@@ -1,7 +1,7 @@
 import React from 'react';
 import { Leaves } from '../Leaves/Leaves';
 import GlobalStyle from '../../styles/global-styles';
-console.log(window.location.pathname);
+
 const App = () => {
   return (
     <>
@@ -9,5 +9,5 @@ const App = () => {
       <Leaves />
     </>
   );
-}
+};
 export default App;

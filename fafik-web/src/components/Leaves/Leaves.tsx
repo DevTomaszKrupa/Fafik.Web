@@ -25,5 +25,5 @@ const Leaves = () =>
         <LeavesHeaderMenu />
         <LeavesCouple />
         <LeavesCounter />
-    </S.Header>
+    </S.Header>;
 export { Leaves };

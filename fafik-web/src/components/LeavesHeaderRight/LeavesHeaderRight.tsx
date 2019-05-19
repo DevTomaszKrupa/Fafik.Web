@@ -1,5 +1,10 @@
 import React from 'react';
-import flower1 from './flower1.png';
+import flower2 from './flower2.png';
 
-const LeavesHeaderRight = () => <img src={flower1} alt="flower" />;
+const divStyle = {
+    height: '13rem',
+    width: 'auto'
+};
+
+const LeavesHeaderRight = () => <img style={divStyle} src={flower2} alt="flower" />;
 export { LeavesHeaderRight };

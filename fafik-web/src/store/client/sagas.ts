@@ -6,7 +6,7 @@ import { Action } from '../actions';
 import { GetClientRequest } from '../../models';
 
 
-export function* getClient(action: Action<GetClientRequest>): any {
+function* getClient(action: Action<GetClientRequest>): any {
   try {
     const client = yield call(apiCaller.getClient, action.payload as GetClientRequest);
     yield put({ type: GET_CLIENT_SUCCESS, payload: client });

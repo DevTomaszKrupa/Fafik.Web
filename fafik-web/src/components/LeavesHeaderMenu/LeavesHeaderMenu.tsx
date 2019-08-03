@@ -45,7 +45,11 @@ const S = {
     `
 };
 
-const LeavesHeaderMenu = () => {
+type Props = {
+    logoNames: string;
+};
+
+const LeavesHeaderMenu = (props: Props) => {
     const leftMenuItems = [
         { name: 'O nas' },
         { name: 'galeria' },
@@ -59,7 +63,7 @@ const LeavesHeaderMenu = () => {
     return <S.Menu>
         <S.MenuLeft>{leftMenuItems.map(x => <S.Item> {x ? x.name : ''} </S.Item>)}</S.MenuLeft>
         <S.MenuCenter>
-            Katarzyna Daniel
+            {props.logoNames}
         </S.MenuCenter>
         <S.MenuRight>{rightMenuItems.map(x => <S.Item> {x ? x.name : ''} </S.Item>)}</S.MenuRight>
     </S.Menu>;

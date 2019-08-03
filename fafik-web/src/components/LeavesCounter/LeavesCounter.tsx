@@ -22,5 +22,5 @@ const S = {
 const LeavesCounter = () =>
     <S.Counter>
         do naszego ślubu zostało: <S.Badge>11</S.Badge> miesięcy, <S.Badge>8</S.Badge> dni.
-    </S.Counter>
+    </S.Counter>;
 export { LeavesCounter };

@@ -15,14 +15,19 @@ const S = {
     display: flex;
     justify-content: space-between;
     `
-}
-const Leaves = () =>
+};
+
+type Props = {
+    logoNames: string;
+};
+
+const Leaves = (props: Props) =>
     <S.Header>
         <S.Images>
             <LeavesHeaderLeft />
             <LeavesHeaderRight />
         </S.Images>
-        <LeavesHeaderMenu />
+        <LeavesHeaderMenu logoNames={props.logoNames} />
         <LeavesCouple />
         <LeavesCounter />
     </S.Header>;

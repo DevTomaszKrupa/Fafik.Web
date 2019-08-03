@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 
 import ClientPage from '../ClientPage';
 import { history } from '../../helpers';
-import { store } from '../../store/index';
+import store from '../../store/index';
 
 const App = () => {
   return (

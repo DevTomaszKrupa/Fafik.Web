@@ -1,13 +1,20 @@
 import React from 'react';
-import { Leaves } from '../Leaves/Leaves';
-import GlobalStyle from '../../styles/global-styles';
+import { Route, Switch, Router } from 'react-router';
+import { Provider } from 'react-redux';
+
+import ClientPage from '../ClientPage';
+import { history } from '../../helpers';
+import { store } from '../../store/index';
 
 const App = () => {
   return (
-    <>
-      <GlobalStyle />
-      <Leaves />
-    </>
+    <Provider store={store}>
+      <Router history={history}>
+        <Switch>
+          <Route exact path="/:clientName" component={ClientPage} />
+        </Switch>
+      </Router>
+    </Provider>
   );
 };
 export default App;

@@ -43,7 +43,8 @@ const S = {
     display: flex;
     align-items: flex-end;
     `
-}
+};
+
 const LeavesHeaderMenu = () => {
     const leftMenuItems = [
         { name: 'O nas' },
@@ -51,8 +52,8 @@ const LeavesHeaderMenu = () => {
         { name: 'blog' }
     ];
     const rightMenuItems = [
-        { name: 'plan dnia' }, ,
-        { name: 'mapy' }, ,
+        { name: 'plan dnia' },
+        { name: 'mapy' },
         { name: 'RSVP' }
     ];
     return <S.Menu>
@@ -61,7 +62,7 @@ const LeavesHeaderMenu = () => {
             Katarzyna Daniel
         </S.MenuCenter>
         <S.MenuRight>{rightMenuItems.map(x => <S.Item> {x ? x.name : ''} </S.Item>)}</S.MenuRight>
-    </S.Menu>
-}
+    </S.Menu>;
+};
 
 export { LeavesHeaderMenu };

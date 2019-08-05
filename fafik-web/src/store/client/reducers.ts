@@ -16,7 +16,6 @@ const initialState: ClientState = {
 };
 
 export const clientState: Reducer<ClientState, Action> = (state = initialState, action: Action): ClientState => {
-  console.log(action);
   switch (action.type) {
     case GET_CLIENT_STARTED:
       return {

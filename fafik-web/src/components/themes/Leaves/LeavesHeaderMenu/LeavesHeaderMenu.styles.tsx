@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const S = {
+export default {
     Menu: styled.div`
     display:flex;
     justify-content: space-between;
@@ -44,29 +43,3 @@ const S = {
     align-items: flex-end;
     `
 };
-
-type Props = {
-    logoNames: string;
-};
-
-const LeavesHeaderMenu = (props: Props) => {
-    const leftMenuItems = [
-        { name: 'O nas' },
-        { name: 'galeria' },
-        { name: 'blog' }
-    ];
-    const rightMenuItems = [
-        { name: 'plan dnia' },
-        { name: 'mapy' },
-        { name: 'RSVP' }
-    ];
-    return <S.Menu>
-        <S.MenuLeft>{leftMenuItems.map(x => <S.Item> {x ? x.name : ''} </S.Item>)}</S.MenuLeft>
-        <S.MenuCenter>
-            {props.logoNames}
-        </S.MenuCenter>
-        <S.MenuRight>{rightMenuItems.map(x => <S.Item> {x ? x.name : ''} </S.Item>)}</S.MenuRight>
-    </S.Menu>;
-};
-
-export { LeavesHeaderMenu };

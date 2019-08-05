@@ -1,8 +1,6 @@
-import React from 'react';
-import couple from './couple.jpg';
 import styled from 'styled-components';
 
-const S = {
+export default {
     ImgBox: styled.div`
     margin-top:11rem;
     padding: 0 3rem;
@@ -13,6 +11,3 @@ const S = {
     object-fit: cover;
     `
 };
-
-const LeavesCouple = () => <S.ImgBox><S.Image src={couple} alt="couple" /></S.ImgBox>;
-export { LeavesCouple };

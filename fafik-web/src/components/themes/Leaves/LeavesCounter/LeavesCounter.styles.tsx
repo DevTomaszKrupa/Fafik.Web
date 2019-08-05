@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const S = {
+export default {
     Counter: styled.div`
     display: flex;
     align-items: center;
@@ -18,9 +17,4 @@ const S = {
     width: 2.5rem;
     align-items: center;
     justify-content: center;`
-}
-const LeavesCounter = () =>
-    <S.Counter>
-        do naszego ślubu zostało: <S.Badge>11</S.Badge> miesięcy, <S.Badge>8</S.Badge> dni.
-    </S.Counter>;
-export { LeavesCounter };
+};

@@ -12,6 +12,7 @@ const App = () => {
       <Router history={history}>
         <Switch>
           <Route exact path="/:clientName" component={ClientPage} />
+          <Route exact path="/:clientName/:page" component={ClientPage} />
         </Switch>
       </Router>
     </Provider>

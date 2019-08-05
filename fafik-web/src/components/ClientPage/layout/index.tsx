@@ -11,14 +11,18 @@ type Props = {
     getClient: (request: GetClientRequest) => Action<GetClientRequest>;
 };
 
-const ClientPageLayout = (props: Props & RouteComponentProps<{ clientName: string }>) => {
+const ClientPageLayout = (props: Props & RouteComponentProps<{ clientName: string, page: string }>) => {
 
     const { getClient, match, clientState } = props;
-    const { clientName } = match.params;
+    const { clientName, page } = match.params;
 
     const resolveTheme = () => {
         if (clientState.theme)
-            return SiteThemes[clientState.theme](clientState.themeData);
+            return SiteThemes[clientState.theme].component;
+    };
+    const resolvePage = () => {
+        if (clientState.theme)
+            return SiteThemes[clientState.theme].sites[page];
     };
 
     useEffect(() => {
@@ -28,6 +32,7 @@ const ClientPageLayout = (props: Props & RouteComponentProps<{ clientName: strin
     return (
         <div>
             {resolveTheme()}
+            {resolvePage()}
         </div>);
 };
 

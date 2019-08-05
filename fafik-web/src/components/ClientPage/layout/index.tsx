@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Fragment } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
 import { Action } from '../../../store/actions';
@@ -30,10 +30,10 @@ const ClientPageLayout = (props: Props & RouteComponentProps<{ clientName: strin
     }, [clientName]);
 
     return (
-        <div>
+        <Fragment>
             {resolveTheme()}
             {resolvePage()}
-        </div>);
+        </Fragment>);
 };
 
 export { ClientPageLayout };

@@ -1,14 +1,14 @@
 import React from "react";
 import components from "./Leaves.styles";
-import { ClientState } from '../../../../store/client/reducers';
+import { ClientState } from "../../../../store/client/reducers";
 
 type Props = {
   clientState: ClientState;
 };
 
 const LeavesLayout = (props: Props) => {
-    const { clientState } = props;
-    const { themeData } = clientState;
+  const { clientState } = props;
+  const { themeData } = clientState;
 
   const {
     Header,
@@ -33,16 +33,18 @@ const LeavesLayout = (props: Props) => {
   return (
     <Header>
       <Images>
-                <Image src={process.env.PUBLIC_URL + themeData.headerRightImage}  alt="flower"></Image>
-                <Image src={process.env.PUBLIC_URL + themeData.headerLeftImage}  alt="flower"></Image>
+        <Image
+          src={process.env.PUBLIC_URL + themeData.headerRightImage}
+          alt="flower"
+        />
+        <Image
+          src={process.env.PUBLIC_URL + themeData.headerLeftImage}
+          alt="flower"
+        />
       </Images>
       <Menu>
-        <MenuLeft>
-          {leftMenuItems.map(x => (
-                    {themeData.logoNames}
-          ))}
-        </MenuLeft>
-        <MenuCenter>Katarzyna Daniel</MenuCenter>
+        <MenuLeft>{leftMenuItems.map(x => (x ? x.name : ""))}</MenuLeft>
+        <MenuCenter>{themeData.logoNames}</MenuCenter>
         <MenuRight>
           {rightMenuItems.map(x => (
             <Item> {x ? x.name : ""} </Item>

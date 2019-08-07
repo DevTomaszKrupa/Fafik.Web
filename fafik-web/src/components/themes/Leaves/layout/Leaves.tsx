@@ -1,10 +1,16 @@
 import React from 'react';
 import components from './Leaves.styles';
-import flower1 from './flower1.png';
-import flower2 from './flower2.png';
+import { ClientState } from '../../../../store/client/reducers';
 
 
-const Leaves = () => {
+type Props = {
+  clientState: ClientState;
+};
+
+const LeavesLayout = (props: Props) => {
+    const { clientState } = props;
+    const { themeData } = clientState;
+
     const { Header, Images, Image, Menu, Item, MenuLeft, MenuCenter, MenuRight } = components;
     const leftMenuItems = [
         { name: 'O nas' },
@@ -19,17 +25,17 @@ const Leaves = () => {
     return (
         <Header>
             <Images>
-                <Image src={flower1} alt="flower"></Image>
-                <Image src={flower2} alt="flower"></Image>
+                <Image src={process.env.PUBLIC_URL + themeData.headerRightImage}  alt="flower"></Image>
+                <Image src={process.env.PUBLIC_URL + themeData.headerLeftImage}  alt="flower"></Image>
             </Images>
             <Menu>
                 <MenuLeft>{leftMenuItems.map(x => <Item> {x ? x.name : ''} </Item>)}</MenuLeft>
                 <MenuCenter>
-                    Katarzyna i Daniel
+                    {themeData.logoNames}
                 </MenuCenter>
                 <MenuRight>{rightMenuItems.map(x => <Item> {x ? x.name : ''} </Item>)}</MenuRight>
             </Menu>
         </Header>);
 };
 
-export { Leaves };
+export default LeavesLayout;

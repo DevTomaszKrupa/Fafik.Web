@@ -1,7 +1,6 @@
 import React from "react";
-
-import { Leaves } from "../components/themes/Leaves/layout/Leaves";
-import { LeavesAbout } from "../components/themes/Leaves/LeavesAbout/LeavesAbout";
+import Leaves from '../components/themes/Leaves';
+import LeavesAbout from '../components/themes/Leaves/LeavesAbout';
 import { LeavesGallery } from "../components/themes/Leaves/LeavesGallery/LeavesGallery";
 import { RomanticLayout } from "../components/themes/Romantic/layout/Romantic";
 

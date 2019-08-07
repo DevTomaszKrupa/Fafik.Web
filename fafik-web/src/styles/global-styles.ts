@@ -19,6 +19,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
+
+  @font-face{ 
+    font-family: 'Selima';
+    src: url('selima_-webfont.woff') format('woff'),
 `;
 
 export default GlobalStyle;

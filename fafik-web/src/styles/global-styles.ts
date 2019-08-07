@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   #root,
@@ -6,8 +6,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
-    min-height: 100vh;
-    min-width: 100vw;
+    height: 100%;
+    min-height: 100%;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
       sans-serif;
@@ -23,6 +23,8 @@ const GlobalStyle = createGlobalStyle`
   @font-face{ 
     font-family: 'Selima';
     src: url('selima_-webfont.woff') format('woff'),
+  }
+  
 `;
 
 export default GlobalStyle;

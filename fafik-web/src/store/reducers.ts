@@ -1,10 +1,15 @@
 import { combineReducers } from 'redux';
+
 import { ClientState, clientState } from './client/reducers';
+import { LeavesState, leavesState } from './leaves/reducers';
+
 
 export type AppState = {
-  clientState: ClientState
+  clientState: ClientState,
+  leavesState: LeavesState
 };
 
 export default combineReducers<AppState>({
-  clientState
+  clientState,
+  leavesState
 });

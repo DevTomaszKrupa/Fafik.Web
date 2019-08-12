@@ -1,3 +1,3 @@
 export interface GetClientResponse {
-  clientName: string;
+  theme: string;
 }

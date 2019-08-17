@@ -1,0 +1,48 @@
+import React, { Fragment } from 'react';
+
+import components from './header.styles';
+import { LeavesState } from '../../../../../store/leaves/theme/reducers';
+import { history } from '../../../../../helpers';
+
+
+type Props = {
+  leavesState: LeavesState;
+};
+
+const header = (props: Props) => {
+
+  const { leavesState } = props;
+  const { Header, Images, Image, Menu, Item, MenuLeft, MenuCenter, MenuRight } = components;
+
+  // const redirect = (path: string) => {
+  //   history.push(`${leavesState.clientPath}/${path}`);
+  // };
+
+  return (
+    <Fragment>
+      <Header>
+        <Images>
+          <Image
+            src={'http://localhost/fafik/' + leavesState.headerImageLeft}
+            alt="flower"
+          />
+          <Image
+            src={'http://localhost/fafik/' + leavesState.headerImageRight}
+            alt="flower"
+          />
+        </Images>
+        <Menu>
+          <MenuLeft>
+            {leavesState.leftMenuItems.map(x => (<Item onClick={() => history.push(x.path)}> {x.name} </Item>))}
+          </MenuLeft>
+          <MenuCenter>{leavesState.headerNames}</MenuCenter>
+          <MenuRight>
+            {leavesState.rightMenuItems.map(x => (<Item onClick={() => history.push(x.path)}> {x.name} </Item>))}
+          </MenuRight>
+        </Menu>
+      </Header>
+    </Fragment>
+  );
+};
+
+export default header;

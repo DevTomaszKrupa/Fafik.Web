@@ -1,12 +1,16 @@
 import { all, fork } from 'redux-saga/effects';
 
 import { clientRootSaga } from './client/sagas';
-import { leavesRootSaga } from './leaves/sagas';
+import { leavesRootSaga } from './leaves/theme/sagas';
+import { leavesMainSiteRootSaga } from './leaves/main/sagas';
 
 
 const sagas = [
   clientRootSaga,
-  leavesRootSaga
+
+  // leaves
+  leavesRootSaga,
+  leavesMainSiteRootSaga
 ];
 
 export default function* rootSaga(): any {

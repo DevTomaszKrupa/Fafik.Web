@@ -6,7 +6,7 @@ const baseApiUrl = 'http://localhost:5000';
 // client
 const getClient = (request: GetClientRequest) =>
   Axios.get<GetClientResponse>(`${baseApiUrl}/clients/${request.clientPath}/site/${request.sitePath}`);
-
+// ({data:{theme:"romantic"}})
 // leaves
 const getLeavesTheme = (clientPath: string) =>
   Axios.get<GetClientResponse>(`${baseApiUrl}/leaves?clientPath=${clientPath}`);

@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+
+import React from 'react';
 
 const LeavesGallery = () => {
 
@@ -8,4 +9,4 @@ const LeavesGallery = () => {
     );
 };
 
-export { LeavesGallery };
+export default LeavesGallery;

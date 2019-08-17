@@ -20,6 +20,7 @@ const ClientPageLayout = (props: Props & RouteComponentProps<{ clientPath: strin
         if (clientState.theme)
             return SiteThemes[clientState.theme];
     };
+
     useEffect(() => {
         getClient({ clientPath: clientPath, sitePath: sitePath ? sitePath : '' });
     }, [clientPath]);

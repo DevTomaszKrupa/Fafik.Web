@@ -24,7 +24,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Selima';
     src: url('selima_-webfont.woff') format('woff'),
   }
-  
 `;
 
 export default GlobalStyle;

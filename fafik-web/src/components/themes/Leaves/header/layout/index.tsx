@@ -14,9 +14,9 @@ const header = (props: Props) => {
   const { leavesState } = props;
   const { Header, Images, Image, Menu, Item, MenuLeft, MenuCenter, MenuRight } = components;
 
-  // const redirect = (path: string) => {
-  //   history.push(`${leavesState.clientPath}/${path}`);
-  // };
+  const redirect = (path: string) => {
+    history.push(`/${leavesState.clientPath}/${path}`);
+  };
 
   return (
     <Fragment>
@@ -33,11 +33,11 @@ const header = (props: Props) => {
         </Images>
         <Menu>
           <MenuLeft>
-            {leavesState.leftMenuItems.map(x => (<Item onClick={() => history.push(x.path)}> {x.name} </Item>))}
+            {leavesState.leftMenuItems.map(x => (<Item onClick={() => redirect(x.path)}> {x.name} </Item>))}
           </MenuLeft>
-          <MenuCenter>{leavesState.headerNames}</MenuCenter>
+          <MenuCenter onClick={() => history.push(`/${leavesState.clientPath}`)}>{leavesState.headerNames}</MenuCenter>
           <MenuRight>
-            {leavesState.rightMenuItems.map(x => (<Item onClick={() => history.push(x.path)}> {x.name} </Item>))}
+            {leavesState.rightMenuItems.map(x => (<Item onClick={() => redirect(x.path)}> {x.name} </Item>))}
           </MenuRight>
         </Menu>
       </Header>

@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-interface ItemProps {
-  textAlign: string;
-}
-
 interface CategoryPhotoProps {
   backgroundImage: string;
 }
@@ -22,77 +18,6 @@ interface BlogPostProps {
 }
 
 export default {
-  Header: styled.div`
-    flex-grow: 1;
-    background-image: url(https://i.imgur.com/2E99Q3y.jpg);
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    padding: 5% 0 0 0;
-  `,
-
-  Menu: styled.div`
-    flex-grow: 1;
-    background-color: #ffffff;
-    align-items: center;
-    display: flex;
-    height: 18rem;
-  `,
-
-  MenuFrame: styled.div`
-    border: 0.07rem solid #707070;
-    flex-grow: 1;
-    padding: 3%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  `,
-
-  SideMenu: styled.div`
-    display: flex;
-    flex-direction: column;
-    flex-grow: 2;
-    padding: 0 1rem;
-  `,
-
-  MenuCenter: styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 1;
-  `,
-
-  Item: styled.div`
-    text-align: ${(props: ItemProps) => props.textAlign};
-    font-size: 1rem;
-    text-transform: uppercase;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    letter-spacing: 0.1rem;
-    line-height: 2.1rem;
-    cursor: pointer;
-
-    &: hover {
-      text-decoration: underline;
-    }
-  `,
-
-  CenterNames: styled.div`
-    font-family: "Sacramento";
-    font-size: 3.3rem;
-  `,
-
-  CenterDate: styled.div`
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    letter-spacing: 0.1rem;
-  `,
-
-  SingleLineVertical: styled.div`
-    height: 8.2rem;
-    width: 0.1rem;
-    background-color: #707070;
-  `,
 
   SingleLineHorizontal: styled.div`
     width: 14rem;
@@ -265,6 +190,8 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+    cursor: poiner;
+    box-shadow: 0.4rem 0.4rem 2rem #343434;
   `,
 
   CategoryPhoto: styled.div`
@@ -355,6 +282,11 @@ export default {
     border: none;
     border-radius: 2rem;
     font-size: 1.1rem;
+    cursor: pointer;
+
+    &: hover{
+      background-color: #884239;
+    }
   `,
 
   MapSection: styled.div`
@@ -408,6 +340,11 @@ export default {
     border-radius: 2rem;
     font-size: 1.2rem;
     margin-top: 1rem;
+    cursor: pointer;
+
+    &: hover {
+      background-color: #d8ccad;
+    }
   `,
 
   MapImage1: styled.div`
@@ -436,5 +373,351 @@ export default {
     align-items: center;
     justify-content: space-between;
     width: 70%;
+  `,
+
+  EventPlanSection: styled.div`
+    flex-grow: 1;
+    height: 80%;
+  `,
+
+  PlanDecoration: styled.div`
+    background-image: url("https://i.imgur.com/7ykWG81.png");
+    width: 38rem;
+    height: 9rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: 320%;
+  `,
+
+  PlanHeader: styled.div`
+    display: flex;
+    justify-content: space-between;
+  `,
+
+  PlanHeaderText: styled.div`
+    font-family: "Sacramento";
+    font-size: 7.5rem;
+    font-weight: 500;
+    color: #683b35;
+    transform: rotate(10deg);
+    width: 38rem;
+    padding: 5rem 5rem 2rem 0;
+  `,
+
+  EventPlan: styled.div`
+    display: flex;
+    justify-content: center;
+  `,
+
+  EventElement: styled.div`
+    display: flex;
+    flex-direction: column;
+  `,
+
+  EventTopElement: styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: -0.8rem;
+    position: relative;
+}
+  `,
+
+  EventIcon: styled.div`
+    background-image: url("https://i.imgur.com/mWzbv7h.png");
+    width: 10rem;
+    height: 10rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  `,
+
+  EventDot: styled.div`
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: #ebe3cd;
+
+    &: hover{
+      background-color: #683B35;
+    }
+  `,
+
+  EventBottomElement: styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 0.2rem solid #683b35;
+    padding: 0 3rem;
+  `,
+
+  EventTime: styled.div`
+    color: #b6947a;
+    font-size: 3rem;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+    padding-top: 1rem;
+  `,
+
+  EventName: styled.div`
+    color: #683b35;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+    font-size: 1.15rem;
+    padding-top: 0.2rem;
+  `,
+
+  GiftSection: styled.div`
+    flex-grow: 1;
+    height: 60%;
+    background-image: url("https://i.imgur.com/rzmxHCQ.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  `,
+
+  GiftSectionFrame: styled.div`
+    background-color: rgba(255, 255, 255, 0.85);
+    width: 82rem;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+  `,
+
+  GiftSectionHeader: styled.div`
+    font-family: "Sacramento";
+    font-size: 4rem;
+    font-weight: 500;
+    color: #683b35;
+  `,
+
+  GiftRebuses: styled.div`
+    display: flex;
+  `,
+
+  GiftRebus: styled.div``,
+
+  MusicSection: styled.div`
+    display: flex;
+    flex-grow: 1;
+    height: 60%;
+    background-color: #ebe3cd;
+    justify-content: center;
+    align-items: center;
+  `,
+
+  MusicSectionFrame: styled.div`
+    background-color: #ffffff;
+    width: 74rem;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  `,
+
+  MusicSectionCircle: styled.div`
+    width: 22rem;
+    height: 22rem;
+    border: 0.4rem solid #683b35;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: -7rem;
+    background-color: #ffffff;
+    position: relative;
+  `,
+
+  MusicCircleFrame: styled.div`
+    width: 17.5rem;
+    height: 17.5rem;
+    border: 1rem solid #ebe4ce;
+    border-radius: 50%;
+  `,
+
+  MusicCircleIcon: styled.div``,
+
+  MusicSectionTitle: styled.div`
+    color: #683b35;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.65rem;
+    line-height: 2.5rem;
+    padding: 3rem 0 0.8rem 0;
+  `,
+
+  MusicInputBox: styled.div`
+    color: #683b35;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding-top: 1.2rem;
+  `,
+
+  MusicInput: styled.input`
+    border: 0.2rem solid #683b35;
+    border-radius: 2rem;
+    width: 15rem;
+    height: 1.8rem;
+
+    padding-left: 1.2rem;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+    font-size: 0.8rem;
+  `,
+
+  MusicSectionInputs: styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  `,
+
+  MusicButton: styled.button`
+    background-color: #c3a88c;
+    color: #ffffff;
+    width: 9rem;
+    height: 2.2rem;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    justify-content: center;
+    border-radius: 1rem;
+
+    &: hover {
+      background-color: #683b35;
+    }
+  `,
+
+  MusicActionPanel: styled.div`
+    display: flex;
+  `,
+
+  MusicSectionButton: styled.div`
+    display: flex;
+    align-items: flex-end;
+    padding-left: 2rem;
+  `,
+
+  AdditionalInfoSection: styled.div`
+    flex-grow: 1;
+    height: 80%;
+    background-color: #726257;
+    background-image: url("https://i.imgur.com/zNjU7AO.png");
+    background-size: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  `,
+
+  AdditionalInfoHeader: styled.div`
+    color: #ffffff;
+    font-family: "Sacramento";
+    font-size: 4rem;
+    padding-top: 2rem;
+  `,
+
+  AdditionalInformationsBox: styled.div`
+    flex-grow: 1;
+    padding: 2.5rem;
+  `,
+
+  MainInformationBox: styled.div`
+    display: flex;
+  `,
+
+  InformationIcon: styled.div`
+    height: 3.2rem;
+    width: 3.2rem;
+    border: 0.4rem solid #ffffff;
+    border-radius: 50%;
+    display: flex;
+  `,
+
+  InformationTextBox: styled.div`
+    padding: 1.1rem 0 0 1.1rem;
+  `,
+
+  TextBoxHeader: styled.div`
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.07rem;
+    font-weight: 600;
+    font-size: 1.8rem;
+    padding-bottom: 0.9rem;
+  `,
+
+  TextBoxDescription: styled.div`
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.07rem;
+    font-size: 0.9rem;
+    line-height: 1.7rem;
+    font-weight: 500;
+  `,
+
+  AdditionalInfo: styled.div`
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.07rem;
+    font-size: 0.75rem;
+    padding-top: 1rem;
+    line-height: 1.3rem;
+    font-weight: 200;
+  `,
+
+  AdditionalInformationsBoxes: styled.div`
+    display: flex;
+    justify-content: space-between;
+  `,
+
+  AdditionalInformationsDoubleLine: styled.div`
+    width: 100%;
+    padding-top: 1.3rem;
+  `,
+
+  DoubleLine: styled.div`
+    border: 0.07rem solid #ffffff;
+    flex-grow: 1;
+    padding: 0.3rem;
+    margin-top: 1.2rem;
+  `,
+
+  BottomInfoSection: styled.div`
+    flex-grow: 1;
+    display: flex;
+    width: 74%;
+    align-items: center;
+  `,
+
+  TextBoxHeaderBottom: styled.div`
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.07rem;
+    font-weight: 600;
+    font-size: 1.8rem;
+    padding: 0 3rem 0 1.1rem;
+  `,
+
+  TextBoxDescriptionBottom: styled.div`
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.07rem;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    font-weight: 200;
+    padding-left: 2.7rem;
   `
 };

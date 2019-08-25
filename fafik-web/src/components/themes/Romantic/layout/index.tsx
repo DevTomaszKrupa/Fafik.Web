@@ -28,6 +28,7 @@ const RomanticLayout = (props: Props) => {
     Gallery,
     GalleryOpacity,
     GalleryFrame,
+    GalleryTitle,
     Title,
     Subtitle,
     GalleryCategories,
@@ -45,9 +46,11 @@ const RomanticLayout = (props: Props) => {
     ShowMoreButton,
     MapSection,
     MapCircle,
+    MapTitleSubtitle,
     MapTitle,
     MapSubtitle,
     MapTextBox,
+    MapButtons,
     MapButton,
     MapImage1,
     MapImage2,
@@ -119,39 +122,28 @@ const RomanticLayout = (props: Props) => {
       <AboutUsBox>
         <AboutUsPhotoBox>
           <AboutUsPhotoFrame>
-            <AboutUsPhoto> </AboutUsPhoto>
+            <AboutUsPhoto aboutUsImg={props.romanticState.aboutUsPhoto}>
+              {" "}
+            </AboutUsPhoto>
           </AboutUsPhotoFrame>
         </AboutUsPhotoBox>
         <AboutBoxText>
-          <TextWelcome> Cześć kochani! </TextWelcome>
-          <AboutUs>
-            Nazywamy się Gaja Skawińska oraz Stanisław Miłoszewski. <br />W roku
-            2021 zawieramy związek małżeński. <br />
-            Zaręczyliśmy się 5 marca 2019 roku w Krakowie. <br />
-            Jesteśmy bardzo szczęśliwi, iż będziemy mogli gościć Was
-            <br />
-            tego wielkiego dnia, kiedy staniemy się rodziną.
-          </AboutUs>
+          <TextWelcome> {props.romanticState.textWelcome} </TextWelcome>
+          <AboutUs> {props.romanticState.aboutUs}</AboutUs>
           <ToRSVPButton> potwierdź obecność> </ToRSVPButton>
         </AboutBoxText>
       </AboutUsBox>
       <DoubleLineTheme />
       <QuoteSection>
-        <QuoteText>
-          "Będę Cię kochał dopóki niebo się nie rozchmurzy,
-          <br />
-          będę Cię kochał, aż żadna gwiazda nie zostanie na górze,
-          <br />
-          aż wszystkie spadną dla Ciebie i dla mnie"
-        </QuoteText>
+        <QuoteText>{props.romanticState.quote}</QuoteText>
         <SingleLineHorizontal />
-        <QuoteAuthor> ROBBIE KRIEGER </QuoteAuthor>
+        <QuoteAuthor> {props.romanticState.quoteAutor} </QuoteAuthor>
       </QuoteSection>
       <DoubleLineTheme />
-      <Gallery>
+      <Gallery galleryImage={props.romanticState.galleryImage}>
         <GalleryOpacity>
           <GalleryFrame>
-            <Title color="#ffffff"> GALERIA ZDJĘĆ </Title>
+            <GalleryTitle color="#ffffff"> GALERIA ZDJĘĆ </GalleryTitle>
             <Subtitle color="#ffffff" padding="0 0 2.5rem 0">
               Drodzy Goście, zachęcamy do obejrzenia naszej galerii <br />
               zarówno przed, jak i po uroczystości.
@@ -159,23 +151,23 @@ const RomanticLayout = (props: Props) => {
             <GalleryCategories>
               <GalleryCard>
                 <CategoryPhoto
-                  backgroundImage={`url("https://i.imgur.com/ItZPGj4.jpg")`}
+                  backgroundImage={`url("http://localhost/Fafik/gaja-i-stanislaw/gallery-prep.png")`}
                 />
                 <CategoryName> Przygotowania </CategoryName>
               </GalleryCard>
 
               <GalleryCard>
                 <CategoryPhoto
-                  backgroundImage={`url("https://i.imgur.com/i2JfGjP.jpg")`}
+                  backgroundImage={`url("http://localhost/Fafik/gaja-i-stanislaw/gallery-wedding.png")`}
                 />
                 <CategoryName> Ślub i wesele </CategoryName>
               </GalleryCard>
 
               <GalleryCard>
                 <CategoryPhoto
-                  backgroundImage={`url("https://i.imgur.com/DTpfMt3.jpg")`}
+                  backgroundImage={`url("http://localhost/Fafik/gaja-i-stanislaw/gallery-session.png")`}
                 />
-                <CategoryName> Zdjęcia grupowe </CategoryName>
+                <CategoryName> Sesja narzeczeńska </CategoryName>
               </GalleryCard>
             </GalleryCategories>
           </GalleryFrame>
@@ -241,19 +233,23 @@ const RomanticLayout = (props: Props) => {
         <MapContent>
           <MapCircle />
           <MapTextBox>
-            <MapTitle color="#000000">
-              NIE WIESZ JAK DOJECHAĆ <br />
-              NA MIEJSCE?
-            </MapTitle>
-            <MapSubtitle>
-              {" "}
-              Kliknij na prostokąt z nazwą miejsca
-              <br />i sprawdź lokalizację na mapie!{" "}
-            </MapSubtitle>
-
-            <MapButton> DOM PANNY MŁODEJ </MapButton>
-            <MapButton> KOŚCIÓŁ - ŚLUB </MapButton>
-            <MapButton> KARCZMA - WESELE </MapButton>
+            <MapTitleSubtitle>
+              <MapTitle color="#000000">
+                NIE WIESZ JAK DOJECHAĆ <br />
+                NA MIEJSCE?
+              </MapTitle>
+              <MapSubtitle>
+                {" "}
+                Kliknij na prostokąt z nazwą miejsca
+                <br />i sprawdź lokalizację na mapie!{" "}
+              </MapSubtitle>
+            </MapTitleSubtitle>
+            <MapButtons>
+                <MapButton> DOM PANNY MŁODEJ </MapButton>
+                <MapButton> KOŚCIÓŁ - ŚLUB </MapButton>
+                <MapButton> KARCZMA - WESELE </MapButton>
+            </MapButtons>
+            
           </MapTextBox>
         </MapContent>
 

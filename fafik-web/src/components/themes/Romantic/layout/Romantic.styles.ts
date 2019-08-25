@@ -17,6 +17,14 @@ interface BlogPostProps {
   backgroundImage: string;
 }
 
+interface AboutUsPhotoProps {
+  aboutUsImg: string;
+}
+
+interface GalleryProps {
+  galleryImage: string;
+}
+
 export default {
 
   SingleLineHorizontal: styled.div`
@@ -24,14 +32,6 @@ export default {
     height: 0.1rem;
     background-color: #707070;
     margin: 0.5rem 0 1rem 0;
-  `,
-
-  CenterQuote: styled.div`
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-    text-align: center;
-    line-height: 1.4rem;
   `,
 
   DoubleLineTheme: styled.div`
@@ -48,14 +48,24 @@ export default {
     height: 70%;
     display: flex;
     justify-content: center;
+
+    @media(max-width: 900px){
+      height: 60%;
+    }
   `,
 
   AboutUsPhoto: styled.div`
-    background-image: url("https://i.imgur.com/h8nhCS7.jpg");
+  background-image: ${(props: AboutUsPhotoProps) =>
+    `url("http://localhost/Fafik/${props.aboutUsImg}")`};
     width: 17rem;
     height: 25rem;
     background-size: 107%;
     background-repeat: no-repeat;
+
+    @media(max-width: 900px){
+      width: 12rem;
+      height: 17.5rem;
+    }
   `,
 
   AboutUsPhotoBox: styled.div`
@@ -65,6 +75,11 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media(max-width: 900px){
+      width: 14rem;
+      height: 19.6rem;
+    }
   `,
 
   AboutUsPhotoFrame: styled.div`
@@ -74,18 +89,33 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media(max-width: 900px){
+      width: 13.3rem;
+      height: 18.9rem;
+    }
   `,
 
   AboutBoxText: styled.div`
     display: flex;
     flex-direction: column;
     padding-left: 6rem;
+    width: 40%;
+
+    @media(max-width: 900px){
+      padding-left: 3rem;
+      width: 45%;
+    }
   `,
 
   TextWelcome: styled.div`
     font-family: "Sacramento";
     font-size: 4.3rem;
     color: #501c15;
+
+    @media(max-width: 900px){
+      font-size: 3.3rem;
+    }
   `,
 
   AboutUs: styled.div`
@@ -93,6 +123,10 @@ export default {
     line-height: 2.3rem;
     font-size: 1.3rem;
     padding: 0.7rem 0 2.7rem 0;
+
+    @media(max-width: 900px){
+      font-size: 1rem;
+    }
   `,
 
   ToRSVPButton: styled.button`
@@ -105,6 +139,17 @@ export default {
     width: 20rem;
     height: 4rem;
     cursor: pointer;
+    
+
+    &: hover{
+      box-shadow: 0.01rem 0.01rem 0.8rem #ededec;
+    }
+
+    @media(max-width: 900px){
+      font-size: 2.3rem;
+      width: 18rem;
+      height: 3rem;
+    }
   `,
 
   QuoteSection: styled.div`
@@ -134,11 +179,13 @@ export default {
 
   Gallery: styled.div`
     flex-grow: 1;
-    background-image: url(https://i.imgur.com/2E99Q3y.jpg);
+    background-image: ${(props: GalleryProps) =>
+      `url("http://localhost/Fafik/${props.galleryImage}")`};
     height: 88%;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 98rem;
     background-position-y: 20%;
+    position: relative;
   `,
   GalleryOpacity: styled.div`
     flex-grow: 1;
@@ -146,6 +193,7 @@ export default {
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
   `,
 
   GalleryFrame: styled.div`
@@ -155,6 +203,18 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+
+  `,
+
+  GalleryTitle: styled.div`
+    color: ${(props: TitleProps) => props.color};
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.1rem;
+    font-size: 2.3rem;
+    padding: 2.5rem 0 1rem 0;
+    font-weight: 500;
+    text-shadow: 0.2rem 0.2rem 0.8rem #000000;
   `,
 
   Title: styled.div`
@@ -164,7 +224,7 @@ export default {
     font-size: 2.3rem;
     padding: 2.5rem 0 1rem 0;
     font-weight: 500;
-  `,
+    `,
 
   Subtitle: styled.div`
     color: ${(props: SubtitleProps) => props.color};
@@ -178,8 +238,8 @@ export default {
   GalleryCategories: styled.div`
     flex-grow: 1;
     display: flex;
-    width: 80%;
-    justify-content: space-around;
+    width: 90%;
+    justify-content: center;
   `,
 
   GalleryCard: styled.div`
@@ -190,8 +250,15 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    cursor: poiner;
+    cursor: pointer;
     box-shadow: 0.4rem 0.4rem 2rem #343434;
+    margin: 0 2.5% 0 2.5%;
+    
+    @media(max-width: 900px){
+      width: 32%;
+      height: 74%;
+    }
+    
   `,
 
   CategoryPhoto: styled.div`
@@ -201,12 +268,22 @@ export default {
     background-size: 161%;
     background-repeat: no-repeat;
     background-position: 21% 18%;
+
+    @media(max-width: 900px){
+      width: 82%;
+      height: 64%;
+    }
   `,
 
   CategoryName: styled.div`
     font-family: "Sacramento";
     font-size: 2.3rem;
     padding: 1.15rem 0;
+    text-align: center;
+
+    @media(max-width: 900px){
+      font-size: 1.8rem;
+    }
   `,
 
   BlogSection: styled.div`
@@ -240,12 +317,21 @@ export default {
     justify-content: space-around;
     width: 80%;
     padding: 0.6rem 0 2rem 0;
+
+    @media(max-width: 900px){
+        justify-content: center;
+        padding: 0.6rem 0 1.6rem 0;
+    }
   `,
 
   BlogPost: styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+   
+    @media(max-width: 900px){
+      padding: 0 1.5rem;
+    }
   `,
 
   BlogPostPhoto: styled.div`
@@ -254,6 +340,12 @@ export default {
     height: 2.5rem;
     background-position-y: 52%;
     background-size: 100%;
+
+    @media(max-width: 900px){
+        height: 3rem;
+        width: 14rem;
+
+    }
   `,
 
   BlogPostDate: styled.div`
@@ -270,6 +362,11 @@ export default {
     text-align: center;
     letter-spacing: 0.07rem;
     font-weight: 500;
+
+    @media(max-width: 900px){
+      width: 14rem;
+      font-size: 0.9rem;
+    }
   `,
 
   ShowMoreButton: styled.button`
@@ -287,6 +384,12 @@ export default {
     &: hover{
       background-color: #884239;
     }
+
+    @media(max-width: 900px){
+        width: 16rem
+        height: 2.2rem;
+        font-size: 1rem;
+    }
   `,
 
   MapSection: styled.div`
@@ -294,6 +397,8 @@ export default {
     height: 70%;
     display: flex;
     align-items: center;
+
+    
   `,
 
   MapCircle: styled.div`
@@ -301,6 +406,10 @@ export default {
     width: 28rem;
     height: 28rem;
     border-radius: 50%;
+  `,
+
+  MapTitleSubtitle:styled.div`
+    
   `,
 
   MapTitle: styled.div`
@@ -327,6 +436,10 @@ export default {
     align-items: center;
   `,
 
+  MapButtons: styled.div`
+  
+  `,
+  
   MapButton: styled.button`
     background-color: #ebe3cd;
     border: none;
@@ -373,6 +486,10 @@ export default {
     align-items: center;
     justify-content: space-between;
     width: 70%;
+
+    @media(max-width: 900px){
+      flex-direction: column-reverse;
+    }
   `,
 
   EventPlanSection: styled.div`

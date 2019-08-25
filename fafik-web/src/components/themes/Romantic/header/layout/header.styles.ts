@@ -4,10 +4,15 @@ interface ItemProps {
   textAlign: string;
 }
 
+interface HeaderProps {
+  headerImage: string;
+}
+
 export default {
   Header: styled.div`
     flex-grow: 1;
-    background-image: url(https://i.imgur.com/2E99Q3y.jpg);
+    background-image: ${(props: HeaderProps) =>
+      `url("http://localhost/Fafik/${props.headerImage}")`};
     height: 100%;
     background-repeat: no-repeat;
     background-size: 100rem;
@@ -19,12 +24,27 @@ export default {
     display: flex;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.95);
-    height: 12%;
+    height: 13%;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 
     position: fixed;
     z-index: 1;
     top: 0;
+
+    // display: none;
+  `,
+
+  StickyMenuOptions: styled.div`
+    display: flex;
+    width: 75%;
+    margin-top: -0.6rem;
+
+    @media (max-width: 1100px){
+        width: 90%;
+
+    }
   `,
 
   SideStickyMenu: styled.div`
@@ -32,10 +52,25 @@ export default {
     flex-grow: 2;
     justify-content: center;
     justify-content: space-around;
-    padding: 0 6%;
+  `,
 
-    @media (max-width: 1200px) {
-      padding: 0 4%;
+  StickyCenterNames: styled.div`
+    font-family: "Sacramento";
+    font-size: 2.7rem;
+    padding-top: 0.6rem;
+  `,
+
+  StickyItem: styled.div`
+    text-align: ${(props: ItemProps) => props.textAlign};
+    font-size: 0.9rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    line-height: 2.1rem;
+    cursor: pointer;
+
+    &: hover {
+      text-decoration: underline;
     }
   `,
 
@@ -46,7 +81,7 @@ export default {
     display: flex;
     height: 18rem;
 
-    @media (max-width: 725px) {
+    @media (max-width: 835px) {
       display: none;
     }
   `,
@@ -77,7 +112,6 @@ export default {
   Item: styled.div`
     text-align: ${(props: ItemProps) => props.textAlign};
     font-size: 1rem;
-    text-transform: uppercase;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     letter-spacing: 0.1rem;

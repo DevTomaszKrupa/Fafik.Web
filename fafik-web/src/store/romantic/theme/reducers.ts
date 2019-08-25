@@ -22,6 +22,15 @@ export type RomanticState = {
   mainImage: string;
   weddingDate: Date | undefined;
   headerQuote: string;
+
+  aboutUsPhoto: string;
+  textWelcome: string;
+  aboutUs: string;
+
+  quote: string;
+  quoteAutor: string;
+
+  galleryImage: string;
 };
 
 const initialState: RomanticState = {
@@ -32,7 +41,16 @@ const initialState: RomanticState = {
   rightMenuItems: [],
   mainImage: "",
   weddingDate: undefined,
-  headerQuote: ""
+  headerQuote: "",
+
+  aboutUsPhoto: "",
+  textWelcome: "",
+  aboutUs: "",
+
+  quote: "",
+  quoteAutor: "",
+
+  galleryImage: "",
 };
 
 const resolveMenuItem = (sites: SiteItem[]) => {
@@ -42,11 +60,8 @@ const resolveMenuItem = (sites: SiteItem[]) => {
     leftItems = sites.slice(0, sites.length / 2);
     rightItems = sites.slice(sites.length / 2, sites.length);
   } else {
-    leftItems = sites.slice(0, Math.floor(sites.length / 2));
-    rightItems = sites.slice(
-      Math.floor(sites.length / 2),
-      Math.floor(sites.length / 2) * 2
-    );
+    leftItems = sites.slice(0, Math.ceil(sites.length / 2));
+    rightItems = sites.slice(Math.ceil(sites.length / 2), sites.length);
   }
   return { leftItems, rightItems };
 };
@@ -74,7 +89,16 @@ export const romanticState: Reducer<RomanticState, Action> = (
         sites,
         mainImage,
         weddingDate,
-        headerQuote
+        headerQuote,
+
+        aboutUsPhoto,
+        textWelcome,
+        aboutUs,
+
+        quote,
+        quoteAutor,
+
+        galleryImage,
       } = action.payload.data;
       const { leftItems, rightItems } = resolveMenuItem(sites);
       return {
@@ -85,7 +109,16 @@ export const romanticState: Reducer<RomanticState, Action> = (
         rightMenuItems: rightItems,
         mainImage: mainImage,
         weddingDate: weddingDate,
-        headerQuote: headerQuote
+        headerQuote: headerQuote,
+
+        aboutUsPhoto: aboutUsPhoto,
+        textWelcome: textWelcome,
+        aboutUs: aboutUs,
+
+        quote: quote,
+        quoteAutor: quoteAutor,
+
+        galleryImage: galleryImage,
       };
     case GET_ROMANTIC_THEME_FAILURE:
       return {

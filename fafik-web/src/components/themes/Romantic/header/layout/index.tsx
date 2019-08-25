@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import moment from "moment";
 
 import components from "./header.styles";
 import { RomanticState } from "../../../../../store/romantic/theme/reducers";
@@ -12,7 +13,10 @@ const Header = (props: Props) => {
   const {
     Header,
     StickyMenu,
+    StickyMenuOptions,
     SideStickyMenu,
+    StickyCenterNames,
+    StickyItem,
     Menu,
     MenuFrame,
     MenuCenter,
@@ -25,53 +29,62 @@ const Header = (props: Props) => {
     CenterQuote
   } = components;
 
-  const leftMenuItems = [
-    { name: "O nas" },
-    { name: "Galeria" },
-    { name: "Blog" }
-  ];
-  const rightMenuItems = [
-    { name: "Dojazd" },
-    { name: "Plan wydarzenia" },
-    { name: "RSVP" }
-  ];
+  // const leftMenuItems = [
+  //   { name: "O nas" },
+  //   { name: "Galeria" },
+  //   { name: "Blog" }
+  // ];
+  // const rightMenuItems = [
+  //   { name: "Dojazd" },
+  //   { name: "Plan wydarzenia" },
+  //   { name: "RSVP" }
+  // ];
+
+
   return (
     <Fragment>
-      <Header>
+      <Header headerImage={props.romanticState.mainImage}>
         <StickyMenu>
-          <SideStickyMenu>
-            {leftMenuItems.map(x => (
-              <Item textAlign="right"> {x.name} </Item>
-            ))}
-          </SideStickyMenu>
+          <StickyCenterNames>
+            {props.romanticState.headerNames}
+          </StickyCenterNames>
 
-          <CenterNames>{props.romanticState.headerNames}</CenterNames>
+          <StickyMenuOptions>
+            <SideStickyMenu>
+              {props.romanticState.leftMenuItems.map(x => (
+                <StickyItem textAlign="right"> {x.name} </StickyItem>
+              ))}
+            </SideStickyMenu>
 
-          <SideStickyMenu>
-            {rightMenuItems.map(x => (
-              <Item textAlign="left"> {x ? x.name : ""} </Item>
-            ))}
-          </SideStickyMenu>
+            <SideStickyMenu>
+              {props.romanticState.rightMenuItems.map(x => (
+                <StickyItem textAlign="left"> {x ? x.name : ""} </StickyItem>
+              ))}
+            </SideStickyMenu>
+          </StickyMenuOptions>
         </StickyMenu>
         <Menu>
           <MenuFrame>
             <SideMenu>
-              {leftMenuItems.map(x => (
+              {props.romanticState.leftMenuItems.map(x => (
                 <Item textAlign="right"> {x.name} </Item>
               ))}
             </SideMenu>
             <SingleLineVertical />
             <MenuCenter>
-              <CenterNames>Gaja i Stanisław</CenterNames>
-              <CenterDate> 09.06.2021 </CenterDate>
+              <CenterNames>{props.romanticState.headerNames}</CenterNames>
+              <CenterDate>
+                {" "}
+                {moment(props.romanticState.weddingDate).format(
+                  "DD.MM.YYYY"
+                )}{" "}
+              </CenterDate>
               <SingleLineHorizontal />
-              <CenterQuote>
-                "Kocha się za nic. <br /> Nie istnieje żaden powód do miłości."
-              </CenterQuote>
+              <CenterQuote>{props.romanticState.headerQuote}</CenterQuote>
             </MenuCenter>
             <SingleLineVertical />
             <SideMenu>
-              {rightMenuItems.map(x => (
+              {props.romanticState.rightMenuItems.map(x => (
                 <Item textAlign="left"> {x ? x.name : ""} </Item>
               ))}
             </SideMenu>

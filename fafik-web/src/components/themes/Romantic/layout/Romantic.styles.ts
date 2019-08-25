@@ -56,7 +56,7 @@ export default {
 
   AboutUsPhoto: styled.div`
   background-image: ${(props: AboutUsPhotoProps) =>
-    `url("http://localhost/Fafik/${props.aboutUsImg}")`};
+      `url("http://localhost/Fafik/${props.aboutUsImg}")`};
     width: 17rem;
     height: 25rem;
     background-size: 107%;
@@ -159,7 +159,7 @@ export default {
     align-items: center;
     padding: 4.8rem 0 3.5rem 0;
     background-image: url("https://i.imgur.com/5PixXri.png");
-    background-size: 27%;
+    background-size: 26rem;
     background-repeat: no-repeat;
     background-position: 50% 50%;
   `,
@@ -169,6 +169,9 @@ export default {
     font-size: 2.3rem;
     text-align: center;
     padding-bottom: 1rem;
+
+    width: 45%;
+  }
   `,
 
   QuoteAuthor: styled.div`
@@ -408,7 +411,7 @@ export default {
     border-radius: 50%;
   `,
 
-  MapTitleSubtitle:styled.div`
+  MapTitleSubtitle: styled.div`
     
   `,
 
@@ -434,12 +437,18 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 50%;
+
+    @media(max-width: 900px){
+        flex-direction: row;
+    }
   `,
 
   MapButtons: styled.div`
-  
+    display: flex;
+    flex-direction: column;
   `,
-  
+
   MapButton: styled.button`
     background-color: #ebe3cd;
     border: none;

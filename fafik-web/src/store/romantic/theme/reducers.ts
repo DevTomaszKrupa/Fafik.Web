@@ -65,13 +65,13 @@ export const romanticState: Reducer<RomanticState, Action> = (
         isLoading: true
       };
     case GET_ROMANTIC_THEME_SUCCESS:
-      console.log(action.payload.data);
-      const { header, aboutUs, gallery } = action.payload.data;
+      const { header, aboutUs, gallery, quoteSection } = action.payload.data;
       const { leftItems, rightItems } = resolveMenuItem(header.sites);
       return {
         ...state,
         isLoading: false,
         aboutUs: aboutUs,
+        quoteSection: quoteSection,
         gallery: gallery,
         header: {
           ...header,

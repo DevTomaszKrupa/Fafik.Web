@@ -46,8 +46,8 @@ const getRomanticTheme = (clientPath: string) => ({
         'Nazywamy się Kasia Dziuba i Daniel Szyper. W roku 2020 zawieramy związek małżeński. Zaręczyliśmy się w sierpniu 2018. Jesteśmy bardzo szczęśliwi, iż będziemy mogli gościć Was tego wielkiego dnia, kiedy staniemy się rodziną.',
     },
     quoteSection: {
-      quote: '"Klaudynka jest najlepsza, hybryda foczki i pantery."',
-      quoteAutor: 'TOMASZ KRUPA',
+      quote: '"Klaudynka jest najlepsza, hybryda foczki i pantery. Kocham jo i szanuje i jest mojo żono."',
+      quoteAuthor: 'TOMASZ KRUPA',
     },
     gallery: {
       galleryImage: 'gaja-i-stanislaw/gallery-main.jpg'

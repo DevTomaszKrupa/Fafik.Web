@@ -8,7 +8,7 @@ type Props = {
   romanticState: RomanticState;
 };
 
-const Header = (props: Props) => {
+const HeaderLayout = (props: Props) => {
   const {
     Header,
     StickyMenu,
@@ -34,9 +34,7 @@ const Header = (props: Props) => {
     <Fragment>
       <Header headerImage={header.mainImage}>
         <StickyMenu>
-          <StickyCenterNames>
-            {header.headerNames}
-          </StickyCenterNames>
+          <StickyCenterNames>{header.headerNames}</StickyCenterNames>
 
           <StickyMenuOptions>
             <SideStickyMenu>
@@ -81,4 +79,4 @@ const Header = (props: Props) => {
   );
 };
 
-export default Header;
+export default HeaderLayout;

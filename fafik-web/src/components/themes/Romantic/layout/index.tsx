@@ -1,9 +1,9 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect } from 'react';
 
-import components from "./Romantic.styles";
-import Header from "../header/index";
-import { RomanticState } from "../../../../store/romantic/theme/reducers";
-import { Action } from "../../../../store/actions";
+import components from './Romantic.styles';
+import Header from '../header/index';
+import { RomanticState } from '../../../../store/romantic/theme/reducers';
+import { Action } from '../../../../store/actions';
 
 type Props = {
   romanticState: RomanticState;
@@ -102,19 +102,11 @@ const RomanticLayout = (props: Props) => {
   } = components;
 
   useEffect(() => {
-    props.getRomanticTheme("gaja-i-slawomir");
+    props.getRomanticTheme('gaja-i-slawomir');
   }, []);
 
-  const leftMenuItems = [
-    { name: "O nas" },
-    { name: "Galeria" },
-    { name: "Blog" }
-  ];
-  const rightMenuItems = [
-    { name: "Dojazd" },
-    { name: "Plan wydarzenia" },
-    { name: "RSVP" }
-  ];
+  const { aboutUs, quoteSection, gallery } = props.romanticState;
+
   return (
     <Fragment>
       <Header />
@@ -122,25 +114,25 @@ const RomanticLayout = (props: Props) => {
       <AboutUsBox>
         <AboutUsPhotoBox>
           <AboutUsPhotoFrame>
-            <AboutUsPhoto aboutUsImg={props.romanticState.aboutUsPhoto}>
-              {" "}
+            <AboutUsPhoto aboutUsImg={aboutUs.aboutUsPhoto}>
+              {' '}
             </AboutUsPhoto>
           </AboutUsPhotoFrame>
         </AboutUsPhotoBox>
         <AboutBoxText>
-          <TextWelcome> {props.romanticState.textWelcome} </TextWelcome>
-          <AboutUs> {props.romanticState.aboutUs}</AboutUs>
+          <TextWelcome> {aboutUs.textWelcome} </TextWelcome>
+          <AboutUs> {aboutUs.aboutUs}</AboutUs>
           <ToRSVPButton> potwierdź obecność> </ToRSVPButton>
         </AboutBoxText>
       </AboutUsBox>
       <DoubleLineTheme />
       <QuoteSection>
-        <QuoteText>{props.romanticState.quote}</QuoteText>
+        <QuoteText>{quoteSection.quote}</QuoteText>
         <SingleLineHorizontal />
-        <QuoteAuthor> {props.romanticState.quoteAutor} </QuoteAuthor>
+        <QuoteAuthor> {quoteSection.quoteAuthor} </QuoteAuthor>
       </QuoteSection>
       <DoubleLineTheme />
-      <Gallery galleryImage={props.romanticState.galleryImage}>
+      <Gallery galleryImage={gallery.galleryImage}>
         <GalleryOpacity>
           <GalleryFrame>
             <GalleryTitle color="#ffffff"> GALERIA ZDJĘĆ </GalleryTitle>
@@ -239,9 +231,9 @@ const RomanticLayout = (props: Props) => {
                 NA MIEJSCE?
               </MapTitle>
               <MapSubtitle>
-                {" "}
+                {' '}
                 Kliknij na prostokąt z nazwą miejsca
-                <br />i sprawdź lokalizację na mapie!{" "}
+                <br />i sprawdź lokalizację na mapie!{' '}
               </MapSubtitle>
             </MapTitleSubtitle>
             <MapButtons>
@@ -332,9 +324,9 @@ const RomanticLayout = (props: Props) => {
         </MusicSectionCircle>
         <MusicSectionFrame>
           <MusicSectionTitle>
-            {" "}
+            {' '}
             MASZ SWOJĄ ULUBIONĄ PIOSENKĘ I CHCESZ USŁYSZEĆ JĄ <br />W TRAKCIE
-            NASZEGO WESELA?{" "}
+            NASZEGO WESELA?{' '}
           </MusicSectionTitle>
           <MusicActionPanel>
             <MusicSectionInputs>
@@ -364,18 +356,18 @@ const RomanticLayout = (props: Props) => {
               <InformationTextBox>
                 <TextBoxHeader> NOCLEG </TextBoxHeader>
                 <TextBoxDescription>
-                  {" "}
+                  {' '}
                   Różana weranda,
                   <br /> ul. Skłodowskiej-Curie 21
-                  <br /> 30-315 Dołek{" "}
+                  <br /> 30-315 Dołek{' '}
                 </TextBoxDescription>
               </InformationTextBox>
             </MainInformationBox>
             <AdditionalInfo>
-              {" "}
+              {' '}
               Drodzy Goście, chcąc zarezerwować pokój,
               <br />
-              prosimy skontaktować się z nami.{" "}
+              prosimy skontaktować się z nami.{' '}
             </AdditionalInfo>
           </AdditionalInformationsBox>
 
@@ -426,13 +418,13 @@ const RomanticLayout = (props: Props) => {
 
           <TextBoxHeaderBottom> KONTAKT </TextBoxHeaderBottom>
           <TextBoxDescriptionBottom>
-            {" "}
-            Gaja: 738 203 202{" "}
+            {' '}
+            Gaja: 738 203 202{' '}
           </TextBoxDescriptionBottom>
 
           <TextBoxDescriptionBottom>
-            {" "}
-            Stanisław: 647 214 583{" "}
+            {' '}
+            Stanisław: 647 214 583{' '}
           </TextBoxDescriptionBottom>
         </BottomInfoSection>
       </AdditionalInfoSection>

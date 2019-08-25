@@ -1,7 +1,7 @@
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
-import header from "./layout";
-import { AppState } from "./../../../../store/reducers";
+import header from './layout';
+import { AppState } from './../../../../store/reducers';
 
 const mapStateToProps = ({ romanticState }: AppState) => ({
   romanticState: romanticState

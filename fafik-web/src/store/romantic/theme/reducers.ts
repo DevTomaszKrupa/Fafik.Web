@@ -1,12 +1,13 @@
-import { Reducer } from "redux";
+import { RomanticHeader, RomanticAboutUs, RomanticGallery, RomanticQuoteSection } from './types';
+import { Reducer } from 'redux';
 
-import { Action } from "../../actions";
-import { GET_CLIENT_SUCCESS } from "../../client/consts";
+import { Action } from '../../actions';
+import { GET_CLIENT_SUCCESS } from '../../client/consts';
 import {
   GET_ROMANTIC_THEME_STARTED,
   GET_ROMANTIC_THEME_SUCCESS,
   GET_ROMANTIC_THEME_FAILURE
-} from "./consts";
+} from './consts';
 
 interface SiteItem {
   name: string;
@@ -16,41 +17,23 @@ interface SiteItem {
 export type RomanticState = {
   clientPath: string;
   isLoading: boolean;
-  headerNames: string;
-  leftMenuItems: SiteItem[];
-  rightMenuItems: SiteItem[];
-  mainImage: string;
-  weddingDate: Date | undefined;
-  headerQuote: string;
 
-  aboutUsPhoto: string;
-  textWelcome: string;
-  aboutUs: string;
-
-  quote: string;
-  quoteAutor: string;
-
-  galleryImage: string;
+  header: RomanticHeader;
+  aboutUs: RomanticAboutUs;
+  quoteSection: RomanticQuoteSection;
+  gallery: RomanticGallery;
 };
 
 const initialState: RomanticState = {
-  clientPath: "",
+  clientPath: '',
   isLoading: false,
-  headerNames: "",
-  leftMenuItems: [],
-  rightMenuItems: [],
-  mainImage: "",
-  weddingDate: undefined,
-  headerQuote: "",
-
-  aboutUsPhoto: "",
-  textWelcome: "",
-  aboutUs: "",
-
-  quote: "",
-  quoteAutor: "",
-
-  galleryImage: "",
+  header: {
+    leftMenuItems: [] as SiteItem[],
+    rightMenuItems: [] as SiteItem[]
+  } as RomanticHeader,
+  aboutUs: {} as RomanticAboutUs,
+  quoteSection: {} as RomanticQuoteSection,
+  gallery: {} as RomanticGallery
 };
 
 const resolveMenuItem = (sites: SiteItem[]) => {
@@ -82,43 +65,19 @@ export const romanticState: Reducer<RomanticState, Action> = (
         isLoading: true
       };
     case GET_ROMANTIC_THEME_SUCCESS:
-      const {
-        headerNames,
-        headerImageLeft,
-        headerImageRight,
-        sites,
-        mainImage,
-        weddingDate,
-        headerQuote,
-
-        aboutUsPhoto,
-        textWelcome,
-        aboutUs,
-
-        quote,
-        quoteAutor,
-
-        galleryImage,
-      } = action.payload.data;
-      const { leftItems, rightItems } = resolveMenuItem(sites);
+      console.log(action.payload.data);
+      const { header, aboutUs, gallery } = action.payload.data;
+      const { leftItems, rightItems } = resolveMenuItem(header.sites);
       return {
         ...state,
         isLoading: false,
-        headerNames: headerNames,
-        leftMenuItems: leftItems,
-        rightMenuItems: rightItems,
-        mainImage: mainImage,
-        weddingDate: weddingDate,
-        headerQuote: headerQuote,
-
-        aboutUsPhoto: aboutUsPhoto,
-        textWelcome: textWelcome,
         aboutUs: aboutUs,
-
-        quote: quote,
-        quoteAutor: quoteAutor,
-
-        galleryImage: galleryImage,
+        gallery: gallery,
+        header: {
+          ...header,
+          leftMenuItems: leftItems,
+          rightMenuItems: rightItems
+        }
       };
     case GET_ROMANTIC_THEME_FAILURE:
       return {

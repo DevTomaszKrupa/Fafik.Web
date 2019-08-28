@@ -18,6 +18,7 @@ export default {
     background-size: 100rem;
     background-position: center;
     padding-top: 5%;
+
   `,
 
   StickyMenu: styled.div`
@@ -36,6 +37,32 @@ export default {
     // display: none;
   `,
 
+  StickyMenuTopLine: styled.div`
+    display: flex;
+    align-items: center;
+    width: 100%;
+  `,
+
+  StickyMenuIcon: styled.img`
+    width: 1.8rem;
+    height: 2.1rem;
+    padding-left: 1.6rem;
+    cursor: pointer;
+    display: none;
+
+    @media(max-width: 835px){
+      display: block;
+    }
+  `,
+
+  StickyMenuIconBox: styled.div`
+      flex-grow: 1
+  `,
+
+  StickyMenuRight: styled.div`
+      flex-grow: 1;
+  `,
+
   StickyMenuOptions: styled.div`
     display: flex;
     width: 75%;
@@ -43,7 +70,10 @@ export default {
 
     @media (max-width: 1100px){
         width: 90%;
+    }
 
+    @media(max-width: 835px){
+        display: none;
     }
   `,
 
@@ -58,6 +88,9 @@ export default {
     font-family: "Sacramento";
     font-size: 2.7rem;
     padding-top: 0.6rem;
+    flex-grow: 1;
+    text-align: center;
+    padding-right: 2rem;
   `,
 
   StickyItem: styled.div`
@@ -87,7 +120,8 @@ export default {
   `,
 
   MenuFrame: styled.div`
-    border: 0.07rem solid #707070;
+    border-top 0.07rem solid #707070;
+    border-bottom: 0.07rem solid #707070;
     flex-grow: 1;
     padding: 3%;
     display: flex;

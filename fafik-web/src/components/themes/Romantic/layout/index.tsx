@@ -52,12 +52,14 @@ const RomanticLayout = (props: Props) => {
     MapTextBox,
     MapButtons,
     MapButton,
-    MapImage1,
-    MapImage2,
+    MapPart1,
+    MapPart2,
     MapContent,
     EventPlanSection,
     PlanDecoration,
+    PlanDecorationImage,
     PlanHeader,
+    PlanHeaderBox,
     PlanHeaderText,
     EventPlan,
     EventElement,
@@ -97,6 +99,7 @@ const RomanticLayout = (props: Props) => {
     AdditionalInformationsDoubleLine,
     DoubleLine,
     BottomInfoSection,
+    BottomInfoHeader,
     TextBoxDescriptionBottom,
     TextBoxHeaderBottom
   } = components;
@@ -136,9 +139,8 @@ const RomanticLayout = (props: Props) => {
         <GalleryOpacity>
           <GalleryFrame>
             <GalleryTitle color="#ffffff"> GALERIA ZDJĘĆ </GalleryTitle>
-            <Subtitle color="#ffffff" padding="0 0 2.5rem 0">
-              Drodzy Goście, zachęcamy do obejrzenia naszej galerii <br />
-              zarówno przed, jak i po uroczystości.
+            <Subtitle color="#ffffff" padding=" 0.5rem 0 3rem 0">
+              Drodzy Goście, zachęcamy do obejrzenia naszej galerii zarówno przed, jak i po uroczystości.
             </Subtitle>
             <GalleryCategories>
               <GalleryCard>
@@ -221,39 +223,44 @@ const RomanticLayout = (props: Props) => {
       <DoubleLineTheme />
 
       <MapSection>
-        <MapImage1 />
         <MapContent>
-          <MapCircle />
-          <MapTextBox>
-            <MapTitleSubtitle>
-              <MapTitle color="#000000">
-                NIE WIESZ JAK DOJECHAĆ <br />
-                NA MIEJSCE?
+          <MapPart1>
+            <MapCircle />
+          </MapPart1>
+
+          <MapPart2>
+            <MapTextBox>
+              <MapTitleSubtitle>
+                <MapTitle color="#000000">
+                  NIE WIESZ JAK DOJECHAĆ <br />
+                  NA MIEJSCE?
               </MapTitle>
-              <MapSubtitle>
-                {' '}
-                Kliknij na prostokąt z nazwą miejsca
+                <MapSubtitle>
+                  {' '}
+                  Kliknij na prostokąt z nazwą miejsca
                 <br />i sprawdź lokalizację na mapie!{' '}
-              </MapSubtitle>
-            </MapTitleSubtitle>
-            <MapButtons>
+                </MapSubtitle>
+              </MapTitleSubtitle>
+              <MapButtons>
                 <MapButton> DOM PANNY MŁODEJ </MapButton>
                 <MapButton> KOŚCIÓŁ - ŚLUB </MapButton>
                 <MapButton> KARCZMA - WESELE </MapButton>
-            </MapButtons>
-            
-          </MapTextBox>
+              </MapButtons>
+            </MapTextBox>
+
+          </MapPart2>
         </MapContent>
 
-        <MapImage2 />
       </MapSection>
 
       <DoubleLineTheme />
 
       <EventPlanSection>
         <PlanHeader>
-          <PlanDecoration />
-          <PlanHeaderText> plan wydarzenia </PlanHeaderText>
+          <PlanDecoration>
+            <PlanDecorationImage src="https://i.imgur.com/7ykWG81.png" />
+          </PlanDecoration>
+          <PlanHeaderBox><PlanHeaderText> plan wydarzenia </PlanHeaderText></PlanHeaderBox>
         </PlanHeader>
         <EventPlan>
           <EventElement>
@@ -325,7 +332,7 @@ const RomanticLayout = (props: Props) => {
         <MusicSectionFrame>
           <MusicSectionTitle>
             {' '}
-            MASZ SWOJĄ ULUBIONĄ PIOSENKĘ I CHCESZ USŁYSZEĆ JĄ <br />W TRAKCIE
+            MASZ SWOJĄ ULUBIONĄ PIOSENKĘ I CHCESZ USŁYSZEĆ JĄ W TRAKCIE
             NASZEGO WESELA?{' '}
           </MusicSectionTitle>
           <MusicActionPanel>
@@ -414,9 +421,13 @@ const RomanticLayout = (props: Props) => {
         </AdditionalInformationsDoubleLine>
 
         <BottomInfoSection>
-          <InformationIcon> </InformationIcon>
+          <BottomInfoHeader>
 
-          <TextBoxHeaderBottom> KONTAKT </TextBoxHeaderBottom>
+            <InformationIcon> </InformationIcon>
+
+            <TextBoxHeaderBottom> KONTAKT </TextBoxHeaderBottom>
+
+          </BottomInfoHeader>
           <TextBoxDescriptionBottom>
             {' '}
             Gaja: 738 203 202{' '}

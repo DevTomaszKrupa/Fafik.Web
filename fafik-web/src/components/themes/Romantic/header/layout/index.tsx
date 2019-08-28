@@ -3,6 +3,7 @@ import moment from 'moment';
 
 import components from './header.styles';
 import { RomanticState } from '../../../../../store/romantic/theme/reducers';
+import { url } from 'inspector';
 
 type Props = {
   romanticState: RomanticState;
@@ -12,9 +13,13 @@ const HeaderLayout = (props: Props) => {
   const {
     Header,
     StickyMenu,
+    StickyMenuTopLine,
+    StickyMenuIcon,
+    StickyMenuIconBox,
     StickyMenuOptions,
     SideStickyMenu,
     StickyCenterNames,
+    StickyMenuRight,
     StickyItem,
     Menu,
     MenuFrame,
@@ -34,7 +39,15 @@ const HeaderLayout = (props: Props) => {
     <Fragment>
       <Header headerImage={header.mainImage}>
         <StickyMenu>
-          <StickyCenterNames>{header.headerNames}</StickyCenterNames>
+          <StickyMenuTopLine>
+            <StickyMenuIconBox>
+              <StickyMenuIcon
+                src={'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png'}>
+              </StickyMenuIcon>
+            </StickyMenuIconBox>
+            <StickyCenterNames>{header.headerNames}</StickyCenterNames>
+            <StickyMenuRight></StickyMenuRight>
+          </StickyMenuTopLine>
 
           <StickyMenuOptions>
             <SideStickyMenu>

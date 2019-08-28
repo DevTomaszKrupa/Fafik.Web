@@ -35,7 +35,8 @@ export default {
   `,
 
   DoubleLineTheme: styled.div`
-    border: 0.07rem solid #707070;
+    border-top: 0.07rem solid #707070;
+    border-bottom: 0.07rem solid #707070;
     flex-grow: 1;
     padding: 0.3rem;
     margin-top: 1.2rem;
@@ -45,12 +46,21 @@ export default {
     padding-top: 2rem;
     align-items: center;
     flex-grow: 1;
-    height: 70%;
+    height: 83%;
     display: flex;
     justify-content: center;
 
     @media(max-width: 900px){
       height: 60%;
+    }
+
+    @media(max-width: 650px){
+      height: 70%;
+    }
+
+    @media(max-width: 610px){
+      height: 54%;
+      flex-direction: column;
     }
   `,
 
@@ -80,6 +90,10 @@ export default {
       width: 14rem;
       height: 19.6rem;
     }
+
+    @media(max-width: 610px){
+      display: none;
+    }
   `,
 
   AboutUsPhotoFrame: styled.div`
@@ -106,6 +120,11 @@ export default {
       padding-left: 3rem;
       width: 45%;
     }
+
+    @media(max-width: 610px){
+      width: 100%;
+      align-items: center;
+    }
   `,
 
   TextWelcome: styled.div`
@@ -126,6 +145,12 @@ export default {
 
     @media(max-width: 900px){
       font-size: 1rem;
+      padding: 0.7rem 0 1.4rem 0;
+    }
+
+    @media(max-width: 610px){
+      text-align: center;
+      width: 87%;
     }
   `,
 
@@ -142,7 +167,7 @@ export default {
     
 
     &: hover{
-      box-shadow: 0.01rem 0.01rem 0.8rem #ededec;
+      box-shadow: 0.01rem 0.01rem 0.8rem #501c15;
     }
 
     @media(max-width: 900px){
@@ -169,9 +194,11 @@ export default {
     font-size: 2.3rem;
     text-align: center;
     padding-bottom: 1rem;
-
     width: 45%;
-  }
+
+    @media(max-width: 900px){
+      width: 80%;
+    }
   `,
 
   QuoteAuthor: styled.div`
@@ -184,11 +211,15 @@ export default {
     flex-grow: 1;
     background-image: ${(props: GalleryProps) =>
       `url("http://localhost/Fafik/${props.galleryImage}")`};
-    height: 88%;
+    height: 92%;
     background-repeat: no-repeat;
     background-size: 98rem;
     background-position-y: 20%;
     position: relative;
+
+    @media(max-width: 785px){
+      height: 110%;
+    }
   `,
   GalleryOpacity: styled.div`
     flex-grow: 1;
@@ -200,14 +231,17 @@ export default {
   `,
 
   GalleryFrame: styled.div`
-    border: 0.07rem solid #ffffff;
+    border-top: 0.07rem solid #ffffff;
+    border-bottom: 0.07rem solid #ffffff;
     flex-grow: 1;
     height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-
+    @media(max-width: 785px){
+      justify-content: center;
+    }
   `,
 
   GalleryTitle: styled.div`
@@ -218,6 +252,10 @@ export default {
     padding: 2.5rem 0 1rem 0;
     font-weight: 500;
     text-shadow: 0.2rem 0.2rem 0.8rem #000000;
+
+    @media(max-width: 785px){
+      padding: 0 0 1rem 0;
+    }
   `,
 
   Title: styled.div`
@@ -225,7 +263,7 @@ export default {
     font-family: "Montserrat", sans-serif;
     letter-spacing: 0.1rem;
     font-size: 2.3rem;
-    padding: 2.5rem 0 1rem 0;
+    padding: 1rem 0;
     font-weight: 500;
     `,
 
@@ -236,13 +274,28 @@ export default {
     font-size: 2rem;
     line-height: 2.6rem;
     padding: ${(props: SubtitleProps) => props.padding};
+    width: 60%;
+
+    @media(max-width: 785px){
+      padding: 0 0 1.5rem 0;
+      width: 80%;
+    }
+
+    @media(max-width: 550px){
+      width: 90%
+      font-size: 1.9rem;
+    }
   `,
 
   GalleryCategories: styled.div`
-    flex-grow: 1;
     display: flex;
     width: 90%;
     justify-content: center;
+
+    @media(max-width: 785px){
+      flex-wrap: wrap;
+      flex-grow: 0;
+    }
   `,
 
   GalleryCard: styled.div`
@@ -255,13 +308,28 @@ export default {
     justify-content: flex-end;
     cursor: pointer;
     box-shadow: 0.4rem 0.4rem 2rem #343434;
-    margin: 0 2.5% 0 2.5%;
+    margin: 0 2.5%;
     
     @media(max-width: 900px){
-      width: 32%;
-      height: 74%;
+      width: 15rem;
+      height: 18rem;
+    }
+
+    @media(max-width: 785px){
+      justify-content: center;
+      width: 13rem;
+      height: 13rem;
+      margin: 1rem 1rem;
+      
+      &: hover{
+          background-color: rgba(255, 255, 255, 0.8)
+      }
     }
     
+    @media(max-width: 550px){
+      width: 10rem;
+      height: 10rem;
+    }
   `,
 
   CategoryPhoto: styled.div`
@@ -276,6 +344,16 @@ export default {
       width: 82%;
       height: 64%;
     }
+
+    @media(max-width: 785px){
+      width: 10rem;
+      height: 10rem;
+    }
+
+    @media(max-width: 550px){
+      width: 82%;
+      height: 82%;
+    }
   `,
 
   CategoryName: styled.div`
@@ -287,43 +365,71 @@ export default {
     @media(max-width: 900px){
       font-size: 1.8rem;
     }
+
+    @media(max-width: 785px){
+      display: none;
+    }
   `,
 
   BlogSection: styled.div`
     background-color: #ebe3cd;
     flex-grow: 1;
-    height: 70%;
+    height: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media(max-width: 945px){
+      height: 95%;
+    }
+
+    @media(max-width: 725px){
+      height: 115%;
+    }
   `,
 
   BlogSectionFrame: styled.div`
-    border: 0.07rem solid #707070;
-    padding: 1.2rem 1.2rem;
+    border-top: 0.07rem solid #707070;
+    border-bottom: 0.07rem solid #707070;
+    padding: 2.2rem 2.2rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-grow: 1;
   `,
 
   BlogPanel: styled.div`
     background-color: #ffffff;
-    width: 90rem;
-    height: 25rem;
+    width: 100%;
+    height: 29rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+
+    @media(max-width: 945px){
+      height: 36rem;
+    }
+
+    @media(max-width: 725px){
+      height: 44rem;
+    }
   `,
 
   BlogRecentPosts: styled.div`
     display: flex;
     justify-content: space-around;
-    width: 80%;
+    width: 90%;
     padding: 0.6rem 0 2rem 0;
 
-    @media(max-width: 900px){
-        justify-content: center;
-        padding: 0.6rem 0 1.6rem 0;
+    // @media(max-width: 900px){
+    //     justify-content: center;
+    //     padding: 0.6rem 0 1.6rem 0;
+    // }
+
+    @media(max-width: 945px){
+      flex-wrap: wrap;
+      padding: 0 0 1rem 0;
     }
   `,
 
@@ -332,8 +438,12 @@ export default {
     flex-direction: column;
     align-items: center;
    
-    @media(max-width: 900px){
+    @media(max-width: 1140px){
       padding: 0 1.5rem;
+    }
+
+    @media(max-width: 945px){
+      padding: 0.7rem 0.5rem;
     }
   `,
 
@@ -344,9 +454,9 @@ export default {
     background-position-y: 52%;
     background-size: 100%;
 
-    @media(max-width: 900px){
+    @media(max-width: 1140px){
         height: 3rem;
-        width: 14rem;
+        width: 17rem;
 
     }
   `,
@@ -366,8 +476,8 @@ export default {
     letter-spacing: 0.07rem;
     font-weight: 500;
 
-    @media(max-width: 900px){
-      width: 14rem;
+    @media(max-width: 945px){
+      width: 100%;
       font-size: 0.9rem;
     }
   `,
@@ -397,11 +507,13 @@ export default {
 
   MapSection: styled.div`
     flex-grow: 1;
-    height: 70%;
+    height: 82%;
     display: flex;
     align-items: center;
 
-    
+    @media(max-width: 900px){
+        height: 100%
+    }
   `,
 
   MapCircle: styled.div`
@@ -409,10 +521,17 @@ export default {
     width: 28rem;
     height: 28rem;
     border-radius: 50%;
+
+    @media(max-width: 900px){
+      width: 24rem;
+      height: 24rem;
+    }
   `,
 
   MapTitleSubtitle: styled.div`
-    
+    @media(max-width: 900px){
+      padding-right: 1rem;
+    }
   `,
 
   MapTitle: styled.div`
@@ -422,6 +541,10 @@ export default {
     font-size: 1.9rem;
     font-weight: 500;
     text-align: center;
+
+    @media(max-width: 900px){
+      font-size: 1.7rem;
+    }
   `,
 
   MapSubtitle: styled.div`
@@ -430,14 +553,17 @@ export default {
     text-align: center;
     font-size: 2.1rem;
     line-height: 2.4rem;
-    padding: 1.2rem 
+    padding: 1.2rem;
+
+    @media(max-width: 900px){
+      font-size: 1.9rem;
+    }
   `,
 
   MapTextBox: styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
 
     @media(max-width: 900px){
         flex-direction: row;
@@ -467,37 +593,57 @@ export default {
     &: hover {
       background-color: #d8ccad;
     }
+
+    @media(max-width: 900px){
+      width: 19rem;
+      height: 2.5rem;
+      font-size: 1rem;
+    }
   `,
 
-  MapImage1: styled.div`
-    background-image: url("https://i.imgur.com/5PixXri.png");
-    background-size: 100%;
+  MapPart1: styled.div`
+    background-image: url("https://i.imgur.com/J8dP9fb.png");
+    background-size: 40%;
+    background-position: -19% 98%;
     background-repeat: no-repeat;
-    width: 18rem;
-    height: 19rem;
-    -webkit-transform: rotate(238deg);
-    position: relative;
-    top: 5rem;
+    flex-grow: 2;
+    display: flex;
+    justify-content: flex-end;
+
+    @media(max-width: 900px){
+        width: 100%;
+        justify-content: center;
+    }
   `,
 
-  MapImage2: styled.div`
+  MapPart2: styled.div`
     background-image: url("https://i.imgur.com/5PixXri.png");
-    background-size: 118%;
+    background-size: 47%;
+    background-position: 124%;
     background-repeat: no-repeat;
-    width: 23rem;
-    height: 22rem;
-    position: relative;
-    top: 6rem;
-  `,
+    flex-grow: 3;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 1rem;
 
+    @media(max-width:900px){
+        width: 100%
+        padding: 2rem 0;
+        background-size: 33%;
+        background-position: 119%;
+        justify-content: space-around;
+    }
+    `,
   MapContent: styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    flex-grow: 1;
     width: 70%;
 
     @media(max-width: 900px){
       flex-direction: column-reverse;
+      width: 100%
     }
   `,
 
@@ -507,17 +653,21 @@ export default {
   `,
 
   PlanDecoration: styled.div`
-    background-image: url("https://i.imgur.com/7ykWG81.png");
-    width: 38rem;
-    height: 9rem;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position-y: 320%;
+    margin: -3.2rem 2rem;
+  `,
+
+  PlanDecorationImage: styled.img`
+    width: 39rem;
   `,
 
   PlanHeader: styled.div`
     display: flex;
     justify-content: space-between;
+
+    @media(max-width: 1263px){
+      flex-direction: column;
+      align-items: center;
+    };
   `,
 
   PlanHeaderText: styled.div`
@@ -526,8 +676,22 @@ export default {
     font-weight: 500;
     color: #683b35;
     transform: rotate(10deg);
-    width: 38rem;
+
+    @media(max-width: 1383px){
+      font-size: 6rem;
+      transform: none;
+    }
+  `,
+
+  PlanHeaderBox: styled.div`
+    flex-grow: 1;
+    justify-content: flex-end;
+    display: flex;
     padding: 5rem 5rem 2rem 0;
+
+    @media(max-width: 1263px){
+      padding: 2rem 0 1.5rem 0;
+    };
   `,
 
   EventPlan: styled.div`
@@ -538,6 +702,10 @@ export default {
   EventElement: styled.div`
     display: flex;
     flex-direction: column;
+
+    @media(max-width: 1215px){
+        width: 20%;
+    }
   `,
 
   EventTopElement: styled.div`
@@ -546,20 +714,19 @@ export default {
     align-items: center;
     margin-bottom: -0.8rem;
     position: relative;
-}
   `,
 
   EventIcon: styled.div`
     background-image: url("https://i.imgur.com/mWzbv7h.png");
-    width: 10rem;
-    height: 10rem;
+    width: 9rem;
+    height: 9rem;
     background-size: 100%;
     background-repeat: no-repeat;
   `,
 
   EventDot: styled.div`
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.3rem;
+    height: 1.3rem;
     border-radius: 50%;
     background-color: #ebe3cd;
 
@@ -578,7 +745,7 @@ export default {
 
   EventTime: styled.div`
     color: #b6947a;
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-family: "Montserrat", sans-serif;
     letter-spacing: 0.1rem;
     font-weight: 500;
@@ -590,19 +757,20 @@ export default {
     font-family: "Montserrat", sans-serif;
     letter-spacing: 0.1rem;
     font-weight: 500;
-    font-size: 1.15rem;
+    font-size: 1rem;
     padding-top: 0.2rem;
+    text-align: center;
   `,
 
   GiftSection: styled.div`
     flex-grow: 1;
     height: 60%;
     background-image: url("https://i.imgur.com/rzmxHCQ.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100rem;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
   `,
 
@@ -612,6 +780,11 @@ export default {
     height: 20rem;
     display: flex;
     justify-content: center;
+
+    @media(max-width: 900px){
+      width: 48rem;
+      height: 23rem;
+    }
   `,
 
   GiftSectionHeader: styled.div`
@@ -619,6 +792,7 @@ export default {
     font-size: 4rem;
     font-weight: 500;
     color: #683b35;
+    padding-top: 0.6rem;
   `,
 
   GiftRebuses: styled.div`
@@ -634,6 +808,11 @@ export default {
     background-color: #ebe3cd;
     justify-content: center;
     align-items: center;
+
+    @media(max-width: 1400px){
+      height: 78%;
+      flex-direction: column;
+  }
   `,
 
   MusicSectionFrame: styled.div`
@@ -643,6 +822,12 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media(max-width: 1400px){
+      margin-top: -7rem;
+      justify-content: flex-end;
+      height: 23rem;
+    }
 }
   `,
 
@@ -657,6 +842,11 @@ export default {
     margin-right: -7rem;
     background-color: #ffffff;
     position: relative;
+
+    @media(max-width: 1400px){
+      width: 14rem;
+      height: 14rem;
+    }
   `,
 
   MusicCircleFrame: styled.div`
@@ -664,6 +854,11 @@ export default {
     height: 17.5rem;
     border: 1rem solid #ebe4ce;
     border-radius: 50%;
+
+    @media(max-width: 1400px){
+      width: 10.5rem;
+      height: 10.5rem;
+    }
   `,
 
   MusicCircleIcon: styled.div``,
@@ -677,6 +872,11 @@ export default {
     font-size: 1.65rem;
     line-height: 2.5rem;
     padding: 3rem 0 0.8rem 0;
+    width: 66%;
+
+    @media(max-width: 950px){
+      font-size: 1.4rem;
+    }
   `,
 
   MusicInputBox: styled.div`
@@ -686,6 +886,7 @@ export default {
     font-weight: 500;
     font-size: 1.2rem;
     padding-top: 1.2rem;
+
   `,
 
   MusicInput: styled.input`
@@ -729,6 +930,10 @@ export default {
 
   MusicActionPanel: styled.div`
     display: flex;
+
+    @media(max-width: 1400px){
+      padding-bottom: 2rem;
+    }
   `,
 
   MusicSectionButton: styled.div`
@@ -746,6 +951,10 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media(max-width: 1033px){
+      height: 115%;
+    }
   `,
 
   AdditionalInfoHeader: styled.div`
@@ -758,6 +967,15 @@ export default {
   AdditionalInformationsBox: styled.div`
     flex-grow: 1;
     padding: 2.5rem;
+
+    @media(max-width: 1200px){
+      padding: 2.5rem 0.7rem 1.2rem 0.7rem;
+    }
+
+    @media(max-width: 1033px){
+      flex-grow: 0;
+    }
+
   `,
 
   MainInformationBox: styled.div`
@@ -807,6 +1025,11 @@ export default {
   AdditionalInformationsBoxes: styled.div`
     display: flex;
     justify-content: space-between;
+
+    @media(max-width: 1033px){
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   `,
 
   AdditionalInformationsDoubleLine: styled.div`
@@ -815,16 +1038,32 @@ export default {
   `,
 
   DoubleLine: styled.div`
-    border: 0.07rem solid #ffffff;
+    border-bottom: 0.07rem solid #ffffff;
+    border-top: 0.07rem solid #ffffff;
     flex-grow: 1;
     padding: 0.3rem;
     margin-top: 1.2rem;
   `,
 
   BottomInfoSection: styled.div`
-    flex-grow: 1;
     display: flex;
-    width: 74%;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: space-around;
+    width: 59%;
+    padding-top: 1.3rem;
+    
+    @media(max-width: 1360px){
+      width: 72%;
+    }
+    
+    @media(max-width: 1130px){
+      width: 92%;
+    }
+    `,
+
+  BottomInfoHeader: styled.div`
+    display: flex;
     align-items: center;
   `,
 
@@ -844,6 +1083,9 @@ export default {
     font-size: 1.4rem;
     line-height: 1.7rem;
     font-weight: 200;
-    padding-left: 2.7rem;
+
+    @media(max-width: 880px){
+      font-size: 1.2rem;
+    }
   `
 };

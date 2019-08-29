@@ -76,6 +76,7 @@ const RomanticLayout = (props: Props) => {
     GiftRebuses,
     MusicSection,
     MusicSectionFrame,
+    MusicSectionCircleBox,
     MusicSectionCircle,
     MusicCircleFrame,
     MusicCircleIcon,
@@ -232,8 +233,7 @@ const RomanticLayout = (props: Props) => {
             <MapTextBox>
               <MapTitleSubtitle>
                 <MapTitle color="#000000">
-                  NIE WIESZ JAK DOJECHAĆ <br />
-                  NA MIEJSCE?
+                  NIE WIESZ JAK DOJECHAĆ NA MIEJSCE?
               </MapTitle>
                 <MapSubtitle>
                   {' '}
@@ -324,11 +324,13 @@ const RomanticLayout = (props: Props) => {
       <DoubleLineTheme />
 
       <MusicSection>
-        <MusicSectionCircle>
-          <MusicCircleFrame>
-            <MusicCircleIcon />
-          </MusicCircleFrame>
-        </MusicSectionCircle>
+        <MusicSectionCircleBox>
+          <MusicSectionCircle>
+            <MusicCircleFrame>
+              <MusicCircleIcon />
+            </MusicCircleFrame>
+          </MusicSectionCircle>
+        </MusicSectionCircleBox>
         <MusicSectionFrame>
           <MusicSectionTitle>
             {' '}

@@ -1,8 +1,8 @@
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
-import RomanticLayout from "./layout";
-import { AppState } from "./../../../store/reducers";
-import { getRomanticTheme } from "../../../store/romantic/theme/actions";
+import RomanticLayout from './layout';
+import { AppState } from './../../../store/reducers';
+import { getRomanticTheme } from '../../../store/romantic/theme/actions';
 
 const mapStateToProps = ({ romanticState }: AppState) => ({
   romanticState: romanticState

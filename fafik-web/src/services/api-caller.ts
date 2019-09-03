@@ -30,10 +30,11 @@ const getRomanticTheme = (clientPath: string) => ({
         { name: 'O NAS', path: 'o-nas' },
         { name: 'GALERIA', path: 'galeria' },
         { name: 'BLOG', path: 'blog' },
+        { name: 'RSVP', path: 'rsvp' },
         { name: 'DOJAZD', path: 'dojazd' },
         { name: 'PLAN WYDARZENIA', path: 'plan-wydarzenia' },
         { name: 'PLAYLISTA', path: 'playlista' },
-        { name: 'INFO DODATKOWE', path: 'info-dodatkowe' }
+        { name: 'INFO DODATKOWE', path: 'info-dodatkowe' },
       ],
       mainImage: 'gaja-i-stanislaw/main-image.png',
       weddingDate: new Date(2020, 9, 12, 16, 0, 0),

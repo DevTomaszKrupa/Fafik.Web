@@ -3,10 +3,11 @@ import moment from 'moment';
 
 import components from './header.styles';
 import { RomanticState } from '../../../../../store/romantic/theme/reducers';
-import { url } from 'inspector';
+import { Action } from '../../../../../store/actions';
 
 type Props = {
   romanticState: RomanticState;
+  openRsvpDialog: () => Action;
 };
 
 const HeaderLayout = (props: Props) => {
@@ -33,8 +34,17 @@ const HeaderLayout = (props: Props) => {
     CenterQuote
   } = components;
 
-  const { romanticState } = props;
+  const { romanticState, openRsvpDialog } = props;
   const { header } = romanticState;
+
+  const ItemClicked = (path: string) => {
+    switch (path) {
+      case 'rsvp':
+        openRsvpDialog();
+        break;
+    }
+  };
+
   return (
     <Fragment>
       <Header headerImage={header.mainImage}>
@@ -51,14 +61,14 @@ const HeaderLayout = (props: Props) => {
 
           <StickyMenuOptions>
             <SideStickyMenu>
-              {header.leftMenuItems.map(x => (
-                <StickyItem textAlign="right"> {x.name} </StickyItem>
-              ))}
+              {header.leftMenuItems.map(x => {
+                return <StickyItem onClick={() => ItemClicked(x.path)} textAlign="right"> {x.name} </StickyItem>
+              })}
             </SideStickyMenu>
 
             <SideStickyMenu>
               {header.rightMenuItems.map(x => (
-                <StickyItem textAlign="left"> {x ? x.name : ''} </StickyItem>
+                <StickyItem onClick={() => ItemClicked(x.path)} textAlign="left"> {x ? x.name : ''} </StickyItem>
               ))}
             </SideStickyMenu>
           </StickyMenuOptions>
@@ -67,7 +77,7 @@ const HeaderLayout = (props: Props) => {
           <MenuFrame>
             <SideMenu>
               {header.leftMenuItems.map(x => (
-                <Item textAlign="right"> {x.name} </Item>
+                <Item onClick={() => ItemClicked(x.path)} textAlign="right"> {x.name} </Item>
               ))}
             </SideMenu>
             <SingleLineVertical />
@@ -82,7 +92,7 @@ const HeaderLayout = (props: Props) => {
             <SingleLineVertical />
             <SideMenu>
               {header.rightMenuItems.map(x => (
-                <Item textAlign="left"> {x ? x.name : ''} </Item>
+                <Item onClick={() => ItemClicked(x.path)} textAlign="left"> {x ? x.name : ''} </Item>
               ))}
             </SideMenu>
           </MenuFrame>

@@ -1,10 +1,11 @@
 import React from 'react';
 import Modal from 'react-modal';
-import Select from 'react-select';
 
 import components from './RsvpDialog.styles';
 import { RomanticRsvpDialogState } from '../../../../../../store/romantic/dialogs/RsvpDialog/reducers';
 import { Action } from '../../../../../../store/actions';
+import RomanticSelect from '../../../shared/RomanticSelect/index';
+import RomanticButton from '../../../shared/RomanticButton/index';
 
 type Props = {
   romanticRsvpDialogState: RomanticRsvpDialogState;
@@ -39,12 +40,10 @@ const RsvpDialog = (props: Props) => {
     RsvpDate,
     RsvpEmailBox,
     RsvpEmailRequest,
-    RsvpEmailInput,
+    RsvpInput,
     RsvpListRequest,
     SingleFormToFill,
-    NameInput,
-    AgeListInput,
-    DietListInput
+    FormIcon
   } = components;
 
   const DietOptions = [
@@ -55,7 +54,6 @@ const RsvpDialog = (props: Props) => {
   ];
 
   const AgeOptions = [
-    { value: 'Wybierz', label: 'Wybierz' },
     { value: 'Dziecko do lat 7', label: 'Dziecko do lat 7' },
     { value: 'Osoba do lat 17', label: 'Osoba do lat 17' },
     { value: 'Osoba dorosła', label: 'Osoba dorosła' },
@@ -87,19 +85,26 @@ const RsvpDialog = (props: Props) => {
 
           <RsvpEmailBox>
             <RsvpEmailRequest> Twój e-mail: </RsvpEmailRequest>
-            <RsvpEmailInput />
+            <RsvpInput />
           </RsvpEmailBox>
 
           <RsvpListRequest> WPROWADŹ OSOBY: </RsvpListRequest>
 
           <SingleFormToFill>
-            <NameInput placeholder="imię i nazwisko" />
-            <AgeListInput placeholder="wiek"
-            />
-            <Select
-              defaultValue={DietOptions[0]}
+            <RsvpInput placeholder="imię i nazwisko" />
+
+            <RomanticSelect
+              placeholder="Wiek"
+              options={AgeOptions} />
+
+            <RomanticSelect
+              placeholder="Dieta"
               options={DietOptions} />
+
+            <RomanticButton buttonStyle="green"> dodaj <FormIcon> + </FormIcon> </RomanticButton>
           </SingleFormToFill>
+
+          <RomanticButton buttonStyle="green">Gotowe</RomanticButton>
 
         </RsvpModalFrame>
       </RsvpModal>

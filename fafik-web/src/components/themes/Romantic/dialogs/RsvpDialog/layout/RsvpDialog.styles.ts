@@ -14,10 +14,18 @@ export default {
   border: 0.09rem solid #000000;
   height: 97%;
   width: 98%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 `,
 
   TopOptionsSection: styled.div`
   width: 100%
+  height: 4rem;
   display: flex;
   justify-content: flex-end;
 `,
@@ -32,6 +40,7 @@ export default {
   display: flex;
   justify-content: center;
   cursor: pointer;
+  position: fixed;
 }
 `,
 
@@ -87,27 +96,47 @@ export default {
   padding-right: 2rem;
   `,
 
-  RsvpEmailInput: styled.input`
+  RsvpInput: styled.input`
   width: 14rem;
-  height: 1.8rem;
+  height: 2.1rem;
   border-radius: 1.4rem;
   border: 0.25rem solid #EDEDEC;
   padding: 0 0.4rem 0 1rem;
 
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-family: "Montserrat",sans-serif;
   font-weight: 400;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.05rem;
+
+  &: hover{
+    border: 0.25rem solid #B3B3B3;
+  }
   `,
 
-  RsvpListRequest: styled.div``,
+  RsvpListRequest: styled.div`
+  text-align: center;
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  padding: 1.8rem 0;
+  `,
 
-  SingleFormToFill: styled.div``,
-
-  NameInput: styled.input``,
+  SingleFormToFill: styled.div`
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 1.85rem;
+  `,
 
   AgeListInput: styled.input``,
 
   DietListInput: styled.div``,
+
+  FormIcon: styled.div`
+  font-size: 1.8rem;
+  padding-left: 0.5rem;
+  -webkit-text-stroke: 0.17rem #ffffff;
+  `,
 
 };

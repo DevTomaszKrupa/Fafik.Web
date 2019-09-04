@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 import Sticky from '../Sticky';
 import Usual from '../Usual';
@@ -26,12 +27,13 @@ const HeaderLayout = (props: Props) => {
     }
   };
 
+  const dateString: string = moment(header.weddingDate).format('DD.MM.YYYY');
   return (
     <Header headerImage={header.mainImage}>
       <Usual
         headerNames={header.headerNames}
         headerQuote={header.headerQuote}
-        weddingDate={header.weddingDate}
+        weddingDate={dateString}
         leftMenuItems={header.leftMenuItems}
         rightMenuItems={header.rightMenuItems}
         onItemClick={ItemClicked} />

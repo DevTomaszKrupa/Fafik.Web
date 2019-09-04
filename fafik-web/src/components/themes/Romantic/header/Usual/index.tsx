@@ -1,5 +1,4 @@
 import React from 'react';
-import moment from 'moment';
 
 import components from './header.styles';
 import { SiteItem } from '../../../../../store/romantic/theme/types';
@@ -7,7 +6,7 @@ import { SiteItem } from '../../../../../store/romantic/theme/types';
 type Props = {
   headerNames: string;
   headerQuote: string;
-  weddingDate: Date | undefined;
+  weddingDate: string;
   leftMenuItems: SiteItem[];
   rightMenuItems: SiteItem[];
   onItemClick: (path: string) => void;
@@ -32,9 +31,7 @@ const HeaderLayout = (props: Props) => {
         <SingleLineVertical />
         <MenuCenter>
           <CenterNames>{headerNames}</CenterNames>
-          <CenterDate>
-            {moment(weddingDate).format('DD.MM.YYYY')}
-          </CenterDate>
+          <CenterDate>{weddingDate}</CenterDate>
           <SingleLineHorizontal />
           <CenterQuote>{headerQuote}</CenterQuote>
         </MenuCenter>

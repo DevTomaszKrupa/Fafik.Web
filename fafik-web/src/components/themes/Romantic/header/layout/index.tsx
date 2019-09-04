@@ -1,5 +1,7 @@
-import React, { Fragment } from 'react';
-import moment from 'moment';
+import React from 'react';
+
+import Sticky from '../Sticky';
+import Usual from '../Usual';
 
 import components from './header.styles';
 import { RomanticState } from '../../../../../store/romantic/theme/reducers';
@@ -11,28 +13,7 @@ type Props = {
 };
 
 const HeaderLayout = (props: Props) => {
-  const {
-    Header,
-    StickyMenu,
-    StickyMenuTopLine,
-    StickyMenuIcon,
-    StickyMenuIconBox,
-    StickyMenuOptions,
-    SideStickyMenu,
-    StickyCenterNames,
-    StickyMenuRight,
-    StickyItem,
-    Menu,
-    MenuFrame,
-    MenuCenter,
-    SideMenu,
-    Item,
-    CenterNames,
-    CenterDate,
-    SingleLineVertical,
-    SingleLineHorizontal,
-    CenterQuote
-  } = components;
+  const { Header } = components;
 
   const { romanticState, openRsvpDialog } = props;
   const { header } = romanticState;
@@ -46,59 +27,20 @@ const HeaderLayout = (props: Props) => {
   };
 
   return (
-    <Fragment>
-      <Header headerImage={header.mainImage}>
-        <StickyMenu>
-          <StickyMenuTopLine>
-            <StickyMenuIconBox>
-              <StickyMenuIcon
-                src={'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png'}>
-              </StickyMenuIcon>
-            </StickyMenuIconBox>
-            <StickyCenterNames>{header.headerNames}</StickyCenterNames>
-            <StickyMenuRight></StickyMenuRight>
-          </StickyMenuTopLine>
-
-          <StickyMenuOptions>
-            <SideStickyMenu>
-              {header.leftMenuItems.map(x => {
-                return <StickyItem onClick={() => ItemClicked(x.path)} textAlign="right"> {x.name} </StickyItem>
-              })}
-            </SideStickyMenu>
-
-            <SideStickyMenu>
-              {header.rightMenuItems.map(x => (
-                <StickyItem onClick={() => ItemClicked(x.path)} textAlign="left"> {x ? x.name : ''} </StickyItem>
-              ))}
-            </SideStickyMenu>
-          </StickyMenuOptions>
-        </StickyMenu>
-        <Menu>
-          <MenuFrame>
-            <SideMenu>
-              {header.leftMenuItems.map(x => (
-                <Item onClick={() => ItemClicked(x.path)} textAlign="right"> {x.name} </Item>
-              ))}
-            </SideMenu>
-            <SingleLineVertical />
-            <MenuCenter>
-              <CenterNames>{header.headerNames}</CenterNames>
-              <CenterDate>
-                {moment(header.weddingDate).format('DD.MM.YYYY')}
-              </CenterDate>
-              <SingleLineHorizontal />
-              <CenterQuote>{header.headerQuote}</CenterQuote>
-            </MenuCenter>
-            <SingleLineVertical />
-            <SideMenu>
-              {header.rightMenuItems.map(x => (
-                <Item onClick={() => ItemClicked(x.path)} textAlign="left"> {x ? x.name : ''} </Item>
-              ))}
-            </SideMenu>
-          </MenuFrame>
-        </Menu>
-      </Header>
-    </Fragment>
+    <Header headerImage={header.mainImage}>
+      <Usual
+        headerNames={header.headerNames}
+        headerQuote={header.headerQuote}
+        weddingDate={header.weddingDate}
+        leftMenuItems={header.leftMenuItems}
+        rightMenuItems={header.rightMenuItems}
+        onItemClick={ItemClicked} />
+      <Sticky
+        headerNames={header.headerNames}
+        leftMenuItems={header.leftMenuItems}
+        rightMenuItems={header.rightMenuItems}
+        onItemClick={ItemClicked} />
+    </Header>
   );
 };
 

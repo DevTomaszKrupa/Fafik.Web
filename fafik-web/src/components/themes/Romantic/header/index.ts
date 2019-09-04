@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 
 import header from './layout';
-import { AppState } from './../../../../store/reducers';
-import { openRsvpDialog } from './../../../../store/romantic/dialogs/RsvpDialog/actions';
+import { AppState } from '../../../../store/reducers';
+import { openRsvpDialog } from '../../../../store/romantic/dialogs/RsvpDialog/actions';
 
 const mapStateToProps = ({ romanticState }: AppState) => ({
   romanticState: romanticState

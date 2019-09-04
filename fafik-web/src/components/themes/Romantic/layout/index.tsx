@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 
 import components from './Romantic.styles';
 
-import Header from '../header/index';
+import Header from '../Header/index';
 import AboutUs from '../AboutUs/index';
 import Quote from '../Quote/index';
 import Gallery from '../Gallery/index';

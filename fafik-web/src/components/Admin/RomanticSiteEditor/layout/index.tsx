@@ -17,6 +17,7 @@ const AdminRomanticSiteEditorComponent = () => {
                     headerNames="Tutaj wpisz swoje imiona"
                     headerQuote="Tutaj wpisz swój cytat"
                     weddingDate="Tutaj wpisz swoją datę"
+                    adminMode={true}
                     leftMenuItems={[
                         { name: 'O NAS', path: 'o-nas' },
                         { name: 'GALERIA', path: 'galeria' },

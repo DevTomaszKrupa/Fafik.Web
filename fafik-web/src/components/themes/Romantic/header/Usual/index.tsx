@@ -2,6 +2,7 @@ import React from 'react';
 
 import components from './header.styles';
 import { SiteItem } from '../../../../../store/romantic/theme/types';
+import { AdminEditableComponent } from '../../../../../shared/components';
 
 type Props = {
   headerNames: string;
@@ -10,6 +11,7 @@ type Props = {
   leftMenuItems: SiteItem[];
   rightMenuItems: SiteItem[];
   onItemClick: (path: string) => void;
+  adminMode?: boolean;
 };
 
 
@@ -18,7 +20,7 @@ const HeaderLayout = (props: Props) => {
   const { Menu, MenuFrame, MenuCenter, SideMenu, Item, CenterNames, CenterDate, SingleLineVertical, SingleLineHorizontal,
     CenterQuote } = components;
 
-  const { headerNames, leftMenuItems, headerQuote, weddingDate, rightMenuItems, onItemClick } = props;
+  const { headerNames, leftMenuItems, headerQuote, weddingDate, rightMenuItems, onItemClick, adminMode } = props;
 
   return (
     <Menu>
@@ -30,10 +32,16 @@ const HeaderLayout = (props: Props) => {
         </SideMenu>
         <SingleLineVertical />
         <MenuCenter>
-          <CenterNames>{headerNames}</CenterNames>
-          <CenterDate>{weddingDate}</CenterDate>
+          <CenterNames>
+            <AdminEditableComponent adminMode={adminMode} itemId="RomanticHeaderHeaderNames">{headerNames}</AdminEditableComponent>
+          </CenterNames>
+          <CenterDate>
+            <AdminEditableComponent adminMode={adminMode} itemId="RomanticHeaderWeddingDate">{weddingDate}</AdminEditableComponent>
+          </CenterDate>
           <SingleLineHorizontal />
-          <CenterQuote>{headerQuote}</CenterQuote>
+          <CenterQuote>
+            <AdminEditableComponent adminMode={adminMode} itemId="RomanticHeaderHeaderQuote">{headerQuote}</AdminEditableComponent>
+          </CenterQuote>
         </MenuCenter>
         <SingleLineVertical />
         <SideMenu>

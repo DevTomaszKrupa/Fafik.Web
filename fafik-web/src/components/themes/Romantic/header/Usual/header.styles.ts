@@ -15,10 +15,6 @@ export default {
     align-items: center;
     display: flex;
     height: 18rem;
-
-    @media (max-width: 835px) {
-      display: none;
-    }
   `,
 
   MenuFrame: styled.div`

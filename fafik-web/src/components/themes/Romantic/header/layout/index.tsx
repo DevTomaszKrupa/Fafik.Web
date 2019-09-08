@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 
 import Sticky from '../Sticky';
@@ -14,6 +14,7 @@ type Props = {
 };
 
 const HeaderLayout = (props: Props) => {
+  const stickyIsVisible = useStickyHeader();
   const { Header } = components;
 
   const { romanticState, openRsvpDialog } = props;
@@ -27,6 +28,7 @@ const HeaderLayout = (props: Props) => {
     }
   };
 
+
   const dateString: string = moment(header.weddingDate).format('DD.MM.YYYY');
   return (
     <Header headerImage={header.mainImage}>
@@ -37,13 +39,40 @@ const HeaderLayout = (props: Props) => {
         leftMenuItems={header.leftMenuItems}
         rightMenuItems={header.rightMenuItems}
         onItemClick={ItemClicked} />
-      <Sticky
+      {stickyIsVisible && <Sticky
         headerNames={header.headerNames}
         leftMenuItems={header.leftMenuItems}
         rightMenuItems={header.rightMenuItems}
-        onItemClick={ItemClicked} />
+        onItemClick={ItemClicked} />}
     </Header>
   );
 };
+
+const useStickyHeader = () => {
+  const [stickyIsVisible, setStickyIsVisible] = useState(false);
+
+  const handleWindowChange = () => {
+    const scrollTop = (window.pageYOffset !== undefined) ?
+      window.pageYOffset :
+      (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    setStickyIsVisible(scrollTop > 360 || window.innerWidth < 835);
+  };
+
+  useEffect(() => {
+      window.addEventListener('scroll', handleWindowChange);
+    return () => {
+      window.removeEventListener('scroll', handleWindowChange);
+    };
+  });
+
+  useEffect(() => {
+      window.addEventListener('resize', handleWindowChange);
+    return () => {
+      window.removeEventListener('resize', handleWindowChange);
+    };
+  });
+  return stickyIsVisible;
+};
+
 
 export default HeaderLayout;

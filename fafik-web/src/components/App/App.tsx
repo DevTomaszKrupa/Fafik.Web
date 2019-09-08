@@ -17,8 +17,8 @@ const App = () => {
       <Router history={history}>
         <Switch>
           <Route exact path="/admin" component={AdminPanel} />
-          <Route exact path="/admin/mysites" component={AdminMySites} />
-          <Route exact path="/admin/mysites/:clientPath" component={AdminSiteEditor} />
+          <Route exact path="/admin/strony" component={AdminMySites} />
+          <Route exact path="/admin/strony/:clientPath" component={AdminSiteEditor} />
 
           <Route exact path="/:clientPath" component={ClientPage} />
           <Route exact path="/:clientPath/:site" component={ClientPage} />

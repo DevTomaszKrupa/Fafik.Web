@@ -33,7 +33,9 @@ const HeaderLayout = (props: Props) => {
         <SingleLineVertical />
         <MenuCenter>
           <CenterNames>
-            <AdminEditableComponent adminMode={adminMode} itemId="RomanticHeaderHeaderNames">{headerNames}</AdminEditableComponent>
+            <AdminEditableComponent adminMode={adminMode} itemId="RomanticHeaderHeaderNames">
+              {headerNames}
+            </AdminEditableComponent>
           </CenterNames>
           <CenterDate>
             <AdminEditableComponent adminMode={adminMode} itemId="RomanticHeaderWeddingDate">{weddingDate}</AdminEditableComponent>

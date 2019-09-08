@@ -8,7 +8,7 @@ type Props = {
   children: any;
   itemId: string;
   adminMode?: boolean;
-  editAdminEditableTextComponent: (itemId: string) => Action<string>
+  editAdminEditableTextComponent: (itemId: string) => Action<string>;
 };
 
 const AdminEditableComponent = (props: Props) => {

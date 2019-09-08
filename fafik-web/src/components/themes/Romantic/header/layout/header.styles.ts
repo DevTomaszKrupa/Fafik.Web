@@ -11,7 +11,7 @@ export default {
       `url("http://localhost/Fafik/${props.headerImage}")`};
     height: 100%;
     background-repeat: no-repeat;
-    background-size: 100rem;
+    background-size: cover;
     background-position: center;
     padding-top: 5%;
   `

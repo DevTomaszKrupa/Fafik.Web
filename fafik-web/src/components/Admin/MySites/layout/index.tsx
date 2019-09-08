@@ -1,10 +1,14 @@
 import React, { Fragment } from 'react';
 
+import { useDocumentTitle } from '../../../../shared';
+
+
 const AdminMySitesComponent = () => {
+    useDocumentTitle('Moje strony');
     return (
         <Fragment>
             <div>
-            mojeeee strony 
+                mojeeee strony
             </div>
         </Fragment>);
 };

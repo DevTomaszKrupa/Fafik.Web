@@ -17,10 +17,23 @@ const AdminPanelComponent = (props: Props) => {
     const { logout } = props;
     const {
         AdminPanelHeader,
+        HeaderLeftSide,
+        HeaderLogo,
+        AdminLogo,
+        HeaderRightSide,
         AdminSidePanel,
         AdminMainPanel,
         SidePanelItem,
-        AdminMain
+        AdminMain,
+        SidePanelClientBox,
+        ClientBoxText,
+        ClientBoxTitle,
+        ClientBoxNames,
+        ClientBoxValidity,
+        ValidityRequest,
+        ValidityExpDate,
+        ClientBoxOptionArrow,
+        SidePanelPause,
     } = components;
 
     const sidePanelItems: SiteItem[] = [
@@ -38,11 +51,25 @@ const AdminPanelComponent = (props: Props) => {
 
     return (
         <Fragment>
-            <AdminPanelHeader> Logo
-                <button onClick={() => logout()}>Wyloguj</button>
+            <AdminPanelHeader>
+                <HeaderLeftSide />
+                <HeaderLogo> <AdminLogo src="http://localhost/Fafik/app/logo.png" /> </HeaderLogo>
+                <HeaderRightSide> <button onClick={() => logout()}>Wyloguj</button> </HeaderRightSide>
             </AdminPanelHeader>
             <AdminMain>
                 <AdminSidePanel>
+                    <SidePanelClientBox>
+                        <ClientBoxText>
+                            <ClientBoxTitle>STRONA:</ClientBoxTitle>
+                            <ClientBoxNames>KASIA I DANIEL</ClientBoxNames>
+                            <ClientBoxValidity>
+                                <ValidityRequest>ważna do:</ValidityRequest>
+                                <ValidityExpDate>21.05.2020</ValidityExpDate>
+                            </ClientBoxValidity>
+                        </ClientBoxText>
+                        <ClientBoxOptionArrow />
+                    </SidePanelClientBox>
+                    <SidePanelPause />
                     {sidePanelItems.map(x => {
                         return <SidePanelItem onClick={() => OnItemClicked(x.path)} > {x.name} </SidePanelItem>;
                     })}

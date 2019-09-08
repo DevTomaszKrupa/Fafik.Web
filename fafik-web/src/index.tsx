@@ -4,6 +4,9 @@ import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
 import GlobalStyle from './styles/global-styles';
 
+import { setupAxiosInterceptors } from './helpers';
+
+setupAxiosInterceptors();
 ReactDOM.render(
   <Fragment>
     <GlobalStyle />

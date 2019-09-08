@@ -3,9 +3,16 @@ import React, { Fragment } from 'react';
 import components from './AdminPanel.styles';
 import { history } from '../../../../helpers';
 import { SiteItem } from '../../../../store/romantic/theme/types';
+import { Action } from '../../../../store/actions';
 
-const AdminPanelComponent = () => {
 
+type Props = {
+    logout: () => Action;
+};
+
+const AdminPanelComponent = (props: Props) => {
+
+    const { logout } = props;
     const {
         AdminPanelHeader,
         AdminSidePanel,
@@ -21,14 +28,17 @@ const AdminPanelComponent = () => {
         { name: 'Moje strony', path: 'strony' },
         { name: 'Moje strony', path: 'strony' },
         { name: 'Moje strony', path: 'strony' },
-    ]
+    ];
 
     const OnItemClicked = (path: string) => {
         history.push(path);
-    }
+    };
+
     return (
         <Fragment>
-            <AdminPanelHeader> Logo </AdminPanelHeader>
+            <AdminPanelHeader> Logo
+                <button onClick={() => logout()}>Wyloguj</button>
+            </AdminPanelHeader>
             <AdminMain>
                 <AdminSidePanel>
                     {sidePanelItems.map(x => {

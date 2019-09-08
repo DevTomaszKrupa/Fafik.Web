@@ -1,7 +1,11 @@
+import { LoginRequest } from './../models/admin/login-request';
 import Axios from 'axios';
-import { GetClientRequest, GetClientResponse } from '../models';
+import { GetClientRequest, GetClientResponse, LoginResponse } from '../models';
 
 const baseApiUrl = 'http://localhost:5000';
+
+const login = (request: LoginRequest) =>
+  Axios.post<LoginResponse>(`${baseApiUrl}/users/authenticate`, request);
 
 // client
 const getClient = (request: GetClientRequest) =>
@@ -57,6 +61,7 @@ const getRomanticTheme = (clientPath: string) => ({
 });
 
 export const apiCaller = {
+  login,
   getClient,
   getLeavesTheme,
   getLeavesMainSite,

@@ -46,14 +46,20 @@ const AdminPanelComponent = (props: Props) => {
     ];
 
     const OnItemClicked = (path: string) => {
-        history.push(path);
+        history.push(`/admin/${path}`);
+    };
+
+    const OnLogoClicked = () => {
+        history.push('/admin');
     };
 
     return (
         <Fragment>
             <AdminPanelHeader>
                 <HeaderLeftSide />
-                <HeaderLogo> <AdminLogo src="http://localhost/Fafik/app/logo.png" /> </HeaderLogo>
+                <HeaderLogo>
+                    <AdminLogo onClick={OnLogoClicked} src="http://localhost/Fafik/app/logo.png" />
+                </HeaderLogo>
                 <HeaderRightSide> <button onClick={() => logout()}>Wyloguj</button> </HeaderRightSide>
             </AdminPanelHeader>
             <AdminMain>

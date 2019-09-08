@@ -32,13 +32,13 @@ const HeaderLayout = (props: Props) => {
   const dateString: string = moment(header.weddingDate).format('DD.MM.YYYY');
   return (
     <Header headerImage={header.mainImage}>
-      <Usual
+      {!stickyIsVisible && <Usual
         headerNames={header.headerNames}
         headerQuote={header.headerQuote}
         weddingDate={dateString}
         leftMenuItems={header.leftMenuItems}
         rightMenuItems={header.rightMenuItems}
-        onItemClick={ItemClicked} />
+        onItemClick={ItemClicked} />}
       {stickyIsVisible && <Sticky
         headerNames={header.headerNames}
         leftMenuItems={header.leftMenuItems}
@@ -59,14 +59,14 @@ const useStickyHeader = () => {
   };
 
   useEffect(() => {
-      window.addEventListener('scroll', handleWindowChange);
+    window.addEventListener('scroll', handleWindowChange);
     return () => {
       window.removeEventListener('scroll', handleWindowChange);
     };
   });
 
   useEffect(() => {
-      window.addEventListener('resize', handleWindowChange);
+    window.addEventListener('resize', handleWindowChange);
     return () => {
       window.removeEventListener('resize', handleWindowChange);
     };

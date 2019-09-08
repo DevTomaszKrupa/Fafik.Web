@@ -4,7 +4,9 @@ import components from './AdminPanel.styles';
 import { history } from '../../../../helpers';
 import { SiteItem } from '../../../../store/romantic/theme/types';
 import { Action } from '../../../../store/actions';
-
+import { AuthenticatedRoute } from '../../../../shared';
+import AdminMySites from '../../../Admin/MySites';
+import AdminSiteEditor from '../../../Admin/RomanticSiteEditor';
 
 type Props = {
     logout: () => Action;
@@ -46,7 +48,11 @@ const AdminPanelComponent = (props: Props) => {
                     })}
                 </AdminSidePanel>
 
-                <AdminMainPanel></AdminMainPanel>
+                <AdminMainPanel>
+                    <AuthenticatedRoute exact path="/admin/strony" component={AdminMySites} />
+                    <AuthenticatedRoute exact path="/admin/strony/:clientPath" component={AdminSiteEditor} />
+                </AdminMainPanel>
+
 
             </AdminMain>
 

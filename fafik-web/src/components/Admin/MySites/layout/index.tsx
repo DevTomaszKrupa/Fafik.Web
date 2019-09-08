@@ -4,7 +4,7 @@ const AdminMySitesComponent = () => {
     return (
         <Fragment>
             <div>
-
+            mojeeee strony 
             </div>
         </Fragment>);
 };

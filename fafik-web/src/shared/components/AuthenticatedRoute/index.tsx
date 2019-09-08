@@ -7,7 +7,7 @@ import { localStorageService } from '../../../services';
 export const AuthenticatedRoute = ({ component: Component, ...rest }: any) => {
   return (
     <Route {...rest} render={(props) => (
-      !!localStorageService.token
+      localStorageService.token
         ? <Component {...props} />
         : <Redirect to={{ pathname: '/admin/login', state: { from: props.location } }} />
     )} />

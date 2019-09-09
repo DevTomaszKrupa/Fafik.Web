@@ -1,13 +1,8 @@
 import React, { Fragment } from 'react';
 
-import components from './Blog.styles';
-import { RomanticState } from '../../../../../store/romantic/theme/reducers';
+import components from './styles';
 
-type Props = {
-  romanticState: RomanticState;
-};
-
-const BlogLayout = (props: Props) => {
+const BlogLayout = () => {
   const {
     SingleLineHorizontal,
     Title,
@@ -22,8 +17,6 @@ const BlogLayout = (props: Props) => {
     BlogPostTitle,
     ShowMoreButton
   } = components;
-
-  const { } = props.romanticState;
 
   return (
     <Fragment>

@@ -1,26 +1,17 @@
 import React, { Fragment } from 'react';
 
-import components from './AboutUs.styles';
-import { RomanticState } from '../../../../../store/romantic/theme/reducers';
+import components from './styles';
+import { useSelector } from 'react-redux';
+import { AppState } from '../../../../store/reducers';
 
-type Props = {
-  romanticState: RomanticState;
-};
+const AboutUsLayout = () => {
 
-const AboutUsLayout = (props: Props) => {
-  const {
-    AboutUsBox,
-    AboutUsPhotoBox,
-    AboutUsPhotoFrame,
-    AboutUsPhoto,
-    AboutBoxText,
-    TextWelcome,
-    AboutUs,
-    ToRSVPButton,
-  } = components;
+  const romanticState = useSelector((state: AppState) => state.romanticState);
 
+  const { AboutUsBox, AboutUsPhotoBox, AboutUsPhotoFrame, AboutUsPhoto,
+    AboutBoxText, TextWelcome, AboutUs, ToRSVPButton } = components;
 
-  const { aboutUs } = props.romanticState;
+  const { aboutUs } = romanticState;
 
   return (
     <Fragment>

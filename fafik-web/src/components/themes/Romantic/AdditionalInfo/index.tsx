@@ -1,13 +1,8 @@
 import React, { Fragment } from 'react';
 
-import components from './AdditionalInfo.styles';
-import { RomanticState } from '../../../../../store/romantic/theme/reducers';
+import components from './styles';
 
-type Props = {
-  romanticState: RomanticState;
-};
-
-const AdditionalInfoLayout = (props: Props) => {
+const AdditionalInfoLayout = () => {
   const {
     AdditionalInfoSection,
     AdditionalInfoHeader,
@@ -27,8 +22,6 @@ const AdditionalInfoLayout = (props: Props) => {
     TextBoxDescriptionBottom,
     TextBoxHeaderBottom
   } = components;
-
-  const { } = props.romanticState;
 
   return (
     <Fragment>

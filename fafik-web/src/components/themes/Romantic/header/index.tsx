@@ -1,23 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 
-import Sticky from '../Sticky';
-import Usual from '../Usual';
+import Sticky from './Sticky';
+import Usual from './Usual';
 
-import components from './header.styles';
-import { RomanticState } from '../../../../../store/romantic/theme/reducers';
-import { Action } from '../../../../../store/actions';
+import components from './styles';
+import { useSelector, useDispatch } from 'react-redux';
+import { AppState } from '../../../../store/reducers';
 
-type Props = {
-  romanticState: RomanticState;
-  openRsvpDialog: () => Action;
-};
+const HeaderLayout = () => {
 
-const HeaderLayout = (props: Props) => {
+  const dispatch = useDispatch();
+  const openRsvpDialog = () => dispatch({ type: 'OPEN_ROMANTIC_RSVP_DIALOG' });
+  const romanticState = useSelector((state: AppState) => state.romanticState);
+
   const stickyIsVisible = useStickyHeader();
   const { Header } = components;
 
-  const { romanticState, openRsvpDialog } = props;
   const { header } = romanticState;
 
   const ItemClicked = (path: string) => {

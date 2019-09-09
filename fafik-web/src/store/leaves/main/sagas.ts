@@ -1,4 +1,4 @@
-import { apiCaller } from './../../../services/api-caller';
+import { apiCaller } from './../../../services';
 import { put, takeLatest, call } from 'redux-saga/effects';
 
 import {
@@ -11,7 +11,7 @@ import { Action } from '../../actions';
 
 function* getLeavesMainSiteTheme(action: Action): any {
   try {
-    const theme = yield call(apiCaller.getLeavesMainSite, action.payload);
+    const theme = yield call(apiCaller.leaves.getMainSite, action.payload);
     yield put({ type: GET_LEAVES_MAIN_SITE_SUCCESS, payload: theme });
   } catch (error) {
     yield put({ type: GET_LEAVES_MAIN_SITE_FAILURE });

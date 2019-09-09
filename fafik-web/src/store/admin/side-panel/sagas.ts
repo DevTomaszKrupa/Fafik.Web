@@ -1,4 +1,4 @@
-import { apiCaller } from './../../../services/api-caller';
+import { apiCaller } from './../../../services';
 import { put, takeLatest, call } from 'redux-saga/effects';
 
 import { Action } from '../../actions';
@@ -6,7 +6,7 @@ import { Action } from '../../actions';
 
 function* adminGetClients(action: Action): any {
   try {
-    const clients = yield call(apiCaller.adminGetClients);
+    const clients = yield call(apiCaller.admin.getClients);
     yield put({ type: 'GET_ADMIN_CLIENTS_SUCCESS', payload: clients });
   } catch (error) {
     yield put({ type: 'GET_ADMIN_CLIENTS_FAILURE' });

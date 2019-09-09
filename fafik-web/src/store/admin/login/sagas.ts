@@ -9,7 +9,7 @@ import { Action } from '../../actions';
 
 function* login(action: Action<LoginRequest>): any {
   try {
-    const loginResponse: LoginResponse = yield call(apiCaller.login, action.payload as LoginRequest);
+    const loginResponse: LoginResponse = yield call(apiCaller.admin.login, action.payload as LoginRequest);
 
     yield put({ type: ADMIN_LOGIN_SUCCESS, payload: loginResponse });
   } catch (error) {

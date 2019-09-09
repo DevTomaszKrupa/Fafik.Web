@@ -8,7 +8,7 @@ import store from '../../store/index';
 import ClientPage from '../ClientPage';
 
 import AdminLoginPage from '../Admin/LoginPage';
-import AdminPanel from '../Admin/AdminPanel';
+import AdminPage from '../Admin/AdminPage';
 
 import { AuthenticatedRoute } from '../../shared';
 
@@ -19,7 +19,7 @@ const App = () => {
       <Router history={history}>
         <Switch>
           <Route exact path="/admin/login" component={AdminLoginPage} />
-          <AuthenticatedRoute path="/admin" component={AdminPanel} />
+          <AuthenticatedRoute path="/admin" component={AdminPage} />
 
           <Route exact path="/:clientPath" component={ClientPage} />
           <Route exact path="/:clientPath/:site" component={ClientPage} />

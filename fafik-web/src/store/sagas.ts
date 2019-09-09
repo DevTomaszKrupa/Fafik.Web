@@ -6,6 +6,7 @@ import { romanticRootSaga } from './romantic/theme/sagas';
 import { leavesMainSiteRootSaga } from './leaves/main/sagas';
 
 import { adminLoginSaga } from './admin/login/sagas';
+import { adminGetClientsRootSaga } from './admin/side-panel/sagas';
 
 
 const sagas = [
@@ -19,7 +20,8 @@ const sagas = [
   romanticRootSaga,
 
   // admin
-  adminLoginSaga
+  adminLoginSaga,
+  adminGetClientsRootSaga
 ];
 
 export default function* rootSaga(): any {

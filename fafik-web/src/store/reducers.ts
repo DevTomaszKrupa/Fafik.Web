@@ -1,3 +1,4 @@
+import { AdminSidePanelState, adminSidePanelState } from './admin/side-panel/reducers';
 import { combineReducers } from 'redux';
 import { reducer as reduxFormReducer, FormStateMap } from 'redux-form';
 
@@ -24,6 +25,7 @@ export type AppState = {
   // admin
   adminLoginState: AdminLoginState;
   adminEditorSidePanelState: AdminEditorSidePanelState;
+  adminSidePanelState: AdminSidePanelState;
 };
 
 export default combineReducers<AppState>({
@@ -37,5 +39,6 @@ export default combineReducers<AppState>({
 
   // admin
   adminLoginState,
-  adminEditorSidePanelState
+  adminEditorSidePanelState,
+  adminSidePanelState
 });

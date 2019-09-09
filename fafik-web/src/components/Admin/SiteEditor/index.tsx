@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import RomanticSiteEditor from '../../RomanticSiteEditor';
+import RomanticSiteEditor from '../RomanticSiteEditor';
 
 const AdminSiteEditorComponent = () => {
     return (

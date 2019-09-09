@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import { useDocumentTitle } from '../../../../shared';
+import { useDocumentTitle } from '../../../shared';
 
 
 const AdminMySitesComponent = () => {

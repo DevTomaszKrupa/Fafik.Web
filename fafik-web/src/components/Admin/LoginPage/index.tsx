@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
-import components from './LoginPage.style';
-import LoginForm from '../LoginForm';
+import components from './styles';
+import LoginForm from './LoginForm';
 
 const LoginPageComponent = () => {
 

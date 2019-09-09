@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import components from './styles';
-import { history } from '../../../helpers';
+import { history } from '../../../../helpers';
 
 const AdminPanelComponent = () => {
 

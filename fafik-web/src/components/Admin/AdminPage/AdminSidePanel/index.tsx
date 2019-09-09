@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 import components from './styles';
-import { AppState } from '../../../store/reducers';
+import { AppState } from '../../../../store/reducers';
 import AdminSidePanelClient from './Client';
 
 const AdminSidePanelComponent = () => {
@@ -11,10 +11,10 @@ const AdminSidePanelComponent = () => {
 
     const { AdminSidePanel } = components;
 
-
     return (
         <AdminSidePanel>
-            {adminSidePanelState.clients.map(client => {
+            {adminSidePanelState.isLoading && <span>lołding...</span>}
+            {!adminSidePanelState.isLoading && adminSidePanelState.clients.map(client => {
                 return <AdminSidePanelClient client={client} />;
             })}
         </AdminSidePanel>);

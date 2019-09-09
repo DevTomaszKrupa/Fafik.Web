@@ -1,5 +1,4 @@
 import { AdminClient } from './../../../models/admin/admin-client';
-import { GET_ADMIN_CLIENTS_STARTED, GET_ADMIN_CLIENTS_FAILURE, GET_ADMIN_CLIENTS_SUCCESS } from './consts';
 import { Reducer } from 'redux';
 import { Action } from '../../actions';
 
@@ -16,18 +15,18 @@ const initialState: AdminSidePanelState = {
 
 export const adminSidePanelState: Reducer<AdminSidePanelState, Action> = (state = initialState, action: Action): AdminSidePanelState => {
   switch (action.type) {
-    case GET_ADMIN_CLIENTS_STARTED:
+    case 'GET_ADMIN_CLIENTS_STARTED':
       return {
         ...state,
         isLoading: true
       };
-    case GET_ADMIN_CLIENTS_SUCCESS:
+    case 'GET_ADMIN_CLIENTS_SUCCESS':
       return {
         ...state,
         isLoading: false,
-        clients: action.payload.clients
+        clients: action.payload.data
       };
-    case GET_ADMIN_CLIENTS_FAILURE:
+    case 'GET_ADMIN_CLIENTS_FAILURE':
       return {
         ...state,
         isLoading: false

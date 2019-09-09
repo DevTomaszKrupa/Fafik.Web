@@ -5,8 +5,8 @@ import components from './styles';
 import { AuthenticatedRoute } from '../../../shared';
 import AdminMySites from '../../Admin/MySites';
 import AdminSiteEditor from '../../Admin/RomanticSiteEditor';
-import AdminTopBar from '../AdminTopBar';
-import AdminSidePanel from '../AdminSidePanel';
+import AdminTopBar from '../AdminPage/AdminTopBar';
+import AdminSidePanel from '../AdminPage/AdminSidePanel';
 
 
 const AdminPanelComponent = () => {

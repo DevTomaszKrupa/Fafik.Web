@@ -1,7 +1,7 @@
 import React from 'react';
 
-import components from './RomanticSiteEditor';
-import RomanticUsualHeader from '../../../themes/Romantic/Header/Usual';
+import components from './styles';
+import RomanticUsualHeader from '../../themes/Romantic/Header/Usual';
 
 
 const AdminRomanticSiteEditorComponent = () => {

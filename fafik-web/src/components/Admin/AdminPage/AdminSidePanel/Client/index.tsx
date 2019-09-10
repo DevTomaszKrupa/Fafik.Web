@@ -24,15 +24,15 @@ const AdminSidePanelClientComponent = (props: Props) => {
         ValidityExpDate,
         ClientBoxOptionArrow,
         SidePanelPause,
+        SidePanelPremiumItem,
     } = components;
 
     const sidePanelItems: SiteItem[] = [
-        { name: 'Moje strony', path: 'strony' },
-        { name: 'Moje strony', path: 'strony' },
-        { name: 'Moje strony', path: 'strony' },
-        { name: 'Moje strony', path: 'strony' },
-        { name: 'Moje strony', path: 'strony' },
-        { name: 'Moje strony', path: 'strony' },
+        { name: 'Konfiguruj', path: 'konfiguruj' },
+        { name: 'Blog', path: 'blog' },
+        { name: 'Playlista', path: 'playlista' },
+        { name: 'Lista gości', path: 'lista gości' },
+        { name: 'Statystyki', path: 'statystyki' },
     ];
 
     const OnItemClicked = (path: string) => {
@@ -56,6 +56,8 @@ const AdminSidePanelClientComponent = (props: Props) => {
             {sidePanelItems.map(x => {
                 return <SidePanelItem onClick={() => OnItemClicked(x.path)} > {x.name} </SidePanelItem>;
             })}
+            <SidePanelPause />
+            <SidePanelPremiumItem> Abonament </SidePanelPremiumItem>
         </Fragment>);
 };
 

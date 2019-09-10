@@ -15,7 +15,19 @@ const AdminPanelComponent = () => {
         getAdminClients();
     }, []);
 
-    const { AdminPanelHeader, HeaderLeftSide, HeaderLogo, AdminLogo, HeaderRightSide } = components;
+    const {
+        AdminPanelHeader,
+        HeaderLeftSide,
+        HeaderLogo,
+        AdminLogo,
+        HeaderRightSide,
+        NotificationsIcon,
+        NotificationsQuantity,
+        NotificationBox,
+        ProfilBox,
+        ProfilAvatar,
+        ProfilMoreButton,
+    } = components;
 
     const onLogoClicked = () => history.push('/admin');
     const onLogoutClicked = () => logout();
@@ -26,7 +38,17 @@ const AdminPanelComponent = () => {
             <HeaderLogo>
                 <AdminLogo onClick={onLogoClicked} src="http://localhost/Fafik/app/logo.png" />
             </HeaderLogo>
-            <HeaderRightSide> <button onClick={onLogoutClicked}>Wyloguj</button> </HeaderRightSide>
+            <HeaderRightSide>
+                <NotificationBox>
+                    <NotificationsIcon src="http://localhost/Fafik/app/bell.png" />
+                    <NotificationsQuantity>1</NotificationsQuantity>
+                </NotificationBox>
+                <ProfilBox>
+                    <ProfilAvatar src="http://localhost/Fafik/app/user-avatar.png" />
+                    <ProfilMoreButton src="http://localhost/Fafik/app/arrow-down.png" />
+                </ProfilBox>
+                <button onClick={onLogoutClicked}>Wyloguj</button>
+            </HeaderRightSide>
         </AdminPanelHeader>);
 };
 

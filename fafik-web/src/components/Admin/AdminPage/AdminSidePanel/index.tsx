@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import components from './styles';
 import { AppState } from '../../../../store/reducers';
 import AdminSidePanelClient from './Client';
-import AdminThemeEditorSidePanelComponent from '../../Editor/SidePanel';
+import AdminThemeEditorSidePanelComponent from '../../ThemeEditor/SidePanel';
 
 const AdminSidePanelComponent = () => {
 

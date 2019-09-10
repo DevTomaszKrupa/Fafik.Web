@@ -2,8 +2,8 @@ import React, { Fragment } from 'react';
 
 import components from './styles';
 import { history } from '../../../../../helpers';
-import { SiteItem } from '../../../../../store/romantic/theme/types';
 import { AdminClient } from '../../../../../models';
+import { useDispatch } from 'react-redux';
 
 
 type Props = {
@@ -11,6 +11,9 @@ type Props = {
 };
 
 const AdminSidePanelClientComponent = (props: Props) => {
+
+    const dispatch = useDispatch();
+    const openAdminThemeEditor = () => dispatch({ type: 'OPEN_ADMIN_THEME_EDITOR' });
 
     const { client } = props;
     const {
@@ -27,16 +30,12 @@ const AdminSidePanelClientComponent = (props: Props) => {
         SidePanelPremiumItem,
     } = components;
 
-    const sidePanelItems: SiteItem[] = [
-        { name: 'Konfiguruj', path: 'konfiguruj' },
-        { name: 'Blog', path: 'blog' },
-        { name: 'Playlista', path: 'playlista' },
-        { name: 'Lista gości', path: 'lista gości' },
-        { name: 'Statystyki', path: 'statystyki' },
-    ];
-
     const OnItemClicked = (path: string) => {
         history.push(`/admin/${path}`);
+    };
+    const OnConfigurationClicked = () => {
+        openAdminThemeEditor();
+        history.push(`/admin/konfiguruj`);
     };
 
     return (
@@ -53,9 +52,11 @@ const AdminSidePanelClientComponent = (props: Props) => {
                 <ClientBoxOptionArrow />
             </SidePanelClientBox>
             <SidePanelPause />
-            {sidePanelItems.map(x => {
-                return <SidePanelItem onClick={() => OnItemClicked(x.path)} > {x.name} </SidePanelItem>;
-            })}
+            <SidePanelItem onClick={OnConfigurationClicked} > Konfiguruj </SidePanelItem>
+            <SidePanelItem onClick={() => OnItemClicked('blog')} > Blog </SidePanelItem>
+            <SidePanelItem onClick={() => OnItemClicked('playlista')} > Playlista </SidePanelItem>
+            <SidePanelItem onClick={() => OnItemClicked('goscie')} > Lista gości </SidePanelItem>
+            <SidePanelItem onClick={() => OnItemClicked('statystyki')} > Statystyki </SidePanelItem>
             <SidePanelPause />
             <SidePanelPremiumItem> Abonament </SidePanelPremiumItem>
         </Fragment>);

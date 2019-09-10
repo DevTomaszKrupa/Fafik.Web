@@ -38,6 +38,11 @@ export const adminSidePanelState: Reducer<AdminSidePanelState, Action> = (state 
         ...state,
         sidePanelState: 'editor'
       };
+    case 'OPEN_BASE_ADMIN_SIDE_PANEL':
+      return {
+        ...state,
+        sidePanelState: 'base'
+      };
     default:
       return state;
   }

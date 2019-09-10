@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useSelector } from 'react-redux';
 
 import components from './styles';
 import { AppState } from '../../../../store/reducers';
 import AdminSidePanelClient from './Client';
+import AdminThemeEditorSidePanelComponent from '../../Editor/SidePanel';
 
 const AdminSidePanelComponent = () => {
 
@@ -14,9 +15,16 @@ const AdminSidePanelComponent = () => {
     return (
         <AdminSidePanel>
             {adminSidePanelState.isLoading && <span>lołding...</span>}
-            {!adminSidePanelState.isLoading && adminSidePanelState.clients.map(client => {
-                return <AdminSidePanelClient client={client} />;
-            })}
+
+            {!adminSidePanelState.isLoading && <Fragment>
+
+                {adminSidePanelState.sidePanelState === 'base' &&
+                    adminSidePanelState.clients.map(client => <AdminSidePanelClient client={client} />)}
+
+                {adminSidePanelState.sidePanelState === 'editor' && <AdminThemeEditorSidePanelComponent />}
+
+            </Fragment>}
+
         </AdminSidePanel>);
 };
 

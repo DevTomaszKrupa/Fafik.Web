@@ -7,7 +7,7 @@ import { leavesMainSiteRootSaga } from './leaves/main/sagas';
 
 import { adminLoginSaga } from './admin/login/sagas';
 import { adminGetClientsRootSaga } from './admin/side-panel/sagas';
-
+import { adminThemeEditorRootSaga } from './admin/theme-editor/sagas';
 
 const sagas = [
   clientRootSaga,
@@ -21,7 +21,8 @@ const sagas = [
 
   // admin
   adminLoginSaga,
-  adminGetClientsRootSaga
+  adminGetClientsRootSaga,
+  adminThemeEditorRootSaga
 ];
 
 export default function* rootSaga(): any {

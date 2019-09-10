@@ -13,6 +13,6 @@ function* adminSidePanelGetTheme(action: Action): any {
   }
 }
 
-export function* adminGetClientsRootSaga(): any {
+export function* adminThemeEditorRootSaga(): any {
   yield takeLatest('THEME_EDITOR_GET_THEME_STARTED', adminSidePanelGetTheme);
 }

@@ -1,10 +1,9 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { history } from '../../../../helpers';
 
 const AdminThemeEditorSidePanelComponent = () => {
 
-    const dispatch = useDispatch();
-    const leaveEditor = () => dispatch({ type: 'OPEN_BASE_ADMIN_SIDE_PANEL' });
+    const leaveEditor = () => history.push('/admin')
 
     return (
         <div>

@@ -5,13 +5,11 @@ import { Action } from '../../actions';
 
 export type AdminSidePanelState = {
   readonly isLoading: boolean;
-  readonly sidePanelState: 'base' | 'editor';
   readonly clients: AdminClient[];
 };
 
 const initialState: AdminSidePanelState = {
   isLoading: true,
-  sidePanelState: 'base',
   clients: []
 };
 
@@ -32,16 +30,6 @@ export const adminSidePanelState: Reducer<AdminSidePanelState, Action> = (state 
       return {
         ...state,
         isLoading: false
-      };
-    case 'OPEN_ADMIN_THEME_EDITOR':
-      return {
-        ...state,
-        sidePanelState: 'editor'
-      };
-    case 'OPEN_BASE_ADMIN_SIDE_PANEL':
-      return {
-        ...state,
-        sidePanelState: 'base'
       };
     default:
       return state;

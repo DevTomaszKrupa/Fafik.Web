@@ -13,6 +13,7 @@ import { leavesMainSiteState, LeavesMainSiteState } from './leaves/main/reducers
 import { AdminEditorSidePanelState, adminEditorSidePanelState } from './admin/editor-side-panel/reducers';
 import { AdminLoginState, adminLoginState } from './admin/login/reducers';
 
+import { AdminRomanticThemeEditorState, adminRomanticThemeEditorState } from './admin/romantic-theme-editor/reducers';
 
 export type AppState = {
   form: FormStateMap;
@@ -28,6 +29,9 @@ export type AppState = {
   adminEditorSidePanelState: AdminEditorSidePanelState;
   adminSidePanelState: AdminSidePanelState;
   adminThemeEditorState: AdminThemeEditorState;
+
+  // admin romantic
+  adminRomanticThemeEditorState: AdminRomanticThemeEditorState;
 };
 
 export default combineReducers<AppState>({
@@ -43,5 +47,8 @@ export default combineReducers<AppState>({
   adminLoginState,
   adminEditorSidePanelState,
   adminSidePanelState,
-  adminThemeEditorState
+  adminThemeEditorState,
+
+  // admin romantic
+  adminRomanticThemeEditorState
 });

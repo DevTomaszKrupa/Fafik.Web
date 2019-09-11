@@ -1,19 +1,29 @@
-import { connect } from 'react-redux';
+import React, { Fragment } from 'react';
 
-import adminEditableComponent from './layout';
+import components from './AdminEditableComponent.styles';
 
-import { editAdminEditableTextComponent } from '../../../store/admin/actions';
+import { useDispatch } from 'react-redux';
 
-const mapStateToProps = () => ({
-});
-
-const mapDispatchToProps = {
-  editAdminEditableTextComponent
+type Props = {
+  children: any;
+  itemId: string;
+  adminMode?: boolean;
 };
 
-const enhancer = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(adminEditableComponent);
+const AdminEditableComponent = (props: Props) => {
 
-export { enhancer as AdminEditableComponent };
+  const dispatch = useDispatch();
+  const editAdminEditableTextComponent = (item: string) => dispatch({ type: 'EDIT_ADMIN_EDITABLE_TEXT_COMPONENT_CLICK', payload: item });
+
+  const { children, adminMode, itemId } = props;
+  const { Container } = components;
+
+  return (
+    <Fragment>
+      {adminMode && <Container onClick={() => editAdminEditableTextComponent(itemId)}>{children}</Container>}
+      {!adminMode && children}
+    </Fragment>
+  );
+};
+
+export { AdminEditableComponent };

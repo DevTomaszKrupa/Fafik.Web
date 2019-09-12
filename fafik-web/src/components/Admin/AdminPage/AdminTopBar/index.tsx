@@ -5,7 +5,6 @@ import components from './styles';
 import { history } from '../../../../helpers';
 
 const AdminPanelComponent = () => {
-
     const dispatch = useDispatch();
     const logout = () => dispatch({ type: 'ADMIN_LOGOUT' });
     const getAdminClients = () => dispatch({ type: 'GET_ADMIN_CLIENTS_STARTED' });

@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface SidePanelItemProps {
+  active?: boolean;
+}
+
 export default {
   AdminSidePanel: styled.div`
   background-color: #FDFBFD;
@@ -11,6 +15,12 @@ export default {
   `,
 
   SidePanelItem: styled.div`
+  ${(props: SidePanelItemProps) => props.active && `
+      background-color: #F2EEE8;
+  `}
+  ${(props: SidePanelItemProps) => !props.active && `
+      background-color: #FDFBFD;
+  `}
   display: flex;
   align-items: center;
   justify-content: center;

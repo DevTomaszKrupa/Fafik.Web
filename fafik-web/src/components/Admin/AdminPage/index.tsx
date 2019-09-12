@@ -4,11 +4,13 @@ import { useDispatch } from 'react-redux';
 import components from './styles';
 import { AuthenticatedRoute } from '../../../shared';
 import AdminMySites from '../../Admin/MySites';
+import AdminBlog from '../../Admin/Blog';
 import AdminSiteEditor from '../../Admin/RomanticSiteEditor';
 import AdminTopBar from '../AdminPage/AdminTopBar';
 import AdminThemeEditor from '../../Admin/ThemeEditor';
 import AdminThemeEditorSidePanelComponent from '../ThemeEditor/SidePanel';
 import BaseAdminSidePanel from './AdminSidePanel';
+import { adminSidePanelPaths } from './consts';
 
 const AdminPanelComponent = () => {
 
@@ -28,13 +30,18 @@ const AdminPanelComponent = () => {
             <AdminMain>
                 <AdminSidePanel>
                     <AuthenticatedRoute exact path="/admin" component={BaseAdminSidePanel} />
-                    <AuthenticatedRoute exact path="/admin/strony" component={BaseAdminSidePanel} />
-                    <AuthenticatedRoute exact path="/admin/konfiguruj" component={AdminThemeEditorSidePanelComponent} />
+                    <AuthenticatedRoute exact path={adminSidePanelPaths.pages} component={BaseAdminSidePanel} />
+                    <AuthenticatedRoute exact path={adminSidePanelPaths.blog} component={BaseAdminSidePanel} />
+                    <AuthenticatedRoute exact path={adminSidePanelPaths.playlist} component={BaseAdminSidePanel} />
+                    <AuthenticatedRoute exact path={adminSidePanelPaths.guestList} component={BaseAdminSidePanel} />
+                    <AuthenticatedRoute exact path={adminSidePanelPaths.stats} component={BaseAdminSidePanel} />
+                    <AuthenticatedRoute exact path={adminSidePanelPaths.config} component={AdminThemeEditorSidePanelComponent} />
                 </AdminSidePanel>
                 <AdminMainPanel>
-                    <AuthenticatedRoute exact path="/admin/strony" component={AdminMySites} />
-                    <AuthenticatedRoute exact path="/admin/konfiguruj" component={AdminThemeEditor} />
-                    <AuthenticatedRoute exact path="/admin/strony/:clientPath" component={AdminSiteEditor} />
+                    <AuthenticatedRoute exact path={adminSidePanelPaths.pages} component={AdminMySites} />
+                    <AuthenticatedRoute exact path={adminSidePanelPaths.config} component={AdminThemeEditor} />
+                    <AuthenticatedRoute exact path={adminSidePanelPaths.blog} component={AdminBlog} />
+                    <AuthenticatedRoute exact path={`{adminSidePanelPaths.pages}/:clientPath`} component={AdminSiteEditor} />
                 </AdminMainPanel>
             </AdminMain>
         </Fragment>);

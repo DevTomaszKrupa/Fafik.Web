@@ -3,6 +3,7 @@ import React, { Fragment } from 'react';
 import components from './styles';
 import { history } from '../../../../../helpers';
 import { AdminClient } from '../../../../../models';
+import { adminSidePanelPaths } from '../../consts';
 import { useDispatch } from 'react-redux';
 
 
@@ -30,12 +31,11 @@ const AdminSidePanelClientComponent = (props: Props) => {
         SidePanelPremiumItem,
     } = components;
 
-    const OnItemClicked = (path: string) => {
-        history.push(`/admin/${path}`);
-    };
+    const OnItemClicked = (path: string) => history.push(path);
+
     const OnConfigurationClicked = () => {
         openAdminThemeEditor();
-        history.push(`/admin/konfiguruj`);
+        history.push(adminSidePanelPaths.config);
     };
 
     return (
@@ -53,10 +53,14 @@ const AdminSidePanelClientComponent = (props: Props) => {
             </SidePanelClientBox>
             <SidePanelPause />
             <SidePanelItem onClick={OnConfigurationClicked} > Konfiguruj </SidePanelItem>
-            <SidePanelItem onClick={() => OnItemClicked('blog')} > Blog </SidePanelItem>
-            <SidePanelItem onClick={() => OnItemClicked('playlista')} > Playlista </SidePanelItem>
-            <SidePanelItem onClick={() => OnItemClicked('goscie')} > Lista gości </SidePanelItem>
-            <SidePanelItem onClick={() => OnItemClicked('statystyki')} > Statystyki </SidePanelItem>
+            <SidePanelItem onClick={() => OnItemClicked(adminSidePanelPaths.blog)}
+                active={history.location.pathname === adminSidePanelPaths.blog}> Blog </SidePanelItem>
+            <SidePanelItem onClick={() => OnItemClicked(adminSidePanelPaths.playlist)}
+                active={history.location.pathname === adminSidePanelPaths.playlist}> Playlista </SidePanelItem>
+            <SidePanelItem onClick={() => OnItemClicked(adminSidePanelPaths.guestList)}
+                active={history.location.pathname === adminSidePanelPaths.guestList}> Lista gości </SidePanelItem>
+            <SidePanelItem onClick={() => OnItemClicked(adminSidePanelPaths.stats)}
+                active={history.location.pathname === adminSidePanelPaths.stats}> Statystyki </SidePanelItem>
             <SidePanelPause />
             <SidePanelPremiumItem> Abonament </SidePanelPremiumItem>
         </Fragment>);

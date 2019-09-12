@@ -9,9 +9,11 @@ import { adminLoginSaga } from './admin/login/sagas';
 import { adminGetClientsRootSaga } from './admin/side-panel/sagas';
 import { adminThemeEditorRootSaga } from './admin/theme-editor/sagas';
 import { adminRomanticThemeEditorSaga } from './admin/romantic-theme-editor/sagas';
+import { registerRootSaga } from './register/sagas';
 
 const sagas = [
   clientRootSaga,
+  registerRootSaga,
 
   // leaves
   leavesRootSaga,

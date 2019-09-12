@@ -15,10 +15,12 @@ import { AdminLoginState, adminLoginState } from './admin/login/reducers';
 
 import { AdminRomanticThemeEditorState, adminRomanticThemeEditorState } from './admin/romantic-theme-editor/reducers';
 import { AdminBlogState, adminBlogState } from './admin/blog/reducers';
+import { RegisterState, registerState } from './register/reducers';
 
 export type AppState = {
   form: FormStateMap;
 
+  registerState: RegisterState;
   clientState: ClientState;
   leavesState: LeavesState;
   romanticState: RomanticState;
@@ -39,6 +41,7 @@ export type AppState = {
 export default combineReducers<AppState>({
   form: reduxFormReducer,
 
+  registerState,
   clientState,
   leavesState,
   romanticState,

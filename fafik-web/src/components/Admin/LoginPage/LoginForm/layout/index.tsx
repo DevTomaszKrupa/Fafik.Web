@@ -31,20 +31,6 @@ const LoginFormComponent = (props: InjectedFormProps & Props) => {
 
   return (
     <LoginForm onSubmit={handleSubmit}>
-      {/* <PxReduxFormInput
-          label="Username"
-          labelPosition={LabelPosition.Top}
-          type={InputType.Text}
-          name="username"
-          validate={[LoginFormValidation.usernameRequired]}
-        />
-        <PxReduxFormInput
-          label="Password"
-          labelPosition={LabelPosition.Top}
-          type={InputType.Password}
-          validate={[LoginFormValidation.passwordRequired]}
-          name="password"
-        /> */}
       <FieldBox>
         <span> Email</span>
         <Field name="email" component="input" type="email" />

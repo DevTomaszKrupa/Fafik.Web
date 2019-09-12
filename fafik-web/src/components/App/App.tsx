@@ -9,6 +9,8 @@ import ClientPage from '../ClientPage';
 
 import AdminLoginPage from '../Admin/LoginPage';
 import AdminPage from '../Admin/AdminPage';
+import HomePage from '../HomePage';
+import OfferPage from '../OfferPage';
 
 import { AuthenticatedRoute } from '../../shared';
 
@@ -18,6 +20,10 @@ const App = () => {
     <Provider store={store}>
       <Router history={history}>
         <Switch>
+
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/oferta" component={OfferPage} />
+
           <Route exact path="/admin/login" component={AdminLoginPage} />
           <AuthenticatedRoute path="/admin" component={AdminPage} />
 

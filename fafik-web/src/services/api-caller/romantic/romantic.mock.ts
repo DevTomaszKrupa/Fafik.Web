@@ -29,7 +29,55 @@ const getTheme = (clientPath: string) => ({
       quoteAuthor: 'TOMASZ KRUPA',
     },
     gallery: {
-      galleryImage: 'gaja-i-stanislaw/gallery-main.jpg'
+      galleryImage: 'gaja-i-stanislaw/gallery-main.jpg',
+      galleryHeader: 'galeria zdjęć',
+      galleryDescription: 'Drodzy Goście, zachęcamy do obejrzenia naszej galerii zarówno przed, jak i po uroczystości.',
+      cards: [
+        { title: 'Przygotowania', image: 'url("http://localhost/Fafik/gaja-i-stanislaw/gallery-prep.png")' },
+        { title: 'Ślub i wesele', image: 'url("http://localhost/Fafik/gaja-i-stanislaw/gallery-wedding.png")' },
+        { title: 'Sesja narzeczeńska', image: 'url("http://localhost/Fafik/gaja-i-stanislaw/gallery-session.png")' }
+      ]
+    },
+    blog: {
+      header: 'Nasz blog',
+      subtitle: 'Są tu nasze wpisy kierowane do Was, naszych najdroższych.',
+      posts: [
+        {
+          image: `url("https://images.unsplash.com/photo-1553013983-15241ab69e57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80")`,
+          date: new Date(2018, 1, 1, 12, 0, 0),
+          header: 'Przygotowujemy zaproszenia, zobaczcie!'
+        },
+        {
+          image: `url("https://images.unsplash.com/photo-1553013983-15241ab69e57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80")`,
+          date: new Date(2018, 1, 1, 12, 0, 0),
+          header: 'Przygotowujemy zaproszenia, zobaczcie!'
+        },
+        {
+          image: `url("https://images.unsplash.com/photo-1553013983-15241ab69e57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80")`,
+          date: new Date(2018, 1, 1, 12, 0, 0),
+          header: 'Przygotowujemy zaproszenia, zobaczcie!'
+        }
+      ],
+      showMore: 'zobacz więcej'
+    },
+    plan: {
+      events: [
+        {
+          tooltip: 'Zapraszamy na uroczystość do Kościoła św. Anny w Kazimierzu Dolnym.',
+          time: '16:00',
+          name: 'Uroczystość zaślubin'
+        },
+        {
+          tooltip: 'Zapraszamy na uroczystość do Kościoła św. Anny w Kazimierzu Dolnym.',
+          time: '18:00',
+          name: 'Pierwszy taniec'
+        },
+        {
+          tooltip: 'Zapraszamy na uroczystość do Kościoła św. Anny w Kazimierzu Dolnym.',
+          time: '20:00',
+          name: 'Tort'
+        },
+      ]
     }
   }
 });

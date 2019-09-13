@@ -2,17 +2,17 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { AppState } from '../../../../store/reducers';
-import Blog from '../../../../theme/romantic/components/Blog';
+import Gallery from '../../../../theme/romantic/components/Gallery';
 
-const BlogLayout = () => {
+const GalleryLayout = () => {
 
   const romanticState = useSelector((state: AppState) => state.romanticState);
 
-  const { blog } = romanticState;
+  const { gallery } = romanticState;
 
   return (
-    <Blog {...blog} />
+    <Gallery {...gallery} />
   );
 };
 
-export default BlogLayout;
+export default GalleryLayout;

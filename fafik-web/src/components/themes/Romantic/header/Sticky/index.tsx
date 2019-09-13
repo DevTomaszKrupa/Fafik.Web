@@ -38,13 +38,13 @@ const StickyHeaderLayout = (props: Props) => {
       <StickyMenuOptions>
         <SideStickyMenu>
           {leftMenuItems.map(x => {
-            return <StickyItem onClick={() => onItemClick(x.path)} textAlign="right"> {x.name} </StickyItem>;
+            return <StickyItem key={x.path} onClick={() => onItemClick(x.path)} textAlign="right"> {x.name} </StickyItem>;
           })}
         </SideStickyMenu>
 
         <SideStickyMenu>
           {rightMenuItems.map(x => {
-            return <StickyItem onClick={() => onItemClick(x.path)} textAlign="left"> {x.name} </StickyItem>;
+            return <StickyItem key={x.path} onClick={() => onItemClick(x.path)} textAlign="left"> {x.name} </StickyItem>;
           })}
         </SideStickyMenu>
       </StickyMenuOptions>

@@ -2,17 +2,17 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { AppState } from '../../../../store/reducers';
-import Blog from '../../../../theme/romantic/components/Blog';
+import QuoteSection from '../../../../theme/romantic/components/Quote';
 
-const BlogLayout = () => {
+const QuoteLayout = () => {
 
   const romanticState = useSelector((state: AppState) => state.romanticState);
 
-  const { blog } = romanticState;
+  const { quoteSection } = romanticState;
 
   return (
-    <Blog {...blog} />
+    <QuoteSection {...quoteSection} />
   );
 };
 
-export default BlogLayout;
+export default QuoteLayout;

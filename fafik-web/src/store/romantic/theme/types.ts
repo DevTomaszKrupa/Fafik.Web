@@ -11,13 +11,3 @@ export interface RomanticHeader {
   weddingDate: Date | undefined;
   headerQuote: string;
 }
-
-
-export interface RomanticQuoteSection {
-  quote: string;
-  quoteAuthor: string;
-}
-
-export interface RomanticGallery {
-  galleryImage: string;
-}

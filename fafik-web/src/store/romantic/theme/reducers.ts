@@ -1,4 +1,4 @@
-import { RomanticHeader, RomanticGallery, RomanticQuoteSection } from './types';
+import { RomanticHeader } from './types';
 import { Reducer } from 'redux';
 
 import { Action } from '../../actions';
@@ -8,7 +8,8 @@ import {
   GET_ROMANTIC_THEME_SUCCESS,
   GET_ROMANTIC_THEME_FAILURE
 } from './consts';
-import { RomanticAboutUsProps } from '../../../theme/romantic/models';
+import { RomanticAboutUsProps, RomanticQuoteProps, RomanticGalleryProps, RomanticGalleryCard, RomanticBlogProps,
+  RomanticBlogPost, RomanticPlanEvent, RomanticPlanProps } from '../../../theme/romantic/models';
 
 interface SiteItem {
   name: string;
@@ -21,8 +22,10 @@ export type RomanticState = {
 
   header: RomanticHeader;
   aboutUs: RomanticAboutUsProps;
-  quoteSection: RomanticQuoteSection;
-  gallery: RomanticGallery;
+  quoteSection: RomanticQuoteProps;
+  gallery: RomanticGalleryProps;
+  blog: RomanticBlogProps;
+  plan: RomanticPlanProps;
 };
 
 const initialState: RomanticState = {
@@ -33,8 +36,16 @@ const initialState: RomanticState = {
     rightMenuItems: [] as SiteItem[]
   } as RomanticHeader,
   aboutUs: {} as RomanticAboutUsProps,
-  quoteSection: {} as RomanticQuoteSection,
-  gallery: {} as RomanticGallery
+  quoteSection: {} as RomanticQuoteProps,
+  gallery: {
+    cards: [] as RomanticGalleryCard[]
+  } as RomanticGalleryProps,
+  blog: {
+    posts: [] as RomanticBlogPost[]
+  } as RomanticBlogProps,
+  plan: {
+    events: [] as RomanticPlanEvent[]
+  } as RomanticPlanProps
 };
 
 const resolveMenuItem = (sites: SiteItem[]) => {
@@ -66,14 +77,12 @@ export const romanticState: Reducer<RomanticState, Action> = (
         isLoading: true
       };
     case GET_ROMANTIC_THEME_SUCCESS:
-      const { header, aboutUs, gallery, quoteSection } = action.payload.data;
+      const { header } = action.payload.data;
       const { leftItems, rightItems } = resolveMenuItem(header.sites);
       return {
         ...state,
+        ...action.payload.data,
         isLoading: false,
-        aboutUs: aboutUs,
-        quoteSection: quoteSection,
-        gallery: gallery,
         header: {
           ...header,
           leftMenuItems: leftItems,

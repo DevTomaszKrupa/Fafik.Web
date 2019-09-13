@@ -23,10 +23,10 @@ export default {
     flex-grow: 1;
     background-image: ${(props: GalleryProps) =>
       `url("http://localhost/Fafik/${props.galleryImage}")`};
-    background-repeat: no-repeat;
-    background-size: 98rem;
-    background-position-y: 20%;
     position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   `,
   GalleryOpacity: styled.div`
     flex-grow: 1;

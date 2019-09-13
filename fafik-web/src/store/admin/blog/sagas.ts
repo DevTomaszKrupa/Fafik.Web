@@ -4,15 +4,15 @@ import { put, takeLatest, call } from 'redux-saga/effects';
 import { Action } from '../../actions';
 
 
-function* adminSidePanelGetTheme(action: Action): any {
+function* adminBlogGetPosts(action: Action): any {
   try {
-    const theme = yield call(apiCaller.admin.getEditorTheme);
-    yield put({ type: 'THEME_EDITOR_GET_THEME_SUCCESS', payload: theme });
+    const response = yield call(apiCaller.admin.getBlogPosts);
+    yield put({ type: 'ADMIN_BLOCK_GET_POSTS_SUCCESS', payload: response.data });
   } catch (error) {
-    yield put({ type: 'THEME_EDITOR_GET_THEME_FAILURE' });
+    yield put({ type: 'ADMIN_BLOCK_GET_POSTS_FAILURE' });
   }
 }
 
-export function* adminThemeEditorRootSaga(): any {
-  yield takeLatest('THEME_EDITOR_GET_THEME_STARTED', adminSidePanelGetTheme);
+export function* adminBlogGetPostsRootSaga(): any {
+  yield takeLatest('ADMIN_BLOCK_GET_POSTS_STARTED', adminBlogGetPosts);
 }

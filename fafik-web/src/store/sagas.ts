@@ -10,6 +10,7 @@ import { adminGetClientsRootSaga } from './admin/side-panel/sagas';
 import { adminThemeEditorRootSaga } from './admin/theme-editor/sagas';
 import { adminRomanticThemeEditorSaga } from './admin/romantic-theme-editor/sagas';
 import { registerRootSaga } from './register/sagas';
+import { adminBlogGetPostsRootSaga } from './admin/blog/sagas';
 
 const sagas = [
   clientRootSaga,
@@ -26,7 +27,8 @@ const sagas = [
   adminLoginSaga,
   adminGetClientsRootSaga,
   adminThemeEditorRootSaga,
-  adminRomanticThemeEditorSaga
+  adminRomanticThemeEditorSaga,
+  adminBlogGetPostsRootSaga
 ];
 
 export default function* rootSaga(): any {

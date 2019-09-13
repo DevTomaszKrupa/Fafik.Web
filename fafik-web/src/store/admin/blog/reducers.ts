@@ -27,10 +27,11 @@ export const adminBlogState: Reducer<AdminBlogState, Action> = (state = initialS
         isLoading: true
       };
     case 'ADMIN_BLOCK_GET_POSTS_SUCCESS':
+      const { posts } = action.payload;
       return {
         ...state,
         isLoading: false,
-        posts: action.payload.posts
+        posts: posts
       };
     case 'ADMIN_BLOCK_GET_POSTS_FAILURE':
       return {

@@ -9,7 +9,7 @@ import {
   GET_ROMANTIC_THEME_FAILURE
 } from './consts';
 import { RomanticAboutUsProps, RomanticQuoteProps, RomanticGalleryProps, RomanticGalleryCard, RomanticBlogProps,
-  RomanticBlogPost, RomanticPlanEvent, RomanticPlanProps } from '../../../theme/romantic/models';
+  RomanticBlogPost, RomanticPlanEvent, RomanticPlanProps, RomanticAdditionalInfoProps, RomanticAdditionalInfoInfo } from '../../../theme/romantic/models';
 
 interface SiteItem {
   name: string;
@@ -26,6 +26,7 @@ export type RomanticState = {
   gallery: RomanticGalleryProps;
   blog: RomanticBlogProps;
   plan: RomanticPlanProps;
+  additionalInfo: RomanticAdditionalInfoProps;
 };
 
 const initialState: RomanticState = {
@@ -45,7 +46,10 @@ const initialState: RomanticState = {
   } as RomanticBlogProps,
   plan: {
     events: [] as RomanticPlanEvent[]
-  } as RomanticPlanProps
+  } as RomanticPlanProps,
+  additionalInfo: {
+    infoCards: [] as RomanticAdditionalInfoInfo[]
+  }
 };
 
 const resolveMenuItem = (sites: SiteItem[]) => {

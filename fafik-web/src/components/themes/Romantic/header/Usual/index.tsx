@@ -10,7 +10,7 @@ type Props = {
   weddingDate: string;
   leftMenuItems: SiteItem[];
   rightMenuItems: SiteItem[];
-  onItemClick: (path: string) => void;
+  onItemClick?: (path: string) => void;
   adminMode?: boolean;
 };
 
@@ -22,13 +22,16 @@ const HeaderLayout = (props: Props) => {
 
   const { headerNames, leftMenuItems, headerQuote, weddingDate, rightMenuItems, onItemClick, adminMode } = props;
 
+  const handleOnItemClick = (path: string) => {
+    if (onItemClick)
+      onItemClick(path);
+  };
+
   return (
     <Menu>
       <MenuFrame>
         <SideMenu>
-          {leftMenuItems.map(x => (
-            <Item key={x.path} onClick={() => onItemClick(x.path)} textAlign="right"> {x.name} </Item>
-          ))}
+          {leftMenuItems.map(x => <Item key={x.path} onClick={() => handleOnItemClick(x.path)} textAlign="right"> {x.name} </Item>)}
         </SideMenu>
         <SingleLineVertical />
         <MenuCenter>
@@ -47,9 +50,7 @@ const HeaderLayout = (props: Props) => {
         </MenuCenter>
         <SingleLineVertical />
         <SideMenu>
-          {rightMenuItems.map(x => (
-            <Item onClick={() => onItemClick(x.path)} textAlign="left"> {x.name} </Item>
-          ))}
+          {rightMenuItems.map(x => <Item onClick={() => handleOnItemClick(x.path)} textAlign="left"> {x.name} </Item>)}
         </SideMenu>
       </MenuFrame>
     </Menu>

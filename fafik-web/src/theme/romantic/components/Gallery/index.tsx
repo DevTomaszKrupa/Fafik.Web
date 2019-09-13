@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import components from './styles';
 import { RomanticGalleryProps } from '../../models';
@@ -11,8 +11,7 @@ const GalleryLayout = (props: RomanticGalleryProps) => {
   const { galleryImage, galleryDescription, galleryHeader, cards } = props;
 
   return (
-    <Fragment>
-      <Gallery galleryImage={galleryImage}>
+      <Gallery id="galeria" galleryImage={galleryImage}>
         <GalleryOpacity>
           <GalleryFrame>
             <GalleryTitle color="#ffffff"> {galleryHeader} </GalleryTitle>
@@ -29,7 +28,6 @@ const GalleryLayout = (props: RomanticGalleryProps) => {
           </GalleryFrame>
         </GalleryOpacity>
       </Gallery>
-    </Fragment>
   );
 };
 

@@ -1,13 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
-import components from './Map.styles';
-import { RomanticState } from '../../../../../store/romantic/theme/reducers';
+import components from './styles';
 
-type Props = {
-  romanticState: RomanticState;
-};
 
-const MapLayout = (props: Props) => {
+const MapLayout = () => {
   const {
     MapSection,
     MapCircle,
@@ -22,11 +18,8 @@ const MapLayout = (props: Props) => {
     MapContent,
   } = components;
 
-  const { } = props.romanticState;
-
   return (
-    <Fragment>
-      <MapSection>
+      <MapSection id="dojazd">
         <MapContent>
           <MapPart1>
             <MapCircle />
@@ -39,9 +32,8 @@ const MapLayout = (props: Props) => {
                   NIE WIESZ JAK DOJECHAĆ NA MIEJSCE?
               </MapTitle>
                 <MapSubtitle>
-                  {' '}
                   Kliknij na prostokąt z nazwą miejsca
-                <br />i sprawdź lokalizację na mapie!{' '}
+                <br />i sprawdź lokalizację na mapie!
                 </MapSubtitle>
               </MapTitleSubtitle>
               <MapButtons>
@@ -55,7 +47,6 @@ const MapLayout = (props: Props) => {
         </MapContent>
 
       </MapSection>
-    </Fragment>
   );
 };
 

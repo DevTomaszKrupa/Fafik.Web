@@ -78,6 +78,25 @@ const getTheme = (clientPath: string) => ({
           name: 'Tort'
         },
       ]
+    },
+    additionalInfo: {
+      infoCards: [
+        {
+          header: 'nocleg',
+          description: 'Różana weranda, ul. Skłodowskiej-Curie 21 30-315 Dołek',
+          additionalInfo: 'Drodzy Goście, chcąc zarezerwować pokój, prosimy skontaktować się z nami.'
+        },
+        {
+          header: 'nocleg',
+          description: 'Różana weranda, ul. Skłodowskiej-Curie 21 30-315 Dołek',
+          additionalInfo: 'Drodzy Goście, chcąc zarezerwować pokój, prosimy skontaktować się z nami.'
+        },
+        {
+          header: 'nocleg',
+          description: 'Różana weranda, ul. Skłodowskiej-Curie 21 30-315 Dołek',
+          additionalInfo: 'Drodzy Goście, chcąc zarezerwować pokój, prosimy skontaktować się z nami.'
+        }
+      ]
     }
   }
 });

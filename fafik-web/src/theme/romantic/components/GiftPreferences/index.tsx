@@ -1,13 +1,8 @@
 import React, { Fragment } from 'react';
 
-import components from './GiftPreferences.styles';
-import { RomanticState } from '../../../../../store/romantic/theme/reducers';
+import components from './styles';
 
-type Props = {
-  romanticState: RomanticState;
-};
-
-const GiftPreferencesLayout = (props: Props) => {
+const GiftPreferencesLayout = () => {
   const {
     GiftSection,
     GiftSectionFrame,
@@ -15,9 +10,6 @@ const GiftPreferencesLayout = (props: Props) => {
     GiftRebus,
     GiftRebuses,
   } = components;
-
-
-  const { } = props.romanticState;
 
   return (
     <Fragment>

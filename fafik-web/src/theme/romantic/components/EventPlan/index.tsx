@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import components from './styles';
 import { RomanticPlanProps } from '../../models';
@@ -26,8 +26,7 @@ const EventPlanLayout = (props: RomanticPlanProps) => {
   const { events } = props;
 
   return (
-    <Fragment>
-      <EventPlanSection>
+      <EventPlanSection id="plan-wydarzenia">
         <PlanHeader>
           <PlanDecoration>
             <PlanDecorationImage src="https://i.imgur.com/7ykWG81.png" />
@@ -47,10 +46,8 @@ const EventPlanLayout = (props: RomanticPlanProps) => {
               </EventBottomElement>
             </EventElement>)}
         </EventPlan>
+        <Tooltip />
       </EventPlanSection>
-
-      <Tooltip />
-    </Fragment>
   );
 };
 

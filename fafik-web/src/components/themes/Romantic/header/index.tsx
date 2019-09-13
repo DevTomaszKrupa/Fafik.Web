@@ -24,9 +24,22 @@ const HeaderLayout = () => {
       case 'rsvp':
         openRsvpDialog();
         break;
+      case 'o-nas':
+      case 'galeria':
+      case 'blog':
+      case 'dojazd':
+      case 'playlista':
+      case 'info-dodatkowe':
+      case 'plan-wydarzenia':
+        scrollToDiv(path);
+        break;
     }
   };
-
+  const scrollToDiv = (divId: string) => {
+    const element = document.getElementById(divId);
+    if (element)
+      element.scrollIntoView();
+  };
 
   const dateString: string = moment(header.weddingDate).format('DD.MM.YYYY');
   return (

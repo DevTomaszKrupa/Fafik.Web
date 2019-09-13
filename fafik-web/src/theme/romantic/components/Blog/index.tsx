@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import moment from 'moment';
 
 import components from './styles';
@@ -13,8 +13,7 @@ const BlogLayout = (props: RomanticBlogProps) => {
   const { header, subtitle, posts, showMore } = props;
 
   return (
-    <Fragment>
-      <BlogSection>
+      <BlogSection id="blog">
         <BlogSectionFrame>
           <BlogPanel>
             <Title color="#0E0E06"> {header} </Title>
@@ -36,7 +35,6 @@ const BlogLayout = (props: RomanticBlogProps) => {
           </BlogPanel>
         </BlogSectionFrame>
       </BlogSection>
-    </Fragment>
   );
 };
 

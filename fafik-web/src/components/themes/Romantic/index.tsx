@@ -30,21 +30,29 @@ const RomanticLayout = () => {
 
   return (
     <Fragment>
+
       <Header />
       <DoubleLineTheme />
+
       <AboutUs />
       <DoubleLineTheme />
+
       <Quote />
       <DoubleLineTheme />
+
       <Gallery />
       <Blog />
       <DoubleLineTheme />
+
       <Map />
       <DoubleLineTheme />
+
       <EventPlan />
       <DoubleLineTheme />
+
       <GiftPreferences />
       <DoubleLineTheme />
+
       <Music />
       <DoubleLineTheme />
 

@@ -9,21 +9,19 @@ const AboutUsLayout = (props: RomanticAboutUsProps) => {
   const { aboutUsPhoto, textWelcome, aboutUs } = props;
 
   return (
-    <Fragment>
-      <AboutUsBox>
-        <AboutUsPhotoBox>
-          <AboutUsPhotoFrame>
-            <AboutUsPhoto aboutUsImg={aboutUsPhoto}>
-            </AboutUsPhoto>
-          </AboutUsPhotoFrame>
-        </AboutUsPhotoBox>
-        <AboutBoxText>
-          <TextWelcome> {textWelcome} </TextWelcome>
-          <AboutUs> {aboutUs}</AboutUs>
-          <ToRSVPButton> potwierdź obecność> </ToRSVPButton>
-        </AboutBoxText>
-      </AboutUsBox>
-    </Fragment>
+    <AboutUsBox id="o-nas">
+      <AboutUsPhotoBox>
+        <AboutUsPhotoFrame>
+          <AboutUsPhoto aboutUsImg={aboutUsPhoto}>
+          </AboutUsPhoto>
+        </AboutUsPhotoFrame>
+      </AboutUsPhotoBox>
+      <AboutBoxText>
+        <TextWelcome> {textWelcome} </TextWelcome>
+        <AboutUs> {aboutUs}</AboutUs>
+        <ToRSVPButton> potwierdź obecność> </ToRSVPButton>
+      </AboutBoxText>
+    </AboutUsBox>
   );
 };
 

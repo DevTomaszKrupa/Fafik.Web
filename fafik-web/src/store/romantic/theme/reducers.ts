@@ -1,4 +1,4 @@
-import { RomanticHeader, RomanticAboutUs, RomanticGallery, RomanticQuoteSection } from './types';
+import { RomanticHeader, RomanticGallery, RomanticQuoteSection } from './types';
 import { Reducer } from 'redux';
 
 import { Action } from '../../actions';
@@ -8,6 +8,7 @@ import {
   GET_ROMANTIC_THEME_SUCCESS,
   GET_ROMANTIC_THEME_FAILURE
 } from './consts';
+import { RomanticAboutUsProps } from '../../../theme/romantic/models';
 
 interface SiteItem {
   name: string;
@@ -19,7 +20,7 @@ export type RomanticState = {
   isLoading: boolean;
 
   header: RomanticHeader;
-  aboutUs: RomanticAboutUs;
+  aboutUs: RomanticAboutUsProps;
   quoteSection: RomanticQuoteSection;
   gallery: RomanticGallery;
 };
@@ -31,7 +32,7 @@ const initialState: RomanticState = {
     leftMenuItems: [] as SiteItem[],
     rightMenuItems: [] as SiteItem[]
   } as RomanticHeader,
-  aboutUs: {} as RomanticAboutUs,
+  aboutUs: {} as RomanticAboutUsProps,
   quoteSection: {} as RomanticQuoteSection,
   gallery: {} as RomanticGallery
 };

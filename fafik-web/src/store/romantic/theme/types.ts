@@ -12,11 +12,6 @@ export interface RomanticHeader {
   headerQuote: string;
 }
 
-export interface RomanticAboutUs {
-  aboutUsPhoto: string;
-  textWelcome: string;
-  aboutUs: string;
-}
 
 export interface RomanticQuoteSection {
   quote: string;

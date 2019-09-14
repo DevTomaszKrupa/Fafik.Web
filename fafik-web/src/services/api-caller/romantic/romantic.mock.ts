@@ -43,16 +43,19 @@ const getTheme = (clientPath: string) => ({
       subtitle: 'Są tu nasze wpisy kierowane do Was, naszych najdroższych.',
       posts: [
         {
+          postId: 1,
           image: `url("https://images.unsplash.com/photo-1553013983-15241ab69e57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80")`,
           date: new Date(2018, 1, 1, 12, 0, 0),
           header: 'Przygotowujemy zaproszenia, zobaczcie!'
         },
         {
+          postId: 2,
           image: `url("https://images.unsplash.com/photo-1553013983-15241ab69e57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80")`,
           date: new Date(2018, 1, 1, 12, 0, 0),
           header: 'Przygotowujemy zaproszenia, zobaczcie!'
         },
         {
+          postId: 3,
           image: `url("https://images.unsplash.com/photo-1553013983-15241ab69e57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80")`,
           date: new Date(2018, 1, 1, 12, 0, 0),
           header: 'Przygotowujemy zaproszenia, zobaczcie!'

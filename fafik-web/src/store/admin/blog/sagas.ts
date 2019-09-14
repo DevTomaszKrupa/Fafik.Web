@@ -7,12 +7,12 @@ import { Action } from '../../actions';
 function* adminBlogGetPosts(action: Action): any {
   try {
     const response = yield call(apiCaller.admin.getBlogPosts);
-    yield put({ type: 'ADMIN_BLOCK_GET_POSTS_SUCCESS', payload: response.data });
+    yield put({ type: 'ADMIN_BLOG_GET_POSTS_SUCCESS', payload: response.data });
   } catch (error) {
-    yield put({ type: 'ADMIN_BLOCK_GET_POSTS_FAILURE' });
+    yield put({ type: 'ADMIN_BLOG_GET_POSTS_FAILURE' });
   }
 }
 
 export function* adminBlogGetPostsRootSaga(): any {
-  yield takeLatest('ADMIN_BLOCK_GET_POSTS_STARTED', adminBlogGetPosts);
+  yield takeLatest('ADMIN_BLOG_GET_POSTS_STARTED', adminBlogGetPosts);
 }

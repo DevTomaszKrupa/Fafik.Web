@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
 export default {
+  BlogContent: styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  `,
 
   AdminCheckbox: styled.div`
   height: 2rem;
@@ -14,8 +19,23 @@ export default {
 
   Checkbox: styled.input` `,
 
+  CheckboxPosts: styled.input``,
+
   AdminEditButtonsInputs: styled.div`
   display: flex;
+  justify-content: space-between;
+  width: 75%;
+  padding: 2rem 0;
+  `,
+
+  ButtonsPart1: styled.div`
+  display: flex;
+  `,
+
+  ButtonsPart2: styled.div`
+  display: flex;
+  width: 65%;
+  justify-content: space-between;
   `,
 
   SearchBox: styled.div`
@@ -29,6 +49,7 @@ export default {
   padding-left: 1rem;
   font-family: 'Josefin Sans';
   font-size: 1.1rem;
+  
 
   &: focus{
     outline: none;
@@ -41,36 +62,61 @@ export default {
   border: 0.1rem solid #E3DBD5;
   background-color: #FDFBFD;
   cursor: pointer;
-  
+
+  &: hover{
+    background-color: #DED4CC;
+    color: #FDFBFD;
+  }
   &: focus{
     outline: none;
   }
   `,
 
+  BlogPostSection: styled.div`
+  display: flex;
+  `,
+
   TableCheckbox: styled.div`
-  width: 5rem;
-  height: 5rem;
-  border-top: 0.1rem solid #E3DBD5;
-  border-bottom: 0.1rem solid #E3DBD5;
-  border-right: 0.1rem solid #E3DBD5;
+  width: 4rem;
+  height: 4rem;
+  border-top: 0.15rem solid #E3DBD5;
+  border-bottom: 0.15rem solid #E3DBD5;
+  border-right: 0.15rem solid #E3DBD5;
   display: flex;
   justify-content: center;
   align-items: center;
   `,
 
   TableInfoBox: styled.div`
-  width: 30rem;
-  height: 5rem;
-  border-top: 0.1rem solid #E3DBD5;
-  border-bottom: 0.1rem solid #E3DBD5;
+  width: 55rem;
+  height: 4rem;
+  border-top: 0.15rem solid #E3DBD5;
+  border-bottom: 0.15rem solid #E3DBD5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Josefin Sans';
   `,
 
-  DateTitleBox: styled.div``,
+  DateTitleBox: styled.div`
+  padding-left: 1rem;
+  `,
 
-  PostDate: styled.div``,
+  PostDate: styled.div`
+  color: #DFD6CF;
+  font-weight: 600;
+  padding-bottom: 0.3rem;
+  `,
 
-  PostTitle: styled.div``,
+  PostTitle: styled.div`
+  font-size: 1.15rem;
+  `,
 
-  OptionBox: styled.div``,
+  OptionBox: styled.div`
+  font-size: 0.85rem;
+  color: #DFD6CF;
+  font-weight: 800;
+  cursor: pointer;
+  `,
 
 };

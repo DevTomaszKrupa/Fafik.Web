@@ -7,6 +7,8 @@ export default {
     height: 5rem;
     display: flex;
     justify-content: center;
+    position: sticky;
+    top: 0;
   `,
 
   HeaderLeftSide: styled.div`

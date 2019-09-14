@@ -8,12 +8,16 @@ export default {
 
   AButton: styled.button`
   font-family: 'Josefin Sans';
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   height: 2.2rem;
   padding: 0.3rem 1.3rem;
   display: flex;
   align-items: center;
-  
+  cursor: pointer;
+  &: focus{
+    outline: none;
+  }
+
   ${(props: ButtonProps) => props.buttonStyle === 'gray' && `
     background-color: #FDFBFD;
     color: #000000;
@@ -29,6 +33,7 @@ export default {
     background-color: #E3B7AC;
     color: #FFFFFF;
     font-weight: 800;
+    border: none;
 
     &: hover{
       background-color: #D6A092;

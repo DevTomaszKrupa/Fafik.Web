@@ -10,6 +10,7 @@ import AdminTopBar from '../AdminPage/AdminTopBar';
 import AdminThemeEditor from '../../Admin/ThemeEditor';
 import AdminThemeEditorSidePanelComponent from '../ThemeEditor/SidePanel';
 import BaseAdminSidePanel from './AdminSidePanel';
+import ChooseTheme from '../ChooseTheme';
 import { adminSidePanelPaths } from './consts';
 
 const AdminPanelComponent = () => {
@@ -30,6 +31,7 @@ const AdminPanelComponent = () => {
             <AdminMain>
                 <AdminSidePanel>
                     <AuthenticatedRoute exact path="/admin" component={BaseAdminSidePanel} />
+                    <AuthenticatedRoute exact path="/admin/wybierz-motyw" component={BaseAdminSidePanel} />
                     <AuthenticatedRoute exact path={adminSidePanelPaths.pages} component={BaseAdminSidePanel} />
                     <AuthenticatedRoute exact path={adminSidePanelPaths.blog} component={BaseAdminSidePanel} />
                     <AuthenticatedRoute exact path={adminSidePanelPaths.playlist} component={BaseAdminSidePanel} />
@@ -41,7 +43,8 @@ const AdminPanelComponent = () => {
                     <AuthenticatedRoute exact path={adminSidePanelPaths.pages} component={AdminMySites} />
                     <AuthenticatedRoute exact path={adminSidePanelPaths.config} component={AdminThemeEditor} />
                     <AuthenticatedRoute exact path={adminSidePanelPaths.blog} component={AdminBlog} />
-                    <AuthenticatedRoute exact path={`{adminSidePanelPaths.pages}/:clientPath`} component={AdminSiteEditor} />
+                    <AuthenticatedRoute exact path="/admin/wybierz-motyw" component={ChooseTheme} />
+                    <AuthenticatedRoute exact path={`${adminSidePanelPaths.pages}/:clientPath`} component={AdminSiteEditor} />
                 </AdminMainPanel>
             </AdminMain>
         </Fragment>);

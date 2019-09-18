@@ -49,7 +49,6 @@ export default {
   padding-left: 1rem;
   font-family: 'Josefin Sans';
   font-size: 1.1rem;
-  
 
   &: focus{
     outline: none;

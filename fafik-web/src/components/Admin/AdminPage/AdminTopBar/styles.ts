@@ -36,11 +36,6 @@ export default {
   display: flex;
   `,
 
-  NotificationsIcon: styled.img`
-  height: 2rem;
-  width: auto;
-  `,
-
   NotificationsQuantity: styled.div`
   background-color: #A14848;
   font-family: 'Josefin Sans';
@@ -52,23 +47,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: -0.3rem;
-  `,
-
-  ProfilBox: styled.div`
-  border: 0.1rem solid #F2EEE8;
-  display: flex;
-  align-items: center;
-  padding: 0.6rem 1rem;
-  `,
-
-  ProfilAvatar: styled.img`
-  height: 3rem;
-  width: auto;
-  `,
-
-  ProfilMoreButton: styled.img`
-  height: 0.8rem;
-  width: auto;
+  margin-left: -0.8rem;
+  font-size: 0.9rem;
+  margin-right: 0.6rem;
   `,
 };

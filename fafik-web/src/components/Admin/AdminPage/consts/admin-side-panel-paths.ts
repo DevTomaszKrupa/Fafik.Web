@@ -6,6 +6,7 @@ const adminSidePanelPaths = {
   stats: '/admin/statystyki',
   subscription: '/admin/abonament',
   pages: '/admin/pages',
+  gallery: '/admin/galeria',
 };
 
 export { adminSidePanelPaths };

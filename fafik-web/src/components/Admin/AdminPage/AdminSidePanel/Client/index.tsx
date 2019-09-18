@@ -61,6 +61,8 @@ const AdminSidePanelClientComponent = (props: Props) => {
                 active={history.location.pathname === adminSidePanelPaths.guestList}> Lista gości </SidePanelItem>
             <SidePanelItem onClick={() => OnItemClicked(adminSidePanelPaths.stats)}
                 active={history.location.pathname === adminSidePanelPaths.stats}> Statystyki </SidePanelItem>
+            <SidePanelItem onClick={() => OnItemClicked(adminSidePanelPaths.gallery)}
+                active={history.location.pathname === adminSidePanelPaths.gallery}> Galeria </SidePanelItem>
             <SidePanelPause />
             <SidePanelPremiumItem> Abonament </SidePanelPremiumItem>
         </Fragment>);

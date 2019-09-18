@@ -3,10 +3,11 @@ import { useDispatch } from 'react-redux';
 
 import components from './styles';
 import { history } from '../../../../helpers';
+import AdminMenu from '../../shared/AdminMenu';
+import NotificationsIcon from '@material-ui/icons/Notifications';
 
 const AdminPanelComponent = () => {
     const dispatch = useDispatch();
-    const logout = () => dispatch({ type: 'ADMIN_LOGOUT' });
     const getAdminClients = () => dispatch({ type: 'GET_ADMIN_CLIENTS_STARTED' });
 
 
@@ -20,16 +21,11 @@ const AdminPanelComponent = () => {
         HeaderLogo,
         AdminLogo,
         HeaderRightSide,
-        NotificationsIcon,
         NotificationsQuantity,
         NotificationBox,
-        ProfilBox,
-        ProfilAvatar,
-        ProfilMoreButton,
     } = components;
 
     const onLogoClicked = () => history.push('/admin');
-    const onLogoutClicked = () => logout();
 
     return (
         <AdminPanelHeader>
@@ -39,14 +35,10 @@ const AdminPanelComponent = () => {
             </HeaderLogo>
             <HeaderRightSide>
                 <NotificationBox>
-                    <NotificationsIcon src="http://localhost/Fafik/app/bell.png" />
+                    <NotificationsIcon htmlColor="#F2EEE8" fontSize="large" />
                     <NotificationsQuantity>1</NotificationsQuantity>
                 </NotificationBox>
-                <ProfilBox>
-                    <ProfilAvatar src="http://localhost/Fafik/app/user-avatar.png" />
-                    <ProfilMoreButton src="http://localhost/Fafik/app/arrow-down.png" />
-                </ProfilBox>
-                <button onClick={onLogoutClicked}>Wyloguj</button>
+                <AdminMenu />
             </HeaderRightSide>
         </AdminPanelHeader>);
 };

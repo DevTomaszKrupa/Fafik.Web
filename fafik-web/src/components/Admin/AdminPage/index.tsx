@@ -37,11 +37,11 @@ const AdminPanelComponent = () => {
                     <AuthenticatedRoute exact path={adminSidePanelPaths.playlist} component={BaseAdminSidePanel} />
                     <AuthenticatedRoute exact path={adminSidePanelPaths.guestList} component={BaseAdminSidePanel} />
                     <AuthenticatedRoute exact path={adminSidePanelPaths.stats} component={BaseAdminSidePanel} />
-                    <AuthenticatedRoute exact path={adminSidePanelPaths.config} component={AdminThemeEditorSidePanelComponent} />
+                    <AuthenticatedRoute exact path={`${adminSidePanelPaths.config}/:clientPath`} component={AdminThemeEditorSidePanelComponent} />
                 </AdminSidePanel>
                 <AdminMainPanel>
                     <AuthenticatedRoute exact path={adminSidePanelPaths.pages} component={AdminMySites} />
-                    <AuthenticatedRoute exact path={adminSidePanelPaths.config} component={AdminThemeEditor} />
+                    <AuthenticatedRoute exact path={`${adminSidePanelPaths.config}/:clientPath`} component={AdminThemeEditor} />
                     <AuthenticatedRoute exact path={adminSidePanelPaths.blog} component={AdminBlog} />
                     <AuthenticatedRoute exact path="/admin/wybierz-motyw" component={ChooseTheme} />
                     <AuthenticatedRoute exact path={`${adminSidePanelPaths.pages}/:clientPath`} component={AdminSiteEditor} />

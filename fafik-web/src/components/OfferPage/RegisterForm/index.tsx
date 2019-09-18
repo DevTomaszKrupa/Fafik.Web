@@ -15,7 +15,7 @@ const RegisterComponent = (props: Props & InjectedFormProps<{}, Props>) => {
   const { submitRegisterForm } = props;
 
   const handleSubmit = (e: any) => {
-    e.preventDefault();console.log(values);
+    e.preventDefault();
     submitRegisterForm(values);
   };
 

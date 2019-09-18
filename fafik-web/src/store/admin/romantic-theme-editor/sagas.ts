@@ -6,7 +6,7 @@ import { Action } from '../../actions';
 
 function* adminRomanticThemeEditor(action: Action): any {
   try {
-    const theme = yield call(apiCaller.admin.getRomanticEditorTheme);
+    const theme = yield call(apiCaller.romantic.getTheme, action.payload);
     yield put({ type: 'ROMANTIC_THEME_EDITOR_GET_THEME_SUCCESS', payload: theme });
   } catch (error) {
     yield put({ type: 'ROMANTIC_THEME_EDITOR_GET_THEME_FAILURE' });

@@ -3,7 +3,7 @@ import { LoginRequest } from './../../../models';
 const login = (request: LoginRequest) =>
   ({ data: { email: 'kasia@daniel.pl', token: 'tosadasdsamdsasfjfsdaf3231ewd9k12' } });
 
-const getEditorTheme = () =>
+const getEditorTheme = (clientName: string) =>
   ({ data: { theme: 'romantic' } });
 
 const getRomanticEditorTheme = () =>

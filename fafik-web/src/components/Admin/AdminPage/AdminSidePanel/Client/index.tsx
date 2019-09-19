@@ -54,7 +54,7 @@ const AdminSidePanelClientComponent = (props: Props) => {
             <SidePanelPause />
             <SidePanelItem onClick={OnConfigurationClicked} > Konfiguruj </SidePanelItem>
             <SidePanelItem onClick={() => OnItemClicked(adminSidePanelPaths.blog)}
-                active={history.location.pathname === adminSidePanelPaths.blog}> Blog </SidePanelItem>
+                active={history.location.pathname === (adminSidePanelPaths.blog || adminSidePanelPaths.blogNewPost)}> Blog </SidePanelItem>
             <SidePanelItem onClick={() => OnItemClicked(adminSidePanelPaths.playlist)}
                 active={history.location.pathname === adminSidePanelPaths.playlist}> Playlista </SidePanelItem>
             <SidePanelItem onClick={() => OnItemClicked(adminSidePanelPaths.guestList)}

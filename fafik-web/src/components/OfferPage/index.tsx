@@ -20,7 +20,6 @@ const OfferPageComponent = () => {
       ...values,
       theme: selectedTheme
     };
-    console.log(request);
     submitRegisterForm(request);
   };
 

@@ -35,7 +35,7 @@ const AdminSidePanelClientComponent = (props: Props) => {
 
     const OnConfigurationClicked = () => {
         openAdminThemeEditor();
-        history.push(adminSidePanelPaths.config);
+        history.push(`${adminSidePanelPaths.config}/${client.name}`);
     };
 
     return (

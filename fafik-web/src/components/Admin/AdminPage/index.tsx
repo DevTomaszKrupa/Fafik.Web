@@ -42,13 +42,17 @@ const AdminPanelComponent = () => {
                     <AuthenticatedRoute exact path={adminSidePanelPaths.playlist} component={BaseAdminSidePanel} />
                     <AuthenticatedRoute exact path={adminSidePanelPaths.guestList} component={BaseAdminSidePanel} />
                     <AuthenticatedRoute exact path={adminSidePanelPaths.stats} component={BaseAdminSidePanel} />
+                    <AuthenticatedRoute exact path={`${adminSidePanelPaths.config}/:clientPath`} component={AdminThemeEditorSidePanelComponent} />
                     <AuthenticatedRoute exact path={adminSidePanelPaths.gallery} component={BaseAdminSidePanel} />
+<<<<<<< HEAD
                     <AuthenticatedRoute exact path={adminSidePanelPaths.blogNewPost} component={BaseAdminSidePanel} />
                     <AuthenticatedRoute exact path={adminSidePanelPaths.config} component={AdminThemeEditorSidePanelComponent} />
+=======
+>>>>>>> 6ed40ae85eaf907e9b53b58029b9bd3bb23a6990
                 </AdminSidePanel>
                 <AdminMainPanel>
                     <AuthenticatedRoute exact path={adminSidePanelPaths.pages} component={AdminMySites} />
-                    <AuthenticatedRoute exact path={adminSidePanelPaths.config} component={AdminThemeEditor} />
+                    <AuthenticatedRoute exact path={`${adminSidePanelPaths.config}/:clientPath`} component={AdminThemeEditor} />
                     <AuthenticatedRoute exact path={adminSidePanelPaths.blog} component={AdminBlog} />
                     <AuthenticatedRoute exact path={adminSidePanelPaths.guestList} component={AdminGuestList} />
                     <AuthenticatedRoute exact path={adminSidePanelPaths.stats} component={AdminStats} />

@@ -5,11 +5,14 @@ import components from './styles';
 import RomanticUsualHeader from '../../themes/Romantic/Header/Usual';
 import { AppState } from '../../../store/reducers';
 
+type Props  = {
+    clientPath: string;
+};
 
-const AdminRomanticSiteEditorComponent = () => {
+const AdminRomanticSiteEditorComponent = (props: Props) => {
 
     const dispatch = useDispatch();
-    const getThemeData = () => dispatch({ type: 'ROMANTIC_THEME_EDITOR_GET_THEME_STARTED' });
+    const getThemeData = () => dispatch({ type: 'ROMANTIC_THEME_EDITOR_GET_THEME_STARTED', payload: props.clientPath });
     const adminRomanticThemeEditorState = useSelector((state: AppState) => state.adminRomanticThemeEditorState);
     const { header } = adminRomanticThemeEditorState;
 

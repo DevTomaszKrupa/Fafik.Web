@@ -18,7 +18,11 @@ const HomeComponent = () => {
     MainLogo,
     MainMenu,
     MenuItem,
-    VerticalLine
+    VerticalLine,
+    BannerBox,
+    BannerInfoBox,
+    BannerInfoText,
+    BannerInfoButton,
   } = components;
 
   return (
@@ -44,8 +48,17 @@ const HomeComponent = () => {
         <MenuItem>FAQ</MenuItem> <VerticalLine />
         <MenuItem>KONTAKT</MenuItem> <VerticalLine />
         <MenuItem>LOGOWANIE</MenuItem>
-
       </MainMenu>
+
+      <BannerBox>
+        <BannerInfoBox>
+          <BannerInfoText>
+            WYJĄTKOWE STRONY ŚLUBNE JUŻ OD <b>49ZŁ/MIES.</b> ZASKOCZ SWOICH GOŚCI NOWĄ FORMĄ ORGANIZACJI WYDARZENIA!
+          </BannerInfoText>
+          <BannerInfoButton>ZOBACZ PLANY ></BannerInfoButton>
+
+        </BannerInfoBox>
+      </BannerBox>
       {/* <div style={{fontSize: '70px'}}>
     MIŁOŚĆ WIERNOŚĆ W ZAKOPANEM
     <button onClick={() => history.push('/oferta')}>KUP SOBIE STRONE</button>

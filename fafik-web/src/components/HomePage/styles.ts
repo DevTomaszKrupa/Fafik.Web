@@ -38,6 +38,16 @@ export default {
 
   FAwesomeIcon: styled(FontAwesomeIcon)`
   cursor: pointer;
+
+  &:hover {
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+
+  @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+  @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+  @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+  }
   `,
 
   TopBartLeftTitle: styled.div`
@@ -84,6 +94,7 @@ export default {
   font-family: 'Josefin Sans';
   font-size: 0.8rem;
   letter-spacing: 0.1rem;
+  color: #253535;
 
   &: hover{
     text-decoration: underline;
@@ -91,7 +102,57 @@ export default {
   `,
 
   VerticalLine: styled.div`
-  border-left: 0.08rem solid #000000;
+  border-left: 0.08rem solid #253535;
   height: 1rem;
   `,
+
+  BannerBox: styled.div`
+  background-image: url("http://localhost/Fafik/App/main-banner.jpg");
+  height: 50%;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position-y: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  `,
+
+  BannerInfoBox: styled.div`
+  background-color: rgba(255,255,255,0.5);
+  height: 71%;
+  width: 48%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Josefin Sans';
+  letter-spacing: 0.17rem;
+  `,
+
+  BannerInfoText: styled.div`
+  width: 74%;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 2.4rem;
+  color: #253535;
+  `,
+
+  BannerInfoButton: styled.button`
+  width: 51%;
+  height: 17%;
+  background-color: #FDFCFD;
+  border: 0.2rem solid #253535;
+  margin-top: 1.3rem;
+  font-weight: 700;
+  font-family: 'Josefin Sans';
+  letter-spacing: 0.17rem;
+  font-size: 0.97rem;
+  color: #253535;
+  cursor: pointer;
+
+  &: focus{
+    outline: none;
+  }
+  `,
+
 };

@@ -3,12 +3,12 @@ import { Reducer } from 'redux';
 
 
 export type AdminThemeEditorState = {
-  theme: string;
+  theme: number;
   isLoading: boolean;
 };
 
 const initialState: AdminThemeEditorState = {
-  theme: '',
+  theme: 0,
   isLoading: false
 };
 

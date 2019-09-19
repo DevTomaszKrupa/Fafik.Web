@@ -12,7 +12,7 @@ export default {
   `,
 
   HeaderLeftSide: styled.div`
-    flex-grow: 1;
+    width: 33%;
   `,
 
   HeaderLogo: styled.div`

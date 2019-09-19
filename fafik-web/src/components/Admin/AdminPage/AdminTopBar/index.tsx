@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import components from './styles';
 import { history } from '../../../../helpers';
 import AdminMenu from '../../shared/AdminMenu';
-import NotificationsIcon from '@material-ui/icons/Notifications';
+import NotificationButton from '../../shared/AdminNotificationButton';
 
 const AdminPanelComponent = () => {
     const dispatch = useDispatch();
@@ -21,8 +21,6 @@ const AdminPanelComponent = () => {
         HeaderLogo,
         AdminLogo,
         HeaderRightSide,
-        NotificationsQuantity,
-        NotificationBox,
     } = components;
 
     const onLogoClicked = () => history.push('/admin');
@@ -34,10 +32,7 @@ const AdminPanelComponent = () => {
                 <AdminLogo onClick={onLogoClicked} src="http://localhost/Fafik/app/logo.png" />
             </HeaderLogo>
             <HeaderRightSide>
-                <NotificationBox>
-                    <NotificationsIcon htmlColor="#F2EEE8" fontSize="large" />
-                    <NotificationsQuantity>1</NotificationsQuantity>
-                </NotificationBox>
+                <NotificationButton />
                 <AdminMenu />
             </HeaderRightSide>
         </AdminPanelHeader>);

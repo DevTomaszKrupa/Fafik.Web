@@ -1,5 +1,6 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import moment from 'moment';
+import { history } from '../../../helpers';
 
 import { useDocumentTitle } from '../../../shared';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,6 +9,7 @@ import AdminTitleSection from '../shared/AdminTitleSection';
 import AdminButton from '../shared/AdminButton';
 import { BlogPost } from '../../../store/admin/blog/reducers';
 import components from './styles';
+import { adminSidePanelPaths } from '../AdminPage/consts';
 
 const AdminBlogComponent = () => {
     useDocumentTitle('Blog');
@@ -24,6 +26,10 @@ const AdminBlogComponent = () => {
 
     const CheckSingle = (post: BlogPost) => {
         dispatch({ type: 'ADMIN_BLOG_CHANGE_SINGLE_POST_CHECK', payload: post.postId });
+    };
+
+    const OnNewPostClick = () => {
+        history.push(adminSidePanelPaths.blogNewPost);
     };
 
     const {
@@ -61,7 +67,7 @@ const AdminBlogComponent = () => {
                                 <AdminButton buttonStyle="gray" buttonText="Usuń" />
                             </ButtonsPart1>
                             <ButtonsPart2>
-                                <AdminButton buttonStyle="pink" buttonText="Nowy post" />
+                                <AdminButton buttonStyle="pink" buttonText="Nowy post" onClick={OnNewPostClick} />
                                 <SearchBox>
                                     <SearchInput />
                                     <SearchButton></SearchButton>

@@ -12,7 +12,7 @@ type Props  = {
 const AdminRomanticSiteEditorComponent = (props: Props) => {
 
     const dispatch = useDispatch();
-    const getThemeData = () => dispatch({ type: 'ROMANTIC_THEME_EDITOR_GET_THEME_STARTED', payload: props.clientPath });
+    const getThemeData = () => dispatch({ type: 'ROMANTIC_THEME_EDITOR_GET_THEME_STARTED', payload: { clientPath: props.clientPath, sitePath: 'home' }});
     const adminRomanticThemeEditorState = useSelector((state: AppState) => state.adminRomanticThemeEditorState);
     const { header } = adminRomanticThemeEditorState;
 

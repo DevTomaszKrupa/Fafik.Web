@@ -29,6 +29,6 @@ const AdminThemeEditorComponent = (props: RouteComponentProps<{ clientPath: stri
 export default AdminThemeEditorComponent;
 
 
-const ThemeEditors: { [key: string]: (clientPath: string) => JSX.Element } = {
-    romantic: (clientPath) => <RomanticSiteEditor clientPath={clientPath} />
+const ThemeEditors: { [key: number]: (clientPath: string) => JSX.Element } = {
+    1: (clientPath) => <RomanticSiteEditor clientPath={clientPath} />
 };

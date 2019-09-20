@@ -23,6 +23,11 @@ const HomeComponent = () => {
     BannerInfoBox,
     BannerInfoText,
     BannerInfoButton,
+    MeetUsSection,
+    MeetUsBox,
+    MeetUsText,
+    MeetUsTitle,
+    MeetUsSignatures,
   } = components;
 
   return (
@@ -56,9 +61,22 @@ const HomeComponent = () => {
             WYJĄTKOWE STRONY ŚLUBNE JUŻ OD <b>49ZŁ/MIES.</b> ZASKOCZ SWOICH GOŚCI NOWĄ FORMĄ ORGANIZACJI WYDARZENIA!
           </BannerInfoText>
           <BannerInfoButton>ZOBACZ PLANY ></BannerInfoButton>
-
         </BannerInfoBox>
       </BannerBox>
+
+      <MeetUsSection>
+        <MeetUsBox>
+          <MeetUsTitle>KOCHANI NARZECZENI</MeetUsTitle>
+          <MeetUsText>WITAJCIE NA NASZEJ STRONIE, BARDZO SIĘ CIESZYMY,
+            ŻE TU TRAFILIŚCIE! WIEMY JAK WYMAGAJĄCA JEST ORGANIZACJA WESELA,
+            DLATEGO POŚWIĘCILIŚMY WIELE CZASU NAD TYM, ABYŚCIE MOGLI KOMFORTOWO
+            I WEDŁUG SWOJEJ WIZJI STWORZYĆ WYMARZONĄ STRONĘ ŚLUBNĄ, KTÓRA WAM TO UŁATWI.
+            PRZEDSTAWIAMY WAM NASZ PORTAL, MAMY NADZIEJĘ, ŻE WAM SIĘ SPODOBA!
+            </MeetUsText>
+          <MeetUsSignatures>Klaudia i Tomek ^</MeetUsSignatures>
+        </MeetUsBox>
+
+      </MeetUsSection>
       {/* <div style={{fontSize: '70px'}}>
     MIŁOŚĆ WIERNOŚĆ W ZAKOPANEM
     <button onClick={() => history.push('/oferta')}>KUP SOBIE STRONE</button>

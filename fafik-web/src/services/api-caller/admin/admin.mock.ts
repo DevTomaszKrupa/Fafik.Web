@@ -4,7 +4,7 @@ const login = (request: LoginRequest) =>
   ({ data: { email: 'kasia@daniel.pl', token: 'tosadasdsamdsasfjfsdaf3231ewd9k12' } });
 
 const getEditorTheme = (clientName: string) =>
-  ({ data: { theme: 'romantic' } });
+  ({ data: { theme: 1 } });
 
 const getRomanticEditorTheme = () =>
   ({

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import components from './styles';
-import RomanticUsualHeader from '../../themes/Romantic/Header/Usual';
+import RomanticUsualHeader from '../../../theme/romantic/components/Header/Usual';
 import { AppState } from '../../../store/reducers';
 
 type Props  = {

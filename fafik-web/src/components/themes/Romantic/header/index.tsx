@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
+import { useSelector, useDispatch } from 'react-redux';
 
-import Sticky from './Sticky';
-import Usual from './Usual';
 
 import components from './styles';
-import { useSelector, useDispatch } from 'react-redux';
 import { AppState } from '../../../../store/reducers';
+
+import Usual from '../../../../theme/romantic/components/Header/Usual';
+import Sticky from '../../../../theme/romantic/components/Header/Sticky';
 
 const HeaderLayout = () => {
 

@@ -192,16 +192,6 @@ export default {
 
   ButtonArrow: styled.div`
   padding: 0 0 0.1rem 0.3rem;
-  
-  // &: hover{
-  //   animation: moveArrow 2s infinite;
-  //   animation-timing-function: ease;
-  //   animation-direction: alternate-reverse;
-  //   @keyframes moveArrow {
-  //     from {left: 0px;}
-  //     to {left: 20px;}
-  //   }
-  // }
   `,
 
   MeetUsSection: styled.div`

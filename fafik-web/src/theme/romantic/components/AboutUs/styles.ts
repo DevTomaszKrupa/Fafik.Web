@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { IMAGE_STORAGE } from '../../../../styles';
 
 interface AboutUsPhotoProps {
   aboutUsImg: string;
@@ -20,7 +21,7 @@ export default {
 
   AboutUsPhoto: styled.div`
   background-image: ${(props: AboutUsPhotoProps) =>
-      `url("http://localhost/Fafik/${props.aboutUsImg}")`};
+      `url("${IMAGE_STORAGE}${props.aboutUsImg}")`};
     width: 17rem;
     height: 25rem;
     background-size: 107%;

@@ -23,6 +23,7 @@ const HomeComponent = () => {
     BannerInfoBox,
     BannerInfoText,
     BannerInfoButton,
+    ButtonArrow,
     MeetUsSection,
     MeetUsBox,
     MeetUsText,
@@ -33,13 +34,12 @@ const HomeComponent = () => {
     WhatsThisSection,
     VideoSection,
     TextSection,
-    WhatsThisVideo,
-    VideoSectionButton,
-    CornerLetter,
+    HomePageButton,
     ShortLogo,
     WhatsThisTitle,
     WhatsThisText,
-    WhatsThisButton,
+    YouTubePlayer,
+
   } = components;
 
   return (
@@ -72,7 +72,7 @@ const HomeComponent = () => {
           <BannerInfoText>
             WYJĄTKOWE STRONY ŚLUBNE JUŻ OD <b>49ZŁ/MIES.</b> ZASKOCZ SWOICH GOŚCI NOWĄ FORMĄ ORGANIZACJI WYDARZENIA!
           </BannerInfoText>
-          <BannerInfoButton onClick={() => history.push('/oferta')}>KUP STRONĘ ></BannerInfoButton>
+          <BannerInfoButton onClick={() => history.push('/oferta')}>ZRÓB STRONĘ <ButtonArrow id="arrow">></ButtonArrow></BannerInfoButton>
         </BannerInfoBox>
       </BannerBox>
 
@@ -93,21 +93,21 @@ const HomeComponent = () => {
 
       <WhatsThisSection>
         <VideoSection>
-          <WhatsThisVideo />
-          <VideoSectionButton>ZAŁÓŻ SWOJĄ STRONĘ ŚLUBNĄ ></VideoSectionButton>
-          <CornerLetter>M</CornerLetter>
+          <YouTubePlayer videoId={'HOZi1UFRYpk'} />
+          <HomePageButton backgroundColor="#BAC6B6" border="0.25rem solid #BAC6B6" color="#FFFFFF"
+            onClick={() => history.push('/oferta')}>ZAŁÓŻ SWOJĄ STRONĘ ŚLUBNĄ ></HomePageButton>
         </VideoSection>
         <TextSection>
-          <ShortLogo />
-          <WhatsThisTitle>co to jest?</WhatsThisTitle>
-          <WhatsThisText>To portal na którym narzeczeni mogą zakupić swoje miejsce w sieci
+          <ShortLogo src="http://localhost/Fafik/app/logo-short.png" />
+          <WhatsThisTitle src="http://localhost/Fafik/app/whats-this-title.png" />
+          <WhatsThisText> To portal na którym narzeczeni mogą zakupić swoje miejsce w sieci
               pod adresem (miloscwiernosc.pl/waszanazwa) na pewien okres czasu,
               dobrać szablon wykonany przez grafika i wyedytować go samodzielnie
               pod swoim kątem. Korzystają przy tym z kreatora,
               dzięki któremu możliwe jest edytowanie szablonu "na żywo".
           </WhatsThisText>
-          <WhatsThisButton>ZOBACZ, CO MOŻESZ MIEĆ NA STRONIE ></WhatsThisButton>
-          <CornerLetter>W</CornerLetter>
+          <HomePageButton backgroundColor="#FFFEFE" border="0.25rem solid #F9E2DC" color="#ECCCC4">CO MOŻESZ MIEĆ NA SWOJEJ STRONIE >
+          </HomePageButton>
         </TextSection>
       </WhatsThisSection>
     </Fragment>

@@ -82,7 +82,8 @@ export default {
 
   SidePanelPause: styled.div`
   height: 0.8rem;
-  border: 0.09rem solid #CBC3B6;
+  border-top: 0.09rem solid #CBC3B6;
+  border-bottom: 0.09rem solid #CBC3B6;
   `,
 
   SidePanelPremiumItem: styled.div`

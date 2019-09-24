@@ -155,14 +155,75 @@ export default {
   }
   `,
 
-  MeetUsSection: styled.div``,
+  MeetUsSection: styled.div`
+  flex-grow: 1;
+  height: 32rem;
+  background-color: #FDFBFD;
+  display: flex;
+  `,
 
-  MeetUsBox: styled.div``,
+  MeetUsBox: styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5.7rem 3rem 2rem 3rem;
+  align-items: center;
+  `,
 
-  MeetUsText: styled.div``,
+  MeetUsText: styled.div`
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 2.3rem;
+  font-family: 'Josefin Sans';
+  letter-spacing: 0.16rem;
+  color: #253535;
+  width: 84%;
+  `,
 
-  MeetUsTitle: styled.div``,
+  MeetUsTitle: styled.div`
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 800;
+  font-family: 'Josefin Sans';
+  letter-spacing: 0.3rem;
+  color: #253535;
+  `,
 
-  MeetUsSignatures: styled.div``,
+  HorizontalLine: styled.div`
+  width: 8rem;
+  border-top: 0.08rem solid #233333;
+  margin: 1.3rem 0;
+  `,
+
+  MeetUsSignatures: styled.img`
+  width: 15rem;
+  padding-left: 28rem;
+  `,
+
+  MeetUsImg: styled.img`
+  height: 32rem;
+  width: auto;
+  `,
+
+  WhatsThisSection: styled.div``,
+
+  VideoSection: styled.div``,
+
+  TextSection: styled.div``,
+
+  WhatsThisVideo: styled.div``,
+
+  VideoSectionButton: styled.div``,
+
+  CornerLetter: styled.div``,
+
+  ShortLogo: styled.div``,
+
+  WhatsThisTitle: styled.div``,
+
+  WhatsThisText: styled.div``,
+
+  WhatsThisButton: styled.div``,
 
 };

@@ -26,8 +26,20 @@ const HomeComponent = () => {
     MeetUsSection,
     MeetUsBox,
     MeetUsText,
+    HorizontalLine,
     MeetUsTitle,
     MeetUsSignatures,
+    MeetUsImg,
+    WhatsThisSection,
+    VideoSection,
+    TextSection,
+    WhatsThisVideo,
+    VideoSectionButton,
+    CornerLetter,
+    ShortLogo,
+    WhatsThisTitle,
+    WhatsThisText,
+    WhatsThisButton,
   } = components;
 
   return (
@@ -60,27 +72,44 @@ const HomeComponent = () => {
           <BannerInfoText>
             WYJĄTKOWE STRONY ŚLUBNE JUŻ OD <b>49ZŁ/MIES.</b> ZASKOCZ SWOICH GOŚCI NOWĄ FORMĄ ORGANIZACJI WYDARZENIA!
           </BannerInfoText>
-          <BannerInfoButton>ZOBACZ PLANY ></BannerInfoButton>
+          <BannerInfoButton onClick={() => history.push('/oferta')}>KUP STRONĘ ></BannerInfoButton>
         </BannerInfoBox>
       </BannerBox>
 
       <MeetUsSection>
         <MeetUsBox>
-          <MeetUsTitle>KOCHANI NARZECZENI</MeetUsTitle>
+          <MeetUsTitle>KOCHANI NARZECZENI!</MeetUsTitle>
+          <HorizontalLine />
           <MeetUsText>WITAJCIE NA NASZEJ STRONIE, BARDZO SIĘ CIESZYMY,
             ŻE TU TRAFILIŚCIE! WIEMY JAK WYMAGAJĄCA JEST ORGANIZACJA WESELA,
             DLATEGO POŚWIĘCILIŚMY WIELE CZASU NAD TYM, ABYŚCIE MOGLI KOMFORTOWO
             I WEDŁUG SWOJEJ WIZJI STWORZYĆ WYMARZONĄ STRONĘ ŚLUBNĄ, KTÓRA WAM TO UŁATWI.
             PRZEDSTAWIAMY WAM NASZ PORTAL, MAMY NADZIEJĘ, ŻE WAM SIĘ SPODOBA!
             </MeetUsText>
-          <MeetUsSignatures>Klaudia i Tomek ^</MeetUsSignatures>
+          <MeetUsSignatures src="http://localhost/Fafik/app/signatures.png" />
         </MeetUsBox>
-
+        <MeetUsImg src="http://localhost/Fafik/app/meet-us-img.png" />
       </MeetUsSection>
-      {/* <div style={{fontSize: '70px'}}>
-    MIŁOŚĆ WIERNOŚĆ W ZAKOPANEM
-    <button onClick={() => history.push('/oferta')}>KUP SOBIE STRONE</button>
-  </div> */}
+
+      <WhatsThisSection>
+        <VideoSection>
+          <WhatsThisVideo />
+          <VideoSectionButton>ZAŁÓŻ SWOJĄ STRONĘ ŚLUBNĄ ></VideoSectionButton>
+          <CornerLetter>M</CornerLetter>
+        </VideoSection>
+        <TextSection>
+          <ShortLogo />
+          <WhatsThisTitle>co to jest?</WhatsThisTitle>
+          <WhatsThisText>To portal na którym narzeczeni mogą zakupić swoje miejsce w sieci
+              pod adresem (miloscwiernosc.pl/waszanazwa) na pewien okres czasu,
+              dobrać szablon wykonany przez grafika i wyedytować go samodzielnie
+              pod swoim kątem. Korzystają przy tym z kreatora,
+              dzięki któremu możliwe jest edytowanie szablonu "na żywo".
+          </WhatsThisText>
+          <WhatsThisButton>ZOBACZ, CO MOŻESZ MIEĆ NA STRONIE ></WhatsThisButton>
+          <CornerLetter>W</CornerLetter>
+        </TextSection>
+      </WhatsThisSection>
     </Fragment>
   );
 };

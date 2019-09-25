@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface MenuItemProps {
   active: boolean;
+  hideBorder?: boolean;
 }
 
 export default {
@@ -114,16 +115,20 @@ export default {
   MainMenu: styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 1% 23%;
+  justify-content: center;
+  padding: 1% 0;
   position: sticky;
   top: 0;
   z-index: 1;
   background-color: #ffffff;
-
+  flex-wrap: wrap;
+  
   @media(max-width:1080px){
-    padding: 1.5% 3%;
+    padding: 3.5% 3%;
   }
+  @media (max-width: 395px){
+    padding: 3.5% 1%;
+};
   `,
 
   MenuItem: styled.div`
@@ -132,6 +137,27 @@ export default {
   font-size: 0.8rem;
   letter-spacing: 0.1rem;
   color: #253535;
+  border-left: 0.08rem solid #253535;
+  padding: 0 1.6rem;
+
+  @media (min-width: 487px) and (max-width: 750px){
+    &:nth-last-child(1) {
+      border-left: none;
+    }
+  };
+  @media (max-width: 486px){
+    &:nth-last-child(2) {
+      border-left: none;
+    }
+
+    @media (max-width: 395px){
+      padding: 0 0.5rem;
+  };
+  
+
+  ${(props: MenuItemProps) => props.hideBorder && `
+  border-left: none;
+  `}
 
   &: hover{
     text-decoration: underline;
@@ -140,10 +166,11 @@ export default {
   ${(props: MenuItemProps) => props.active && `
     text-decoration: underline;
   `}
+
   `,
 
   VerticalLine: styled.div`
-  border-left: 0.08rem solid #253535;
+  
   height: 1rem;
   `,
 

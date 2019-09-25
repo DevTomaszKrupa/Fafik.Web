@@ -47,14 +47,14 @@ const TopBarComponent = () => {
         <MainLogo src="http://localhost/Fafik/App/logo-main.png" onClick={() => history.push('/')} />
       </LogoSection>
       <MainMenu>
-        <MenuItem onClick={() => history.push('/oferta')} active={history.location.pathname === '/oferta'}>
-          SZABLONY</MenuItem><VerticalLine />
+        <MenuItem hideBorder onClick={() => history.push('/oferta')} active={history.location.pathname === '/oferta'}>
+          SZABLONY</MenuItem>
         <MenuItem onClick={() => history.push('/cennik')} active={history.location.pathname === '/cennik'}>
-          CENNIK</MenuItem><VerticalLine />
+          CENNIK</MenuItem>
         <MenuItem onClick={() => history.push('/FAQ')} active={history.location.pathname === '/FAQ'}>
-          FAQ</MenuItem> <VerticalLine />
+          FAQ</MenuItem>
         <MenuItem onClick={() => history.push('/kontakt')} active={history.location.pathname === '/kontakt'}>
-          KONTAKT</MenuItem> <VerticalLine />
+          KONTAKT</MenuItem>
         <MenuItem onClick={() => history.push('/admin')} active={history.location.pathname === '/admin'}>
           PANEL ADMINISTRATORA</MenuItem>
       </MainMenu>

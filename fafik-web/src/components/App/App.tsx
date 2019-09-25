@@ -11,6 +11,9 @@ import AdminLoginPage from '../Admin/LoginPage';
 import AdminPage from '../Admin/AdminPage';
 import HomePage from '../HomePage';
 import OfferPage from '../OfferPage';
+import PricingPage from '../PricingPage';
+import FAQPage from '../FAQPage';
+import ContactPage from '../ContactPage';
 
 import { AuthenticatedRoute } from '../../shared';
 
@@ -23,6 +26,9 @@ const App = () => {
 
           <Route exact path="/" component={HomePage} />
           <Route exact path="/oferta" component={OfferPage} />
+          <Route exact path="/cennik" component={PricingPage} />
+          <Route exact path="/FAQ" component={FAQPage} />
+          <Route exact path="/kontakt" component={ContactPage} />
 
           <Route exact path="/admin/login" component={AdminLoginPage} />
           <AuthenticatedRoute path="/admin" component={AdminPage} />

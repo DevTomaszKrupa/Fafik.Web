@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import RegisterForm from './RegisterForm';
 import { RegisterRequest } from '../../models';
 import { useDispatch } from 'react-redux';
+import { useDocumentTitle } from '../../shared';
+
+import TopBar from '../TopBar';
 
 
 const OfferPageComponent = () => {
+  useDocumentTitle('Szablony - Miłość Wierność');
   const [loginFormVisible, setLoginFormVisible] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState('');
   const dispatch = useDispatch();
@@ -25,6 +29,7 @@ const OfferPageComponent = () => {
 
   return (
     <div>
+      <TopBar />
       <div style={{ fontSize: '70px' }}>WYBIERZ SZABLON M8</div>
       <ul>
         <li onClick={() => onThemeClicked('leaves')}>LEAVES</li>

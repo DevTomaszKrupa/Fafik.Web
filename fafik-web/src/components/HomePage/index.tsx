@@ -1,24 +1,21 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { history } from '../../helpers';
+import { useDocumentTitle } from '../../shared';
 
 import components from './styles';
-import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import TopBar from '../TopBar';
+
 
 const HomeComponent = () => {
+  useDocumentTitle('Wytwórnia stron ślubnych - Miłość Wierność');
+
+  const scrollToWhatsThisSection = () => {
+    const element = document.getElementById('whatsThisSection');
+    if (element)
+      element.scrollIntoView();
+  };
 
   const {
-    TopBar,
-    TopBarLeft,
-    TopBarRight,
-    SocialIcons,
-    FAwesomeIcon,
-    TopBartLeftTitle,
-    TopBartRightTitle,
-    LogoSection,
-    MainLogo,
-    MainMenu,
-    MenuItem,
-    VerticalLine,
     BannerBox,
     BannerInfoBox,
     BannerInfoText,
@@ -44,35 +41,13 @@ const HomeComponent = () => {
 
   return (
     <Fragment>
-      <TopBar>
-        <TopBarLeft>
-          <SocialIcons>
-            <FAwesomeIcon icon={faFacebook} size="lg" color="#FFFFFF" />
-            <FAwesomeIcon icon={faInstagram} size="lg" color="#FFFFFF" />
-          </SocialIcons>
-          <TopBartLeftTitle>SPRAWDŹ NASZE SOCIAL MEDIA!</TopBartLeftTitle>
-        </TopBarLeft>
-        <TopBarRight>
-          <TopBartRightTitle>MIŁOŚĆ, WIERNOŚĆ</TopBartRightTitle>
-        </TopBarRight>
-      </TopBar>
-      <LogoSection>
-        <MainLogo src="http://localhost/Fafik/App/logo-main.png" />
-      </LogoSection>
-      <MainMenu>
-        <MenuItem>PRZYKŁADOWE SZABLONY</MenuItem> <VerticalLine />
-        <MenuItem>SEGMENTY NA STRONĘ</MenuItem> <VerticalLine />
-        <MenuItem>FAQ</MenuItem> <VerticalLine />
-        <MenuItem>KONTAKT</MenuItem> <VerticalLine />
-        <MenuItem>LOGOWANIE</MenuItem>
-      </MainMenu>
-
+      <TopBar />
       <BannerBox>
         <BannerInfoBox>
           <BannerInfoText>
             WYJĄTKOWE STRONY ŚLUBNE JUŻ OD <b>49ZŁ/MIES.</b> ZASKOCZ SWOICH GOŚCI NOWĄ FORMĄ ORGANIZACJI WYDARZENIA!
           </BannerInfoText>
-          <BannerInfoButton onClick={() => history.push('/oferta')}>ZRÓB STRONĘ <ButtonArrow id="arrow">></ButtonArrow></BannerInfoButton>
+          <BannerInfoButton onClick={scrollToWhatsThisSection}> ZOBACZ JAK TO DZIAŁA <ButtonArrow id="arrow">></ButtonArrow></BannerInfoButton>
         </BannerInfoBox>
       </BannerBox>
 
@@ -80,18 +55,20 @@ const HomeComponent = () => {
         <MeetUsBox>
           <MeetUsTitle>KOCHANI NARZECZENI!</MeetUsTitle>
           <HorizontalLine />
-          <MeetUsText>WITAJCIE NA NASZEJ STRONIE, BARDZO SIĘ CIESZYMY,
-            ŻE TU TRAFILIŚCIE! WIEMY JAK WYMAGAJĄCA JEST ORGANIZACJA WESELA,
-            DLATEGO POŚWIĘCILIŚMY WIELE CZASU NAD TYM, ABYŚCIE MOGLI KOMFORTOWO
-            I WEDŁUG SWOJEJ WIZJI STWORZYĆ WYMARZONĄ STRONĘ ŚLUBNĄ, KTÓRA WAM TO UŁATWI.
-            PRZEDSTAWIAMY WAM NASZ PORTAL, MAMY NADZIEJĘ, ŻE WAM SIĘ SPODOBA!
+          <MeetUsText>
+            WITAJCIE NA NASZEJ STRONIE! BARDZO SIĘ CIESZYMY,ŻE TU TRAFILIŚCIE ♥ <br />
+            WIEMY JAK WYMAGAJĄCA JEST <b>ORGANIZACJA WESELA,</b><br />
+            DLATEGO POŚWIĘCILIŚMY WIELE CZASU, ABYŚCIE MOGLI KOMFORTOWO<br />
+            I WEDŁUG SWOJEJ WIZJI STWORZYĆ WYMARZONĄ STRONĘ ŚLUBNĄ,
+            KTÓRA WAM TO UŁATWI. PRZEDSTAWIAMY WAM NASZ PORTAL,<br />
+            MAMY NADZIEJĘ, ŻE WAM SIĘ SPODOBA!
             </MeetUsText>
           <MeetUsSignatures src="http://localhost/Fafik/app/signatures.png" />
         </MeetUsBox>
         <MeetUsImg src="http://localhost/Fafik/app/meet-us-img.png" />
       </MeetUsSection>
 
-      <WhatsThisSection>
+      <WhatsThisSection id="whatsThisSection">
         <VideoSection>
           <YouTubePlayer videoId={'HOZi1UFRYpk'} />
           <HomePageButton backgroundColor="#BAC6B6" border="0.25rem solid #BAC6B6" color="#FFFFFF"
@@ -106,8 +83,8 @@ const HomeComponent = () => {
               pod swoim kątem. Korzystają przy tym z kreatora,
               dzięki któremu możliwe jest edytowanie szablonu "na żywo".
           </WhatsThisText>
-          <HomePageButton backgroundColor="#FFFEFE" border="0.25rem solid #F9E2DC" color="#ECCCC4">CO MOŻESZ MIEĆ NA SWOJEJ STRONIE >
-          </HomePageButton>
+          <HomePageButton backgroundColor="#FFFEFE" border="0.25rem solid #F9E2DC" color="#ECCCC4"
+            onClick={() => history.push('/cennik')}>ZOBACZ CENNIK ></HomePageButton>
         </TextSection>
       </WhatsThisSection>
     </Fragment>

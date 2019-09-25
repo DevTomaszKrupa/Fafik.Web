@@ -1,8 +1,7 @@
 import React, { Fragment } from 'react';
 import components from './styles';
-import TopBar from '../TopBar';
 
-import { useDocumentTitle } from '../../shared';
+import { useDocumentTitle } from '../../../shared';
 
 
 const PricingPage = () => {
@@ -13,7 +12,7 @@ const PricingPage = () => {
 
   return (
     <Fragment>
-      <TopBar />
+      pricing
     </Fragment>
   );
 };

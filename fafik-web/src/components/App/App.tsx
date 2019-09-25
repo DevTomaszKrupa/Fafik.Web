@@ -9,11 +9,12 @@ import ClientPage from '../ClientPage';
 
 import AdminLoginPage from '../Admin/LoginPage';
 import AdminPage from '../Admin/AdminPage';
-import HomePage from '../HomePage';
-import OfferPage from '../OfferPage';
-import PricingPage from '../PricingPage';
-import FAQPage from '../FAQPage';
-import ContactPage from '../ContactPage';
+import HomePage from '../Home';
+import OfferPage from '../Home/OfferPage';
+import PricingPage from '../Home/PricingPage';
+import FAQPage from '../Home/FAQPage';
+import ContactPage from '../Home/ContactPage';
+import HomeTopBar from '../TopBar';
 
 import { AuthenticatedRoute } from '../../shared';
 
@@ -22,14 +23,9 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router history={history}>
+        <Route exact path="/(|oferta|cennik|FAQ|kontakt)/" component={HomeTopBar} />
         <Switch>
-
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/oferta" component={OfferPage} />
-          <Route exact path="/cennik" component={PricingPage} />
-          <Route exact path="/FAQ" component={FAQPage} />
-          <Route exact path="/kontakt" component={ContactPage} />
-
+          <Route exact path="/(|oferta|cennik|FAQ|kontakt)/" component={HomePage} />
           <Route exact path="/admin/login" component={AdminLoginPage} />
           <AuthenticatedRoute path="/admin" component={AdminPage} />
 

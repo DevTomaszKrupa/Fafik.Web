@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import RegisterForm from './RegisterForm';
-import { RegisterRequest } from '../../models';
+import { RegisterRequest } from '../../../models';
 import { useDispatch } from 'react-redux';
-import { useDocumentTitle } from '../../shared';
+import { useDocumentTitle } from '../../../shared';
 
-import TopBar from '../TopBar';
+import TopBar from '../../TopBar';
 
 
 const OfferPageComponent = () => {
@@ -29,7 +29,6 @@ const OfferPageComponent = () => {
 
   return (
     <div>
-      <TopBar />
       <div style={{ fontSize: '70px' }}>WYBIERZ SZABLON M8</div>
       <ul>
         <li onClick={() => onThemeClicked('leaves')}>LEAVES</li>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { InjectedFormProps, Field, reduxForm, getFormValues } from 'redux-form';
 import { useSelector } from 'react-redux';
-import { AppState } from '../../../store/reducers';
+import { AppState } from '../../../../store/reducers';
 
 const formName = 'register-form';
 

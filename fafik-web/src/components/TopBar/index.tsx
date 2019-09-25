@@ -47,11 +47,16 @@ const TopBarComponent = () => {
         <MainLogo src="http://localhost/Fafik/App/logo-main.png" onClick={() => history.push('/')} />
       </LogoSection>
       <MainMenu>
-        <MenuItem onClick={() => history.push('/oferta')}>SZABLONY</MenuItem> <VerticalLine />
-        <MenuItem onClick={() => history.push('/cennik')}>CENNIK</MenuItem> <VerticalLine />
-        <MenuItem onClick={() => history.push('/FAQ')}>FAQ</MenuItem> <VerticalLine />
-        <MenuItem onClick={() => history.push('/kontakt')}>KONTAKT</MenuItem> <VerticalLine />
-        <MenuItem onClick={() => history.push('/admin')}>PANEL ADMINISTRATORA</MenuItem>
+        <MenuItem onClick={() => history.push('/oferta')} active={history.location.pathname === '/oferta'}>
+          SZABLONY</MenuItem><VerticalLine />
+        <MenuItem onClick={() => history.push('/cennik')} active={history.location.pathname === '/cennik'}>
+          CENNIK</MenuItem><VerticalLine />
+        <MenuItem onClick={() => history.push('/FAQ')} active={history.location.pathname === '/FAQ'}>
+          FAQ</MenuItem> <VerticalLine />
+        <MenuItem onClick={() => history.push('/kontakt')} active={history.location.pathname === '/kontakt'}>
+          KONTAKT</MenuItem> <VerticalLine />
+        <MenuItem onClick={() => history.push('/admin')} active={history.location.pathname === '/admin'}>
+          PANEL ADMINISTRATORA</MenuItem>
       </MainMenu>
     </Fragment>
   );

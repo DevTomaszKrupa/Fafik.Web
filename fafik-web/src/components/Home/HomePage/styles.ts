@@ -1,12 +1,6 @@
 import styled from 'styled-components';
 import YouTube from 'react-youtube';
 
-interface HomePageButton {
-  backgroundColor: string;
-  border: string;
-  color: string;
-}
-
 export default {
 
   BannerBox: styled.div`
@@ -22,7 +16,7 @@ export default {
 
   BannerInfoBox: styled.div`
   background-color: rgba(255,255,255,0.5);
-  padding: 3rem 0;
+  padding: 3.5rem 0;
   width: 48%;
   display: flex;
   align-items: center;
@@ -161,12 +155,12 @@ export default {
   `,
 
   HomePageButton: styled.button`
-  border: ${(props: HomePageButton) => props.border};
-  background-color: ${(props: HomePageButton) => props.backgroundColor};
+  border: 0.25rem solid #F9E2DC;
+  background-color: #FFFEFE;
   width: 23rem;
   height: 2.6rem;
   border-radius: 1.2rem;
-  color: ${(props: HomePageButton) => props.color};
+  color: #ECCCC4;
   font-family: 'Josefin Sans';
   text-align: center;
   letter-spacing: 0.1rem;
@@ -174,6 +168,31 @@ export default {
   font-weight: 600;
   padding: 0 0.8rem 0 0.8rem;
   cursor: pointer;
+
+  &: hover{
+    border: 0.25rem solid #D49C8E;
+    color: #D49C8E;
+  }
+  `,
+
+  HomePageVideoButton: styled.button`
+  border: 0.25rem solid #BAC6B6;
+  background-color: #BAC6B6;
+  width: 23rem;
+  height: 2.6rem;
+  border-radius: 1.2rem;
+  color: #FFFFFF;
+  font-family: 'Josefin Sans';
+  text-align: center;
+  letter-spacing: 0.1rem;
+  padding-top: 0.1rem;
+  font-weight: 600;
+  padding: 0 0.8rem 0 0.8rem;
+  cursor: pointer;
+
+  &: hover{
+    background-color: #A9B7A5;
+  }
   `,
 
   ShortLogo: styled.img`

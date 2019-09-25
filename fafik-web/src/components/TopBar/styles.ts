@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+interface MenuItemProps {
+  active: boolean;
+}
+
 export default {
   TopBar: styled.div`
   display: flex;
@@ -132,6 +136,10 @@ export default {
   &: hover{
     text-decoration: underline;
   };
+
+  ${(props: MenuItemProps) => props.active && `
+    text-decoration: underline;
+  `}
   `,
 
   VerticalLine: styled.div`

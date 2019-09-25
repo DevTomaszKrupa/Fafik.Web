@@ -1,12 +1,11 @@
-import React, { Fragment, useEffect } from 'react';
-import { history } from '../../helpers';
-import { useDocumentTitle } from '../../shared';
+import React, { Fragment } from 'react';
+import { history } from '../../../helpers';
+import { useDocumentTitle } from '../../../shared';
 
 import components from './styles';
-import TopBar from '../TopBar';
 
 
-const HomeComponent = () => {
+const HomePageComponent = () => {
   useDocumentTitle('Wytwórnia stron ślubnych - Miłość Wierność');
 
   const scrollToWhatsThisSection = () => {
@@ -36,12 +35,11 @@ const HomeComponent = () => {
     WhatsThisTitle,
     WhatsThisText,
     YouTubePlayer,
-
+    HomePageVideoButton,
   } = components;
 
   return (
     <Fragment>
-      <TopBar />
       <BannerBox>
         <BannerInfoBox>
           <BannerInfoText>
@@ -71,8 +69,7 @@ const HomeComponent = () => {
       <WhatsThisSection id="whatsThisSection">
         <VideoSection>
           <YouTubePlayer videoId={'HOZi1UFRYpk'} />
-          <HomePageButton backgroundColor="#BAC6B6" border="0.25rem solid #BAC6B6" color="#FFFFFF"
-            onClick={() => history.push('/oferta')}>ZAŁÓŻ SWOJĄ STRONĘ ŚLUBNĄ ></HomePageButton>
+          <HomePageVideoButton onClick={() => history.push('/oferta')}>ZAŁÓŻ SWOJĄ STRONĘ ŚLUBNĄ ></HomePageVideoButton>
         </VideoSection>
         <TextSection>
           <ShortLogo src="http://localhost/Fafik/app/logo-short.png" />
@@ -83,11 +80,10 @@ const HomeComponent = () => {
               pod swoim kątem. Korzystają przy tym z kreatora,
               dzięki któremu możliwe jest edytowanie szablonu "na żywo".
           </WhatsThisText>
-          <HomePageButton backgroundColor="#FFFEFE" border="0.25rem solid #F9E2DC" color="#ECCCC4"
-            onClick={() => history.push('/cennik')}>ZOBACZ CENNIK ></HomePageButton>
+          <HomePageButton onClick={() => history.push('/cennik')}>ZOBACZ CENNIK ></HomePageButton>
         </TextSection>
       </WhatsThisSection>
     </Fragment>
   );
 };
-export default HomeComponent;
+export default HomePageComponent;

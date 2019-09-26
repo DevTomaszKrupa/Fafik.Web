@@ -149,7 +149,7 @@ export default {
     &:nth-last-child(2) {
       border-left: none;
     }
-
+  }
     @media (max-width: 395px){
       padding: 0 0.5rem;
   };

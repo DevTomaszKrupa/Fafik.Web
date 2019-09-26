@@ -26,7 +26,6 @@ const TopBarComponent = () => {
     MainLogo,
     MainMenu,
     MenuItem,
-    VerticalLine,
   } = components;
 
   return (

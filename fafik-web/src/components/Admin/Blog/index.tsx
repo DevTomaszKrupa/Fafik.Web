@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import moment from 'moment';
 import { history } from '../../../helpers';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { useDocumentTitle } from '../../../shared';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,6 +9,7 @@ import { AppState } from '../../../store/reducers';
 import AdminTitleSection from '../shared/AdminTitleSection';
 import AdminButton from '../shared/AdminButton';
 import { BlogPost } from '../../../store/admin/blog/reducers';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import components from './styles';
 import { adminSidePanelPaths } from '../AdminPage/consts';
 
@@ -70,7 +72,7 @@ const AdminBlogComponent = () => {
                                 <AdminButton buttonStyle="pink" buttonText="Nowy post" onClick={OnNewPostClick} />
                                 <SearchBox>
                                     <SearchInput />
-                                    <SearchButton></SearchButton>
+                                    <SearchButton><FontAwesomeIcon icon={faSearch} size="lg" color="#000000" /></SearchButton>
                                 </SearchBox>
                             </ButtonsPart2>
                         </AdminEditButtonsInputs>

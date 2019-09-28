@@ -28,7 +28,7 @@ const StickyHeaderLayout = (props: Props) => {
           </StickyMenuIcon>
         </StickyMenuIconBox>
         <StickyCenterNames>
-          <AdminEditableComponent adminMode={adminMode} itemId="RomanticHeaderHeaderNames">
+          <AdminEditableComponent adminMode={adminMode} itemId="header.headerNames" textValue={headerNames}>
             {headerNames}
           </AdminEditableComponent>
         </StickyCenterNames>

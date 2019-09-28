@@ -1,5 +1,5 @@
 import { Reducer } from 'redux';
-
+import { set } from 'lodash';
 import { RomanticHeader, SiteItem } from '../../romantic/theme/types';
 import { Action } from './../../actions';
 
@@ -56,6 +56,11 @@ export const adminRomanticThemeEditorState: Reducer<AdminRomanticThemeEditorStat
         ...state,
         isLoading: false
       };
+    case 'EDITOR_SITE_PANEL_UPDATE_TEXT_VALUE':
+      const { itemId, textValue } = action.payload;
+      const newState = { ...state };
+      set(newState, itemId, textValue);
+      return newState;
     default:
       return state;
   }

@@ -10,7 +10,7 @@ import { RomanticRsvpDialogState, romanticRsvpDialogState } from './romantic/dia
 import { leavesMainSiteState, LeavesMainSiteState } from './leaves/main/reducers';
 
 
-import { AdminEditorSidePanelState, adminEditorSidePanelState } from './admin/editor-side-panel/reducers';
+import { AdminEditorSidePanelState, adminEditorSidePanelState } from './../components/ThemeEditor/reducers';
 import { AdminLoginState, adminLoginState } from './admin/login/reducers';
 
 import { AdminRomanticThemeEditorState, adminRomanticThemeEditorState } from './admin/romantic-theme-editor/reducers';

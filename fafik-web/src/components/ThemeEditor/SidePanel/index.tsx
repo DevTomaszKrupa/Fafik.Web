@@ -1,14 +1,20 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+
 import { history } from '../../../helpers';
+import { AppState } from '../../../store/reducers';
+import TextEditor from './TextEditor';
+
 
 const AdminThemeEditorSidePanelComponent = () => {
 
     const leaveEditor = () => history.push('/admin')
+    const adminEditorSidePanelState = useSelector((state: AppState) => state.adminEditorSidePanelState);
 
     return (
         <div>
-            <button onClick={leaveEditor}> Powrót </button>
-            side panel
+        PANEL EDYCJI  <button onClick={leaveEditor}> Powrót </button>
+            {adminEditorSidePanelState.editor === 'text' && <TextEditor />}
         </div>);
 };
 

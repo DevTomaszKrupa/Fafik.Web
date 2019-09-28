@@ -1,8 +1,8 @@
 import React, { Fragment, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import RomanticSiteEditor from '../RomanticSiteEditor';
-import { AppState } from '../../../store/reducers';
+import RomanticSiteEditor from './themes/RomanticSiteEditor';
+import { AppState } from '../../store/reducers';
 import { RouteComponentProps } from 'react-router-dom';
 
 const AdminThemeEditorComponent = (props: RouteComponentProps<{ clientPath: string }>) => {

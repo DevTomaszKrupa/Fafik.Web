@@ -1,5 +1,5 @@
 import React from 'react';
-import { history } from '../../../../helpers';
+import { history } from '../../../helpers';
 
 const AdminThemeEditorSidePanelComponent = () => {
 

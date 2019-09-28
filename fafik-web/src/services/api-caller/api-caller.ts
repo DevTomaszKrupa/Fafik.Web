@@ -1,7 +1,7 @@
-import admin from './admin/admin.mock';
-import client from './client/client.mock';
+import admin from './admin/admin';
+import client from './client/client';
 import leaves from './leaves/leaves';
-import romantic from './romantic/romantic.mock';
+import romantic from './romantic/romantic';
 
 export const apiCaller = {
   admin,

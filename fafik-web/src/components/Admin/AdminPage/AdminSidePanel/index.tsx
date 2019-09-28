@@ -15,7 +15,7 @@ const AdminSidePanelComponent = () => {
     return (
         <Fragment>
             {isLoading && <span>lołding...</span>}
-            {!isLoading && clients.map(client => <AdminSidePanelClient client={client} />)}
+            {!isLoading && clients.map(client => <AdminSidePanelClient client={client} key={``}/>)}
             {!isLoading && clients.length === 0 &&
                 <div onClick={() => history.push('/admin/wybierz-motyw')}
                 style={{

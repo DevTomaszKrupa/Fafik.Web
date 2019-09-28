@@ -13,7 +13,7 @@ const AdminThemeEditorComponent = (props: RouteComponentProps<{ clientPath: stri
 
     useEffect(() => {
         getTheme();
-    }, []);
+    }, [props.match.params.clientPath]);
 
     const resolveTheme = () => {
         if (adminThemeEditorState.theme)

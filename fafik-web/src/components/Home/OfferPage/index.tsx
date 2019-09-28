@@ -4,8 +4,6 @@ import { RegisterRequest } from '../../../models';
 import { useDispatch } from 'react-redux';
 import { useDocumentTitle } from '../../../shared';
 
-import TopBar from '../../TopBar';
-
 
 const OfferPageComponent = () => {
   useDocumentTitle('Szablony - Miłość Wierność');

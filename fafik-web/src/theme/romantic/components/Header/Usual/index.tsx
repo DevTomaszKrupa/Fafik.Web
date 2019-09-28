@@ -31,7 +31,7 @@ const HeaderLayout = (props: Props) => {
     <Menu>
       <MenuFrame>
         <SideMenu>
-          {leftMenuItems.map(x => <Item key={x.path} onClick={() => handleOnItemClick(x.path)} textAlign="right"> {x.name} </Item>)}
+          {leftMenuItems.map(x => <Item key={`side-menu-left-item-${x.path}`} onClick={() => handleOnItemClick(x.path)} textAlign="right"> {x.name} </Item>)}
         </SideMenu>
         <SingleLineVertical />
         <MenuCenter>
@@ -50,7 +50,7 @@ const HeaderLayout = (props: Props) => {
         </MenuCenter>
         <SingleLineVertical />
         <SideMenu>
-          {rightMenuItems.map(x => <Item onClick={() => handleOnItemClick(x.path)} textAlign="left"> {x.name} </Item>)}
+          {rightMenuItems.map(x => <Item key={`side-menu-right-item-${x.path}`} onClick={() => handleOnItemClick(x.path)} textAlign="left"> {x.name} </Item>)}
         </SideMenu>
       </MenuFrame>
     </Menu>

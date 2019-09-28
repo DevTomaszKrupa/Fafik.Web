@@ -9,6 +9,20 @@ export type AdminRomanticThemeEditorState = {
   isLoading: boolean;
 };
 
+const resolveMenuItem = (sites: SiteItem[]) => {
+  let leftItems = [];
+  let rightItems = [];
+  if (sites.length % 2 === 0) {
+    leftItems = sites.slice(0, sites.length / 2);
+    rightItems = sites.slice(sites.length / 2, sites.length);
+  } else {
+    leftItems = sites.slice(0, Math.ceil(sites.length / 2));
+    rightItems = sites.slice(Math.ceil(sites.length / 2), sites.length);
+  }
+  return { leftItems, rightItems };
+};
+
+
 const initialState: AdminRomanticThemeEditorState = {
   header: {
     leftMenuItems: [] as SiteItem[],
@@ -26,10 +40,16 @@ export const adminRomanticThemeEditorState: Reducer<AdminRomanticThemeEditorStat
       };
     case 'ROMANTIC_THEME_EDITOR_GET_THEME_SUCCESS':
       const { header } = action.payload.data;
+      const { leftItems, rightItems } = resolveMenuItem(header.sites);
       return {
         ...state,
+        ...action.payload.data,
         isLoading: false,
-        header: header
+        header: {
+          ...header,
+          leftMenuItems: leftItems,
+          rightMenuItems: rightItems
+        }
       };
     case 'ROMANTIC_THEME_EDITOR_GET_THEME_FAILURE':
       return {

@@ -11,6 +11,11 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin"
+      }
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,

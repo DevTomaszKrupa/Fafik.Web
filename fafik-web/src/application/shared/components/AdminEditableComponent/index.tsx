@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 
 import components from './AdminEditableComponent.styles';
 
-
 type Props = {
   children: any;
   itemId: string;
@@ -12,17 +11,23 @@ type Props = {
 };
 
 const AdminEditableComponent = (props: Props) => {
-
   const { children, adminMode, itemId, textValue } = props;
   const dispatch = useDispatch();
   const editAdminEditableTextComponent = (item: string) =>
-    dispatch({ type: 'EDIT_ADMIN_EDITABLE_TEXT_COMPONENT_CLICK', payload: { itemId: item, textValue: textValue } });
+    dispatch({
+      type: 'EDIT_ADMIN_EDITABLE_TEXT_COMPONENT_CLICK',
+      payload: { itemId: item, textValue: textValue },
+    });
 
   const { Container } = components;
 
   return (
     <Fragment>
-      {adminMode && <Container onClick={() => editAdminEditableTextComponent(itemId)}>{children}</Container>}
+      {adminMode && (
+        <Container onClick={() => editAdminEditableTextComponent(itemId)}>
+          {children}
+        </Container>
+      )}
       {!adminMode && children}
     </Fragment>
   );

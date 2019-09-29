@@ -11,7 +11,10 @@ type Props = {
 const AdminButton = (props: Props) => {
   const { AButton } = components;
   return (
-    <AButton buttonStyle={props.buttonStyle} onClick={props.onClick}> {props.buttonText} </AButton>
+    <AButton buttonStyle={props.buttonStyle} onClick={props.onClick}>
+      {' '}
+      {props.buttonText}{' '}
+    </AButton>
   );
 };
 

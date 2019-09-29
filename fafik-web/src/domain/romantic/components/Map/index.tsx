@@ -2,7 +2,6 @@ import React from 'react';
 
 import components from './styles';
 
-
 const MapLayout = () => {
   const {
     MapSection,
@@ -19,34 +18,32 @@ const MapLayout = () => {
   } = components;
 
   return (
-      <MapSection id="dojazd">
-        <MapContent>
-          <MapPart1>
-            <MapCircle />
-          </MapPart1>
+    <MapSection id="dojazd">
+      <MapContent>
+        <MapPart1>
+          <MapCircle />
+        </MapPart1>
 
-          <MapPart2>
-            <MapTextBox>
-              <MapTitleSubtitle>
-                <MapTitle color="#000000">
-                  NIE WIESZ JAK DOJECHAĆ NA MIEJSCE?
+        <MapPart2>
+          <MapTextBox>
+            <MapTitleSubtitle>
+              <MapTitle color="#000000">
+                NIE WIESZ JAK DOJECHAĆ NA MIEJSCE?
               </MapTitle>
-                <MapSubtitle>
-                  Kliknij na prostokąt z nazwą miejsca
+              <MapSubtitle>
+                Kliknij na prostokąt z nazwą miejsca
                 <br />i sprawdź lokalizację na mapie!
-                </MapSubtitle>
-              </MapTitleSubtitle>
-              <MapButtons>
-                <MapButton> DOM PANNY MŁODEJ </MapButton>
-                <MapButton> KOŚCIÓŁ - ŚLUB </MapButton>
-                <MapButton> KARCZMA - WESELE </MapButton>
-              </MapButtons>
-            </MapTextBox>
-
-          </MapPart2>
-        </MapContent>
-
-      </MapSection>
+              </MapSubtitle>
+            </MapTitleSubtitle>
+            <MapButtons>
+              <MapButton> DOM PANNY MŁODEJ </MapButton>
+              <MapButton> KOŚCIÓŁ - ŚLUB </MapButton>
+              <MapButton> KARCZMA - WESELE </MapButton>
+            </MapButtons>
+          </MapTextBox>
+        </MapPart2>
+      </MapContent>
+    </MapSection>
   );
 };
 

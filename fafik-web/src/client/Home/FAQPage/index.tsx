@@ -3,17 +3,11 @@ import components from './styles';
 
 import { useDocumentTitle } from 'application/shared';
 
-
 const FAQPage = () => {
   useDocumentTitle('FAQ - Miłość Wierność');
 
-  const {
-  } = components;
+  const {} = components;
 
-  return (
-    <Fragment>
-      faq
-    </Fragment>
-  );
+  return <Fragment>faq</Fragment>;
 };
 export default FAQPage;

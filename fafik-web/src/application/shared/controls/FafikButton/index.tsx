@@ -8,9 +8,7 @@ type Props = {
 const FafikButton = (props: Props) => {
   const { onClick, label } = props;
 
-  return (
-    <button onClick={onClick}>{label}</button>
-  );
+  return <button onClick={onClick}>{label}</button>;
 };
 
 export { FafikButton };

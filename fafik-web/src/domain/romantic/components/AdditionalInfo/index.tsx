@@ -5,9 +5,24 @@ import { RomanticAdditionalInfoProps } from '../../models';
 
 const AdditionalInfoLayout = (props: RomanticAdditionalInfoProps) => {
   const {
-    AdditionalInfoSection, AdditionalInfoHeader, AdditionalInformationsBox, MainInformationBox, InformationIcon, InformationTextBox, TextBoxHeader,
-    TextBoxDescription, AdditionalInfo, AdditionalInformationsBoxes, AdditionalInformationsDoubleLine, DoubleLine, PhoneNumbers, BottomInfoSection,
-    BottomInfoHeader, TextBoxDescriptionBottom, TextBoxHeaderBottom } = components;
+    AdditionalInfoSection,
+    AdditionalInfoHeader,
+    AdditionalInformationsBox,
+    MainInformationBox,
+    InformationIcon,
+    InformationTextBox,
+    TextBoxHeader,
+    TextBoxDescription,
+    AdditionalInfo,
+    AdditionalInformationsBoxes,
+    AdditionalInformationsDoubleLine,
+    DoubleLine,
+    PhoneNumbers,
+    BottomInfoSection,
+    BottomInfoHeader,
+    TextBoxDescriptionBottom,
+    TextBoxHeaderBottom,
+  } = components;
 
   const { infoCards } = props;
   return (
@@ -15,23 +30,18 @@ const AdditionalInfoLayout = (props: RomanticAdditionalInfoProps) => {
       <AdditionalInfoHeader> informacje dodatkowe </AdditionalInfoHeader>
 
       <AdditionalInformationsBoxes>
-        {infoCards.map(info =>
+        {infoCards.map(info => (
           <AdditionalInformationsBox>
             <MainInformationBox>
               <InformationIcon> </InformationIcon>
               <InformationTextBox>
                 <TextBoxHeader> {info.header} </TextBoxHeader>
-                <TextBoxDescription>
-                  {info.description}
-                </TextBoxDescription>
+                <TextBoxDescription>{info.description}</TextBoxDescription>
               </InformationTextBox>
             </MainInformationBox>
-            <AdditionalInfo>
-              {info.additionalInfo}
-            </AdditionalInfo>
-          </AdditionalInformationsBox>)}
-
-
+            <AdditionalInfo>{info.additionalInfo}</AdditionalInfo>
+          </AdditionalInformationsBox>
+        ))}
       </AdditionalInformationsBoxes>
 
       <AdditionalInformationsDoubleLine>
@@ -40,22 +50,17 @@ const AdditionalInfoLayout = (props: RomanticAdditionalInfoProps) => {
 
       <BottomInfoSection>
         <BottomInfoHeader>
-
           <InformationIcon> </InformationIcon>
 
           <TextBoxHeaderBottom> KONTAKT </TextBoxHeaderBottom>
-
         </BottomInfoHeader>
         <PhoneNumbers>
-          <TextBoxDescriptionBottom>
-            Gaja: 738 203 202
-            </TextBoxDescriptionBottom>
+          <TextBoxDescriptionBottom>Gaja: 738 203 202</TextBoxDescriptionBottom>
 
           <TextBoxDescriptionBottom>
             Stanisław: 647 214 583
-            </TextBoxDescriptionBottom>
+          </TextBoxDescriptionBottom>
         </PhoneNumbers>
-
       </BottomInfoSection>
     </AdditionalInfoSection>
   );

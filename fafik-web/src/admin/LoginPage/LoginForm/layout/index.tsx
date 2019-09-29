@@ -14,14 +14,12 @@ type Props = {
 };
 
 const LoginFormComponent = (props: InjectedFormProps & Props) => {
-
   const { LoginForm, LoginButton, FieldBox } = components;
   const { values, login, adminLoginState } = props;
   const { loginCallSuccessful } = adminLoginState;
 
   useEffect(() => {
-    if (loginCallSuccessful)
-      history.push('/admin');
+    if (loginCallSuccessful) history.push('/admin');
   }, [loginCallSuccessful]);
 
   const handleSubmit = (e: any) => {

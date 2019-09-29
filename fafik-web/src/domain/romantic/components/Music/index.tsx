@@ -16,7 +16,7 @@ const MusicLayout = () => {
     MusicSectionInputs,
     MusicSectionButton,
     MusicActionPanel,
-    MusicButton
+    MusicButton,
   } = components;
 
   return (
@@ -30,8 +30,8 @@ const MusicLayout = () => {
       </MusicSectionCircleBox>
       <MusicSectionFrame>
         <MusicSectionTitle>
-          MASZ SWOJĄ ULUBIONĄ PIOSENKĘ I CHCESZ USŁYSZEĆ JĄ W TRAKCIE
-            NASZEGO WESELA?
+          MASZ SWOJĄ ULUBIONĄ PIOSENKĘ I CHCESZ USŁYSZEĆ JĄ W TRAKCIE NASZEGO
+          WESELA?
         </MusicSectionTitle>
         <MusicActionPanel>
           <MusicSectionInputs>

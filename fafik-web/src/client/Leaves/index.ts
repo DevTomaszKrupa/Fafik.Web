@@ -4,15 +4,17 @@ import { getLeavesTheme } from 'application/store/leaves/theme/actions';
 import { AppState } from 'application/store/reducers';
 import LeavesLayout from './layout';
 
-
 const mapStateToProps = ({ leavesState }: AppState) => ({
-  leavesState: leavesState
+  leavesState: leavesState,
 });
 
 const mapDispatchToProps = {
-  getLeavesTheme
+  getLeavesTheme,
 };
 
-const enhancer = connect(mapStateToProps, mapDispatchToProps);
+const enhancer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+);
 
 export default enhancer(LeavesLayout);

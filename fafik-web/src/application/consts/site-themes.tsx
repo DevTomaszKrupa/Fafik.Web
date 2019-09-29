@@ -4,7 +4,7 @@ import RomanticLayout from 'client/Romantic';
 
 const SiteThemes: { [key: string]: JSX.Element } = {
   1: <RomanticLayout />,
-  2: <Leaves />
+  2: <Leaves />,
 };
 
 export { SiteThemes };

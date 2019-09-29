@@ -10,8 +10,9 @@ type Props = {
 };
 
 const RegisterComponent = (props: Props & InjectedFormProps<{}, Props>) => {
-
-  const values = useSelector((state: AppState) => getFormValues(formName)(state));
+  const values = useSelector((state: AppState) =>
+    getFormValues(formName)(state)
+  );
   const { submitRegisterForm } = props;
 
   const handleSubmit = (e: any) => {
@@ -23,12 +24,12 @@ const RegisterComponent = (props: Props & InjectedFormProps<{}, Props>) => {
     <form onSubmit={handleSubmit}>
       Email: <Field name="email" component="input" type="email" />
       Hasło: <Field name="password" component="input" type="text" />
-      Powtórz Hasło: <Field name="confirmpassword" component="input" type="text" />
+      Powtórz Hasło:{' '}
+      <Field name="confirmpassword" component="input" type="text" />
       <button type="submit"> Załóż konto i przejdz do edycji za darmo! </button>
     </form>
   );
 };
-
 
 const component = reduxForm<{}, Props>({ form: formName })(RegisterComponent);
 

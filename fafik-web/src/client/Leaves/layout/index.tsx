@@ -8,10 +8,9 @@ import Header from '../header';
 import MainSite from '../main';
 import GallerySite from '../gallery';
 
-
 type Props = {
   leavesState: LeavesState;
-  getLeavesTheme: (clientPath: string) => Action
+  getLeavesTheme: (clientPath: string) => Action;
 };
 
 const LeavesLayout = (props: Props) => {

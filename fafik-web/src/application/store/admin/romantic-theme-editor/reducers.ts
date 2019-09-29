@@ -3,7 +3,6 @@ import { set } from 'lodash';
 import { RomanticHeader, SiteItem } from '../../romantic/theme/types';
 import { Action } from './../../actions';
 
-
 export type AdminRomanticThemeEditorState = {
   header: RomanticHeader;
   isLoading: boolean;
@@ -22,21 +21,23 @@ const resolveMenuItem = (sites: SiteItem[]) => {
   return { leftItems, rightItems };
 };
 
-
 const initialState: AdminRomanticThemeEditorState = {
   header: {
     leftMenuItems: [] as SiteItem[],
-    rightMenuItems: [] as SiteItem[]
+    rightMenuItems: [] as SiteItem[],
   } as RomanticHeader,
-  isLoading: false
+  isLoading: false,
 };
 
-export const adminRomanticThemeEditorState: Reducer<AdminRomanticThemeEditorState, Action> = (state = initialState, action: Action): AdminRomanticThemeEditorState => {
+export const adminRomanticThemeEditorState: Reducer<
+  AdminRomanticThemeEditorState,
+  Action
+> = (state = initialState, action: Action): AdminRomanticThemeEditorState => {
   switch (action.type) {
     case 'ROMANTIC_THEME_EDITOR_GET_THEME_STARTED':
       return {
         ...state,
-        isLoading: true
+        isLoading: true,
       };
     case 'ROMANTIC_THEME_EDITOR_GET_THEME_SUCCESS':
       const { header } = action.payload.data;
@@ -48,13 +49,13 @@ export const adminRomanticThemeEditorState: Reducer<AdminRomanticThemeEditorStat
         header: {
           ...header,
           leftMenuItems: leftItems,
-          rightMenuItems: rightItems
-        }
+          rightMenuItems: rightItems,
+        },
       };
     case 'ROMANTIC_THEME_EDITOR_GET_THEME_FAILURE':
       return {
         ...state,
-        isLoading: false
+        isLoading: false,
       };
     case 'EDITOR_SITE_PANEL_UPDATE_TEXT_VALUE':
       const { itemId, textValue } = action.payload;

@@ -8,15 +8,8 @@ type Props = {
 };
 
 const RomanticButton = (props: Props) => {
-  const {
-    Button,
-  } = components;
+  const { Button } = components;
 
-  return (
-    <Button buttonStyle={props.buttonStyle}>
-      {props.children}
-    </Button>
-
-  );
+  return <Button buttonStyle={props.buttonStyle}>{props.children}</Button>;
 };
 export default RomanticButton;

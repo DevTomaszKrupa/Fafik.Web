@@ -6,15 +6,22 @@ import { history } from 'application/helpers';
 
 import components from './header.styles';
 
-
 type Props = {
   leavesState: LeavesState;
 };
 
 const header = (props: Props) => {
-
   const { leavesState } = props;
-  const { Header, Images, Image, Menu, Item, MenuLeft, MenuCenter, MenuRight } = components;
+  const {
+    Header,
+    Images,
+    Image,
+    Menu,
+    Item,
+    MenuLeft,
+    MenuCenter,
+    MenuRight,
+  } = components;
 
   const redirect = (path: string) => {
     history.push(`/${leavesState.clientPath}/${path}`);
@@ -35,11 +42,19 @@ const header = (props: Props) => {
         </Images>
         <Menu>
           <MenuLeft>
-            {leavesState.leftMenuItems.map(x => (<Item onClick={() => redirect(x.path)}> {x.name} </Item>))}
+            {leavesState.leftMenuItems.map(x => (
+              <Item onClick={() => redirect(x.path)}> {x.name} </Item>
+            ))}
           </MenuLeft>
-          <MenuCenter onClick={() => history.push(`/${leavesState.clientPath}`)}>{leavesState.headerNames}</MenuCenter>
+          <MenuCenter
+            onClick={() => history.push(`/${leavesState.clientPath}`)}
+          >
+            {leavesState.headerNames}
+          </MenuCenter>
           <MenuRight>
-            {leavesState.rightMenuItems.map(x => (<Item onClick={() => redirect(x.path)}> {x.name} </Item>))}
+            {leavesState.rightMenuItems.map(x => (
+              <Item onClick={() => redirect(x.path)}> {x.name} </Item>
+            ))}
           </MenuRight>
         </Menu>
       </Header>

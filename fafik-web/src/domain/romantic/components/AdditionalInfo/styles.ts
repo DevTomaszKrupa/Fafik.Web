@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
 export default {
-
   AdditionalInfoSection: styled.div`
     flex-grow: 1;
     background-color: #726257;
-    background-image: url("https://i.imgur.com/zNjU7AO.png");
+    background-image: url('https://i.imgur.com/zNjU7AO.png');
     background-size: 30%;
     display: flex;
     flex-direction: column;
@@ -15,7 +14,7 @@ export default {
 
   AdditionalInfoHeader: styled.div`
     color: #ffffff;
-    font-family: "Sacramento";
+    font-family: 'Sacramento';
     font-size: 3.8rem;
   `,
 
@@ -23,14 +22,13 @@ export default {
     flex-grow: 1;
     padding: 2.5rem;
 
-    @media(max-width: 1200px){
+    @media (max-width: 1200px) {
       padding: 2.5rem 0.7rem 1.2rem 0.7rem;
     }
 
-    @media(max-width: 1033px){
+    @media (max-width: 1033px) {
       flex-grow: 0;
     }
-
   `,
 
   MainInformationBox: styled.div`
@@ -51,7 +49,7 @@ export default {
 
   TextBoxHeader: styled.div`
     color: #ffffff;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.07rem;
     font-weight: 600;
     font-size: 1.8rem;
@@ -60,7 +58,7 @@ export default {
 
   TextBoxDescription: styled.div`
     color: #ffffff;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.07rem;
     font-size: 0.9rem;
     line-height: 1.7rem;
@@ -69,7 +67,7 @@ export default {
 
   AdditionalInfo: styled.div`
     color: #ffffff;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.07rem;
     font-size: 0.75rem;
     padding-top: 1rem;
@@ -81,16 +79,15 @@ export default {
     display: flex;
     justify-content: space-between;
 
-    @media(max-width: 1033px){
+    @media (max-width: 1033px) {
       flex-wrap: wrap;
       justify-content: center;
-    };
+    }
 
-    @media(max-width: 750px){
+    @media (max-width: 750px) {
       justify-content: flex-start;
       padding-left: 2rem;
     }
-
   `,
 
   AdditionalInformationsDoubleLine: styled.div`
@@ -117,10 +114,9 @@ export default {
     align-items: flex-start;
     flex-wrap: wrap;
     text-align: center;
-    `,
-
-  PhoneNumbers: styled.div`
   `,
+
+  PhoneNumbers: styled.div``,
 
   BottomInfoHeader: styled.div`
     display: flex;
@@ -129,7 +125,7 @@ export default {
 
   TextBoxHeaderBottom: styled.div`
     color: #ffffff;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.07rem;
     font-weight: 600;
     font-size: 1.8rem;
@@ -138,13 +134,13 @@ export default {
 
   TextBoxDescriptionBottom: styled.div`
     color: #ffffff;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.07rem;
     font-size: 1.3rem;
     padding-top: 0.7rem;
     font-weight: 200;
 
-    @media(max-width: 880px){
+    @media (max-width: 880px) {
       font-size: 1.2rem;
     }
   `,

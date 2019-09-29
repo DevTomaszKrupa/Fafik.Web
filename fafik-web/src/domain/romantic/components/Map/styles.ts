@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
 export default {
-
   MapSection: styled.div`
     flex-grow: 1;
     display: flex;
     align-items: center;
     padding: 3rem 0;
-    `,
+  `,
 
   MapCircle: styled.div`
     background-color: #dfd2ae;
@@ -15,7 +14,7 @@ export default {
     height: 28rem;
     border-radius: 50%;
 
-    @media(max-width: 900px){
+    @media (max-width: 900px) {
       width: 24rem;
       height: 24rem;
     }
@@ -23,12 +22,12 @@ export default {
 
   MapTitleSubtitle: styled.div`
     width: 66%;
-    @media(max-width: 900px){
+    @media (max-width: 900px) {
       padding-right: 1rem;
       width: 50%;
     }
 
-    @media(max-width: 780px){
+    @media (max-width: 780px) {
       padding-right: 0;
       width: 90%;
     }
@@ -36,13 +35,13 @@ export default {
 
   MapTitle: styled.div`
     color: #000000;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.1rem;
     font-size: 1.9rem;
     font-weight: 500;
     text-align: center;
 
-    @media(max-width: 900px){
+    @media (max-width: 900px) {
       font-size: 1.7rem;
     }
   `,
@@ -66,11 +65,11 @@ export default {
     align-items: center;
     justify-content: center;
 
-    @media(max-width: 900px){
-        flex-direction: row;
+    @media (max-width: 900px) {
+      flex-direction: row;
     }
 
-    @media(max-width: 780px){
+    @media (max-width: 780px) {
       flex-direction: column;
       width: 100%;
     }
@@ -85,7 +84,7 @@ export default {
     background-color: #ebe3cd;
     border: none;
     color: #ffffff;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.1rem;
     font-weight: 500;
     text-align: center;
@@ -100,7 +99,7 @@ export default {
       background-color: #d8ccad;
     }
 
-    @media(max-width: 900px){
+    @media (max-width: 900px) {
       width: 19rem;
       height: 2.5rem;
       font-size: 1rem;
@@ -108,7 +107,7 @@ export default {
   `,
 
   MapPart1: styled.div`
-    background-image: url("https://i.imgur.com/J8dP9fb.png");
+    background-image: url('https://i.imgur.com/J8dP9fb.png');
     background-size: 40%;
     background-position: -19% 98%;
     background-repeat: no-repeat;
@@ -117,10 +116,10 @@ export default {
     justify-content: flex-end;
     padding-left: 5rem;
 
-    @media(max-width: 900px){
-        width: 100%;
-        justify-content: center;
-        padding-left: 0;
+    @media (max-width: 900px) {
+      width: 100%;
+      justify-content: center;
+      padding-left: 0;
     }
   `,
 
@@ -149,9 +148,9 @@ export default {
     flex-grow: 1;
     width: 70%;
 
-    @media(max-width: 900px){
+    @media (max-width: 900px) {
       flex-direction: column-reverse;
-      width: 100%
+      width: 100%;
     }
   `,
 };

@@ -8,18 +8,10 @@ type Props = {
 };
 
 const RomanticSelect = (props: Props) => {
-  const {
-    Select,
-  } = components;
+  const { Select } = components;
 
   const { options, placeholder } = props;
 
-  return (
-    <Select
-      options={options}
-      placeholder={placeholder}
-    />
-
-  );
+  return <Select options={options} placeholder={placeholder} />;
 };
 export default RomanticSelect;

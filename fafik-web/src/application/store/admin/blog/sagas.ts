@@ -3,7 +3,6 @@ import { put, takeLatest, call } from 'redux-saga/effects';
 
 import { Action } from '../../actions';
 
-
 function* adminBlogGetPosts(action: Action): any {
   try {
     const response = yield call(apiCaller.admin.getBlogPosts);

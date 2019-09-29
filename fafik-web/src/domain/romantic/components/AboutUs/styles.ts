@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { IMAGE_STORAGE } from 'application/styles';
+import { IMAGE_STORAGE } from 'application/config';
 
 interface AboutUsPhotoProps {
   aboutUsImg: string;

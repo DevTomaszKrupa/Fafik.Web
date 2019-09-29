@@ -1,16 +1,17 @@
-import { LoginRequest, LoginResponse, AdminClient, GetEditorThemeResponse } from 'domain/models';
 import Axios from 'axios';
 
-const baseApiUrl = 'http://localhost:5000';
+import { LoginRequest, LoginResponse, AdminClient, GetEditorThemeResponse } from 'domain/models';
+import { API_BASE_URL } from 'application/config';
+
 
 const login = (request: LoginRequest) =>
-  Axios.post<LoginResponse>(`${baseApiUrl}/users/authenticate`, request);
+  Axios.post<LoginResponse>(`${API_BASE_URL}/users/authenticate`, request);
 
 const getEditorTheme = (clientName: string) =>
-  Axios.get<GetEditorThemeResponse>(`${baseApiUrl}/admin/theme/${clientName}`);
+  Axios.get<GetEditorThemeResponse>(`${API_BASE_URL}/admin/theme/${clientName}`);
 
 const getClients = () =>
-  Axios.get<AdminClient>(`${baseApiUrl}/admin/clients`);
+  Axios.get<AdminClient>(`${API_BASE_URL}/admin/clients`);
 
 const getBlogPosts = () => {
   return {

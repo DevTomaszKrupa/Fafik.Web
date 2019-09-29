@@ -1,8 +1,10 @@
 import React, { Fragment } from 'react';
 
-import components from './header.styles';
 import { LeavesState } from 'application/store/leaves/theme/reducers';
+import { IMAGE_STORAGE } from 'application/config';
 import { history } from 'application/helpers';
+
+import components from './header.styles';
 
 
 type Props = {
@@ -23,11 +25,11 @@ const header = (props: Props) => {
       <Header>
         <Images>
           <Image
-            src={'http://localhost/fafik/' + leavesState.headerImageLeft}
+            src={IMAGE_STORAGE + leavesState.headerImageLeft}
             alt="flower"
           />
           <Image
-            src={'http://localhost/fafik/' + leavesState.headerImageRight}
+            src={IMAGE_STORAGE + leavesState.headerImageRight}
             alt="flower"
           />
         </Images>

@@ -1,19 +1,20 @@
-import { GetClientResponse } from 'domain/models';
 import Axios from 'axios';
 
-const baseApiUrl = 'http://localhost:5000';
+import { GetClientResponse } from 'domain/models';
+import { API_BASE_URL } from 'application/config';
+
 
 const getTheme = (clientPath: string) =>
-  Axios.get<GetClientResponse>(`${baseApiUrl}/leaves?clientPath=${clientPath}`);
+  Axios.get<GetClientResponse>(`${API_BASE_URL}/leaves?clientPath=${clientPath}`);
 
 const getMainSite = (clientPath: string) =>
   Axios.get<GetClientResponse>(
-    `${baseApiUrl}/leaves/main?clientPath=${clientPath}`
+    `${API_BASE_URL}/leaves/main?clientPath=${clientPath}`
   );
 
 const getAboutUsSite = (clientPath: string) =>
   Axios.get<GetClientResponse>(
-    `${baseApiUrl}/leaves/about-us?clientPath=${clientPath}`
+    `${API_BASE_URL}/leaves/about-us?clientPath=${clientPath}`
   );
 
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { IMAGE_STORAGE } from 'application/config';
 
 
 interface TitleProps {
@@ -22,7 +23,7 @@ export default {
   Gallery: styled.div`
     flex-grow: 1;
     background-image: ${(props: GalleryProps) =>
-      `url("http://localhost/Fafik/${props.galleryImage}")`};
+      `url("${IMAGE_STORAGE + props.galleryImage}")`};
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;

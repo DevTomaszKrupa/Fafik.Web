@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
+
 import { history } from 'application/helpers';
 import { useDocumentTitle } from 'application/shared';
+import { IMAGE_STORAGE } from 'application/config';
 
 import components from './styles';
 
@@ -61,9 +63,9 @@ const HomePageComponent = () => {
             KTÓRA WAM TO UŁATWI. PRZEDSTAWIAMY WAM NASZ PORTAL,<br />
             MAMY NADZIEJĘ, ŻE WAM SIĘ SPODOBA!
             </MeetUsText>
-          <MeetUsSignatures src="http://localhost/Fafik/app/signatures.png" />
+          <MeetUsSignatures src={`${IMAGE_STORAGE}app/signatures.png`} />
         </MeetUsBox>
-        <MeetUsImg src="http://localhost/Fafik/app/meet-us-img.png" />
+        <MeetUsImg src={`${IMAGE_STORAGE}app/meet-us-img.png`} />
       </MeetUsSection>
 
       <WhatsThisSection id="whatsThisSection">
@@ -72,8 +74,8 @@ const HomePageComponent = () => {
           <HomePageVideoButton onClick={() => history.push('/oferta')}>ZAŁÓŻ SWOJĄ STRONĘ ŚLUBNĄ ></HomePageVideoButton>
         </VideoSection>
         <TextSection>
-          <ShortLogo src="http://localhost/Fafik/app/logo-short.png" />
-          <WhatsThisTitle src="http://localhost/Fafik/app/whats-this-title.png" />
+          <ShortLogo src={`${IMAGE_STORAGE}app/logo-short.png`} />
+          <WhatsThisTitle src={`${IMAGE_STORAGE}app/whats-this-title.png`} />
           <WhatsThisText> To portal na którym narzeczeni mogą zakupić swoje miejsce w sieci
               pod adresem (miloscwiernosc.pl/waszanazwa) na pewien okres czasu,
               dobrać szablon wykonany przez grafika i wyedytować go samodzielnie

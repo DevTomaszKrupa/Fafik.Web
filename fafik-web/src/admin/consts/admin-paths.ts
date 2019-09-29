@@ -1,4 +1,6 @@
 const adminPaths = {
+  mainAdminPage: '/admin',
+  chooseTheme: '/admin/wybierz-motyw',
   config: '/admin/konfiguruj',
   guestList: '/admin/lista-gosci',
   playlist: '/admin/playlista',

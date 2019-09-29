@@ -1,8 +1,11 @@
 import React, { Fragment } from 'react';
-import { history } from 'application/helpers';
-
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+
+import { history } from 'application/helpers';
+import { IMAGE_STORAGE } from 'application/config';
+
 import components from './styles';
+
 
 const TopBarComponent = () => {
 
@@ -43,7 +46,7 @@ const TopBarComponent = () => {
         </TopBarRight>
       </TopBar>
       <LogoSection>
-        <MainLogo src="http://localhost/Fafik/App/logo-main.png" onClick={() => history.push('/')} />
+        <MainLogo src={`${IMAGE_STORAGE}app/logo-main.png`} onClick={() => history.push('/')} />
       </LogoSection>
       <MainMenu>
         <MenuItem hideBorder onClick={() => history.push('/oferta')} active={history.location.pathname === '/oferta'}>

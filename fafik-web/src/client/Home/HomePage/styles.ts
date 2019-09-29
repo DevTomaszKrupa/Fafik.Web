@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import YouTube from 'react-youtube';
+import { IMAGE_STORAGE } from 'application/config';
 
 export default {
 
   BannerBox: styled.div`
-  background-image: url("http://localhost/Fafik/App/main-banner.jpg");
+  background-image: url("${IMAGE_STORAGE}app/main-banner.jpg");
   padding: 5rem 0;
   background-size: cover;
   background-repeat: no-repeat;

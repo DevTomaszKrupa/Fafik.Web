@@ -1,9 +1,11 @@
 import React from 'react';
 import Modal from 'react-modal';
 
-import components from './RsvpDialog.styles';
 import { RomanticRsvpDialogState } from 'application/store/romantic/dialogs/RsvpDialog/reducers';
+import { IMAGE_STORAGE } from 'application/config';
 import { Action } from 'application/store/actions';
+
+import components from './RsvpDialog.styles';
 import RomanticSelect from '../../../shared/RomanticSelect/index';
 import RomanticButton from '../../../shared/RomanticButton/index';
 
@@ -71,7 +73,7 @@ const RsvpDialog = (props: Props) => {
         <RsvpModalFrame>
           <TopOptionsSection>
             <ClosingBox>
-              <ClosingIcon src="http://localhost/Fafik/gaja-i-stanislaw/close-button.svg" />
+              <ClosingIcon src={IMAGE_STORAGE + 'gaja-i-stanislaw/close-button.svg'} /> {/* TODO */}
             </ClosingBox>
           </TopOptionsSection>
           <RsvpText>

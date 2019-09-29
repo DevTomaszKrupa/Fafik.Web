@@ -1,8 +1,10 @@
 import React, { useEffect, Fragment } from 'react';
 
-import components from './main.styles';
 import { LeavesMainSiteState } from 'application/store/leaves/main/reducers';
 import { Action } from 'application/store/actions';
+import { IMAGE_STORAGE } from 'application/config';
+
+import components from './main.styles';
 
 
 type Props = {
@@ -22,7 +24,7 @@ const MainLayout = (props: Props) => {
   return (
     <Fragment>
       <ImgBox>
-        <CoupleImage src={'http://localhost/fafik/' + leavesMainSiteState.mainImage} alt="couple" />
+        <CoupleImage src={IMAGE_STORAGE + leavesMainSiteState.mainImage} alt="couple" />
       </ImgBox>
       <Counter> do naszego ślubu zostało: <Badge>11</Badge> miesięcy, <Badge>8</Badge> dni.</Counter>
     </Fragment>

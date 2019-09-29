@@ -1,10 +1,11 @@
-import { GetClientResponse } from 'domain/models';
 import Axios from 'axios';
 
-const baseApiUrl = 'http://localhost:5000';
+import { GetClientResponse } from 'domain/models';
+import {API_BASE_URL} from 'application/config';
+
 
 const getTheme = (clientPath: string) =>
-  Axios.get<GetClientResponse>(`${baseApiUrl}/romantic?clientPath=${clientPath}`);
+  Axios.get<GetClientResponse>(`${API_BASE_URL}/romantic?clientPath=${clientPath}`);
 
 export default {
   getTheme

@@ -121,15 +121,35 @@ const HomePageComponent = () => {
           <FeaturesTitle>DLACZEGO WARTO?</FeaturesTitle>
           <AliceCarousel mouseDragEnabled>
             <FeatureBox onDragStart={handleOnDragStart}>
-              <FontAwesomeIcon icon={faClipboardList} size="lg" color="#ffffff"/>
+              <FontAwesomeIcon
+                icon={faClipboardList}
+                size="3x"
+                color="#ffffff"
+              />
               <SingleFeatureTitle>WASZA ORGANIZACJA</SingleFeatureTitle>
-              <FeatureDescription>Możecie dodawać swoją listę gości, oznaczać
-                potwierdzenia oraz zbierają się Wam tam odpowiedzi
-                od gości. Właśnie tam znajdziecie propozycje dedykacji
-                od nich oraz zobaczycie statystyki odsłon Waszej strony.
-                Nasze strony ułatwią Wam przygotowania!</FeatureDescription>
+              <FeatureDescription>
+                Możecie dodawać swoją listę gości, oznaczać potwierdzenia oraz
+                zbierają się Wam tam odpowiedzi od gości. Właśnie tam
+                znajdziecie propozycje dedykacji od nich oraz zobaczycie
+                statystyki odsłon Waszej strony. Nasze strony ułatwią Wam
+                przygotowania!
+              </FeatureDescription>
             </FeatureBox>
-            
+            <FeatureBox onDragStart={handleOnDragStart}>
+              <FontAwesomeIcon
+                icon={faClipboardList}
+                size="3x"
+                color="#ffffff"
+              />
+              <SingleFeatureTitle>WASZA ORGANIZACJA</SingleFeatureTitle>
+              <FeatureDescription>
+                Możecie dodawać swoją listę gości, oznaczać potwierdzenia oraz
+                zbierają się Wam tam odpowiedzi od gości. Właśnie tam
+                znajdziecie propozycje dedykacji od nich oraz zobaczycie
+                statystyki odsłon Waszej strony. Nasze strony ułatwią Wam
+                przygotowania!
+              </FeatureDescription>
+            </FeatureBox>
           </AliceCarousel>
         </TopLayer>
       </FeaturesSection>

@@ -223,6 +223,8 @@ export default {
     position: relative;
     height: 27rem;
     width: 100%;
+
+    font-family: 'Josefin Sans';
   `,
 
   FVideo: styled.video`
@@ -234,30 +236,44 @@ export default {
   `,
 
   TopLayer: styled.div`
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.2);
     height: 100%;
     width: 100%;
     z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   `,
 
   FeaturesTitle: styled.div`
-    font-family: 'Josefin Sans';
     text-align: center;
     letter-spacing: 0.3rem;
     color: #ffffff;
     font-size: 2.7rem;
+    padding-top: 3rem;
   `,
 
   FeatureBox: styled.div`
-  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 13rem;
+    justify-content: space-around;
   `,
 
   SingleFeatureTitle: styled.div`
-  color: #ffffff;
+    color: #ffffff;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    font-size: 1.4rem;
   `,
-  
+
   FeatureDescription: styled.div`
-  color: #ffffff;
+    color: #ffffff;
+    width: 37%;
+    text-align: center;
+    letter-spacing: 0.06rem;
+    font-weight: 200;
+    line-height: 1.4rem !important;
   `,
-  
 };

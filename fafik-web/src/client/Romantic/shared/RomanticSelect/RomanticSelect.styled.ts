@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import Select from 'react-select';
 
 export default {
-
   Select: styled(Select)`
   width: 12rem;
 

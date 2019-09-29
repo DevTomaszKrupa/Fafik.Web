@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 import { useSelector, useDispatch } from 'react-redux';
 
-
 import components from './styles';
 import { AppState } from 'application/store/reducers';
 
@@ -10,7 +9,6 @@ import Usual from 'domain/romantic/components/Header/Usual';
 import Sticky from 'domain/romantic/components/Header/Sticky';
 
 const HeaderLayout = () => {
-
   const dispatch = useDispatch();
   const openRsvpDialog = () => dispatch({ type: 'OPEN_ROMANTIC_RSVP_DIALOG' });
   const romanticState = useSelector((state: AppState) => state.romanticState);
@@ -38,25 +36,30 @@ const HeaderLayout = () => {
   };
   const scrollToDiv = (divId: string) => {
     const element = document.getElementById(divId);
-    if (element)
-      element.scrollIntoView();
+    if (element) element.scrollIntoView();
   };
 
   const dateString: string = moment(header.weddingDate).format('DD.MM.YYYY');
   return (
     <Header headerImage={header.mainImage}>
-      {!stickyIsVisible && <Usual
-        headerNames={header.headerNames}
-        headerQuote={header.headerQuote}
-        weddingDate={dateString}
-        leftMenuItems={header.leftMenuItems}
-        rightMenuItems={header.rightMenuItems}
-        onItemClick={ItemClicked} />}
-      {stickyIsVisible && <Sticky
-        headerNames={header.headerNames}
-        leftMenuItems={header.leftMenuItems}
-        rightMenuItems={header.rightMenuItems}
-        onItemClick={ItemClicked} />}
+      {!stickyIsVisible && (
+        <Usual
+          headerNames={header.headerNames}
+          headerQuote={header.headerQuote}
+          weddingDate={dateString}
+          leftMenuItems={header.leftMenuItems}
+          rightMenuItems={header.rightMenuItems}
+          onItemClick={ItemClicked}
+        />
+      )}
+      {stickyIsVisible && (
+        <Sticky
+          headerNames={header.headerNames}
+          leftMenuItems={header.leftMenuItems}
+          rightMenuItems={header.rightMenuItems}
+          onItemClick={ItemClicked}
+        />
+      )}
     </Header>
   );
 };
@@ -65,9 +68,14 @@ const useStickyHeader = () => {
   const [stickyIsVisible, setStickyIsVisible] = useState(false);
 
   const handleWindowChange = () => {
-    const scrollTop = (window.pageYOffset !== undefined) ?
-      window.pageYOffset :
-      (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    const scrollTop =
+      window.pageYOffset !== undefined
+        ? window.pageYOffset
+        : (
+            document.documentElement ||
+            document.body.parentNode ||
+            document.body
+          ).scrollTop;
     setStickyIsVisible(scrollTop > 360 || window.innerWidth < 835);
   };
 
@@ -86,6 +94,5 @@ const useStickyHeader = () => {
   });
   return stickyIsVisible;
 };
-
 
 export default HeaderLayout;

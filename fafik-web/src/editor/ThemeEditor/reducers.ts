@@ -10,11 +10,13 @@ export type AdminEditorSidePanelState = {
 const initialState: AdminEditorSidePanelState = {
   editor: 'none',
   itemId: '',
-  textValue: ''
+  textValue: '',
 };
 
-export const adminEditorSidePanelState: Reducer<AdminEditorSidePanelState, Action> = (state = initialState, action: Action):
-  AdminEditorSidePanelState => {
+export const adminEditorSidePanelState: Reducer<
+  AdminEditorSidePanelState,
+  Action
+> = (state = initialState, action: Action): AdminEditorSidePanelState => {
   switch (action.type) {
     case 'EDIT_ADMIN_EDITABLE_TEXT_COMPONENT_CLICK': {
       const { itemId, textValue } = action.payload;
@@ -22,14 +24,14 @@ export const adminEditorSidePanelState: Reducer<AdminEditorSidePanelState, Actio
         ...state,
         editor: 'text',
         itemId: itemId,
-        textValue: textValue
+        textValue: textValue,
       };
     }
-    case 'EDITOR_SITE_PANEL_UPDATE_TEXT_VALUE':{
+    case 'EDITOR_SITE_PANEL_UPDATE_TEXT_VALUE': {
       const { textValue } = action.payload;
       return {
         ...state,
-        textValue: textValue
+        textValue: textValue,
       };
     }
     default:

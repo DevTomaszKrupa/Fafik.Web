@@ -4,7 +4,7 @@ import { put, takeLatest, call } from 'redux-saga/effects';
 import {
   GET_ROMANTIC_THEME_STARTED,
   GET_ROMANTIC_THEME_SUCCESS,
-  GET_ROMANTIC_THEME_FAILURE
+  GET_ROMANTIC_THEME_FAILURE,
 } from './consts';
 import { Action } from '../../actions';
 

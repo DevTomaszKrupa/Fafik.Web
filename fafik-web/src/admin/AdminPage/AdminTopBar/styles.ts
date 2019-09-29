@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 export default {
-
   AdminPanelHeader: styled.div`
-    background-color: #909F88;
+    background-color: #909f88;
     height: 5rem;
     display: flex;
     justify-content: center;

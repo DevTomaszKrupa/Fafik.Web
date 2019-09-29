@@ -5,11 +5,11 @@ import { AppState } from 'application/store/reducers';
 import { closeRsvpDialog } from 'application/store/romantic/dialogs/RsvpDialog/actions';
 
 const mapStateToProps = ({ romanticRsvpDialogState }: AppState) => ({
-  romanticRsvpDialogState: romanticRsvpDialogState
+  romanticRsvpDialogState: romanticRsvpDialogState,
 });
 
 const mapDispatchToProps = {
-  closeRsvpDialog
+  closeRsvpDialog,
 };
 
 const enhancer = connect(

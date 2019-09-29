@@ -7,7 +7,7 @@ type Props = {
 };
 
 const AdminTitleSection = (props: Props) => {
-  const { TitlePanel, Title, } = components;
+  const { TitlePanel, Title } = components;
   return (
     <Fragment>
       <TitlePanel>

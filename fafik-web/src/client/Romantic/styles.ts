@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export default {
-
   DoubleLineTheme: styled.div`
     border-top: 0.07rem solid #707070;
     border-bottom: 0.07rem solid #707070;

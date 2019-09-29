@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { IMAGE_STORAGE } from 'application/config';
 
-
 interface TitleProps {
   color: string;
 }
@@ -47,14 +46,14 @@ export default {
     flex-direction: column;
     align-items: center;
 
-    @media(max-width: 785px){
+    @media (max-width: 785px) {
       justify-content: center;
     }
   `,
 
   GalleryTitle: styled.div`
     color: ${(props: TitleProps) => props.color};
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 0.1rem;
     font-size: 2.3rem;
     padding-bottom: 1rem;
@@ -87,7 +86,7 @@ export default {
     width: 90%;
     justify-content: center;
 
-    @media(max-width: 785px){
+    @media (max-width: 785px) {
       flex-wrap: wrap;
       flex-grow: 0;
     }
@@ -105,24 +104,24 @@ export default {
     box-shadow: 0.4rem 0.4rem 2rem #343434;
     margin: 0 2.5%;
 
-    &: hover{
-      background-color: rgba(255, 255, 255, 0.95)
-  }
-    @media(max-width: 900px){
+    &: hover {
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+    @media (max-width: 900px) {
       width: 15rem;
       height: 18rem;
     }
 
-    @media(max-width: 785px){
+    @media (max-width: 785px) {
       justify-content: center;
       width: 13rem;
       height: 13rem;
       margin: 1rem 1rem;
-      &: hover{
-          background-color: rgba(255, 255, 255, 0.8)
+      &: hover {
+        background-color: rgba(255, 255, 255, 0.8);
       }
     }
-    @media(max-width: 550px){
+    @media (max-width: 550px) {
       width: 10rem;
       height: 10rem;
     }
@@ -136,33 +135,33 @@ export default {
     background-repeat: no-repeat;
     background-position: 21% 18%;
 
-    @media(max-width: 900px){
+    @media (max-width: 900px) {
       width: 82%;
       height: 64%;
     }
 
-    @media(max-width: 785px){
+    @media (max-width: 785px) {
       width: 10rem;
       height: 10rem;
     }
 
-    @media(max-width: 550px){
+    @media (max-width: 550px) {
       width: 82%;
       height: 82%;
     }
   `,
 
   CategoryName: styled.div`
-    font-family: "Sacramento";
+    font-family: 'Sacramento';
     font-size: 2.3rem;
     padding: 1.15rem 0;
     text-align: center;
 
-    @media(max-width: 900px){
+    @media (max-width: 900px) {
       font-size: 1.8rem;
     }
 
-    @media(max-width: 785px){
+    @media (max-width: 785px) {
       display: none;
     }
   `,

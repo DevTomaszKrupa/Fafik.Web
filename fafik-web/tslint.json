@@ -1,6 +1,8 @@
 {
   "tsx": "react",
   "rules": {
+    "prettier": true,
+    "interface-name": false,
     "no-import-side-effect": [
       true,
       {
@@ -13,22 +15,13 @@
     "arrow-return-shorthand": true,
     "callable-types": true,
     "class-name": true,
-    "comment-format": [
-      true,
-      "check-space"
-    ],
+    "comment-format": [true, "check-space"],
     "eofline": true,
     "forin": true,
     "import-spacing": true,
-    "indent": [
-      true,
-      "spaces"
-    ],
+    "indent": [true, "spaces"],
     "label-position": true,
-    "max-line-length": [
-      true,
-      170
-    ],
+    "max-line-length": [true, 170],
     "member-access": false,
     "member-ordering": [
       true,
@@ -43,25 +36,14 @@
     ],
     "no-arg": true,
     "no-bitwise": true,
-    "no-console": [
-      true,
-      "debug",
-      "info",
-      "time",
-      "timeEnd",
-      "trace",
-      "log"
-    ],
+    "no-console": [true, "debug", "info", "time", "timeEnd", "trace", "log"],
     "no-construct": true,
     "no-debugger": true,
     "no-duplicate-super": true,
     "no-empty": false,
     "no-empty-interface": true,
     "no-eval": true,
-    "no-inferrable-types": [
-      true,
-      "ignore-params"
-    ],
+    "no-inferrable-types": [true, "ignore-params"],
     "no-misused-new": true,
     "no-non-null-assertion": true,
     "only-arrow-functions": true,
@@ -80,26 +62,11 @@
       "check-whitespace"
     ],
     "prefer-const": true,
-    "quotemark": [
-      true,
-      "single",
-      "avoid-escape",
-      "jsx-double"
-    ],
+    "quotemark": [true, "single", "avoid-escape", "jsx-double"],
     "radix": true,
-    "semicolon": [
-      true,
-      "always"
-    ],
-    "triple-equals": [
-      true,
-      "allow-null-check"
-    ],
-    "typedef": [
-      true,
-      "call-signature",
-      "parameter"
-    ],
+    "semicolon": [true, "always"],
+    "triple-equals": [true, "allow-null-check"],
+    "typedef": [true, "call-signature", "parameter"],
     "typedef-whitespace": [
       true,
       {
@@ -121,5 +88,6 @@
       "check-type"
     ],
     "no-output-on-prefix": false
-  }
+  },
+  "rulesDirectory": ["tslint-plugin-prettier"]
 }

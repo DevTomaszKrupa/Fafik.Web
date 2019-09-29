@@ -28,7 +28,7 @@ const sagas = [
   adminGetClientsRootSaga,
   adminThemeEditorRootSaga,
   adminRomanticThemeEditorSaga,
-  adminBlogGetPostsRootSaga
+  adminBlogGetPostsRootSaga,
 ];
 
 export default function* rootSaga(): any {

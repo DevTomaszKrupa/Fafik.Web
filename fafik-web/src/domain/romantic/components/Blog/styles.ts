@@ -14,31 +14,30 @@ interface SubtitleProps {
 }
 
 export default {
-
   SingleLineHorizontal: styled.div`
-  width: 14rem;
-  height: 0.1rem;
-  background-color: #707070;
-  margin: 0.5rem 0 1rem 0;
-`,
+    width: 14rem;
+    height: 0.1rem;
+    background-color: #707070;
+    margin: 0.5rem 0 1rem 0;
+  `,
 
   Title: styled.div`
-  color: ${(props: TitleProps) => props.color};
-  font-family: "Montserrat", sans-serif;
-  letter-spacing: 0.1rem;
-  font-size: 2.3rem;
-  padding: 1rem 0;
-  font-weight: 500;
+    color: ${(props: TitleProps) => props.color};
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.1rem;
+    font-size: 2.3rem;
+    padding: 1rem 0;
+    font-weight: 500;
   `,
 
   Subtitle: styled.div`
-  color: ${(props: SubtitleProps) => props.color};
-  font-family: "Sacramento";
-  text-align: center;
-  font-size: 2rem;
-  line-height: 2.6rem;
-  padding: ${(props: SubtitleProps) => props.padding};
-  width: 60%;
+    color: ${(props: SubtitleProps) => props.color};
+    font-family: 'Sacramento';
+    text-align: center;
+    font-size: 2rem;
+    line-height: 2.6rem;
+    padding: ${(props: SubtitleProps) => props.padding};
+    width: 60%;
   `,
 
   BlogSection: styled.div`
@@ -49,11 +48,11 @@ export default {
     align-items: center;
     justify-content: center;
 
-    @media(max-width: 945px){
+    @media (max-width: 945px) {
       height: 95%;
     }
 
-    @media(max-width: 725px){
+    @media (max-width: 725px) {
       height: 115%;
     }
   `,
@@ -76,7 +75,6 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
   `,
 
   BlogRecentPosts: styled.div`
@@ -90,7 +88,7 @@ export default {
     //     padding: 0.6rem 0 1.6rem 0;
     // }
 
-    @media(max-width: 945px){
+    @media (max-width: 945px) {
       flex-wrap: wrap;
       padding: 0 0 1rem 0;
     }
@@ -100,11 +98,11 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    @media(max-width: 1140px){
+    @media (max-width: 1140px) {
       padding: 0 1.5rem;
     }
 
-    @media(max-width: 945px){
+    @media (max-width: 945px) {
       padding: 0.7rem 0.5rem;
     }
   `,
@@ -116,18 +114,18 @@ export default {
     background-position-y: 52%;
     background-size: 100%;
 
-    @media(max-width: 1140px){
-        height: 3rem;
-        width: 17rem;
+    @media (max-width: 1140px) {
+      height: 3rem;
+      width: 17rem;
     }
 
-    @media(max-width: 570px){
+    @media (max-width: 570px) {
       height: 2.5rem;
-  }
+    }
   `,
 
   BlogPostDate: styled.div`
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-style: italic;
     font-weight: 400;
     color: #676758;
@@ -136,12 +134,12 @@ export default {
   `,
 
   BlogPostTitle: styled.div`
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     letter-spacing: 0.07rem;
     font-weight: 500;
 
-    @media(max-width: 945px){
+    @media (max-width: 945px) {
       width: 100%;
       font-size: 0.9rem;
     }

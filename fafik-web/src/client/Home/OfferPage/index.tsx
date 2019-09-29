@@ -4,13 +4,13 @@ import { RegisterRequest } from 'domain/models';
 import { useDispatch } from 'react-redux';
 import { useDocumentTitle } from 'application/shared';
 
-
 const OfferPageComponent = () => {
   useDocumentTitle('Szablony - Miłość Wierność');
   const [loginFormVisible, setLoginFormVisible] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState('');
   const dispatch = useDispatch();
-  const submitRegisterForm = (request: RegisterRequest) => dispatch({ type: 'REGISTER_STARTED', payload: request });
+  const submitRegisterForm = (request: RegisterRequest) =>
+    dispatch({ type: 'REGISTER_STARTED', payload: request });
 
   const onThemeClicked = (theme: string) => {
     setLoginFormVisible(true);
@@ -20,7 +20,7 @@ const OfferPageComponent = () => {
   const submitRegisterFormHandler = (values: any) => {
     const request = {
       ...values,
-      theme: selectedTheme
+      theme: selectedTheme,
     };
     submitRegisterForm(request);
   };
@@ -33,9 +33,11 @@ const OfferPageComponent = () => {
         <li onClick={() => onThemeClicked('romantic')}>ROMANTIC</li>
       </ul>
 
-      {loginFormVisible && <div>
-        <RegisterForm submitRegisterForm={submitRegisterFormHandler} />
-      </div>}
+      {loginFormVisible && (
+        <div>
+          <RegisterForm submitRegisterForm={submitRegisterFormHandler} />
+        </div>
+      )}
     </div>
   );
 };

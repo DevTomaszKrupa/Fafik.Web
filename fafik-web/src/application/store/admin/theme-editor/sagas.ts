@@ -3,7 +3,6 @@ import { put, takeLatest, call } from 'redux-saga/effects';
 
 import { Action } from '../../actions';
 
-
 function* adminSidePanelGetTheme(action: Action): any {
   try {
     const theme = yield call(apiCaller.admin.getEditorTheme, action.payload);

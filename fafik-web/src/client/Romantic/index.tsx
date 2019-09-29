@@ -15,12 +15,10 @@ import Music from './Music';
 import AdditionalInfo from './AdditionalInfo';
 import RsvpDialog from './dialogs/RsvpDialog';
 
-
-
 const RomanticLayout = () => {
-
   const dispatch = useDispatch();
-  const getRomanticTheme = (clientPath: string) => dispatch({ type: 'GET_ROMANTIC_THEME_STARTED', payload: clientPath });
+  const getRomanticTheme = (clientPath: string) =>
+    dispatch({ type: 'GET_ROMANTIC_THEME_STARTED', payload: clientPath });
 
   const { DoubleLineTheme } = components;
 
@@ -30,7 +28,6 @@ const RomanticLayout = () => {
 
   return (
     <Fragment>
-
       <Header />
       <DoubleLineTheme />
 

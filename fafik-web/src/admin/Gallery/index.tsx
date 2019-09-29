@@ -5,15 +5,14 @@ import AdminTitleSection from '../shared/AdminTitleSection';
 import components from './styles';
 
 const AdminGalleryComponent = () => {
-    useDocumentTitle('Galeria');
+  useDocumentTitle('Galeria');
 
-    const {
-    } = components;
-    return (
-        <Fragment>
-            <AdminTitleSection title="Galeria" />
-        </Fragment>
-    );
+  const {} = components;
+  return (
+    <Fragment>
+      <AdminTitleSection title="Galeria" />
+    </Fragment>
+  );
 };
 
 export default AdminGalleryComponent;

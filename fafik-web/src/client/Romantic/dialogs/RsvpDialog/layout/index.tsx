@@ -26,7 +26,7 @@ const customStyles = {
     outline: `black`,
     width: `70%`,
     height: `70%`,
-  }
+  },
 };
 
 const RsvpDialog = (props: Props) => {
@@ -45,7 +45,7 @@ const RsvpDialog = (props: Props) => {
     RsvpInput,
     RsvpListRequest,
     SingleFormToFill,
-    FormIcon
+    FormIcon,
   } = components;
 
   const DietOptions = [
@@ -67,23 +67,34 @@ const RsvpDialog = (props: Props) => {
     <Modal
       isOpen={isOpen}
       onRequestClose={closeRsvpDialog}
-      style={customStyles} >
-
+      style={customStyles}
+    >
       <RsvpModal>
         <RsvpModalFrame>
           <TopOptionsSection>
             <ClosingBox>
-              <ClosingIcon src={IMAGE_STORAGE + 'gaja-i-stanislaw/close-button.svg'} /> {/* TODO */}
+              <ClosingIcon
+                src={IMAGE_STORAGE + 'gaja-i-stanislaw/close-button.svg'}
+              />{' '}
+              {/* TODO */}
             </ClosingBox>
           </TopOptionsSection>
           <RsvpText>
             <RsvpTitle> FORMULARZ POTWIERDZENIA OBECNOŚCI </RsvpTitle>
-            <RsvpSubtitle> Drodzy Goscie, deklarując swoja obecnosc potwierdzacie swoje przybycie na wesele.
-  Bardzo prosimy o przemyslana odpowiedz i kontakt z nami w razie jakiejkolwiek zmiany.
-              Po wypelnieniu formularza prosimy o klikniecie "zapisz" oraz potwierdzenie poprzez e-mail. </RsvpSubtitle>
+            <RsvpSubtitle>
+              {' '}
+              Drodzy Goscie, deklarując swoja obecnosc potwierdzacie swoje
+              przybycie na wesele. Bardzo prosimy o przemyslana odpowiedz i
+              kontakt z nami w razie jakiejkolwiek zmiany. Po wypelnieniu
+              formularza prosimy o klikniecie "zapisz" oraz potwierdzenie
+              poprzez e-mail.{' '}
+            </RsvpSubtitle>
           </RsvpText>
 
-          <RsvpDate> Prosimy o potwierdzenie przybycia do dnia 21 maja 2020. </RsvpDate>
+          <RsvpDate>
+            {' '}
+            Prosimy o potwierdzenie przybycia do dnia 21 maja 2020.{' '}
+          </RsvpDate>
 
           <RsvpEmailBox>
             <RsvpEmailRequest> Twój e-mail: </RsvpEmailRequest>
@@ -95,19 +106,17 @@ const RsvpDialog = (props: Props) => {
           <SingleFormToFill>
             <RsvpInput placeholder="imię i nazwisko" />
 
-            <RomanticSelect
-              placeholder="Wiek"
-              options={AgeOptions} />
+            <RomanticSelect placeholder="Wiek" options={AgeOptions} />
 
-            <RomanticSelect
-              placeholder="Dieta"
-              options={DietOptions} />
+            <RomanticSelect placeholder="Dieta" options={DietOptions} />
 
-            <RomanticButton buttonStyle="green"> dodaj <FormIcon> + </FormIcon> </RomanticButton>
+            <RomanticButton buttonStyle="green">
+              {' '}
+              dodaj <FormIcon> + </FormIcon>{' '}
+            </RomanticButton>
           </SingleFormToFill>
 
           <RomanticButton buttonStyle="green">Gotowe</RomanticButton>
-
         </RsvpModalFrame>
       </RsvpModal>
     </Modal>

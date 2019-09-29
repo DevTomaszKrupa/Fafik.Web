@@ -32,17 +32,17 @@ export default {
     cursor: pointer;
     display: none;
 
-    @media(max-width: 835px){
+    @media (max-width: 835px) {
       display: block;
     }
   `,
 
   StickyMenuIconBox: styled.div`
-      flex-grow: 1
+    flex-grow: 1;
   `,
 
   StickyMenuRight: styled.div`
-      flex-grow: 1;
+    flex-grow: 1;
   `,
 
   StickyMenuOptions: styled.div`
@@ -50,12 +50,12 @@ export default {
     width: 75%;
     margin-top: -0.6rem;
 
-    @media (max-width: 1100px){
-        width: 90%;
+    @media (max-width: 1100px) {
+      width: 90%;
     }
 
-    @media(max-width: 835px){
-        display: none;
+    @media (max-width: 835px) {
+      display: none;
     }
   `,
 
@@ -67,7 +67,7 @@ export default {
   `,
 
   StickyCenterNames: styled.div`
-    font-family: "Sacramento";
+    font-family: 'Sacramento';
     font-size: 2.7rem;
     padding-top: 0.6rem;
     flex-grow: 1;
@@ -78,7 +78,7 @@ export default {
   StickyItem: styled.div`
     text-align: ${(props: ItemProps) => props.textAlign};
     font-size: 0.9rem;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     letter-spacing: 0.1rem;
     line-height: 2.1rem;
@@ -87,5 +87,5 @@ export default {
     &: hover {
       text-decoration: underline;
     }
-  `
+  `,
 };

@@ -7,7 +7,6 @@ import Button from '@material-ui/core/Button';
 import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
-
 const AdminMenu = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
@@ -23,19 +22,17 @@ const AdminMenu = () => {
   const logout = () => dispatch({ type: 'ADMIN_LOGOUT' });
   const onLogoutClicked = () => logout();
 
-  const {
-    ProfilBox,
-    ButtonTitle,
-    DropdownMenu,
-    MenuButton,
-  } = components;
+  const { ProfilBox, ButtonTitle, DropdownMenu, MenuButton } = components;
 
   return (
     <div>
-      <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+      <Button
+        aria-controls="simple-menu"
+        aria-haspopup="true"
+        onClick={handleClick}
+      >
         <ProfilBox>
-          <SupervisedUserCircleIcon
-            fontSize="large" htmlColor="#F2EEE8" />
+          <SupervisedUserCircleIcon fontSize="large" htmlColor="#F2EEE8" />
           <ButtonTitle>PROFIL</ButtonTitle>
           <ArrowDropDownIcon fontSize="large" htmlColor="#3E4B39" />
         </ProfilBox>
@@ -55,7 +52,6 @@ const AdminMenu = () => {
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
-
       >
         <MenuButton onClick={handleClose}>Ustawienia</MenuButton>
         <MenuButton onClick={onLogoutClicked}>Wyloguj</MenuButton>

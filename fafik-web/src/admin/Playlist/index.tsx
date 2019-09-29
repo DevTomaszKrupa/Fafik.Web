@@ -5,15 +5,14 @@ import AdminTitleSection from '../shared/AdminTitleSection';
 import components from './styles';
 
 const AdminPlaylistComponent = () => {
-    useDocumentTitle('Playlista');
+  useDocumentTitle('Playlista');
 
-    const {
-    } = components;
-    return (
-        <Fragment>
-            <AdminTitleSection title="Playlista" />
-        </Fragment>
-    );
+  const {} = components;
+  return (
+    <Fragment>
+      <AdminTitleSection title="Playlista" />
+    </Fragment>
+  );
 };
 
 export default AdminPlaylistComponent;

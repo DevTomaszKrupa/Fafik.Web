@@ -7,5 +7,5 @@ export const apiCaller = {
   admin,
   client,
   leaves,
-  romantic
+  romantic,
 };

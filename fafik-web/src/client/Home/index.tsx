@@ -7,9 +7,7 @@ import ContactPage from './ContactPage';
 import OfferPage from './OfferPage';
 import PricingPage from './PricingPage';
 
-
 const HomeComponent = () => {
-
   return (
     <Fragment>
       <Route exact path="/" component={HomePage} />

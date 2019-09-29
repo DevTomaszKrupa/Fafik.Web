@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
       monospace;
   }
 
-  @font-face{ 
+  @font-face{
     font-family: 'Selima';
     src: url('selima_-webfont.woff') format('woff'),
   }

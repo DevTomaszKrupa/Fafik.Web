@@ -6,10 +6,20 @@ import { GET_CLIENT_SUCCESS } from '../../client/consts';
 import {
   GET_ROMANTIC_THEME_STARTED,
   GET_ROMANTIC_THEME_SUCCESS,
-  GET_ROMANTIC_THEME_FAILURE
+  GET_ROMANTIC_THEME_FAILURE,
 } from './consts';
-import { RomanticAboutUsProps, RomanticQuoteProps, RomanticGalleryProps, RomanticGalleryCard, RomanticBlogProps,
-  RomanticBlogPost, RomanticPlanEvent, RomanticPlanProps, RomanticAdditionalInfoProps, RomanticAdditionalInfoInfo } from 'domain/romantic/models';
+import {
+  RomanticAboutUsProps,
+  RomanticQuoteProps,
+  RomanticGalleryProps,
+  RomanticGalleryCard,
+  RomanticBlogProps,
+  RomanticBlogPost,
+  RomanticPlanEvent,
+  RomanticPlanProps,
+  RomanticAdditionalInfoProps,
+  RomanticAdditionalInfoInfo,
+} from 'domain/romantic/models';
 
 interface SiteItem {
   name: string;
@@ -34,22 +44,22 @@ const initialState: RomanticState = {
   isLoading: false,
   header: {
     leftMenuItems: [] as SiteItem[],
-    rightMenuItems: [] as SiteItem[]
+    rightMenuItems: [] as SiteItem[],
   } as RomanticHeader,
   aboutUs: {} as RomanticAboutUsProps,
   quoteSection: {} as RomanticQuoteProps,
   gallery: {
-    cards: [] as RomanticGalleryCard[]
+    cards: [] as RomanticGalleryCard[],
   } as RomanticGalleryProps,
   blog: {
-    posts: [] as RomanticBlogPost[]
+    posts: [] as RomanticBlogPost[],
   } as RomanticBlogProps,
   plan: {
-    events: [] as RomanticPlanEvent[]
+    events: [] as RomanticPlanEvent[],
   } as RomanticPlanProps,
   additionalInfo: {
-    infoCards: [] as RomanticAdditionalInfoInfo[]
-  }
+    infoCards: [] as RomanticAdditionalInfoInfo[],
+  },
 };
 
 const resolveMenuItem = (sites: SiteItem[]) => {
@@ -73,12 +83,12 @@ export const romanticState: Reducer<RomanticState, Action> = (
     case GET_CLIENT_SUCCESS:
       return {
         ...state,
-        clientPath: action.payload.data.clientPath
+        clientPath: action.payload.data.clientPath,
       };
     case GET_ROMANTIC_THEME_STARTED:
       return {
         ...state,
-        isLoading: true
+        isLoading: true,
       };
     case GET_ROMANTIC_THEME_SUCCESS:
       const { header } = action.payload.data;
@@ -90,13 +100,13 @@ export const romanticState: Reducer<RomanticState, Action> = (
         header: {
           ...header,
           leftMenuItems: leftItems,
-          rightMenuItems: rightItems
-        }
+          rightMenuItems: rightItems,
+        },
       };
     case GET_ROMANTIC_THEME_FAILURE:
       return {
         ...state,
-        isLoading: false
+        isLoading: false,
       };
     default:
       return state;

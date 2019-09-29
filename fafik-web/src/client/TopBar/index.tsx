@@ -6,9 +6,7 @@ import { IMAGE_STORAGE } from 'application/config';
 
 import components from './styles';
 
-
 const TopBarComponent = () => {
-
   const FacebookClick = () => {
     window.open('https://www.facebook.com/miloscwiernoscpl', '_blank');
   };
@@ -36,8 +34,14 @@ const TopBarComponent = () => {
       <TopBar>
         <TopBarLeft>
           <SocialIcons>
-            <span onClick={FacebookClick}> <FAwesomeIcon icon={faFacebook} size="lg" color="#FFFFFF" /> </span>
-            <span onClick={InstagramClick}> <FAwesomeIcon icon={faInstagram} size="lg" color="#FFFFFF" /> </span>
+            <span onClick={FacebookClick}>
+              {' '}
+              <FAwesomeIcon icon={faFacebook} size="lg" color="#FFFFFF" />{' '}
+            </span>
+            <span onClick={InstagramClick}>
+              {' '}
+              <FAwesomeIcon icon={faInstagram} size="lg" color="#FFFFFF" />{' '}
+            </span>
           </SocialIcons>
           <TopBartLeftTitle>SPRAWDŹ NASZE SOCIAL MEDIA!</TopBartLeftTitle>
         </TopBarLeft>
@@ -46,22 +50,45 @@ const TopBarComponent = () => {
         </TopBarRight>
       </TopBar>
       <LogoSection>
-        <MainLogo src={`${IMAGE_STORAGE}app/logo-main.png`} onClick={() => history.push('/')} />
+        <MainLogo
+          src={`${IMAGE_STORAGE}app/logo-main.png`}
+          onClick={() => history.push('/')}
+        />
       </LogoSection>
       <MainMenu>
-        <MenuItem hideBorder onClick={() => history.push('/oferta')} active={history.location.pathname === '/oferta'}>
-          SZABLONY</MenuItem>
-        <MenuItem onClick={() => history.push('/cennik')} active={history.location.pathname === '/cennik'}>
-          CENNIK</MenuItem>
-        <MenuItem onClick={() => history.push('/FAQ')} active={history.location.pathname === '/FAQ'}>
-          FAQ</MenuItem>
-        <MenuItem onClick={() => history.push('/kontakt')} active={history.location.pathname === '/kontakt'}>
-          KONTAKT</MenuItem>
-        <MenuItem onClick={() => history.push('/admin')} active={history.location.pathname === '/admin'}>
-          PANEL ADMINISTRATORA</MenuItem>
+        <MenuItem
+          hideBorder
+          onClick={() => history.push('/oferta')}
+          active={history.location.pathname === '/oferta'}
+        >
+          SZABLONY
+        </MenuItem>
+        <MenuItem
+          onClick={() => history.push('/cennik')}
+          active={history.location.pathname === '/cennik'}
+        >
+          CENNIK
+        </MenuItem>
+        <MenuItem
+          onClick={() => history.push('/FAQ')}
+          active={history.location.pathname === '/FAQ'}
+        >
+          FAQ
+        </MenuItem>
+        <MenuItem
+          onClick={() => history.push('/kontakt')}
+          active={history.location.pathname === '/kontakt'}
+        >
+          KONTAKT
+        </MenuItem>
+        <MenuItem
+          onClick={() => history.push('/admin')}
+          active={history.location.pathname === '/admin'}
+        >
+          PANEL ADMINISTRATORA
+        </MenuItem>
       </MainMenu>
     </Fragment>
   );
 };
 export default TopBarComponent;
-

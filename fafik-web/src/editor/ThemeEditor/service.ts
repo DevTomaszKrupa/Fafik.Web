@@ -1,6 +1,3 @@
-
-const  themeEditorService = {
-
-};
+const themeEditorService = {};
 
 export { themeEditorService };

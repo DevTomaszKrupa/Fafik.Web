@@ -10,29 +10,38 @@ import NotificationButton from '../../shared/AdminNotificationButton';
 import { adminPaths } from '../../consts';
 
 const AdminPanelComponent = () => {
-    const dispatch = useDispatch();
-    const getAdminClients = () => dispatch({ type: 'GET_ADMIN_CLIENTS_STARTED' });
+  const dispatch = useDispatch();
+  const getAdminClients = () => dispatch({ type: 'GET_ADMIN_CLIENTS_STARTED' });
 
+  useEffect(() => {
+    getAdminClients();
+  }, []);
 
-    useEffect(() => {
-        getAdminClients();
-    }, []);
+  const {
+    AdminPanelHeader,
+    HeaderLeftSide,
+    HeaderLogo,
+    AdminLogo,
+    HeaderRightSide,
+  } = components;
 
-    const { AdminPanelHeader, HeaderLeftSide, HeaderLogo, AdminLogo, HeaderRightSide } = components;
+  const onLogoClicked = () => history.push(adminPaths.mainAdminPage);
 
-    const onLogoClicked = () => history.push(adminPaths.mainAdminPage);
-
-    return (
-        <AdminPanelHeader>
-            <HeaderLeftSide />
-            <HeaderLogo>
-                <AdminLogo onClick={onLogoClicked} src={`${IMAGE_STORAGE}app/logo.png`} />
-            </HeaderLogo>
-            <HeaderRightSide>
-                <NotificationButton />
-                <AdminMenu />
-            </HeaderRightSide>
-        </AdminPanelHeader>);
+  return (
+    <AdminPanelHeader>
+      <HeaderLeftSide />
+      <HeaderLogo>
+        <AdminLogo
+          onClick={onLogoClicked}
+          src={`${IMAGE_STORAGE}app/logo.png`}
+        />
+      </HeaderLogo>
+      <HeaderRightSide>
+        <NotificationButton />
+        <AdminMenu />
+      </HeaderRightSide>
+    </AdminPanelHeader>
+  );
 };
 
 export default AdminPanelComponent;

@@ -44,7 +44,7 @@ export default {
   Item: styled.div`
     text-align: ${(props: ItemProps) => props.textAlign};
     font-size: 1rem;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     letter-spacing: 0.1rem;
     line-height: 2.1rem;
@@ -56,12 +56,12 @@ export default {
   `,
 
   CenterNames: styled.div`
-    font-family: "Sacramento";
+    font-family: 'Sacramento';
     font-size: 3.3rem;
   `,
 
   CenterDate: styled.div`
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     letter-spacing: 0.1rem;
   `,
@@ -80,10 +80,10 @@ export default {
   `,
 
   CenterQuote: styled.div`
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-style: italic;
     text-align: center;
     line-height: 1.4rem;
-  `
+  `,
 };

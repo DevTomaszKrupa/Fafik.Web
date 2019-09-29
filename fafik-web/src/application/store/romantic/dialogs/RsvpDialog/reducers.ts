@@ -3,7 +3,7 @@ import { Reducer } from 'redux';
 import { Action } from '../../../actions';
 import {
   OPEN_ROMANTIC_RSVP_DIALOG,
-  CLOSE_ROMANTIC_RSVP_DIALOG
+  CLOSE_ROMANTIC_RSVP_DIALOG,
 } from './consts';
 
 export type RomanticRsvpDialogState = {
@@ -11,22 +11,22 @@ export type RomanticRsvpDialogState = {
 };
 
 const initialState: RomanticRsvpDialogState = {
-  isOpen: false
+  isOpen: false,
 };
 
-export const romanticRsvpDialogState: Reducer<RomanticRsvpDialogState, Action> = (
-  state = initialState,
-  action: Action
-): RomanticRsvpDialogState => {
+export const romanticRsvpDialogState: Reducer<
+  RomanticRsvpDialogState,
+  Action
+> = (state = initialState, action: Action): RomanticRsvpDialogState => {
   switch (action.type) {
     case OPEN_ROMANTIC_RSVP_DIALOG:
       return {
-        isOpen: true
+        isOpen: true,
       };
 
     case CLOSE_ROMANTIC_RSVP_DIALOG:
       return {
-        isOpen: false
+        isOpen: false,
       };
 
     default:

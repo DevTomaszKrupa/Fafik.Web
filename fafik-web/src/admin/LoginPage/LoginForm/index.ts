@@ -10,16 +10,17 @@ const loginFormName = 'adminLogin';
 
 const mapStateToProps = (state: AppState) => ({
   values: getFormValues(loginFormName)(state),
-  adminLoginState: state.adminLoginState
+  adminLoginState: state.adminLoginState,
 });
 
 const mapDispatchToProps = {
-  login
+  login,
 };
 
-
-const connected = connect(mapStateToProps, mapDispatchToProps)(LoginPageComponent as any) as any;
+const connected = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoginPageComponent as any) as any;
 const component = reduxForm({ form: loginFormName })(connected);
 
 export default component;
-

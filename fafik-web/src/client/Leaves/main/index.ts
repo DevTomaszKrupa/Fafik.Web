@@ -5,15 +5,17 @@ import { AppState } from 'application/store/reducers';
 
 import MainSite from './layout';
 
-
 const mapStateToProps = ({ leavesMainSiteState }: AppState) => ({
-  leavesMainSiteState: leavesMainSiteState
+  leavesMainSiteState: leavesMainSiteState,
 });
 
 const mapDispatchToProps = {
-  getLeavesMainSite
+  getLeavesMainSite,
 };
 
-const enhancer = connect(mapStateToProps, mapDispatchToProps);
+const enhancer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+);
 
 export default enhancer(MainSite);

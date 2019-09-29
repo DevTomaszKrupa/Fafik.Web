@@ -54,5 +54,5 @@ export default {
     color: black;
     display: flex;
     align-items: flex-end;
-  `
+  `,
 };

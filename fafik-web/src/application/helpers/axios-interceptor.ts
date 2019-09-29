@@ -1,9 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { localStorageService } from 'application/services';
 
-
 const setupAxiosInterceptors = () => {
-
   const onRequestSuccess = (config: AxiosRequestConfig) => {
     const token = localStorageService.token;
 

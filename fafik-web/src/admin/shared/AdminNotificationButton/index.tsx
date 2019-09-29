@@ -5,7 +5,6 @@ import Button from '@material-ui/core/Button';
 import MenuItem from '@material-ui/core/MenuItem';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 
-
 const AdminNotificationButton = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
@@ -17,15 +16,15 @@ const AdminNotificationButton = () => {
     setAnchorEl(null);
   };
 
-  const {
-    DropdownMenu,
-    NotificationBox,
-    NotificationsQuantity,
-  } = components;
+  const { DropdownMenu, NotificationBox, NotificationsQuantity } = components;
 
   return (
     <div>
-      <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+      <Button
+        aria-controls="simple-menu"
+        aria-haspopup="true"
+        onClick={handleClick}
+      >
         <NotificationBox>
           <NotificationsIcon htmlColor="#F2EEE8" fontSize="large" />
           <NotificationsQuantity>1</NotificationsQuantity>
@@ -46,7 +45,6 @@ const AdminNotificationButton = () => {
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
-
       >
         <MenuItem onClick={handleClose}></MenuItem>
       </DropdownMenu>

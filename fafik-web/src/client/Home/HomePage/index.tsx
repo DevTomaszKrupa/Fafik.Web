@@ -1,4 +1,8 @@
 import React, { Fragment } from 'react';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
 
 import { history } from 'application/helpers';
 import { useDocumentTitle } from 'application/shared';
@@ -13,6 +17,8 @@ const HomePageComponent = () => {
     const element = document.getElementById('whatsThisSection');
     if (element) element.scrollIntoView();
   };
+
+  const handleOnDragStart = (e: any) => e.preventDefault();
 
   const {
     BannerBox,
@@ -37,7 +43,12 @@ const HomePageComponent = () => {
     YouTubePlayer,
     HomePageVideoButton,
     FVideo,
-    FeaturesVideo,
+    FeaturesSection,
+    TopLayer,
+    FeaturesTitle,
+    FeatureBox,
+    SingleFeatureTitle,
+    FeatureDescription,
   } = components;
 
   return (
@@ -99,14 +110,29 @@ const HomePageComponent = () => {
           </HomePageButton>
         </TextSection>
       </WhatsThisSection>
-      <FeaturesVideo>
+      <FeaturesSection>
         <FVideo id="background-video" loop autoPlay>
           <source
             src={`${IMAGE_STORAGE}app/Homepage-feature-vid.mp4`}
             type="video/mp4"
           />
         </FVideo>
-      </FeaturesVideo>
+        <TopLayer>
+          <FeaturesTitle>DLACZEGO WARTO?</FeaturesTitle>
+          <AliceCarousel mouseDragEnabled>
+            <FeatureBox onDragStart={handleOnDragStart}>
+              <FontAwesomeIcon icon={faClipboardList} size="lg" color="#ffffff"/>
+              <SingleFeatureTitle>WASZA ORGANIZACJA</SingleFeatureTitle>
+              <FeatureDescription>Możecie dodawać swoją listę gości, oznaczać
+                potwierdzenia oraz zbierają się Wam tam odpowiedzi
+                od gości. Właśnie tam znajdziecie propozycje dedykacji
+                od nich oraz zobaczycie statystyki odsłon Waszej strony.
+                Nasze strony ułatwią Wam przygotowania!</FeatureDescription>
+            </FeatureBox>
+            
+          </AliceCarousel>
+        </TopLayer>
+      </FeaturesSection>
     </Fragment>
   );
 };

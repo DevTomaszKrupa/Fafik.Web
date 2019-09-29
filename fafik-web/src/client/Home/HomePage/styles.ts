@@ -15,7 +15,7 @@ export default {
   `,
 
   BannerInfoBox: styled.div`
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.3);
     padding: 3.5rem 0;
     width: 48%;
     display: flex;
@@ -219,7 +219,45 @@ export default {
 }
   `,
 
-  FeaturesVideo: styled.div``,
+  FeaturesSection: styled.div`
+    position: relative;
+    height: 27rem;
+    width: 100%;
+  `,
 
-  FVideo: styled.video``,
+  FVideo: styled.video`
+    object-fit: cover;
+    height: 27rem;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+  `,
+
+  TopLayer: styled.div`
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+  `,
+
+  FeaturesTitle: styled.div`
+    font-family: 'Josefin Sans';
+    text-align: center;
+    letter-spacing: 0.3rem;
+    color: #ffffff;
+    font-size: 2.7rem;
+  `,
+
+  FeatureBox: styled.div`
+  
+  `,
+
+  SingleFeatureTitle: styled.div`
+  color: #ffffff;
+  `,
+  
+  FeatureDescription: styled.div`
+  color: #ffffff;
+  `,
+  
 };

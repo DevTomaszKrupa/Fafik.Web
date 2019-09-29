@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import components from './styles';
 import { RomanticAdditionalInfoProps } from '../../models';
@@ -11,53 +11,53 @@ const AdditionalInfoLayout = (props: RomanticAdditionalInfoProps) => {
 
   const { infoCards } = props;
   return (
-      <AdditionalInfoSection id="info-dodatkowe">
-        <AdditionalInfoHeader> informacje dodatkowe </AdditionalInfoHeader>
+    <AdditionalInfoSection id="info-dodatkowe">
+      <AdditionalInfoHeader> informacje dodatkowe </AdditionalInfoHeader>
 
-        <AdditionalInformationsBoxes>
-          {infoCards.map(info =>
-            <AdditionalInformationsBox>
-              <MainInformationBox>
-                <InformationIcon> </InformationIcon>
-                <InformationTextBox>
-                  <TextBoxHeader> {info.header} </TextBoxHeader>
-                  <TextBoxDescription>
-                    {info.description}
+      <AdditionalInformationsBoxes>
+        {infoCards.map(info =>
+          <AdditionalInformationsBox>
+            <MainInformationBox>
+              <InformationIcon> </InformationIcon>
+              <InformationTextBox>
+                <TextBoxHeader> {info.header} </TextBoxHeader>
+                <TextBoxDescription>
+                  {info.description}
                 </TextBoxDescription>
-                </InformationTextBox>
-              </MainInformationBox>
-              <AdditionalInfo>
-                {info.additionalInfo}
+              </InformationTextBox>
+            </MainInformationBox>
+            <AdditionalInfo>
+              {info.additionalInfo}
             </AdditionalInfo>
-            </AdditionalInformationsBox>)}
+          </AdditionalInformationsBox>)}
 
 
-        </AdditionalInformationsBoxes>
+      </AdditionalInformationsBoxes>
 
-        <AdditionalInformationsDoubleLine>
-          <DoubleLine />
-        </AdditionalInformationsDoubleLine>
+      <AdditionalInformationsDoubleLine>
+        <DoubleLine />
+      </AdditionalInformationsDoubleLine>
 
-        <BottomInfoSection>
-          <BottomInfoHeader>
+      <BottomInfoSection>
+        <BottomInfoHeader>
 
-            <InformationIcon> </InformationIcon>
+          <InformationIcon> </InformationIcon>
 
-            <TextBoxHeaderBottom> KONTAKT </TextBoxHeaderBottom>
+          <TextBoxHeaderBottom> KONTAKT </TextBoxHeaderBottom>
 
-          </BottomInfoHeader>
-          <PhoneNumbers>
-            <TextBoxDescriptionBottom>
-              Gaja: 738 203 202
+        </BottomInfoHeader>
+        <PhoneNumbers>
+          <TextBoxDescriptionBottom>
+            Gaja: 738 203 202
             </TextBoxDescriptionBottom>
 
-            <TextBoxDescriptionBottom>
-              Stanisław: 647 214 583
+          <TextBoxDescriptionBottom>
+            Stanisław: 647 214 583
             </TextBoxDescriptionBottom>
-          </PhoneNumbers>
+        </PhoneNumbers>
 
-        </BottomInfoSection>
-      </AdditionalInfoSection>
+      </BottomInfoSection>
+    </AdditionalInfoSection>
   );
 };
 

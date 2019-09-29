@@ -1,23 +1,13 @@
 import Axios from 'axios';
 
-import {
-  LoginRequest,
-  LoginResponse,
-  AdminClient,
-  GetEditorThemeResponse,
-} from 'domain/models';
+import { LoginRequest, LoginResponse, AdminClient, GetEditorThemeResponse, CreateNewPostRequest } from 'domain/models';
 import { API_BASE_URL } from 'application/config';
 
-const login = (request: LoginRequest) =>
-  Axios.post<LoginResponse>(`${API_BASE_URL}/users/authenticate`, request);
+const login = (request: LoginRequest) => Axios.post<LoginResponse>(`${API_BASE_URL}/users/authenticate`, request);
 
-const getEditorTheme = (clientName: string) =>
-  Axios.get<GetEditorThemeResponse>(
-    `${API_BASE_URL}/admin/theme/${clientName}`
-  );
+const getEditorTheme = (clientName: string) => Axios.get<GetEditorThemeResponse>(`${API_BASE_URL}/admin/theme/${clientName}`);
 
-const getClients = () =>
-  Axios.get<AdminClient>(`${API_BASE_URL}/admin/clients`);
+const getClients = () => Axios.get<AdminClient>(`${API_BASE_URL}/admin/clients`);
 
 const getBlogPosts = () => {
   return {
@@ -37,8 +27,7 @@ const getBlogPosts = () => {
         },
         {
           postId: 3,
-          title:
-            'Januszowe wakacje komunistyczne - Bułgaria na miesiąc miodowy.',
+          title: 'Januszowe wakacje komunistyczne - Bułgaria na miesiąc miodowy.',
           date: new Date(2018, 7, 20, 15, 10, 0),
           isPublished: true,
         },
@@ -47,9 +36,12 @@ const getBlogPosts = () => {
   };
 };
 
+const createNewPost = (data: CreateNewPostRequest) => Axios.post(`${API_BASE_URL}/admin/blog/post`, data);
+
 export default {
   login,
   getEditorTheme,
   getClients,
   getBlogPosts,
+  createNewPost,
 };

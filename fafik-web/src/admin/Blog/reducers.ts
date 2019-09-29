@@ -1,5 +1,5 @@
 import { Reducer } from 'redux';
-import { Action } from './../../actions';
+import { Action } from 'application/store/actions';
 
 export type BlogPost = {
   postId: number;
@@ -21,10 +21,7 @@ const initialState: AdminBlogState = {
   isAllChecked: false,
 };
 
-export const adminBlogState: Reducer<AdminBlogState, Action> = (
-  state = initialState,
-  action: Action
-): AdminBlogState => {
+export const adminBlogState: Reducer<AdminBlogState, Action> = (state = initialState, action: Action): AdminBlogState => {
   switch (action.type) {
     case 'ADMIN_BLOG_CHANGE_ALL_POSTS_CHECK':
       const newPosts = state.posts.map(post => ({
@@ -37,9 +34,7 @@ export const adminBlogState: Reducer<AdminBlogState, Action> = (
         isAllChecked: action.payload,
       };
     case 'ADMIN_BLOG_CHANGE_SINGLE_POST_CHECK':
-      const postIndex = state.posts.findIndex(
-        post => post.postId === action.payload
-      );
+      const postIndex = state.posts.findIndex(post => post.postId === action.payload);
       let currentPostIsChecked;
       const postsToUpdate = state.posts.map((post, index) => {
         if (index === postIndex) {
@@ -51,10 +46,7 @@ export const adminBlogState: Reducer<AdminBlogState, Action> = (
       return {
         ...state,
         posts: postsToUpdate,
-        isAllChecked:
-          !currentPostIsChecked && state.isAllChecked
-            ? false
-            : state.isAllChecked,
+        isAllChecked: !currentPostIsChecked && state.isAllChecked ? false : state.isAllChecked,
       };
     case 'ADMIN_BLOG_GET_POSTS_STARTED':
       return {

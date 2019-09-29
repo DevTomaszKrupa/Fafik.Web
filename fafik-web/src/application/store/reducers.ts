@@ -1,36 +1,20 @@
 import { combineReducers } from 'redux';
 import { reducer as reduxFormReducer, FormStateMap } from 'redux-form';
 
+import { AdminBlogState, adminBlogState } from 'admin/Blog/reducers';
+import { AdminNewBlogPostState, adminNewBlogPostState } from 'admin/BlogNewPost/reducers';
+import { AdminEditorSidePanelState, adminEditorSidePanelState } from 'editor/ThemeEditor/reducers';
+
 import { ClientState, clientState } from './client/reducers';
 import { LeavesState, leavesState } from './leaves/theme/reducers';
 import { RomanticState, romanticState } from './romantic/theme/reducers';
-import {
-  RomanticRsvpDialogState,
-  romanticRsvpDialogState,
-} from './romantic/dialogs/RsvpDialog/reducers';
-import {
-  leavesMainSiteState,
-  LeavesMainSiteState,
-} from './leaves/main/reducers';
-import {
-  AdminThemeEditorState,
-  adminThemeEditorState,
-} from './admin/theme-editor/reducers';
-import {
-  AdminSidePanelState,
-  adminSidePanelState,
-} from './admin/side-panel/reducers';
-import {
-  AdminEditorSidePanelState,
-  adminEditorSidePanelState,
-} from 'editor/ThemeEditor/reducers';
+import { RomanticRsvpDialogState, romanticRsvpDialogState } from './romantic/dialogs/RsvpDialog/reducers';
+import { leavesMainSiteState, LeavesMainSiteState } from './leaves/main/reducers';
+import { AdminThemeEditorState, adminThemeEditorState } from './admin/theme-editor/reducers';
+import { AdminSidePanelState, adminSidePanelState } from './admin/side-panel/reducers';
 import { AdminLoginState, adminLoginState } from './admin/login/reducers';
 
-import {
-  AdminRomanticThemeEditorState,
-  adminRomanticThemeEditorState,
-} from './admin/romantic-theme-editor/reducers';
-import { AdminBlogState, adminBlogState } from './admin/blog/reducers';
+import { AdminRomanticThemeEditorState, adminRomanticThemeEditorState } from './admin/romantic-theme-editor/reducers';
 import { RegisterState, registerState } from './register/reducers';
 
 export type AppState = {
@@ -49,6 +33,7 @@ export type AppState = {
   adminSidePanelState: AdminSidePanelState;
   adminThemeEditorState: AdminThemeEditorState;
   adminBlogState: AdminBlogState;
+  adminNewBlogPostState: AdminNewBlogPostState;
 
   // admin romantic
   adminRomanticThemeEditorState: AdminRomanticThemeEditorState;
@@ -70,6 +55,7 @@ export default combineReducers<AppState>({
   adminSidePanelState,
   adminThemeEditorState,
   adminBlogState,
+  adminNewBlogPostState,
 
   // admin romantic
   adminRomanticThemeEditorState,

@@ -29,10 +29,10 @@ const initialState: AdminRomanticThemeEditorState = {
   isLoading: false,
 };
 
-export const adminRomanticThemeEditorState: Reducer<
-  AdminRomanticThemeEditorState,
-  Action
-> = (state = initialState, action: Action): AdminRomanticThemeEditorState => {
+export const adminRomanticThemeEditorState: Reducer<AdminRomanticThemeEditorState, Action> = (
+  state = initialState,
+  action: Action
+): AdminRomanticThemeEditorState => {
   switch (action.type) {
     case 'ROMANTIC_THEME_EDITOR_GET_THEME_STARTED':
       return {

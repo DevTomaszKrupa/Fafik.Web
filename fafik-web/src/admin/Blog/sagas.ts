@@ -1,7 +1,7 @@
-import { apiCaller } from './../../../services';
 import { put, takeLatest, call } from 'redux-saga/effects';
 
-import { Action } from '../../actions';
+import { apiCaller } from 'application/services';
+import { Action } from 'application/store/actions';
 
 function* adminBlogGetPosts(action: Action): any {
   try {

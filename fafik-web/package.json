@@ -48,7 +48,12 @@
     "redux-form": "^8.2.6",
     "redux-saga": "^1.0.5",
     "styled-components": "^4.3.2",
-    "typescript": "^3.5.3"
+    "typescript": "^3.5.3",
+    "admin": "file:./src/admin",
+    "application": "file:./src/application",
+    "client": "file:./src/client",
+    "domain": "file:./src/domain",
+    "editor": "file:./src/editor"
   },
   "scripts": {
     "start": "react-scripts start",

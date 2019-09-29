@@ -1,3 +1,17 @@
+## Project structure
+admin
+application
+client
+editor
+theme
+  romantic
+    components
+    models
+  leaves
+    ...
+  
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

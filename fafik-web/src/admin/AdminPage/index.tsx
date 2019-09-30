@@ -38,29 +38,28 @@ const AdminPanelComponent = () => {
               adminPaths.mainAdminPage,
               adminPaths.chooseTheme,
               adminPaths.pages,
-              adminPaths.blog,
-              adminPaths.playlist,
-              adminPaths.guestList,
-              adminPaths.stats,
-              adminPaths.gallery,
-              adminPaths.blogNewPost,
+              adminPaths.blog(':clientName'),
+              adminPaths.playlist(':clientName'),
+              adminPaths.guestList(':clientName'),
+              adminPaths.stats(':clientName'),
+              adminPaths.gallery(':clientName'),
+              adminPaths.blogNewPost(':clientName'),
             ]}
             component={BaseAdminSidePanel}
           />
 
-          <AuthenticatedRoute exact path={adminPaths.config} component={AdminThemeEditorSidePanelComponent} />
+          <AuthenticatedRoute exact path={adminPaths.config(':clientName')} component={AdminThemeEditorSidePanelComponent} />
         </AdminSidePanel>
         <AdminMainPanel>
           <AuthenticatedRoute exact path={adminPaths.pages} component={AdminMySites} />
-          <AuthenticatedRoute exact path={adminPaths.config} component={AdminSiteEditor} />
-          <AuthenticatedRoute exact path={adminPaths.blog} component={AdminBlog} />
-          <AuthenticatedRoute exact path={adminPaths.guestList} component={AdminGuestList} />
-          <AuthenticatedRoute exact path={adminPaths.stats} component={AdminStats} />
-          <AuthenticatedRoute exact path={adminPaths.gallery} component={AdminGallery} />
-          <AuthenticatedRoute exact path={adminPaths.playlist} component={AdminPlaylist} />
-          <AuthenticatedRoute exact path={adminPaths.blogNewPost} component={AdminBlogNewPost} />
-
           <AuthenticatedRoute exact path={adminPaths.chooseTheme} component={ChooseTheme} />
+          <AuthenticatedRoute exact path={adminPaths.config(':clientName')} component={AdminSiteEditor} />
+          <AuthenticatedRoute exact path={adminPaths.blog(':clientName')} component={AdminBlog} />
+          <AuthenticatedRoute exact path={adminPaths.guestList(':clientName')} component={AdminGuestList} />
+          <AuthenticatedRoute exact path={adminPaths.stats(':clientName')} component={AdminStats} />
+          <AuthenticatedRoute exact path={adminPaths.gallery(':clientName')} component={AdminGallery} />
+          <AuthenticatedRoute exact path={adminPaths.playlist(':clientName')} component={AdminPlaylist} />
+          <AuthenticatedRoute exact path={adminPaths.blogNewPost(':clientName')} component={AdminBlogNewPost} />
         </AdminMainPanel>
       </AdminMain>
     </Fragment>

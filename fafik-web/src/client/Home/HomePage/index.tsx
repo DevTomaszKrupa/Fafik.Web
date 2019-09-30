@@ -1,15 +1,12 @@
 import React, { Fragment } from 'react';
-import AliceCarousel from 'react-alice-carousel';
 // tslint:disable-next-line:no-import-side-effect
-import 'react-alice-carousel/lib/alice-carousel.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
 
 import { history } from 'application/helpers';
 import { useDocumentTitle } from 'application/shared';
 import { IMAGE_STORAGE } from 'application/config';
 
 import components from './styles';
+import Carousel from './HomeCarousel';
 
 const HomePageComponent = () => {
   useDocumentTitle('Wytwórnia stron ślubnych - Miłość Wierność');
@@ -18,8 +15,6 @@ const HomePageComponent = () => {
     const element = document.getElementById('whatsThisSection');
     if (element) element.scrollIntoView();
   };
-
-  const handleOnDragStart = (e: any) => e.preventDefault();
 
   const {
     BannerBox,
@@ -47,9 +42,6 @@ const HomePageComponent = () => {
     FeaturesSection,
     TopLayer,
     FeaturesTitle,
-    FeatureBox,
-    SingleFeatureTitle,
-    FeatureDescription,
   } = components;
 
   return (
@@ -104,30 +96,11 @@ const HomePageComponent = () => {
       </WhatsThisSection>
       <FeaturesSection>
         <FVideo id="background-video" loop autoPlay>
-          <source src={`${IMAGE_STORAGE}app/Homepage-feature-vid.mp4`} type="video/mp4" />
+          <source src={`${IMAGE_STORAGE}app/Homepage-feature-vid.webm`} type="video/WebM" />
         </FVideo>
         <TopLayer>
           <FeaturesTitle>DLACZEGO WARTO?</FeaturesTitle>
-          <AliceCarousel mouseDragEnabled>
-            <FeatureBox onDragStart={handleOnDragStart}>
-              <FontAwesomeIcon icon={faClipboardList} size="3x" color="#ffffff" />
-              <SingleFeatureTitle>WASZA ORGANIZACJA</SingleFeatureTitle>
-              <FeatureDescription>
-                Możecie dodawać swoją listę gości, oznaczać potwierdzenia oraz zbierają się Wam tam odpowiedzi od gości. Właśnie tam
-                znajdziecie propozycje dedykacji od nich oraz zobaczycie statystyki odsłon Waszej strony. Nasze strony ułatwią Wam
-                przygotowania!
-              </FeatureDescription>
-            </FeatureBox>
-            <FeatureBox onDragStart={handleOnDragStart}>
-              <FontAwesomeIcon icon={faClipboardList} size="3x" color="#ffffff" />
-              <SingleFeatureTitle>WASZA ORGANIZACJA</SingleFeatureTitle>
-              <FeatureDescription>
-                Możecie dodawać swoją listę gości, oznaczać potwierdzenia oraz zbierają się Wam tam odpowiedzi od gości. Właśnie tam
-                znajdziecie propozycje dedykacji od nich oraz zobaczycie statystyki odsłon Waszej strony. Nasze strony ułatwią Wam
-                przygotowania!
-              </FeatureDescription>
-            </FeatureBox>
-          </AliceCarousel>
+          <Carousel />
         </TopLayer>
       </FeaturesSection>
     </Fragment>

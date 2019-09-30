@@ -221,7 +221,7 @@ export default {
 
   FeaturesSection: styled.div`
     position: relative;
-    height: 27rem;
+    height: 29rem;
     width: 100%;
 
     font-family: 'Josefin Sans';
@@ -229,10 +229,11 @@ export default {
 
   FVideo: styled.video`
     object-fit: cover;
-    height: 27rem;
+    height: 29rem;
     width: 100%;
     position: absolute;
     z-index: -1;
+    filter: blur(4px);
   `,
 
   TopLayer: styled.div`
@@ -249,31 +250,7 @@ export default {
     text-align: center;
     letter-spacing: 0.3rem;
     color: #ffffff;
-    font-size: 2.7rem;
-    padding-top: 3rem;
-  `,
-
-  FeatureBox: styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 13rem;
-    justify-content: space-around;
-  `,
-
-  SingleFeatureTitle: styled.div`
-    color: #ffffff;
-    letter-spacing: 0.1rem;
-    text-align: center;
-    font-size: 1.4rem;
-  `,
-
-  FeatureDescription: styled.div`
-    color: #ffffff;
-    width: 37%;
-    text-align: center;
-    letter-spacing: 0.06rem;
-    font-weight: 200;
-    line-height: 1.4rem !important;
+    font-size: 2.6rem;
+    padding-top: 3.5rem;
   `,
 };

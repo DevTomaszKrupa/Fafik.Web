@@ -20,22 +20,14 @@ ReactDOM.render(
     <GlobalStyle />
     <Provider store={store}>
       <Router history={history}>
-        <Route
-          exact
-          path="/(|oferta|cennik|FAQ|kontakt)/"
-          component={HomeTopBar}
-        />
+        <Route exact path="/(|oferta|cennik|FAQ|kontakt)/" component={HomeTopBar} />
         <Switch>
-          <Route
-            exact
-            path="/(|oferta|cennik|FAQ|kontakt)/"
-            component={HomePage}
-          />
+          <Route exact path="/(|oferta|cennik|FAQ|kontakt)/" component={HomePage} />
           <Route exact path="/admin/login" component={AdminLoginPage} />
           <AuthenticatedRoute path="/admin" component={AdminPage} />
 
-          <Route exact path="/:clientPath" component={ClientPage} />
-          <Route exact path="/:clientPath/:site" component={ClientPage} />
+          <Route exact path="/:clientName" component={ClientPage} />
+          <Route exact path="/:clientName/:site" component={ClientPage} />
         </Switch>
       </Router>
     </Provider>

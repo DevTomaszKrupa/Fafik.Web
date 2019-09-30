@@ -13,12 +13,14 @@ export type AdminBlogState = {
   posts: BlogPost[];
   isLoading: boolean;
   isAllChecked: boolean;
+  total: number;
 };
 
 const initialState: AdminBlogState = {
   posts: [],
   isLoading: false,
   isAllChecked: false,
+  total: 0,
 };
 
 export const adminBlogState: Reducer<AdminBlogState, Action> = (state = initialState, action: Action): AdminBlogState => {
@@ -54,11 +56,12 @@ export const adminBlogState: Reducer<AdminBlogState, Action> = (state = initialS
         isLoading: true,
       };
     case 'ADMIN_BLOG_GET_POSTS_SUCCESS':
-      const { posts } = action.payload;
+      const { data, total } = action.payload;
       return {
         ...state,
         isLoading: false,
-        posts: posts,
+        posts: data,
+        total: total,
       };
     case 'ADMIN_BLOG_GET_POSTS_FAILURE':
       return {

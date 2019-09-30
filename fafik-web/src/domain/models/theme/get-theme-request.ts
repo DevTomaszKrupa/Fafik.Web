@@ -1,4 +1,4 @@
 export interface GetThemeRequest {
-  clientPath: string;
+  clientName: string;
   sitePath: string;
 }

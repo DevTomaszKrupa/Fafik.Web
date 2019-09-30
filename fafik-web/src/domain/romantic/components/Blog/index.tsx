@@ -37,10 +37,7 @@ const BlogLayout = (props: RomanticBlogProps) => {
             {posts.map(post => (
               <BlogPost>
                 <BlogPostPhoto backgroundImage={post.image} />
-                <BlogPostDate>
-                  {' '}
-                  {moment(post.date).format('DD MM')}{' '}
-                </BlogPostDate>
+                <BlogPostDate> {moment(post.date).format('DD MM')} </BlogPostDate>
                 <BlogPostTitle> {post.header} </BlogPostTitle>
               </BlogPost>
             ))}

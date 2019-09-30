@@ -1,11 +1,7 @@
 import { apiCaller } from './../../../services';
 import { put, takeLatest, call } from 'redux-saga/effects';
 
-import {
-  GET_LEAVES_MAIN_SITE_STARTED,
-  GET_LEAVES_MAIN_SITE_FAILURE,
-  GET_LEAVES_MAIN_SITE_SUCCESS,
-} from './consts';
+import { GET_LEAVES_MAIN_SITE_STARTED, GET_LEAVES_MAIN_SITE_FAILURE, GET_LEAVES_MAIN_SITE_SUCCESS } from './consts';
 import { Action } from '../../actions';
 
 function* getLeavesMainSiteTheme(action: Action): any {

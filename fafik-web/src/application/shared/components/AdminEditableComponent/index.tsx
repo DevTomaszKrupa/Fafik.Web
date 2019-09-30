@@ -23,11 +23,7 @@ const AdminEditableComponent = (props: Props) => {
 
   return (
     <Fragment>
-      {adminMode && (
-        <Container onClick={() => editAdminEditableTextComponent(itemId)}>
-          {children}
-        </Container>
-      )}
+      {adminMode && <Container onClick={() => editAdminEditableTextComponent(itemId)}>{children}</Container>}
       {!adminMode && children}
     </Fragment>
   );

@@ -2,35 +2,28 @@ import { Reducer } from 'redux';
 
 import { Action } from '../../actions';
 import { GET_CLIENT_SUCCESS } from '../../client/consts';
-import {
-  GET_LEAVES_MAIN_SITE_STARTED,
-  GET_LEAVES_MAIN_SITE_SUCCESS,
-  GET_LEAVES_MAIN_SITE_FAILURE,
-} from './consts';
+import { GET_LEAVES_MAIN_SITE_STARTED, GET_LEAVES_MAIN_SITE_SUCCESS, GET_LEAVES_MAIN_SITE_FAILURE } from './consts';
 
 export type LeavesMainSiteState = {
   isLoading: boolean;
-  clientPath: string;
+  clientName: string;
   mainImage: string;
   weddingDate: Date | undefined;
 };
 
 const initialState: LeavesMainSiteState = {
   isLoading: false,
-  clientPath: '',
+  clientName: '',
   mainImage: '',
   weddingDate: undefined,
 };
 
-export const leavesMainSiteState: Reducer<LeavesMainSiteState, Action> = (
-  state = initialState,
-  action: Action
-): LeavesMainSiteState => {
+export const leavesMainSiteState: Reducer<LeavesMainSiteState, Action> = (state = initialState, action: Action): LeavesMainSiteState => {
   switch (action.type) {
     case GET_CLIENT_SUCCESS:
       return {
         ...state,
-        clientPath: action.payload.data.clientPath,
+        clientName: action.payload.data.clientName,
       };
     case GET_LEAVES_MAIN_SITE_STARTED:
       return {

@@ -5,28 +5,21 @@ import { RouteComponentProps } from 'react-router-dom';
 import RomanticSiteEditor from './themes/RomanticSiteEditor';
 import { AppState } from 'application/store/reducers';
 
-const AdminThemeEditorComponent = (
-  props: RouteComponentProps<{ clientPath: string }>
-) => {
+const AdminThemeEditorComponent = (props: RouteComponentProps<{ clientName: string }>) => {
   const dispatch = useDispatch();
   const getTheme = () =>
     dispatch({
       type: 'THEME_EDITOR_GET_THEME_STARTED',
-      payload: props.match.params.clientPath,
+      payload: props.match.params.clientName,
     });
-  const adminThemeEditorState = useSelector(
-    (state: AppState) => state.adminThemeEditorState
-  );
+  const adminThemeEditorState = useSelector((state: AppState) => state.adminThemeEditorState);
 
   useEffect(() => {
     getTheme();
-  }, [props.match.params.clientPath]);
+  }, [props.match.params.clientName]);
 
   const resolveTheme = () => {
-    if (adminThemeEditorState.theme)
-      return ThemeEditors[adminThemeEditorState.theme](
-        props.match.params.clientPath
-      );
+    if (adminThemeEditorState.theme) return ThemeEditors[adminThemeEditorState.theme](props.match.params.clientName);
   };
 
   return <Fragment>{resolveTheme()}</Fragment>;
@@ -34,6 +27,6 @@ const AdminThemeEditorComponent = (
 
 export default AdminThemeEditorComponent;
 
-const ThemeEditors: { [key: number]: (clientPath: string) => JSX.Element } = {
-  1: clientPath => <RomanticSiteEditor clientPath={clientPath} />,
+const ThemeEditors: { [key: number]: (clientName: string) => JSX.Element } = {
+  1: clientName => <RomanticSiteEditor clientName={clientName} />,
 };

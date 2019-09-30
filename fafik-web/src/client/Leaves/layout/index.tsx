@@ -10,21 +10,21 @@ import GallerySite from '../gallery';
 
 type Props = {
   leavesState: LeavesState;
-  getLeavesTheme: (clientPath: string) => Action;
+  getLeavesTheme: (clientName: string) => Action;
 };
 
 const LeavesLayout = (props: Props) => {
   const { leavesState, getLeavesTheme } = props;
 
   useEffect(() => {
-    getLeavesTheme(leavesState.clientPath);
-  }, [leavesState.clientPath]);
+    getLeavesTheme(leavesState.clientName);
+  }, [leavesState.clientName]);
 
   return (
     <Fragment>
       <Header />
-      <Route exact path="/:clientPath/" component={MainSite} />
-      <Route exact path="/:clientPath/galeria" component={GallerySite} />
+      <Route exact path="/:clientName/" component={MainSite} />
+      <Route exact path="/:clientName/galeria" component={GallerySite} />
     </Fragment>
   );
 };

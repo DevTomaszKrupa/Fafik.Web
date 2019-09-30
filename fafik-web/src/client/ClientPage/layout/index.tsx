@@ -11,19 +11,17 @@ type Props = {
   getClient: (request: GetClientRequest) => Action<GetClientRequest>;
 };
 
-const ClientPageLayout = (
-  props: Props & RouteComponentProps<{ clientPath: string; sitePath: string }>
-) => {
+const ClientPageLayout = (props: Props & RouteComponentProps<{ clientName: string; sitePath: string }>) => {
   const { getClient, match, clientState } = props;
-  const { clientPath, sitePath } = match.params;
+  const { clientName, sitePath } = match.params;
 
   const resolveTheme = () => {
     if (clientState.theme) return SiteThemes[clientState.theme];
   };
 
   useEffect(() => {
-    getClient({ clientPath: clientPath, sitePath: sitePath ? sitePath : '' });
-  }, [clientPath]);
+    getClient({ clientName: clientName, sitePath: sitePath ? sitePath : '' });
+  }, [clientName]);
 
   return <Fragment>{resolveTheme()}</Fragment>;
 };

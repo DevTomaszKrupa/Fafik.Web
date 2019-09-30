@@ -1,11 +1,7 @@
 import { apiCaller } from './../../../services';
 import { put, takeLatest, call } from 'redux-saga/effects';
 
-import {
-  GET_LEAVES_THEME_STARTED,
-  GET_LEAVES_THEME_FAILURE,
-  GET_LEAVES_THEME_SUCCESS,
-} from './consts';
+import { GET_LEAVES_THEME_STARTED, GET_LEAVES_THEME_FAILURE, GET_LEAVES_THEME_SUCCESS } from './consts';
 import { Action } from '../../actions';
 
 function* getLeavesTheme(action: Action): any {

@@ -16,8 +16,5 @@ function* adminRomanticThemeEditor(action: Action): any {
 }
 
 export function* adminRomanticThemeEditorSaga(): any {
-  yield takeLatest(
-    'ROMANTIC_THEME_EDITOR_GET_THEME_STARTED',
-    adminRomanticThemeEditor
-  );
+  yield takeLatest('ROMANTIC_THEME_EDITOR_GET_THEME_STARTED', adminRomanticThemeEditor);
 }

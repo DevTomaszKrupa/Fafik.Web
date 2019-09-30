@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import AliceCarousel from 'react-alice-carousel';
+// tslint:disable-next-line:no-import-side-effect
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
@@ -56,8 +57,7 @@ const HomePageComponent = () => {
       <BannerBox>
         <BannerInfoBox>
           <BannerInfoText>
-            WYJĄTKOWE STRONY ŚLUBNE JUŻ OD <b>49ZŁ/MIES.</b> ZASKOCZ SWOICH
-            GOŚCI NOWĄ FORMĄ ORGANIZACJI WYDARZENIA!
+            WYJĄTKOWE STRONY ŚLUBNE JUŻ OD <b>49ZŁ/MIES.</b> ZASKOCZ SWOICH GOŚCI NOWĄ FORMĄ ORGANIZACJI WYDARZENIA!
           </BannerInfoText>
           <BannerInfoButton onClick={scrollToWhatsThisSection}>
             {' '}
@@ -71,14 +71,12 @@ const HomePageComponent = () => {
           <MeetUsTitle>KOCHANI NARZECZENI!</MeetUsTitle>
           <HorizontalLine />
           <MeetUsText>
-            WITAJCIE NA NASZEJ STRONIE! BARDZO SIĘ CIESZYMY,ŻE TU TRAFILIŚCIE ♥{' '}
-            <br />
+            WITAJCIE NA NASZEJ STRONIE! BARDZO SIĘ CIESZYMY,ŻE TU TRAFILIŚCIE ♥ <br />
             WIEMY JAK WYMAGAJĄCA JEST <b>ORGANIZACJA WESELA,</b>
             <br />
             DLATEGO POŚWIĘCILIŚMY WIELE CZASU, ABYŚCIE MOGLI KOMFORTOWO
             <br />
-            I WEDŁUG SWOJEJ WIZJI STWORZYĆ WYMARZONĄ STRONĘ ŚLUBNĄ, KTÓRA WAM TO
-            UŁATWI. PRZEDSTAWIAMY WAM NASZ PORTAL,
+            I WEDŁUG SWOJEJ WIZJI STWORZYĆ WYMARZONĄ STRONĘ ŚLUBNĄ, KTÓRA WAM TO UŁATWI. PRZEDSTAWIAMY WAM NASZ PORTAL,
             <br />
             MAMY NADZIEJĘ, ŻE WAM SIĘ SPODOBA!
           </MeetUsText>
@@ -90,63 +88,42 @@ const HomePageComponent = () => {
       <WhatsThisSection id="whatsThisSection">
         <VideoSection>
           <YouTubePlayer videoId={'HOZi1UFRYpk'} />
-          <HomePageVideoButton onClick={() => history.push('/oferta')}>
-            ZAŁÓŻ SWOJĄ STRONĘ ŚLUBNĄ >
-          </HomePageVideoButton>
+          <HomePageVideoButton onClick={() => history.push('/oferta')}>ZAŁÓŻ SWOJĄ STRONĘ ŚLUBNĄ ></HomePageVideoButton>
         </VideoSection>
         <TextSection>
           <ShortLogo src={`${IMAGE_STORAGE}app/logo-short.png`} />
           <WhatsThisTitle src={`${IMAGE_STORAGE}app/whats-this-title.png`} />
           <WhatsThisText>
             {' '}
-            To portal na którym narzeczeni mogą zakupić swoje miejsce w sieci
-            pod adresem (miloscwiernosc.pl/waszanazwa) na pewien okres czasu,
-            dobrać szablon wykonany przez grafika i wyedytować go samodzielnie
-            pod swoim kątem. Korzystają przy tym z kreatora, dzięki któremu
-            możliwe jest edytowanie szablonu "na żywo".
+            To portal na którym narzeczeni mogą zakupić swoje miejsce w sieci pod adresem (miloscwiernosc.pl/waszanazwa) na pewien okres
+            czasu, dobrać szablon wykonany przez grafika i wyedytować go samodzielnie pod swoim kątem. Korzystają przy tym z kreatora,
+            dzięki któremu możliwe jest edytowanie szablonu "na żywo".
           </WhatsThisText>
-          <HomePageButton onClick={() => history.push('/cennik')}>
-            ZOBACZ CENNIK >
-          </HomePageButton>
+          <HomePageButton onClick={() => history.push('/cennik')}>ZOBACZ CENNIK ></HomePageButton>
         </TextSection>
       </WhatsThisSection>
       <FeaturesSection>
         <FVideo id="background-video" loop autoPlay>
-          <source
-            src={`${IMAGE_STORAGE}app/Homepage-feature-vid.mp4`}
-            type="video/mp4"
-          />
+          <source src={`${IMAGE_STORAGE}app/Homepage-feature-vid.mp4`} type="video/mp4" />
         </FVideo>
         <TopLayer>
           <FeaturesTitle>DLACZEGO WARTO?</FeaturesTitle>
           <AliceCarousel mouseDragEnabled>
             <FeatureBox onDragStart={handleOnDragStart}>
-              <FontAwesomeIcon
-                icon={faClipboardList}
-                size="3x"
-                color="#ffffff"
-              />
+              <FontAwesomeIcon icon={faClipboardList} size="3x" color="#ffffff" />
               <SingleFeatureTitle>WASZA ORGANIZACJA</SingleFeatureTitle>
               <FeatureDescription>
-                Możecie dodawać swoją listę gości, oznaczać potwierdzenia oraz
-                zbierają się Wam tam odpowiedzi od gości. Właśnie tam
-                znajdziecie propozycje dedykacji od nich oraz zobaczycie
-                statystyki odsłon Waszej strony. Nasze strony ułatwią Wam
+                Możecie dodawać swoją listę gości, oznaczać potwierdzenia oraz zbierają się Wam tam odpowiedzi od gości. Właśnie tam
+                znajdziecie propozycje dedykacji od nich oraz zobaczycie statystyki odsłon Waszej strony. Nasze strony ułatwią Wam
                 przygotowania!
               </FeatureDescription>
             </FeatureBox>
             <FeatureBox onDragStart={handleOnDragStart}>
-              <FontAwesomeIcon
-                icon={faClipboardList}
-                size="3x"
-                color="#ffffff"
-              />
+              <FontAwesomeIcon icon={faClipboardList} size="3x" color="#ffffff" />
               <SingleFeatureTitle>WASZA ORGANIZACJA</SingleFeatureTitle>
               <FeatureDescription>
-                Możecie dodawać swoją listę gości, oznaczać potwierdzenia oraz
-                zbierają się Wam tam odpowiedzi od gości. Właśnie tam
-                znajdziecie propozycje dedykacji od nich oraz zobaczycie
-                statystyki odsłon Waszej strony. Nasze strony ułatwią Wam
+                Możecie dodawać swoją listę gości, oznaczać potwierdzenia oraz zbierają się Wam tam odpowiedzi od gości. Właśnie tam
+                znajdziecie propozycje dedykacji od nich oraz zobaczycie statystyki odsłon Waszej strony. Nasze strony ułatwią Wam
                 przygotowania!
               </FeatureDescription>
             </FeatureBox>

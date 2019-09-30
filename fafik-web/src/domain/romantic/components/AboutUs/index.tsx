@@ -4,16 +4,7 @@ import components from './styles';
 import { RomanticAboutUsProps } from '../../models';
 
 const AboutUsLayout = (props: RomanticAboutUsProps) => {
-  const {
-    AboutUsBox,
-    AboutUsPhotoBox,
-    AboutUsPhotoFrame,
-    AboutUsPhoto,
-    AboutBoxText,
-    TextWelcome,
-    AboutUs,
-    ToRSVPButton,
-  } = components;
+  const { AboutUsBox, AboutUsPhotoBox, AboutUsPhotoFrame, AboutUsPhoto, AboutBoxText, TextWelcome, AboutUs, ToRSVPButton } = components;
   const { aboutUsPhoto, textWelcome, aboutUs } = props;
 
   return (

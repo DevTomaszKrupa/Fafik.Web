@@ -3,10 +3,7 @@ export type Action<P = any> = {
   payload?: P;
 };
 
-export const createAction = <P = object>(
-  type: string,
-  payload?: P
-): Action => ({
+export const createAction = <P = object>(type: string, payload?: P): Action => ({
   type,
   payload,
 });

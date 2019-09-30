@@ -21,8 +21,7 @@ interface CategoryPhotoProps {
 export default {
   Gallery: styled.div`
     flex-grow: 1;
-    background-image: ${(props: GalleryProps) =>
-      `url("${IMAGE_STORAGE + props.galleryImage}")`};
+    background-image: ${(props: GalleryProps) => `url("${IMAGE_STORAGE + props.galleryImage}")`};
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;

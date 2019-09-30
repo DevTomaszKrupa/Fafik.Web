@@ -20,8 +20,7 @@ export default {
   `,
 
   AboutUsPhoto: styled.div`
-    background-image: ${(props: AboutUsPhotoProps) =>
-      `url("${IMAGE_STORAGE}${props.aboutUsImg}")`};
+    background-image: ${(props: AboutUsPhotoProps) => `url("${IMAGE_STORAGE}${props.aboutUsImg}")`};
     width: 17rem;
     height: 25rem;
     background-size: 107%;

@@ -1,11 +1,6 @@
 import { Reducer } from 'redux';
 
-import {
-  ADMIN_LOGIN_STARTED,
-  ADMIN_LOGIN_SUCCESS,
-  ADMIN_LOGIN_FAILURE,
-  ADMIN_LOGOUT,
-} from './consts';
+import { ADMIN_LOGIN_STARTED, ADMIN_LOGIN_SUCCESS, ADMIN_LOGIN_FAILURE, ADMIN_LOGOUT } from './consts';
 import { Action } from '../../actions';
 import { localStorageService } from '../../../services';
 import { history } from '../../../helpers';
@@ -20,10 +15,7 @@ const initialState: AdminLoginState = {
   loginCallSuccessful: false,
 };
 
-export const adminLoginState: Reducer<AdminLoginState, Action> = (
-  state = initialState,
-  action: Action
-): AdminLoginState => {
+export const adminLoginState: Reducer<AdminLoginState, Action> = (state = initialState, action: Action): AdminLoginState => {
   switch (action.type) {
     case ADMIN_LOGIN_STARTED:
       return {

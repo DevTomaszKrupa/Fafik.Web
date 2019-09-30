@@ -9,8 +9,7 @@ const OfferPageComponent = () => {
   const [loginFormVisible, setLoginFormVisible] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState('');
   const dispatch = useDispatch();
-  const submitRegisterForm = (request: RegisterRequest) =>
-    dispatch({ type: 'REGISTER_STARTED', payload: request });
+  const submitRegisterForm = (request: RegisterRequest) => dispatch({ type: 'REGISTER_STARTED', payload: request });
 
   const onThemeClicked = (theme: string) => {
     setLoginFormVisible(true);

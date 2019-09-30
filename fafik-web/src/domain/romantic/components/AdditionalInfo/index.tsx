@@ -57,9 +57,7 @@ const AdditionalInfoLayout = (props: RomanticAdditionalInfoProps) => {
         <PhoneNumbers>
           <TextBoxDescriptionBottom>Gaja: 738 203 202</TextBoxDescriptionBottom>
 
-          <TextBoxDescriptionBottom>
-            Stanisław: 647 214 583
-          </TextBoxDescriptionBottom>
+          <TextBoxDescriptionBottom>Stanisław: 647 214 583</TextBoxDescriptionBottom>
         </PhoneNumbers>
       </BottomInfoSection>
     </AdditionalInfoSection>

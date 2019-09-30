@@ -26,11 +26,7 @@ const AdminMenu = () => {
 
   return (
     <div>
-      <Button
-        aria-controls="simple-menu"
-        aria-haspopup="true"
-        onClick={handleClick}
-      >
+      <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
         <ProfilBox>
           <SupervisedUserCircleIcon fontSize="large" htmlColor="#F2EEE8" />
           <ButtonTitle>PROFIL</ButtonTitle>

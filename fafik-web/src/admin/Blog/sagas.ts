@@ -5,7 +5,7 @@ import { Action } from 'application/store/actions';
 
 function* adminBlogGetPosts(action: Action): any {
   try {
-    const response = yield call(apiCaller.admin.getBlogPosts);
+    const response = yield call(apiCaller.admin.getBlogPosts, action.payload);
     yield put({ type: 'ADMIN_BLOG_GET_POSTS_SUCCESS', payload: response.data });
   } catch (error) {
     yield put({ type: 'ADMIN_BLOG_GET_POSTS_FAILURE' });

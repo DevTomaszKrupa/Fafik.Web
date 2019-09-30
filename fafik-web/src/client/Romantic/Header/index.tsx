@@ -71,11 +71,7 @@ const useStickyHeader = () => {
     const scrollTop =
       window.pageYOffset !== undefined
         ? window.pageYOffset
-        : (
-            document.documentElement ||
-            document.body.parentNode ||
-            document.body
-          ).scrollTop;
+        : (document.documentElement || document.body.parentNode || document.body).scrollTop;
     setStickyIsVisible(scrollTop > 360 || window.innerWidth < 835);
   };
 

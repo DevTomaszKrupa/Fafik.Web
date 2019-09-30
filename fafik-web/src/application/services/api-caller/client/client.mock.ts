@@ -1,8 +1,4 @@
-import {
-  GetClientRequest,
-  RegisterRequest,
-  GetThemeRequest,
-} from 'domain/models';
+import { GetClientRequest, RegisterRequest, GetThemeRequest } from 'domain/models';
 
 const getClient = (request: GetClientRequest) => ({ data: { theme: 1 } });
 

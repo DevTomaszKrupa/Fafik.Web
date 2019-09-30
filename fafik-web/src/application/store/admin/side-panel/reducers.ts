@@ -12,10 +12,7 @@ const initialState: AdminSidePanelState = {
   clients: [],
 };
 
-export const adminSidePanelState: Reducer<AdminSidePanelState, Action> = (
-  state = initialState,
-  action: Action
-): AdminSidePanelState => {
+export const adminSidePanelState: Reducer<AdminSidePanelState, Action> = (state = initialState, action: Action): AdminSidePanelState => {
   switch (action.type) {
     case 'GET_ADMIN_CLIENTS_STARTED':
       return {

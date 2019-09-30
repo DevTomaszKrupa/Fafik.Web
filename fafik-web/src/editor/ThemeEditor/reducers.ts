@@ -13,10 +13,10 @@ const initialState: AdminEditorSidePanelState = {
   textValue: '',
 };
 
-export const adminEditorSidePanelState: Reducer<
-  AdminEditorSidePanelState,
-  Action
-> = (state = initialState, action: Action): AdminEditorSidePanelState => {
+export const adminEditorSidePanelState: Reducer<AdminEditorSidePanelState, Action> = (
+  state = initialState,
+  action: Action
+): AdminEditorSidePanelState => {
   switch (action.type) {
     case 'EDIT_ADMIN_EDITABLE_TEXT_COMPONENT_CLICK': {
       const { itemId, textValue } = action.payload;

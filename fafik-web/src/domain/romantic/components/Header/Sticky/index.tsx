@@ -25,30 +25,18 @@ const StickyHeaderLayout = (props: Props) => {
     StickyItem,
   } = components;
 
-  const {
-    headerNames,
-    leftMenuItems,
-    rightMenuItems,
-    onItemClick,
-    adminMode,
-  } = props;
+  const { headerNames, leftMenuItems, rightMenuItems, onItemClick, adminMode } = props;
 
   return (
     <StickyMenu>
       <StickyMenuTopLine>
         <StickyMenuIconBox>
           <StickyMenuIcon
-            src={
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png'
-            }
+            src={'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png'}
           ></StickyMenuIcon>
         </StickyMenuIconBox>
         <StickyCenterNames>
-          <AdminEditableComponent
-            adminMode={adminMode}
-            itemId="header.headerNames"
-            textValue={headerNames}
-          >
+          <AdminEditableComponent adminMode={adminMode} itemId="header.headerNames" textValue={headerNames}>
             {headerNames}
           </AdminEditableComponent>
         </StickyCenterNames>
@@ -59,11 +47,7 @@ const StickyHeaderLayout = (props: Props) => {
         <SideStickyMenu>
           {leftMenuItems.map(x => {
             return (
-              <StickyItem
-                key={x.path}
-                onClick={() => onItemClick(x.path)}
-                textAlign="right"
-              >
+              <StickyItem key={x.path} onClick={() => onItemClick(x.path)} textAlign="right">
                 {' '}
                 {x.name}{' '}
               </StickyItem>
@@ -74,11 +58,7 @@ const StickyHeaderLayout = (props: Props) => {
         <SideStickyMenu>
           {rightMenuItems.map(x => {
             return (
-              <StickyItem
-                key={x.path}
-                onClick={() => onItemClick(x.path)}
-                textAlign="left"
-              >
+              <StickyItem key={x.path} onClick={() => onItemClick(x.path)} textAlign="left">
                 {' '}
                 {x.name}{' '}
               </StickyItem>

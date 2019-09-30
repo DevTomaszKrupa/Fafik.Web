@@ -6,7 +6,7 @@ import RomanticUsualHeader from 'domain/romantic/components/Header/Usual';
 import { AppState } from 'application/store/reducers';
 
 type Props = {
-  clientPath: string;
+  clientName: string;
 };
 
 const AdminRomanticSiteEditorComponent = (props: Props) => {
@@ -14,11 +14,9 @@ const AdminRomanticSiteEditorComponent = (props: Props) => {
   const getThemeData = () =>
     dispatch({
       type: 'ROMANTIC_THEME_EDITOR_GET_THEME_STARTED',
-      payload: { clientPath: props.clientPath, sitePath: 'home' },
+      payload: { clientName: props.clientName, sitePath: 'home' },
     });
-  const adminRomanticThemeEditorState = useSelector(
-    (state: AppState) => state.adminRomanticThemeEditorState
-  );
+  const adminRomanticThemeEditorState = useSelector((state: AppState) => state.adminRomanticThemeEditorState);
   const { header } = adminRomanticThemeEditorState;
 
   useEffect(() => {
@@ -37,7 +35,7 @@ const AdminRomanticSiteEditorComponent = (props: Props) => {
             adminMode={true}
             leftMenuItems={header.leftMenuItems}
             rightMenuItems={header.rightMenuItems}
-            onItemClick={() => {}}
+            onItemClick={undefined}
           />
         )}
       </Editor>

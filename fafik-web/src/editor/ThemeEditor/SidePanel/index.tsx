@@ -7,9 +7,7 @@ import TextEditor from './TextEditor';
 
 const AdminThemeEditorSidePanelComponent = () => {
   const leaveEditor = () => history.push('/admin');
-  const adminEditorSidePanelState = useSelector(
-    (state: AppState) => state.adminEditorSidePanelState
-  );
+  const adminEditorSidePanelState = useSelector((state: AppState) => state.adminEditorSidePanelState);
 
   return (
     <div>

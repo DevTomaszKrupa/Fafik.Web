@@ -1,4 +1,4 @@
 export interface GetClientRequest {
-  clientPath: string;
+  clientName: string;
   sitePath: string;
 }

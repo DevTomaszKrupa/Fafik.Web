@@ -17,8 +17,7 @@ import RsvpDialog from './dialogs/RsvpDialog';
 
 const RomanticLayout = () => {
   const dispatch = useDispatch();
-  const getRomanticTheme = (clientPath: string) =>
-    dispatch({ type: 'GET_ROMANTIC_THEME_STARTED', payload: clientPath });
+  const getRomanticTheme = (clientName: string) => dispatch({ type: 'GET_ROMANTIC_THEME_STARTED', payload: clientName });
 
   const { DoubleLineTheme } = components;
 

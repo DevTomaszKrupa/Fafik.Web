@@ -1,6 +1,6 @@
-const getTheme = (clientPath: string) => ({
+const getTheme = (clientName: string) => ({
   data: {
-    clientPath: 'gaja-i-stanislaw',
+    clientName: 'gaja-i-stanislaw',
     header: {
       headerNames: 'Kasia i Daniel',
       sites: [
@@ -24,30 +24,25 @@ const getTheme = (clientPath: string) => ({
         Jesteśmy bardzo szczęśliwi, iż będziemy mogli gościć Was tego wielkiego dnia, kiedy staniemy się rodziną.`,
     },
     quoteSection: {
-      quote:
-        '"Klaudynka jest najlepsza, hybryda foczki i pantery. Kocham jo i szanuje i jest mojo żono."',
+      quote: '"Klaudynka jest najlepsza, hybryda foczki i pantery. Kocham jo i szanuje i jest mojo żono."',
       quoteAuthor: 'TOMASZ KRUPA',
     },
     gallery: {
       galleryImage: 'gaja-i-stanislaw/gallery-main.jpg',
       galleryHeader: 'galeria zdjęć',
-      galleryDescription:
-        'Drodzy Goście, zachęcamy do obejrzenia naszej galerii zarówno przed, jak i po uroczystości.',
+      galleryDescription: 'Drodzy Goście, zachęcamy do obejrzenia naszej galerii zarówno przed, jak i po uroczystości.',
       cards: [
         {
           title: 'Przygotowania',
-          image:
-            'url("http://localhost/Fafik/gaja-i-stanislaw/gallery-prep.png")',
+          image: 'url("http://localhost/Fafik/gaja-i-stanislaw/gallery-prep.png")',
         },
         {
           title: 'Ślub i wesele',
-          image:
-            'url("http://localhost/Fafik/gaja-i-stanislaw/gallery-wedding.png")',
+          image: 'url("http://localhost/Fafik/gaja-i-stanislaw/gallery-wedding.png")',
         },
         {
           title: 'Sesja narzeczeńska',
-          image:
-            'url("http://localhost/Fafik/gaja-i-stanislaw/gallery-session.png")',
+          image: 'url("http://localhost/Fafik/gaja-i-stanislaw/gallery-session.png")',
         },
       ],
     },
@@ -79,20 +74,17 @@ const getTheme = (clientPath: string) => ({
     plan: {
       events: [
         {
-          tooltip:
-            'Zapraszamy na uroczystość do Kościoła św. Anny w Kazimierzu Dolnym.',
+          tooltip: 'Zapraszamy na uroczystość do Kościoła św. Anny w Kazimierzu Dolnym.',
           time: '16:00',
           name: 'Uroczystość zaślubin',
         },
         {
-          tooltip:
-            'Zapraszamy na uroczystość do Kościoła św. Anny w Kazimierzu Dolnym.',
+          tooltip: 'Zapraszamy na uroczystość do Kościoła św. Anny w Kazimierzu Dolnym.',
           time: '18:00',
           name: 'Pierwszy taniec',
         },
         {
-          tooltip:
-            'Zapraszamy na uroczystość do Kościoła św. Anny w Kazimierzu Dolnym.',
+          tooltip: 'Zapraszamy na uroczystość do Kościoła św. Anny w Kazimierzu Dolnym.',
           time: '20:00',
           name: 'Tort',
         },
@@ -103,20 +95,17 @@ const getTheme = (clientPath: string) => ({
         {
           header: 'nocleg',
           description: 'Różana weranda, ul. Skłodowskiej-Curie 21 30-315 Dołek',
-          additionalInfo:
-            'Drodzy Goście, chcąc zarezerwować pokój, prosimy skontaktować się z nami.',
+          additionalInfo: 'Drodzy Goście, chcąc zarezerwować pokój, prosimy skontaktować się z nami.',
         },
         {
           header: 'nocleg',
           description: 'Różana weranda, ul. Skłodowskiej-Curie 21 30-315 Dołek',
-          additionalInfo:
-            'Drodzy Goście, chcąc zarezerwować pokój, prosimy skontaktować się z nami.',
+          additionalInfo: 'Drodzy Goście, chcąc zarezerwować pokój, prosimy skontaktować się z nami.',
         },
         {
           header: 'nocleg',
           description: 'Różana weranda, ul. Skłodowskiej-Curie 21 30-315 Dołek',
-          additionalInfo:
-            'Drodzy Goście, chcąc zarezerwować pokój, prosimy skontaktować się z nami.',
+          additionalInfo: 'Drodzy Goście, chcąc zarezerwować pokój, prosimy skontaktować się z nami.',
         },
       ],
     },

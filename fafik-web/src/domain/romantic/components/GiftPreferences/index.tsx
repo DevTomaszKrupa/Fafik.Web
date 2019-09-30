@@ -3,13 +3,7 @@ import React, { Fragment } from 'react';
 import components from './styles';
 
 const GiftPreferencesLayout = () => {
-  const {
-    GiftSection,
-    GiftSectionFrame,
-    GiftSectionHeader,
-    GiftRebus,
-    GiftRebuses,
-  } = components;
+  const { GiftSection, GiftSectionFrame, GiftSectionHeader, GiftRebus, GiftRebuses } = components;
 
   return (
     <Fragment>

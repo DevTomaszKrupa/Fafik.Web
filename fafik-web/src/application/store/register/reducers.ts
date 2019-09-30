@@ -9,10 +9,7 @@ const initialState: RegisterState = {
   isLoading: true,
 };
 
-export const registerState: Reducer<RegisterState, Action> = (
-  state = initialState,
-  action: Action
-): RegisterState => {
+export const registerState: Reducer<RegisterState, Action> = (state = initialState, action: Action): RegisterState => {
   switch (action.type) {
     case 'REGISTER_STARTED':
       return {

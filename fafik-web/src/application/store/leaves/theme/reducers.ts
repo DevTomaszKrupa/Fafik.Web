@@ -2,11 +2,7 @@ import { Reducer } from 'redux';
 
 import { Action } from '../../actions';
 import { GET_CLIENT_SUCCESS } from '../../client/consts';
-import {
-  GET_LEAVES_THEME_STARTED,
-  GET_LEAVES_THEME_SUCCESS,
-  GET_LEAVES_THEME_FAILURE,
-} from './consts';
+import { GET_LEAVES_THEME_STARTED, GET_LEAVES_THEME_SUCCESS, GET_LEAVES_THEME_FAILURE } from './consts';
 
 interface SiteItem {
   name: string;
@@ -14,7 +10,7 @@ interface SiteItem {
 }
 
 export type LeavesState = {
-  clientPath: string;
+  clientName: string;
   isLoading: boolean;
   headerNames: string;
   headerImageLeft: string;
@@ -26,7 +22,7 @@ export type LeavesState = {
 };
 
 const initialState: LeavesState = {
-  clientPath: '',
+  clientName: '',
   isLoading: false,
   headerNames: '',
   headerImageLeft: '',
@@ -45,23 +41,17 @@ const resolveMenuItem = (sites: SiteItem[]) => {
     rightItems = sites.slice(sites.length / 2, sites.length);
   } else {
     leftItems = sites.slice(0, Math.floor(sites.length / 2));
-    rightItems = sites.slice(
-      Math.floor(sites.length / 2),
-      Math.floor(sites.length / 2) * 2
-    );
+    rightItems = sites.slice(Math.floor(sites.length / 2), Math.floor(sites.length / 2) * 2);
   }
   return { leftItems, rightItems };
 };
 
-export const leavesState: Reducer<LeavesState, Action> = (
-  state = initialState,
-  action: Action
-): LeavesState => {
+export const leavesState: Reducer<LeavesState, Action> = (state = initialState, action: Action): LeavesState => {
   switch (action.type) {
     case GET_CLIENT_SUCCESS:
       return {
         ...state,
-        clientPath: action.payload.data.clientPath,
+        clientName: action.payload.data.clientName,
       };
     case GET_LEAVES_THEME_STARTED:
       return {
@@ -69,14 +59,7 @@ export const leavesState: Reducer<LeavesState, Action> = (
         isLoading: true,
       };
     case GET_LEAVES_THEME_SUCCESS:
-      const {
-        headerNames,
-        headerImageLeft,
-        headerImageRight,
-        sites,
-        mainImage,
-        weddingDate,
-      } = action.payload.data;
+      const { headerNames, headerImageLeft, headerImageRight, sites, mainImage, weddingDate } = action.payload.data;
       const { leftItems, rightItems } = resolveMenuItem(sites);
       return {
         ...state,

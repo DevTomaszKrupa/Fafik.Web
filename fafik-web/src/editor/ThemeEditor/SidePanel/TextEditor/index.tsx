@@ -3,9 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppState } from 'application/store/reducers';
 
 const AdminThemeEditorTextEditorComponent = () => {
-  const adminEditorSidePanelState = useSelector(
-    (state: AppState) => state.adminEditorSidePanelState
-  );
+  const adminEditorSidePanelState = useSelector((state: AppState) => state.adminEditorSidePanelState);
   const dispatch = useDispatch();
   const updateTextValue = (value: string) =>
     dispatch({
@@ -15,10 +13,7 @@ const AdminThemeEditorTextEditorComponent = () => {
 
   return (
     <div>
-      <textarea
-        value={adminEditorSidePanelState.textValue}
-        onChange={e => updateTextValue(e.target.value)}
-      />
+      <textarea value={adminEditorSidePanelState.textValue} onChange={e => updateTextValue(e.target.value)} />
       <button>Zapisz</button>
     </div>
   );

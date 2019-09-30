@@ -6,18 +6,13 @@ import AdminSidePanelClient from './Client';
 import { history } from 'application/helpers';
 
 const AdminSidePanelComponent = () => {
-  const adminSidePanelState = useSelector(
-    (state: AppState) => state.adminSidePanelState
-  );
+  const adminSidePanelState = useSelector((state: AppState) => state.adminSidePanelState);
   const { isLoading, clients } = adminSidePanelState;
 
   return (
     <Fragment>
       {isLoading && <span>lołding...</span>}
-      {!isLoading &&
-        clients.map(client => (
-          <AdminSidePanelClient client={client} key={``} />
-        ))}
+      {!isLoading && clients.map(client => <AdminSidePanelClient client={client} key={`client-${client.name}`} />)}
       {!isLoading && clients.length === 0 && (
         <div
           onClick={() => history.push('/admin/wybierz-motyw')}

@@ -8,7 +8,7 @@ import components from './main.styles';
 
 type Props = {
   leavesMainSiteState: LeavesMainSiteState;
-  getLeavesMainSite: (clientPath: string) => Action;
+  getLeavesMainSite: (clientName: string) => Action;
 };
 
 const MainLayout = (props: Props) => {
@@ -17,20 +17,16 @@ const MainLayout = (props: Props) => {
   const { ImgBox, CoupleImage, Counter, Badge } = components;
 
   useEffect(() => {
-    getLeavesMainSite(leavesMainSiteState.clientPath);
+    getLeavesMainSite(leavesMainSiteState.clientName);
   }, []);
 
   return (
     <Fragment>
       <ImgBox>
-        <CoupleImage
-          src={IMAGE_STORAGE + leavesMainSiteState.mainImage}
-          alt="couple"
-        />
+        <CoupleImage src={IMAGE_STORAGE + leavesMainSiteState.mainImage} alt="couple" />
       </ImgBox>
       <Counter>
-        {' '}
-        do naszego ślubu zostało: <Badge>11</Badge> miesięcy, <Badge>8</Badge>{' '}
+        do naszego ślubu zostało: <Badge>11</Badge> miesięcy, <Badge>8</Badge>
         dni.
       </Counter>
     </Fragment>

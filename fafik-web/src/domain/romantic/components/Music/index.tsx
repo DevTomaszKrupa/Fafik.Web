@@ -29,10 +29,7 @@ const MusicLayout = () => {
         </MusicSectionCircle>
       </MusicSectionCircleBox>
       <MusicSectionFrame>
-        <MusicSectionTitle>
-          MASZ SWOJĄ ULUBIONĄ PIOSENKĘ I CHCESZ USŁYSZEĆ JĄ W TRAKCIE NASZEGO
-          WESELA?
-        </MusicSectionTitle>
+        <MusicSectionTitle>MASZ SWOJĄ ULUBIONĄ PIOSENKĘ I CHCESZ USŁYSZEĆ JĄ W TRAKCIE NASZEGO WESELA?</MusicSectionTitle>
         <MusicActionPanel>
           <MusicSectionInputs>
             <MusicInputBox>

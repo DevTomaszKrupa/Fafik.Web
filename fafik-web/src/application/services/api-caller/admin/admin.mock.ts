@@ -54,8 +54,7 @@ const getBlogPosts = () => {
         },
         {
           postId: 3,
-          title:
-            'Januszowe wakacje komunistyczne - Bułgaria na miesiąc miodowy.',
+          title: 'Januszowe wakacje komunistyczne - Bułgaria na miesiąc miodowy.',
           date: new Date(2018, 7, 20, 15, 10, 0),
           isPublished: true,
         },

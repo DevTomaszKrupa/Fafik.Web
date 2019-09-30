@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { RouteComponentProps } from 'react-router-dom';
 import moment from 'moment';
 import { history } from 'application/helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,13 +15,13 @@ import AdminButton from '../shared/AdminButton';
 import components from './styles';
 import { adminPaths } from '../consts';
 
-const AdminBlogComponent = () => {
+const AdminBlogComponent = (props: RouteComponentProps<{ clientName: string }>) => {
   useDocumentTitle('Blog');
   const dispatch = useDispatch();
   const adminBlogState = useSelector((state: AppState) => state.adminBlogState);
   const { posts, isLoading, isAllChecked } = adminBlogState;
   useEffect(() => {
-    dispatch({ type: 'ADMIN_BLOG_GET_POSTS_STARTED' });
+    dispatch({ type: 'ADMIN_BLOG_GET_POSTS_STARTED', payload: { clientName: props.match.params.clientName, limit: 5, offset: 0 } });
   }, []);
 
   const CheckAll = (event: any) => {
@@ -37,7 +38,7 @@ const AdminBlogComponent = () => {
     });
   };
 
-  const OnNewPostClick = () => history.push(adminPaths.blogNewPost);
+  const OnNewPostClick = () => history.push(adminPaths.blogNewPost(props.match.params.clientName));
 
   const {
     BlogContent,

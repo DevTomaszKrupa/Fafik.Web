@@ -27,9 +27,7 @@ const MapLayout = () => {
         <MapPart2>
           <MapTextBox>
             <MapTitleSubtitle>
-              <MapTitle color="#000000">
-                NIE WIESZ JAK DOJECHAĆ NA MIEJSCE?
-              </MapTitle>
+              <MapTitle color="#000000">NIE WIESZ JAK DOJECHAĆ NA MIEJSCE?</MapTitle>
               <MapSubtitle>
                 Kliknij na prostokąt z nazwą miejsca
                 <br />i sprawdź lokalizację na mapie!

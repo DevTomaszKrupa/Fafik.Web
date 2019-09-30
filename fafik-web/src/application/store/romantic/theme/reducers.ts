@@ -3,11 +3,7 @@ import { Reducer } from 'redux';
 
 import { Action } from '../../actions';
 import { GET_CLIENT_SUCCESS } from '../../client/consts';
-import {
-  GET_ROMANTIC_THEME_STARTED,
-  GET_ROMANTIC_THEME_SUCCESS,
-  GET_ROMANTIC_THEME_FAILURE,
-} from './consts';
+import { GET_ROMANTIC_THEME_STARTED, GET_ROMANTIC_THEME_SUCCESS, GET_ROMANTIC_THEME_FAILURE } from './consts';
 import {
   RomanticAboutUsProps,
   RomanticQuoteProps,
@@ -27,7 +23,7 @@ interface SiteItem {
 }
 
 export type RomanticState = {
-  clientPath: string;
+  clientName: string;
   isLoading: boolean;
 
   header: RomanticHeader;
@@ -40,7 +36,7 @@ export type RomanticState = {
 };
 
 const initialState: RomanticState = {
-  clientPath: '',
+  clientName: '',
   isLoading: false,
   header: {
     leftMenuItems: [] as SiteItem[],
@@ -75,15 +71,12 @@ const resolveMenuItem = (sites: SiteItem[]) => {
   return { leftItems, rightItems };
 };
 
-export const romanticState: Reducer<RomanticState, Action> = (
-  state = initialState,
-  action: Action
-): RomanticState => {
+export const romanticState: Reducer<RomanticState, Action> = (state = initialState, action: Action): RomanticState => {
   switch (action.type) {
     case GET_CLIENT_SUCCESS:
       return {
         ...state,
-        clientPath: action.payload.data.clientPath,
+        clientName: action.payload.data.clientName,
       };
     case GET_ROMANTIC_THEME_STARTED:
       return {

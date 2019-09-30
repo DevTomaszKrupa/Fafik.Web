@@ -14,13 +14,16 @@ import AdminTitleSection from '../shared/AdminTitleSection';
 import AdminButton from '../shared/AdminButton';
 import { adminPaths } from '../consts';
 
-const AdminBlogNewPostComponent = () => {
+const AdminBlogNewPostComponent = props => {
   useDocumentTitle('Blog - Nowy post');
   const [postContent, setPostContent] = useState('');
   const title = useFormInput('');
   const dispatch = useDispatch();
   const createNewPost = () =>
-    dispatch({ type: 'ADMIN_BLOG_CREATE_NEW_POST_STARTED', payload: { title: title.value, content: postContent } });
+    dispatch({
+      type: 'ADMIN_BLOG_CREATE_NEW_POST_STARTED',
+      payload: { title: title.value, content: postContent, clientName: props.match.params.clientName },
+    });
 
   const {
     AdminMainSection,
@@ -40,7 +43,11 @@ const AdminBlogNewPostComponent = () => {
       <AdminTitleSection title="Blog - Nowy post" />
       <AdminMainSection>
         <ButtonSection>
-          <AdminButton buttonStyle="gray" onClick={() => history.push(adminPaths.blog)} buttonText="< Powrót" />
+          <AdminButton
+            buttonStyle="gray"
+            onClick={() => history.push(adminPaths.blog(props.match.params.clientName))}
+            buttonText="< Powrót"
+          />
           <TitleSection>
             <TitleRequest>TYTUŁ POSTA:</TitleRequest>
             <TitleInput {...title} />

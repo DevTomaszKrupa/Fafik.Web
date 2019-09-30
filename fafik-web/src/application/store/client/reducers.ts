@@ -1,8 +1,4 @@
-import {
-  GET_CLIENT_STARTED,
-  GET_CLIENT_SUCCESS,
-  GET_CLIENT_FAILURE,
-} from './consts';
+import { GET_CLIENT_STARTED, GET_CLIENT_SUCCESS, GET_CLIENT_FAILURE } from './consts';
 import { Reducer } from 'redux';
 import { Action } from '../actions';
 
@@ -16,10 +12,7 @@ const initialState: ClientState = {
   isLoading: true,
 };
 
-export const clientState: Reducer<ClientState, Action> = (
-  state = initialState,
-  action: Action
-): ClientState => {
+export const clientState: Reducer<ClientState, Action> = (state = initialState, action: Action): ClientState => {
   switch (action.type) {
     case GET_CLIENT_STARTED:
       return {

@@ -64,37 +64,25 @@ const RsvpDialog = (props: Props) => {
   const { romanticRsvpDialogState, closeRsvpDialog } = props;
   const { isOpen } = romanticRsvpDialogState;
   return (
-    <Modal
-      isOpen={isOpen}
-      onRequestClose={closeRsvpDialog}
-      style={customStyles}
-    >
+    <Modal isOpen={isOpen} onRequestClose={closeRsvpDialog} style={customStyles}>
       <RsvpModal>
         <RsvpModalFrame>
           <TopOptionsSection>
             <ClosingBox>
-              <ClosingIcon
-                src={IMAGE_STORAGE + 'gaja-i-stanislaw/close-button.svg'}
-              />{' '}
-              {/* TODO */}
+              <ClosingIcon src={IMAGE_STORAGE + 'gaja-i-stanislaw/close-button.svg'} /> {/* TODO */}
             </ClosingBox>
           </TopOptionsSection>
           <RsvpText>
             <RsvpTitle> FORMULARZ POTWIERDZENIA OBECNOŚCI </RsvpTitle>
             <RsvpSubtitle>
               {' '}
-              Drodzy Goscie, deklarując swoja obecnosc potwierdzacie swoje
-              przybycie na wesele. Bardzo prosimy o przemyslana odpowiedz i
-              kontakt z nami w razie jakiejkolwiek zmiany. Po wypelnieniu
-              formularza prosimy o klikniecie "zapisz" oraz potwierdzenie
+              Drodzy Goscie, deklarując swoja obecnosc potwierdzacie swoje przybycie na wesele. Bardzo prosimy o przemyslana odpowiedz i
+              kontakt z nami w razie jakiejkolwiek zmiany. Po wypelnieniu formularza prosimy o klikniecie "zapisz" oraz potwierdzenie
               poprzez e-mail.{' '}
             </RsvpSubtitle>
           </RsvpText>
 
-          <RsvpDate>
-            {' '}
-            Prosimy o potwierdzenie przybycia do dnia 21 maja 2020.{' '}
-          </RsvpDate>
+          <RsvpDate> Prosimy o potwierdzenie przybycia do dnia 21 maja 2020. </RsvpDate>
 
           <RsvpEmailBox>
             <RsvpEmailRequest> Twój e-mail: </RsvpEmailRequest>

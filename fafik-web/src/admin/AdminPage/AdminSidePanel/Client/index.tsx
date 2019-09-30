@@ -11,8 +11,7 @@ type Props = {
 
 const AdminSidePanelClientComponent = (props: Props) => {
   const dispatch = useDispatch();
-  const openAdminThemeEditor = () =>
-    dispatch({ type: 'OPEN_ADMIN_THEME_EDITOR' });
+  const openAdminThemeEditor = () => dispatch({ type: 'OPEN_ADMIN_THEME_EDITOR' });
 
   const { client } = props;
   const {
@@ -33,7 +32,7 @@ const AdminSidePanelClientComponent = (props: Props) => {
 
   const OnConfigurationClicked = () => {
     openAdminThemeEditor();
-    history.push(`${adminPaths.config}/${client.name}`);
+    history.push(`${adminPaths.config(client.name)}`);
   };
 
   return (
@@ -50,47 +49,38 @@ const AdminSidePanelClientComponent = (props: Props) => {
         <ClientBoxOptionArrow />
       </SidePanelClientBox>
       <SidePanelPause />
-      <SidePanelItem onClick={OnConfigurationClicked}>
-        {' '}
-        Konfiguruj{' '}
-      </SidePanelItem>
+      <SidePanelItem onClick={OnConfigurationClicked}>Konfiguruj</SidePanelItem>
       <SidePanelItem
-        onClick={() => OnItemClicked(adminPaths.blog)}
+        onClick={() => OnItemClicked(adminPaths.blog(client.name))}
         active={
-          history.location.pathname === adminPaths.blog ||
-          history.location.pathname === adminPaths.blogNewPost
+          history.location.pathname === adminPaths.blog(client.name) || history.location.pathname === adminPaths.blogNewPost(client.name)
         }
       >
-        {' '}
-        Blog{' '}
+        Blog
       </SidePanelItem>
       <SidePanelItem
-        onClick={() => OnItemClicked(adminPaths.playlist)}
-        active={history.location.pathname === adminPaths.playlist}
+        onClick={() => OnItemClicked(adminPaths.playlist(client.name))}
+        active={history.location.pathname === adminPaths.playlist(client.name)}
       >
-        {' '}
-        Playlista{' '}
+        Playlista
       </SidePanelItem>
       <SidePanelItem
-        onClick={() => OnItemClicked(adminPaths.guestList)}
-        active={history.location.pathname === adminPaths.guestList}
+        onClick={() => OnItemClicked(adminPaths.guestList(client.name))}
+        active={history.location.pathname === adminPaths.guestList(client.name)}
       >
-        {' '}
-        Lista gości{' '}
+        Lista gości
       </SidePanelItem>
       <SidePanelItem
-        onClick={() => OnItemClicked(adminPaths.stats)}
-        active={history.location.pathname === adminPaths.stats}
+        onClick={() => OnItemClicked(adminPaths.stats(client.name))}
+        active={history.location.pathname === adminPaths.stats(client.name)}
       >
-        {' '}
-        Statystyki{' '}
+        Statystyki
       </SidePanelItem>
       <SidePanelItem
-        onClick={() => OnItemClicked(adminPaths.gallery)}
-        active={history.location.pathname === adminPaths.gallery}
+        onClick={() => OnItemClicked(adminPaths.gallery(client.name))}
+        active={history.location.pathname === adminPaths.gallery(client.name)}
       >
-        {' '}
-        Galeria{' '}
+        Galeria
       </SidePanelItem>
       <SidePanelPause />
       <SidePanelPremiumItem> Abonament </SidePanelPremiumItem>

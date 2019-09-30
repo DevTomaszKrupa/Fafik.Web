@@ -17,13 +17,7 @@ const AdminPanelComponent = () => {
     getAdminClients();
   }, []);
 
-  const {
-    AdminPanelHeader,
-    HeaderLeftSide,
-    HeaderLogo,
-    AdminLogo,
-    HeaderRightSide,
-  } = components;
+  const { AdminPanelHeader, HeaderLeftSide, HeaderLogo, AdminLogo, HeaderRightSide } = components;
 
   const onLogoClicked = () => history.push(adminPaths.mainAdminPage);
 
@@ -31,10 +25,7 @@ const AdminPanelComponent = () => {
     <AdminPanelHeader>
       <HeaderLeftSide />
       <HeaderLogo>
-        <AdminLogo
-          onClick={onLogoClicked}
-          src={`${IMAGE_STORAGE}app/logo.png`}
-        />
+        <AdminLogo onClick={onLogoClicked} src={`${IMAGE_STORAGE}app/logo.png`} />
       </HeaderLogo>
       <HeaderRightSide>
         <NotificationButton />

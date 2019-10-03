@@ -253,4 +253,16 @@ export default {
     font-size: 2.6rem;
     padding-top: 3.5rem;
   `,
+  
+  InstructionSection: styled.div`
+  background-image: url("${IMAGE_STORAGE}app/eucalyptus.png") ;
+  `,
+
+  InstructionNumber: styled.div`
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background-color: #000000
+  color: #FFFFFF;
+  `,
 };

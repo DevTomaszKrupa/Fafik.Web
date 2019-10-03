@@ -42,6 +42,9 @@ const HomePageComponent = () => {
     FeaturesSection,
     TopLayer,
     FeaturesTitle,
+    InstructionSection,
+    InstructionNumber,
+
   } = components;
 
   return (
@@ -103,6 +106,11 @@ const HomePageComponent = () => {
           <Carousel />
         </TopLayer>
       </FeaturesSection>
+      <InstructionSection>
+          <InstructionNumber>1</InstructionNumber>
+          <InstructionNumber>2</InstructionNumber>
+          <InstructionNumber>3</InstructionNumber>
+      </InstructionSection>
     </Fragment>
   );
 };

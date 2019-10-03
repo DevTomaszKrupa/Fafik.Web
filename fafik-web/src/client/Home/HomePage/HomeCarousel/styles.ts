@@ -20,12 +20,11 @@ export default {
   `,
 
   FeatureDescription: styled.div`
+    line-height: 1.4rem !important;
     color: #ffffff;
-    width: 28%;
     text-align: center;
     letter-spacing: 0.06rem;
     font-weight: 200;
-    line-height: 1.4rem !important;
   `,
 
   PreviousButton: styled.div`

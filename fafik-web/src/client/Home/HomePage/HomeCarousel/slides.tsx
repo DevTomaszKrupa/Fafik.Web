@@ -9,7 +9,7 @@ const slides = [
                 oraz zbierają się Wam tam odpowiedzi od gości.<br/>
                 Właśnie tam znajdziecie propozycje dedykacji od nich<br/>
                 oraz zobaczycie statystyki odsłon Waszej strony.<br/>
-                Nasze strony ułatwią Wamprzygotowania!`,
+                Nasze strony ułatwią Wam przygotowania!`,
   },
   {
     icon: faGlassCheers,

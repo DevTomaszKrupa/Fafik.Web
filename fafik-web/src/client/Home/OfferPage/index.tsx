@@ -4,6 +4,8 @@ import { RegisterRequest } from 'domain/models';
 import { useDispatch } from 'react-redux';
 import { useDocumentTitle } from 'application/shared';
 
+import PageTitleBar from 'client/PageTitleBar';
+
 const OfferPageComponent = () => {
   useDocumentTitle('Szablony - Miłość Wierność');
   const [loginFormVisible, setLoginFormVisible] = useState(false);
@@ -26,7 +28,7 @@ const OfferPageComponent = () => {
 
   return (
     <div>
-      <div style={{ fontSize: '70px' }}>WYBIERZ SZABLON M8</div>
+      <PageTitleBar title="WYBIERZCIE SWÓJ SZABLON" />
       <ul>
         <li onClick={() => onThemeClicked('leaves')}>LEAVES</li>
         <li onClick={() => onThemeClicked('romantic')}>ROMANTIC</li>

@@ -2,6 +2,14 @@ import styled from 'styled-components';
 import YouTube from 'react-youtube';
 import { IMAGE_STORAGE } from 'application/config';
 
+interface InstructionNumberProps {
+  backgroundColor: string;
+}
+
+interface StepTItleProps {
+  color: string;
+}
+
 export default {
   BannerBox: styled.div`
   background-image: url("${IMAGE_STORAGE}app/main-banner.jpg");
@@ -15,7 +23,7 @@ export default {
   `,
 
   BannerInfoBox: styled.div`
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.45);
     padding: 3.5rem 0;
     width: 48%;
     display: flex;
@@ -237,7 +245,7 @@ export default {
   `,
 
   TopLayer: styled.div`
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(242, 208, 109, 0.2);
     height: 100%;
     width: 100%;
     z-index: 99;
@@ -253,16 +261,71 @@ export default {
     font-size: 2.6rem;
     padding-top: 3.5rem;
   `,
-  
+
   InstructionSection: styled.div`
   background-image: url("${IMAGE_STORAGE}app/eucalyptus.png") ;
+  background-repeat: no-repeat;
+  background-size: 122% auto;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  font-family: 'Josefin Sans';
+  `,
+
+  InstructionTitleSmall: styled.div`
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 5rem 0 0.8rem 0;
+  `,
+
+  InstructionTitleBig: styled.div`
+    font-weight: 400;
+    font-size: 3.5rem;
+    padding-bottom: 0.6rem;
+  `,
+
+  InstructionStepByStep: styled.div`
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    width: 80%;
+    padding: 1.3rem 0 4rem 0;
+  `,
+
+  InstructionStep: styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   `,
 
   InstructionNumber: styled.div`
-  width: 6rem;
-  height: 6rem;
-  border-radius: 50%;
-  background-color: #000000
-  color: #FFFFFF;
+    width: 11.7rem;
+    height: 11rem;
+    border-radius: 50%;
+    background-color: ${(props: InstructionNumberProps) => props.backgroundColor};
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 7rem;
+    padding-top: 0.7rem;
+  `,
+
+  StepTItle: styled.div`
+    font-size: 1.5rem;
+    font-weight: 800;
+    padding: 1.7rem 0 1rem 0;
+    letter-spacing: 0.1rem;
+    color: ${(props: StepTItleProps) => props.color};
+  `,
+
+  StepDescription: styled.div`
+    text-align: center;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+    letter-spacing: 0.09rem;
   `,
 };

@@ -43,8 +43,13 @@ const HomePageComponent = () => {
     TopLayer,
     FeaturesTitle,
     InstructionSection,
+    InstructionTitleSmall,
+    InstructionTitleBig,
+    InstructionStepByStep,
+    InstructionStep,
     InstructionNumber,
-
+    StepTItle,
+    StepDescription,
   } = components;
 
   return (
@@ -107,9 +112,45 @@ const HomePageComponent = () => {
         </TopLayer>
       </FeaturesSection>
       <InstructionSection>
-          <InstructionNumber>1</InstructionNumber>
-          <InstructionNumber>2</InstructionNumber>
-          <InstructionNumber>3</InstructionNumber>
+        <InstructionTitleSmall>JAK ZAŁOŻYĆ STRONĘ</InstructionTitleSmall>
+        <InstructionTitleBig>W 3 KROKACH?</InstructionTitleBig>
+        <HorizontalLine />
+        <InstructionStepByStep>
+          <InstructionStep>
+            <InstructionNumber backgroundColor="#BAC6B6">1</InstructionNumber>
+            <StepTItle color="#BAC6B6">WYBIERZ SZABLON</StepTItle>
+            <StepDescription>
+              Nasze szablony są dopasowane również
+              <br />
+              pod przeglądarki na smartfonach!
+              <br />
+              Daj się zaskoczyć ich estetyce
+              <br />i możliwościom jakie ze sobą niosą.
+            </StepDescription>
+          </InstructionStep>
+
+          <InstructionStep>
+            <InstructionNumber backgroundColor="#ECE8DF">2</InstructionNumber>
+            <StepTItle color="#ECE8DF">ZAŁÓŻ KONTO</StepTItle>
+            <StepDescription>
+              zacznij edytować swoją stronę
+              <br /> - zobacz jakie to szybkie i przyjemne.
+              <br />
+              Zbierz informacje w jednym miejscu!
+            </StepDescription>
+          </InstructionStep>
+
+          <InstructionStep>
+            <InstructionNumber backgroundColor="#F9E2DB">3</InstructionNumber>
+            <StepTItle color="#F9E2DB">ZOSTAŃ ADMINEM</StepTItle>
+            <StepDescription>
+              zakup abonament aby Wasza strona<br />
+              została opublikowana. Publikuj posty na blogu,<br />
+              wstawiaj zdjęcia, opisuj detale
+              <br /> - wszystko z perspektywy panelu administratora
+            </StepDescription>
+          </InstructionStep>
+        </InstructionStepByStep>
       </InstructionSection>
     </Fragment>
   );

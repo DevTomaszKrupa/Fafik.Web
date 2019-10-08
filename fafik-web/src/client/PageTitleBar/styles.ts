@@ -12,5 +12,6 @@ export default {
     padding: 2.4rem 0;
     font-size: 1.1rem;
     font-weight: 600;
+    margin-bottom: 1rem;
   `,
 };

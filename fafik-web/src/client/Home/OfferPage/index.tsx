@@ -3,8 +3,10 @@ import RegisterForm from './RegisterForm';
 import { RegisterRequest } from 'domain/models';
 import { useDispatch } from 'react-redux';
 import { useDocumentTitle } from 'application/shared';
+import { IMAGE_STORAGE } from 'application/config';
 
 import PageTitleBar from 'client/PageTitleBar';
+import components from './styles';
 
 const OfferPageComponent = () => {
   useDocumentTitle('Szablony - Miłość Wierność');
@@ -26,9 +28,17 @@ const OfferPageComponent = () => {
     submitRegisterForm(request);
   };
 
+  const { ThemeBox, ThemeImage, ThemeTop, DemoButton } = components;
+
   return (
     <div>
       <PageTitleBar title="WYBIERZCIE SWÓJ SZABLON" />
+      <ThemeBox>
+        <ThemeImage src={`${IMAGE_STORAGE}app/Romantic-theme-img.png`} />
+        <ThemeTop>
+          <DemoButton>PODGLĄD</DemoButton>
+        </ThemeTop>
+      </ThemeBox>
       <ul>
         <li onClick={() => onThemeClicked('leaves')}>LEAVES</li>
         <li onClick={() => onThemeClicked('romantic')}>ROMANTIC</li>

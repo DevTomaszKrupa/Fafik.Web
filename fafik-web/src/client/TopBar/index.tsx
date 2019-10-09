@@ -31,7 +31,7 @@ const TopBarComponent = () => {
 
   return (
     <Fragment>
-      <TopBar>
+      <TopBar id="topBar">
         <TopBarLeft>
           <SocialIcons>
             <span onClick={FacebookClick}>

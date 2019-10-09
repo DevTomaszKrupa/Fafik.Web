@@ -11,6 +11,21 @@ interface StepTItleProps {
 }
 
 export default {
+  GoUpButton: styled.div`
+    background-color: #3e4b39;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    bottom: 4rem;
+    right: 3rem;
+    z-index: 101;
+  `,
+
   BannerBox: styled.div`
   background-image: url("${IMAGE_STORAGE}app/main-banner.jpg");
   padding: 5rem 0;

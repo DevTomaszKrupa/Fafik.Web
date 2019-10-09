@@ -4,6 +4,8 @@ import React, { Fragment } from 'react';
 import { history } from 'application/helpers';
 import { useDocumentTitle } from 'application/shared';
 import { IMAGE_STORAGE } from 'application/config';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 import components from './styles';
 import Carousel from './HomeCarousel';
@@ -16,7 +18,14 @@ const HomePageComponent = () => {
     if (element) element.scrollIntoView();
   };
 
+  const scrollToTop = () => {
+    const topElement = document.getElementById('topBar');
+    console.log(topElement);
+    if (topElement) topElement.scrollIntoView();
+  };
+
   const {
+    GoUpButton,
     BannerBox,
     BannerInfoBox,
     BannerInfoText,
@@ -54,6 +63,9 @@ const HomePageComponent = () => {
 
   return (
     <Fragment>
+      <GoUpButton onClick={scrollToTop}>
+        <FontAwesomeIcon icon={faArrowUp} color="#ffffff" size="2x" />
+      </GoUpButton>
       <BannerBox>
         <BannerInfoBox>
           <BannerInfoText>
@@ -144,8 +156,10 @@ const HomePageComponent = () => {
             <InstructionNumber backgroundColor="#F9E2DB">3</InstructionNumber>
             <StepTItle color="#F9E2DB">ZOSTAŃ ADMINEM</StepTItle>
             <StepDescription>
-              zakup abonament aby Wasza strona<br />
-              została opublikowana. Publikuj posty na blogu,<br />
+              zakup abonament aby Wasza strona
+              <br />
+              została opublikowana. Publikuj posty na blogu,
+              <br />
               wstawiaj zdjęcia, opisuj detale
               <br /> - wszystko z perspektywy panelu administratora
             </StepDescription>

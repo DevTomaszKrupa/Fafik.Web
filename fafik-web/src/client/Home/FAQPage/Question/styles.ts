@@ -25,7 +25,7 @@ export default {
 
   AnswerBox: styled.div`
     font-size: 1.09rem;
-    padding: 1rem 0 2rem 5rem;
+    padding: 1rem 0 2rem 6.6rem;
     line-height: 1.7rem;
     width: 59%;
   `,

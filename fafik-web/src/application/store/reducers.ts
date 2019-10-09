@@ -6,6 +6,7 @@ import { AdminNewBlogPostState, adminNewBlogPostState } from 'admin/BlogNewPost/
 import { AdminEditorSidePanelState, adminEditorSidePanelState } from 'editor/ThemeEditor/reducers';
 
 import { ClientState, clientState } from './client/reducers';
+import { FaqPageState, faqPageState } from 'client/Home/FAQPage/reducers';
 import { LeavesState, leavesState } from './leaves/theme/reducers';
 import { RomanticState, romanticState } from './romantic/theme/reducers';
 import { RomanticRsvpDialogState, romanticRsvpDialogState } from './romantic/dialogs/RsvpDialog/reducers';
@@ -26,6 +27,7 @@ export type AppState = {
   romanticState: RomanticState;
   leavesMainSiteState: LeavesMainSiteState;
   romanticRsvpDialogState: RomanticRsvpDialogState;
+  faqPageState: FaqPageState;
 
   // admin
   adminLoginState: AdminLoginState;
@@ -48,6 +50,7 @@ export default combineReducers<AppState>({
   romanticState,
   leavesMainSiteState,
   romanticRsvpDialogState,
+  faqPageState,
 
   // admin
   adminLoginState,

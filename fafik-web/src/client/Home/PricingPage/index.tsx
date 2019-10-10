@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 
 import components from './styles';
-import { useDocumentTitle } from 'application/shared';
-import PageTitleBar from 'client/PageTitleBar';
+import { useDocumentTitle } from '../../../application/shared';
+import PageTitleBar from '../../../client/PageTitleBar';
 
 const PricingPage = () => {
   useDocumentTitle('Cennik - Miłość Wierność');

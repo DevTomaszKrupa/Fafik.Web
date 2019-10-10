@@ -5,19 +5,26 @@ interface ThemeImageProps {
 }
 
 export default {
+  ThemesSection: styled.div`
+    display: flex;
+    justify-content: space-between;
+    padding: 3.5rem;
+    flex-wrap: wrap;
+  `,
+
   ThemeElement: styled.div`
-    width: 30rem;
+    width: 27rem;
   `,
 
   ThemeBox: styled.div`
-    width: 30rem;
-    height: 19rem;
+    width: 27rem;
+    height: 17rem;
     position: relative;
   `,
 
   ThemeImage: styled.img`
-    width: 30rem;
-    height: 19rem;
+    width: 27rem;
+    height: 17rem;
     position: absolute;
 
     ${(props: ThemeImageProps) => props.isMouseOn && `filter: blur(2px); opacity: 0.95;`}
@@ -33,7 +40,7 @@ export default {
   `,
 
   TopButtons: styled.div`
-    height: 41%;
+    height: 43%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -68,12 +75,13 @@ export default {
     font-weight: 600;
     font-size: 1.7rem;
     text-align: center;
-    padding: 1.4rem 0 0.6rem 0;
+    padding: 1.5rem 0 0.7rem 0;
   `,
 
   ThemeDescription: styled.div`
     font-size: 0.8rem;
     text-align: center;
-    line-height: 1.2rem;
+    line-height: 1.4rem;
+    letter-spacing: 0.04rem;
   `,
 };

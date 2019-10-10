@@ -59,6 +59,8 @@ const HomePageComponent = () => {
     InstructionNumber,
     StepTItle,
     StepDescription,
+    QRSection,
+    QRAdImage,
   } = components;
 
   return (
@@ -166,6 +168,9 @@ const HomePageComponent = () => {
           </InstructionStep>
         </InstructionStepByStep>
       </InstructionSection>
+      <QRSection>
+        <QRAdImage src={`${IMAGE_STORAGE}app/qr-image.png`} />
+      </QRSection>
     </Fragment>
   );
 };

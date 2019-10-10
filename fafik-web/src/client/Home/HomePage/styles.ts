@@ -343,4 +343,8 @@ export default {
     line-height: 1.3rem;
     letter-spacing: 0.09rem;
   `,
+  
+  QRSection: styled.div``,
+
+  QRAdImage: styled.img``,
 };

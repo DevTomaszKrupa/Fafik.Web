@@ -32,9 +32,42 @@ const getFaqQuestions = () => ({
   ],
 });
 
+const getOfferTheme = () => ({
+  data: [
+    {
+      singleThemeId: 1,
+      themeName: 'ROMANTYCZNY',
+      themeImageUrl: `app/Romantic-theme-img.png`,
+      themeDescription: `WSZYSTKO DOSTĘPNE W JEDNYM MIEJSCU, ZMYSŁOWY
+                        I DELIKATNY SZABLON OPARTY NA WASZYCH
+                        ZDJĘCIACH, DLA FANÓW MELANCHOLIJNYCH CYTATÓW.`,
+      themeFunctionName: 'romantic',
+    },
+    {
+      singleThemeId: 2,
+      themeName: 'BOTANICZNY',
+      themeImageUrl: `app/Botanic-theme-img.png`,
+      themeDescription: `SZABLON DLA MIŁOŚNIKÓW ROŚLIN - DOSTĘPNY
+                        W CZTERECH RÓŻNYCH WERSJACH - MONSTERY, PIWONIE
+                        PUDROWY RÓŻ, PIWONIE BORDOWE, MAKI.`,
+      themeFunctionName: 'botanical',
+    },
+    {
+      singleThemeId: 3,
+      themeName: 'LISTKI',
+      themeImageUrl: `app/Leaves-theme-img.png`,
+      themeDescription: `POŁĄCZCIE MINIMALIZM Z MOTYWEM WASZEGO
+                        WESELA. NASTAWCIE SWOICH GOŚCI NA ODPOWIEDNI
+                        KLIMAT I CIESZCIE SIĘ ORGANIZACJĄ.`,
+      themeFunctionName: 'leaves',
+    },
+  ],
+});
+
 export default {
   getClient,
   register,
   getTheme,
   getFaqQuestions,
+  getOfferTheme,
 };

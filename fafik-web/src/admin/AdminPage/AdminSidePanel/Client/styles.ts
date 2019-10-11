@@ -34,6 +34,7 @@ export default {
     border-bottom: 0.09rem solid #cbc3b6;
     cursor: pointer;
     font-weight: 500;
+    letter-spacing: 0.05rem;
 
     &:hover {
       background-color: #f2eee8;
@@ -51,13 +52,15 @@ export default {
   ClientBoxTitle: styled.div`
     color: #3e4b39;
     font-size: 1.15rem;
+    letter-spacing: 0.04rem;
   `,
 
   ClientBoxNames: styled.div`
-    font-size: 1.45rem;
     text-transform: uppercase;
-    letter-spacing: 0.17rem;
     padding: 0.7rem 0;
+    letter-spacing: 0.1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
   `,
 
   ClientBoxValidity: styled.div`
@@ -67,6 +70,9 @@ export default {
 
   ValidityRequest: styled.div`
     color: #3e4b39;
+    letter-spacing: 0.06rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
   `,
 
   ValidityExpDate: styled.div`

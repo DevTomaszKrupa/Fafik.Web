@@ -12,13 +12,11 @@ import { SingleTheme } from './reducers';
 
 const OfferPageComponent = () => {
   useDocumentTitle('Szablony - Miłość Wierność');
-  const [loginFormVisible, setLoginFormVisible] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState({} as SingleTheme);
   const dispatch = useDispatch();
   const submitRegisterForm = (request: RegisterRequest) => dispatch({ type: 'REGISTER_STARTED', payload: request });
 
   const onThemeClicked = (theme: SingleTheme) => {
-    setLoginFormVisible(true);
     setSelectedTheme(theme);
   };
 
@@ -37,22 +35,21 @@ const OfferPageComponent = () => {
   const themesSectionState = useSelector((state: AppState) => state.themesSectionState);
   const { themes } = themesSectionState;
 
-  const { ThemesSection, BackButton } = components;
+  const { SelectedThemeSection, ThemesSection, Form, Buttons, BackButton, ActionButton } = components;
 
   return (
     <div>
       <PageTitleBar title="WYBIERZCIE SWÓJ SZABLON" />
-      {selectedTheme.themeName && (
-        <div>
-          <ThemeElement theme={selectedTheme} />
-          <BackButton onClick={() => setSelectedTheme({} as SingleTheme)}>WRÓĆ</BackButton>
-          {loginFormVisible && (
-            <div>
-              <RegisterForm submitRegisterForm={submitRegisterFormHandler} />
-            </div>
-          )}
-        </div>
-      )}
+      <SelectedThemeSection isVisible={!!selectedTheme.themeName}>
+        <ThemeElement theme={selectedTheme} />
+        <Form>
+          <RegisterForm submitRegisterForm={submitRegisterFormHandler} />
+          <Buttons>
+            <BackButton onClick={() => setSelectedTheme({} as SingleTheme)}>POWRÓT</BackButton>
+            <ActionButton type="submit">ZAREJESTRUJ</ActionButton>
+          </Buttons>
+        </Form>
+      </SelectedThemeSection>
       <ThemesSection>
         {themes.map(theme => (
           <ThemeElement theme={theme} onPreviewClickFunction={onThemeClicked} onSelectClickFunction={onThemeClicked} />

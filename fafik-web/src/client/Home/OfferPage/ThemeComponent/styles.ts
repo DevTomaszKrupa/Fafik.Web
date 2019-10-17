@@ -33,10 +33,9 @@ export default {
   `,
 
   TopButtons: styled.div`
-    height: 43%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
   `,
 
   DemoButton: styled.div`
@@ -49,8 +48,10 @@ export default {
     align-items: center;
     justify-content: center;
     position: sticky;
+    margin: 0.6rem 0
+    font-size: 0.95rem;
 
-    font-family: 'Josefin Sans';
+    font-family: 'Montserrat';
     letter-spacing: 0.08rem;
     font-weight: 600;
 
@@ -65,16 +66,18 @@ export default {
   `,
 
   ThemeName: styled.div`
-    font-weight: 600;
-    font-size: 1.7rem;
     text-align: center;
-    padding: 1.5rem 0 0.7rem 0;
+    font-family: 'DM Serif Text';
+    font-weight: 100;
+    font-size: 2.24rem;
+    padding: 1rem 0 0.7rem 0;
   `,
 
   ThemeDescription: styled.div`
-    font-size: 0.8rem;
+    font-size: 0.74rem;
     text-align: center;
     line-height: 1.4rem;
     letter-spacing: 0.04rem;
+    font-family: 'Montserrat';
   `,
 };

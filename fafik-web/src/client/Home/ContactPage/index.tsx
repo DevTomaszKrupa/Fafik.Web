@@ -9,7 +9,7 @@ import PageTitleBar from 'client/PageTitleBar';
 const ContactPage = () => {
   useDocumentTitle('Kontakt - Miłość Wierność');
 
-  const { MainContainer, MainText, TextMail } = components;
+  const { MainContainer, MainText, MailBox, TextMail } = components;
 
   return (
     <Fragment>
@@ -20,8 +20,10 @@ const ContactPage = () => {
           <br />
           bądź chcesz nam przesłać swoje sugestie/opinię, nie zwlekaj i skontaktuj się z nami!
         </MainText>
-        <FontAwesomeIcon icon={faAt} size="3x" color="#f2d0be" />
-        <TextMail>e-mail: wiernoscmilosc@gmail.com</TextMail>
+        <MailBox>
+          <FontAwesomeIcon icon={faAt} size="3x" color="#f2d0be" />
+          <TextMail>e-mail: wiernoscmilosc@gmail.com</TextMail>
+        </MailBox>
       </MainContainer>
     </Fragment>
   );

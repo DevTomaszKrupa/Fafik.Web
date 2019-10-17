@@ -36,7 +36,7 @@ const getOfferTheme = () => ({
   data: [
     {
       singleThemeId: 1,
-      themeName: 'ROMANTYCZNY',
+      themeName: 'Romantyczny',
       themeImageUrl: `app/Romantic-theme-img.png`,
       themeDescription: `WSZYSTKO DOSTĘPNE W JEDNYM MIEJSCU, ZMYSŁOWY
                         I DELIKATNY SZABLON OPARTY NA WASZYCH
@@ -45,7 +45,7 @@ const getOfferTheme = () => ({
     },
     {
       singleThemeId: 2,
-      themeName: 'BOTANICZNY',
+      themeName: 'Botaniczny',
       themeImageUrl: `app/Botanic-theme-img.png`,
       themeDescription: `SZABLON DLA MIŁOŚNIKÓW ROŚLIN - DOSTĘPNY
                         W CZTERECH RÓŻNYCH WERSJACH - MONSTERY, PIWONIE
@@ -54,7 +54,7 @@ const getOfferTheme = () => ({
     },
     {
       singleThemeId: 3,
-      themeName: 'LISTKI',
+      themeName: 'Listki',
       themeImageUrl: `app/Leaves-theme-img.png`,
       themeDescription: `POŁĄCZCIE MINIMALIZM Z MOTYWEM WASZEGO
                         WESELA. NASTAWCIE SWOICH GOŚCI NA ODPOWIEDNI

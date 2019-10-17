@@ -14,7 +14,7 @@ const AdminGalleryComponent = () => {
   return (
     <Fragment>
       <AdminTitleSection title="Galeria" />
-      <QRCode value={`www.miloscwiernosc.pl/${UserName}`} />
+      <QRCode value={`www.miloscwiernosc.pl/${UserName}`} /> {/*TODO Get this from global variable*/}
     </Fragment>
   );
 };

@@ -30,7 +30,7 @@ const HomeCarouselComponent = () => {
       <AliceCarousel mouseDragEnabled buttonsDisabled slideToIndex={currentSlide}>
         {slides.map(slide => (
           <FeatureBox onDragStart={handleOnDragStart}>
-            <FontAwesomeIcon icon={slide.icon} size="3x" color="#ffffff" />
+            <FontAwesomeIcon icon={slide.icon} size="2x" color="#ffffff" />
             <SingleFeatureTitle>{slide.title}</SingleFeatureTitle>
             <FeatureDescription dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(slide.description) }}></FeatureDescription>
           </FeatureBox>

@@ -31,7 +31,7 @@ const OfferPageComponent = (props: Props) => {
           {isMouseOn && (
             <TopButtons>
               <DemoButton onClick={onPreviewClickHandled}>PODGLĄD</DemoButton>
-              <DemoButton onClick={onSelectClickHandled}> WYBIERZ</DemoButton>
+              {props.onSelectClickFunction && <DemoButton onClick={onSelectClickHandled}> WYBIERZ</DemoButton>}
             </TopButtons>
           )}
         </ThemeTop>

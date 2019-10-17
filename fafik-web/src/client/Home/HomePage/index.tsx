@@ -50,6 +50,7 @@ const HomePageComponent = () => {
     FVideo,
     FeaturesSection,
     TopLayer,
+    FeaturesTop,
     FeaturesTitle,
     InstructionSection,
     InstructionTitleSmall,
@@ -59,8 +60,6 @@ const HomePageComponent = () => {
     InstructionNumber,
     StepTItle,
     StepDescription,
-    QRSection,
-    QRAdImage,
   } = components;
 
   return (
@@ -75,14 +74,14 @@ const HomePageComponent = () => {
           </BannerInfoText>
           <BannerInfoButton onClick={scrollToWhatsThisSection}>
             {' '}
-            ZOBACZ JAK TO DZIAŁA <ButtonArrow id="arrow">></ButtonArrow>
+            zobacz jak to działa <ButtonArrow id="arrow">►</ButtonArrow>
           </BannerInfoButton>
         </BannerInfoBox>
       </BannerBox>
 
       <MeetUsSection>
         <MeetUsBox>
-          <MeetUsTitle>KOCHANI NARZECZENI!</MeetUsTitle>
+          <MeetUsTitle>kochani Narzeczeni!</MeetUsTitle>
           <HorizontalLine />
           <MeetUsText>
             WITAJCIE NA NASZEJ STRONIE! BARDZO SIĘ CIESZYMY,ŻE TU TRAFILIŚCIE ♥ <br />
@@ -109,9 +108,9 @@ const HomePageComponent = () => {
           <WhatsThisTitle src={`${IMAGE_STORAGE}app/whats-this-title.png`} />
           <WhatsThisText>
             {' '}
-            To portal na którym narzeczeni mogą zakupić swoje miejsce w sieci pod adresem (miloscwiernosc.pl/waszanazwa) na pewien okres
-            czasu, dobrać szablon wykonany przez grafika i wyedytować go samodzielnie pod swoim kątem. Korzystają przy tym z kreatora,
-            dzięki któremu możliwe jest edytowanie szablonu "na żywo".
+            To portal na którym narzeczeni mogą zakupić swoje miejsce w sieci pod adresem <b>(miloscwiernosc.pl/waszanazwa</b>) na pewien
+            okres czasu, dobrać szablon wykonany przez grafika i wyedytować go samodzielnie pod swoim kątem. Korzystają przy tym z{' '}
+            <b>kreatora</b>, dzięki któremu możliwe jest edytowanie szablonu "na żywo".
           </WhatsThisText>
           <HomePageButton onClick={() => history.push('/cennik')}>ZOBACZ CENNIK ></HomePageButton>
         </TextSection>
@@ -121,7 +120,9 @@ const HomePageComponent = () => {
           <source src={`${IMAGE_STORAGE}app/Homepage-feature-vid.webm`} type="video/WebM" />
         </FVideo>
         <TopLayer>
-          <FeaturesTitle>DLACZEGO WARTO?</FeaturesTitle>
+          <FeaturesTop>
+            <FeaturesTitle>Dlaczego warto?</FeaturesTitle>
+          </FeaturesTop>
           <Carousel />
         </TopLayer>
       </FeaturesSection>
@@ -168,9 +169,6 @@ const HomePageComponent = () => {
           </InstructionStep>
         </InstructionStepByStep>
       </InstructionSection>
-      <QRSection>
-        <QRAdImage src={`${IMAGE_STORAGE}app/qr-image.png`} />
-      </QRSection>
     </Fragment>
   );
 };

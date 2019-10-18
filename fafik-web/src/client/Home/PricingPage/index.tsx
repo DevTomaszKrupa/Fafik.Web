@@ -3,6 +3,7 @@ import React, { Fragment } from 'react';
 import components from './styles';
 import { useDocumentTitle } from '../../../application/shared';
 import PageTitleBar from '../../../client/PageTitleBar';
+import FeaturesList from './FeatureList';
 
 const PricingPage = () => {
   useDocumentTitle('Cennik - Miłość Wierność');
@@ -51,7 +52,9 @@ const PricingPage = () => {
             <PhotoSquare backgroundImage="app/qr-image.png" />
           </PhotoMiniatures>
         </DescriptionSection>
-        <FeaturesSection></FeaturesSection>
+        <FeaturesSection>
+          <FeaturesList />
+        </FeaturesSection>
       </PricingPageMain>
     </Fragment>
   );

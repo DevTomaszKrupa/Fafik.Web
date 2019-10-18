@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import RegisterForm from './RegisterForm';
-import { RegisterRequest } from 'domain/models';
 import { useDispatch, useSelector } from 'react-redux';
+
+import { RegisterRequest } from 'domain/models';
 import { useDocumentTitle } from 'application/shared';
 import { AppState } from 'application/store/reducers';
 
-import PageTitleBar from 'client/PageTitleBar';
+import PageTitleBar from '../../PageTitleBar';
+import RegisterForm from './RegisterForm';
 import ThemeElement from './ThemeComponent';
 import components from './styles';
 import { SingleTheme } from './reducers';

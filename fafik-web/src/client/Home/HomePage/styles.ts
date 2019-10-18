@@ -346,11 +346,14 @@ export default {
   `,
 
   StepTItle: styled.div`
-    font-size: 1.5rem;
     padding: 1.7rem 0 1rem 0;
     font-family: 'Montserrat';
     font-weight: 600;
     letter-spacing: 0.14rem;
+    font-family: 'DM Serif Text';
+    font-size: 1.6rem;
+    text-align: center;
+}
     color: ${(props: StepTItleProps) => props.color};
   `,
 

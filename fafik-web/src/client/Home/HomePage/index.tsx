@@ -133,7 +133,7 @@ const HomePageComponent = () => {
         <InstructionStepByStep>
           <InstructionStep>
             <InstructionNumber backgroundColor="#BAC6B6">1</InstructionNumber>
-            <StepTItle color="#BAC6B6">WYBIERZ SZABLON</StepTItle>
+            <StepTItle color="#BAC6B6">Wybierz szablon<br/>i załóż konto</StepTItle>
             <StepDescription>
               Nasze szablony są dopasowane również
               <br />
@@ -146,7 +146,7 @@ const HomePageComponent = () => {
 
           <InstructionStep>
             <InstructionNumber backgroundColor="#ECE8DF">2</InstructionNumber>
-            <StepTItle color="#ECE8DF">ZAŁÓŻ KONTO</StepTItle>
+            <StepTItle color="#ECE8DF">Wybierz abonament<br/>i wykonaj płatność </StepTItle>
             <StepDescription>
               zacznij edytować swoją stronę
               <br /> - zobacz jakie to szybkie i przyjemne.
@@ -157,7 +157,7 @@ const HomePageComponent = () => {
 
           <InstructionStep>
             <InstructionNumber backgroundColor="#F9E2DB">3</InstructionNumber>
-            <StepTItle color="#F9E2DB">ZOSTAŃ ADMINEM</StepTItle>
+            <StepTItle color="#F9E2DB">Edytuj stronę<br/>i opublikuj ją</StepTItle>
             <StepDescription>
               zakup abonament aby Wasza strona
               <br />

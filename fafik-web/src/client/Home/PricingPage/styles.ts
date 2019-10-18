@@ -84,5 +84,7 @@ export default {
 
   FeaturesSection: styled.div`
     flex-grow: 2;
+    display: flex;
+    justify-content: center;
   `,
 };

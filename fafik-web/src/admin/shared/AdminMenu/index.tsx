@@ -28,9 +28,9 @@ const AdminMenu = () => {
     <div>
       <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
         <ProfilBox>
-          <SupervisedUserCircleIcon fontSize="large" htmlColor="#F2EEE8" />
+          <SupervisedUserCircleIcon fontSize="large" htmlColor="#ffffff" />
           <ButtonTitle>PROFIL</ButtonTitle>
-          <ArrowDropDownIcon fontSize="large" htmlColor="#3E4B39" />
+          <ArrowDropDownIcon fontSize="large" htmlColor="#000000" />
         </ProfilBox>
       </Button>
       <DropdownMenu

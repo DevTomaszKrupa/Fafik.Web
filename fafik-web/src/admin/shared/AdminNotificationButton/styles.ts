@@ -13,8 +13,8 @@ export default {
   `,
 
   NotificationsQuantity: styled.div`
-    background-color: #a14848;
-    font-family: 'Josefin Sans';
+    background-color: #f26d64;
+    font-family: 'Montserrat';
     font-weight: 800;
     color: #ffffff;
     height: 1.4rem;

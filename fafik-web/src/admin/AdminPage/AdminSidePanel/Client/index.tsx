@@ -14,19 +14,7 @@ const AdminSidePanelClientComponent = (props: Props) => {
   const openAdminThemeEditor = () => dispatch({ type: 'OPEN_ADMIN_THEME_EDITOR' });
 
   const { client } = props;
-  const {
-    SidePanelItem,
-    SidePanelClientBox,
-    ClientBoxText,
-    ClientBoxTitle,
-    ClientBoxNames,
-    ClientBoxValidity,
-    ValidityRequest,
-    ValidityExpDate,
-    ClientBoxOptionArrow,
-    SidePanelPause,
-    SidePanelPremiumItem,
-  } = components;
+  const { SidePanelItem, SidePanelClientBox, ClientBoxNames, WeddingDate, SidePanelPause, SidePanelPremiumItem } = components;
 
   const OnItemClicked = (path: string) => history.push(path);
 
@@ -38,15 +26,16 @@ const AdminSidePanelClientComponent = (props: Props) => {
   return (
     <Fragment>
       <SidePanelClientBox>
-        <ClientBoxText>
-          <ClientBoxTitle>STRONA:</ClientBoxTitle>
-          <ClientBoxNames>{client.name}</ClientBoxNames>
-          <ClientBoxValidity>
-            <ValidityRequest>ważna do:</ValidityRequest>
-            <ValidityExpDate>21.05.2020</ValidityExpDate>
-          </ClientBoxValidity>
-        </ClientBoxText>
-        <ClientBoxOptionArrow />
+        <ClientBoxNames>
+          {' '}
+          Kasia i Daniel
+          {/* {client.name} */}
+        </ClientBoxNames>
+        <WeddingDate>
+          Wasz wielki dzień już
+          <br />
+          za 331 dni!
+        </WeddingDate>
       </SidePanelClientBox>
       <SidePanelPause />
       <SidePanelItem onClick={OnConfigurationClicked}>Konfiguruj</SidePanelItem>
@@ -81,6 +70,12 @@ const AdminSidePanelClientComponent = (props: Props) => {
         active={history.location.pathname === adminPaths.gallery(client.name)}
       >
         Galeria
+      </SidePanelItem>
+      <SidePanelItem
+        onClick={() => OnItemClicked(adminPaths.QRcode(client.name))}
+        active={history.location.pathname === adminPaths.QRcode(client.name)}
+      >
+        Kod QR
       </SidePanelItem>
       <SidePanelPause />
       <SidePanelPremiumItem> Abonament </SidePanelPremiumItem>

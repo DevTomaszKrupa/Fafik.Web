@@ -11,12 +11,13 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 52%;
+    width: 54%;
   `,
 
   TitleRequest: styled.div`
     letter-spacing: 0.07rem;
     font-weight: 500;
+    font-family: 'Montserrat';
   `,
 
   TitleInput: styled.input`
@@ -24,7 +25,6 @@ export default {
     width: 24rem;
     border: 0.1rem solid #e3dbd4;
     padding-left: 1rem;
-    font-family: 'Josefin Sans';
     font-size: 1.1rem;
   `,
 
@@ -62,6 +62,8 @@ export default {
     letter-spacing: 0.05rem;
     font-weight: 500;
     padding-bottom: 0.9rem;
+    font-family: 'Montserrat';
+    font-size: 0.97rem;
   `,
 
   ImageUpload: styled.div`
@@ -74,5 +76,9 @@ export default {
     align-items: center;
     border: 0.3rem solid #a9a196;
     cursor: pointer;
+
+    &: hover {
+      border: 0.3rem solid #f26d64;
+    }
   `,
 };

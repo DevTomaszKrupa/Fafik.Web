@@ -4,7 +4,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 export default {
   ProfilBox: styled.div`
-    border: 0.1rem solid #f2eee8;
+    border: 0.1rem solid #ffffff;
     display: flex;
     align-items: center;
     padding: 0.6rem 1rem;
@@ -13,7 +13,7 @@ export default {
   ButtonTitle: styled.div`
     color: #3e4b39;
     letter-spacing: 0.1rem;
-    font-family: 'Josefin Sans';
+    font-family: 'Montserrat';
     padding-left: 0.5rem;
     font-weight: 800;
     padding-top: 0.2rem;

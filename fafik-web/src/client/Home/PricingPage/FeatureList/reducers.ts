@@ -8,15 +8,17 @@ export type FeatureListState = {
   basicPlanPrice: number;
   RSVPPrice: number;
   galleryPrice: number;
+  isLoading: boolean;
 };
 
 const initialState: FeatureListState = {
   isRSVPChecked: false,
   isGalleryChecked: false,
   price: 0,
-  basicPlanPrice: 40,
-  RSVPPrice: 30,
-  galleryPrice: 20,
+  basicPlanPrice: 0,
+  RSVPPrice: 0,
+  galleryPrice: 0,
+  isLoading: false,
 };
 
 const calculatePrice = (state: FeatureListState, isGalleryChecked: boolean, isRSVPChecked: boolean): number => {
@@ -28,6 +30,25 @@ const calculatePrice = (state: FeatureListState, isGalleryChecked: boolean, isRS
 
 export const featureListState: Reducer<FeatureListState, Action> = (state = initialState, action: Action): FeatureListState => {
   switch (action.type) {
+    case 'FEATURE_LIST_GET_DATA_STARTED':
+      return {
+        ...state,
+        isLoading: true,
+        isGalleryChecked: false,
+        isRSVPChecked: false,
+      };
+    case 'FEATURE_LIST_GET_DATA_SUCCESS':
+      return {
+        ...state,
+        isLoading: false,
+        ...action.payload,
+        price: action.payload.basicPlanPrice,
+      };
+    case 'FEATURE_LIST_GET_DATA_FAILURE':
+      return {
+        ...state,
+        isLoading: false,
+      };
     case 'FEATURE_LIST_SET_RSVP':
       return {
         ...state,

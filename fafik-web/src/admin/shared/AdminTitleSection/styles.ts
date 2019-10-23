@@ -3,17 +3,19 @@ import styled from 'styled-components';
 export default {
   TitlePanel: styled.div`
     flex-grow: 1;
-    background-color: #fdfbfd;
+    background-color: #fbf9f1;
     height: 8.5rem;
     display: flex;
     align-items: flex-end;
+    box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.1);
   `,
 
   Title: styled.div`
-    font-family: 'Josefin Sans';
-    font-size: 1.5rem;
+    font-family: 'Montserrat';
+    letter-spacing: 0.08rem;
+    font-size: 1.35rem;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.13rem;
-    padding: 0 0 2rem 5rem;
+    padding: 0 0 2rem 7rem;
   `,
 };

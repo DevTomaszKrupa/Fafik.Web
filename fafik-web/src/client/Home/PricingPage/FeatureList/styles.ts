@@ -42,6 +42,14 @@ export default {
     padding: 0.3rem 0 0 0.8rem;
   `,
 
+  LastCheckboxBox: styled.div`
+    border-right: 0.09rem solid #847474;
+    display: flex;
+    align-items: center;
+    width: 3.5rem;
+    justify-content: center;
+  `,
+
   LastTextBox: styled.div`
     display: flex;
     flex-direction: column;
@@ -61,11 +69,5 @@ export default {
     &:hover:before {
       background-color: red;
     }
-  `,
-
-  PriceBox: styled.div`
-    background-color: #fdfbfd;
-    font-family: DM Serif Text;
-    font-size: 3rem;
   `,
 };

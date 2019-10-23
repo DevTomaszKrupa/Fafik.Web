@@ -1,12 +1,21 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { AppState } from 'application/store/reducers';
+import { useDocumentTitle } from '../../../application/shared';
 
 import components from './styles';
-import { useDocumentTitle } from '../../../application/shared';
 import PageTitleBar from '../../../client/PageTitleBar';
 import FeaturesList from './FeatureList';
 
 const PricingPage = () => {
   useDocumentTitle('Cennik - Miłość Wierność');
+  const dispatch = useDispatch();
+  const featureListState = useSelector((state: AppState) => state.featureListState);
+
+  useEffect(() => {
+    dispatch({ type: 'FEATURE_LIST_GET_DATA_STARTED' });
+  }, []);
 
   const {
     IntroBar,
@@ -21,6 +30,11 @@ const PricingPage = () => {
     PhotoMiniatures,
     PhotoSquare,
     FeaturesSection,
+    PriceBox,
+    PriceBoxTitle,
+    Price,
+    PriceDetails,
+    PriceBoxDecoration,
   } = components;
 
   return (
@@ -51,6 +65,16 @@ const PricingPage = () => {
             <PhotoSquare backgroundImage="app/Smartphone-image.png" />
             <PhotoSquare backgroundImage="app/qr-image.png" />
           </PhotoMiniatures>
+          <PriceBox>
+            <PriceBoxTitle>KWOTA:</PriceBoxTitle>
+            <Price>{featureListState.price}zł/</Price>
+            <PriceDetails>
+              {' '}
+              mies.
+              <br />w rozliczeniu miesięcznym
+            </PriceDetails>
+            <PriceBoxDecoration />
+          </PriceBox>
         </DescriptionSection>
         <FeaturesSection>
           <FeaturesList />

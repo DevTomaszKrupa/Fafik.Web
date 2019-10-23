@@ -10,6 +10,7 @@ const adminPaths = {
   stats: (clientName: string) => '/admin/statystyki/:clientName'.replace(':clientName', clientName),
   subscription: (clientName: string) => '/admin/abonament/:clientName'.replace(':clientName', clientName),
   gallery: (clientName: string) => '/admin/galeria/:clientName'.replace(':clientName', clientName),
+  QRcode: (clientName: string) => '/admin/kod-QR/:clientName'.replace(':clientName', clientName),
 };
 
 export { adminPaths };

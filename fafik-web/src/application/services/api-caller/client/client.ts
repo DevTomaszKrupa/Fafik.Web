@@ -64,10 +64,19 @@ const getOfferTheme = () => ({
   ],
 });
 
+const getFeatureListData = () => ({
+  data: {
+    basicPlanPrice: 40,
+    RSVPPrice: 30,
+    galleryPrice: 20,
+  },
+});
+
 export default {
   getClient,
   register,
   getTheme,
   getFaqQuestions,
   getOfferTheme,
+  getFeatureListData,
 };

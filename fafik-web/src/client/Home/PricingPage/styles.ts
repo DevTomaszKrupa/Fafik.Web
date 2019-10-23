@@ -87,4 +87,48 @@ export default {
     display: flex;
     justify-content: center;
   `,
+
+  PriceBox: styled.div`
+    font-family: DM Serif Text;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    height: 5rem;
+    width: 86%;
+    margin-top: 3.5rem;
+    background-color: #a6b89d;
+  `,
+
+  PriceBoxTitle: styled.div`
+    background-color: #bbc9b4;
+    font-size: 1.1rem;
+    font-family: 'Montserrat';
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.2rem 0.8rem;
+  `,
+
+  Price: styled.div`
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+  `,
+
+  PriceDetails: styled.div`
+    font-size: 1.1rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    margin-left: -1.5rem;
+  `,
+
+  PriceBoxDecoration: styled.div`
+    width: 0;
+    height: 0;
+    border-top: 2.5rem solid transparent;
+    border-bottom: 2.5rem solid transparent;
+    border-right: 2.5rem solid #ffffff;
+  `,
 };

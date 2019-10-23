@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { AppState } from 'application/store/reducers';
@@ -11,7 +11,18 @@ const FeaturesList = () => {
   const dispatch = useDispatch();
   const featureListState = useSelector((state: AppState) => state.featureListState);
 
-  const { FeatureList, FeatureBox, CheckboxBox, CheckboxImage, TextBox, Title, Description, LastTextBox, Checkbox, PriceBox } = components;
+  const {
+    FeatureList,
+    FeatureBox,
+    CheckboxBox,
+    CheckboxImage,
+    TextBox,
+    Title,
+    Description,
+    LastCheckboxBox,
+    LastTextBox,
+    Checkbox,
+  } = components;
 
   const onRSVPFeatureClick = () => {
     dispatch({ type: 'FEATURE_LIST_SET_RSVP' });
@@ -44,16 +55,14 @@ const FeaturesList = () => {
       </FeatureBox>
 
       <FeatureBox>
-        <CheckboxBox>
+        <LastCheckboxBox>
           <Checkbox type="checkbox" checked={featureListState.isGalleryChecked} onClick={onGalleryFeatureClick} />
-        </CheckboxBox>
+        </LastCheckboxBox>
         <LastTextBox>
           <Title>GALERIA</Title>
           <Description>POKAŻCIE SWOJE ZDJĘCIA GOŚCIOM!</Description>
         </LastTextBox>
       </FeatureBox>
-
-      <PriceBox>{featureListState.price}zł</PriceBox>
     </FeatureList>
   );
 };

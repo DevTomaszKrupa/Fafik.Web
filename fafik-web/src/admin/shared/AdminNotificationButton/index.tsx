@@ -22,7 +22,7 @@ const AdminNotificationButton = () => {
     <div>
       <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
         <NotificationBox>
-          <NotificationsIcon htmlColor="#F2EEE8" fontSize="large" />
+          <NotificationsIcon htmlColor="#FFFFFF" fontSize="large" />
           <NotificationsQuantity>1</NotificationsQuantity>
         </NotificationBox>
       </Button>

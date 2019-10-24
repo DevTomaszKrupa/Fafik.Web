@@ -53,13 +53,11 @@ const RegisterComponent = (props: Props & InjectedFormProps<{}, Props>) => {
         </LoginInputs>
         <GeneralInputs>
           <InputBox>
-            WASZA NAZWA: <Field name="username" component={FormInput} type="text" />
+            WASZE IMIONA: <Field placeholder="pierwsze imię" name="username" component={FormInput} type="text" />
           </InputBox>
-          <Subtitle>
-            To będzie Wasza nazwa użytkownika oraz końcówka
-            <br />
-            adresu www.miloscwiernosc.pl/WASZA-NAZWA
-          </Subtitle>
+          <InputBox>
+            <Field placeholder="drugie imię" name="username" component={FormInput} type="text" />
+          </InputBox>
           <CheckboxBox>
             <Checkbox type="checkbox" checked={checkboxIsChecked} onClick={onCheckboxTextClicked} />
             <CheckboxText onClick={onCheckboxTextClicked}>

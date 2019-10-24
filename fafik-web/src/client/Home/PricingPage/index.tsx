@@ -7,6 +7,7 @@ import { useDocumentTitle } from '../../../application/shared';
 import components from './styles';
 import PageTitleBar from '../../../client/PageTitleBar';
 import FeaturesList from './FeatureList';
+import PricingPlans from './PricingPlan';
 
 const PricingPage = () => {
   useDocumentTitle('Cennik - Miłość Wierność');
@@ -80,6 +81,7 @@ const PricingPage = () => {
           <FeaturesList />
         </FeaturesSection>
       </PricingPageMain>
+      <PricingPlans />
     </Fragment>
   );
 };

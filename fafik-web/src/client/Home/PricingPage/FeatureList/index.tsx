@@ -48,7 +48,7 @@ const FeaturesList = () => {
         <CheckboxBox>
           <Checkbox type="checkbox" checked={featureListState.isRSVPChecked} onClick={onRSVPFeatureClick} />
         </CheckboxBox>
-        <TextBox>
+        <TextBox cursor="pointer" onClick={onRSVPFeatureClick}>
           <Title>RSVP</Title>
           <Description>POTWIERDZENIE OBECNOŚCI SMS + E-MAIL</Description>
         </TextBox>
@@ -58,7 +58,7 @@ const FeaturesList = () => {
         <LastCheckboxBox>
           <Checkbox type="checkbox" checked={featureListState.isGalleryChecked} onClick={onGalleryFeatureClick} />
         </LastCheckboxBox>
-        <LastTextBox>
+        <LastTextBox onClick={onGalleryFeatureClick}>
           <Title>GALERIA</Title>
           <Description>POKAŻCIE SWOJE ZDJĘCIA GOŚCIOM!</Description>
         </LastTextBox>

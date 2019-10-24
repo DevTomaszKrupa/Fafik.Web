@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface TextBoxProps {
+  cursor?: string;
+}
+
 export default {
   FeatureList: styled.div``,
 
@@ -29,6 +33,8 @@ export default {
     justify-content: center;
     padding: 0.6rem 0 0.6rem 1rem;
     width: 25rem;
+
+    cursor: ${(props: TextBoxProps) => props.cursor};
   `,
 
   Title: styled.div`
@@ -56,6 +62,7 @@ export default {
     justify-content: center;
     padding: 0.6rem 0 0.6rem 1rem;
     width: 25rem;
+    cursor: pointer;
   `,
 
   Checkbox: styled.input`

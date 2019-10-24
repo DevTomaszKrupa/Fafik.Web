@@ -9,6 +9,8 @@ export type FeatureListState = {
   RSVPPrice: number;
   galleryPrice: number;
   isLoading: boolean;
+  halfYearDiscount: number;
+  yearDiscount: number;
 };
 
 const initialState: FeatureListState = {
@@ -19,6 +21,8 @@ const initialState: FeatureListState = {
   RSVPPrice: 0,
   galleryPrice: 0,
   isLoading: false,
+  halfYearDiscount: 20,
+  yearDiscount: 50,
 };
 
 const calculatePrice = (state: FeatureListState, isGalleryChecked: boolean, isRSVPChecked: boolean): number => {

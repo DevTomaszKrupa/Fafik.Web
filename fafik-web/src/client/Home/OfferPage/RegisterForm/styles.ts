@@ -39,6 +39,7 @@ export default {
     align-items: center;
     padding-top: 0.6rem;
     font-family: 'Montserrat';
+    justify-content: flex-end;
   `,
 
   GeneralInputs: styled.div``,

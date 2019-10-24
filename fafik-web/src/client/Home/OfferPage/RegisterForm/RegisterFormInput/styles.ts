@@ -8,8 +8,8 @@ export default {
     width: 16rem;
     margin-left: 0.6rem;
     padding-left: 0.8rem;
-    font-size: 1.1rem;
-    font-family: 'Josefin Sans';
+    font-size: 0.98rem;
+    font-family: 'Montserrat';
 
     &: focus {
       outline: none;

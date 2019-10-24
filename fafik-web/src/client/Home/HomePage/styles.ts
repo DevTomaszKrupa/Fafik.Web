@@ -353,6 +353,7 @@ export default {
     font-family: 'DM Serif Text';
     font-size: 1.6rem;
     text-align: center;
+    line-height: 2rem;
 }
     color: ${(props: StepTItleProps) => props.color};
   `,

@@ -5,6 +5,8 @@ import { adminBlogCreateNewPostRootSaga } from 'admin/BlogNewPost/sagas';
 
 import { clientRootSaga } from './client/sagas';
 import { faqPageGetQuestionsRootSaga } from 'client/Home/FAQPage/sagas';
+import { featureListGetDataRootSaga } from 'client/Home/PricingPage/FeatureList/sagas';
+import { themesSectionGetThemeRootSaga } from 'client/Home/OfferPage/sagas';
 import { leavesRootSaga } from './leaves/theme/sagas';
 import { romanticRootSaga } from './romantic/theme/sagas';
 import { leavesMainSiteRootSaga } from './leaves/main/sagas';
@@ -19,6 +21,8 @@ const sagas = [
   clientRootSaga,
   registerRootSaga,
   faqPageGetQuestionsRootSaga,
+  themesSectionGetThemeRootSaga,
+  featureListGetDataRootSaga,
 
   // leaves
   leavesRootSaga,

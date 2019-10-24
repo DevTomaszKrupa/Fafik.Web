@@ -6,8 +6,8 @@ interface ButtonProps {
 
 export default {
   AButton: styled.button`
-    font-family: 'Josefin Sans';
-    font-size: 1.1rem;
+    font-family: 'Montserrat';
+    font-size: 1rem;
     height: 2.2rem;
     padding: 0.3rem 1.3rem;
     display: flex;
@@ -33,13 +33,13 @@ export default {
     ${(props: ButtonProps) =>
       props.buttonStyle === 'pink' &&
       `
-    background-color: #E3B7AC;
+    background-color: #F26D64;
     color: #FFFFFF;
-    font-weight: 800;
+    font-weight: 600;
     border: none;
 
     &: hover{
-      background-color: #D6A092;
+      background-color: #e8493e;
       color: #FFFFFF;
     }
 `}

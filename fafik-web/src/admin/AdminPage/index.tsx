@@ -11,6 +11,7 @@ import AdminGuestList from '../GuestList';
 import AdminStats from '../Stats';
 import AdminGallery from '../Gallery';
 import AdminBlogNewPost from '../BlogNewPost';
+import AdminQRcode from '../QRCodePage';
 import AdminTopBar from '../AdminPage/AdminTopBar';
 import AdminThemeEditorSidePanelComponent from 'editor/ThemeEditor/SidePanel';
 import BaseAdminSidePanel from './AdminSidePanel';
@@ -44,6 +45,7 @@ const AdminPanelComponent = () => {
               adminPaths.stats(':clientName'),
               adminPaths.gallery(':clientName'),
               adminPaths.blogNewPost(':clientName'),
+              adminPaths.QRcode(':clientName'),
             ]}
             component={BaseAdminSidePanel}
           />
@@ -60,6 +62,7 @@ const AdminPanelComponent = () => {
           <AuthenticatedRoute exact path={adminPaths.gallery(':clientName')} component={AdminGallery} />
           <AuthenticatedRoute exact path={adminPaths.playlist(':clientName')} component={AdminPlaylist} />
           <AuthenticatedRoute exact path={adminPaths.blogNewPost(':clientName')} component={AdminBlogNewPost} />
+          <AuthenticatedRoute exact path={adminPaths.QRcode(':clientName')} component={AdminQRcode} />
         </AdminMainPanel>
       </AdminMain>
     </Fragment>

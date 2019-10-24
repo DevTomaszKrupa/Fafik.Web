@@ -7,24 +7,28 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 16rem;
+    height: 14rem;
     justify-content: space-around;
   `,
 
   SingleFeatureTitle: styled.div`
     color: #ffffff;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.06rem;
     text-align: center;
-    font-size: 1.6rem;
     padding-top: 0.4rem;
+    font-family: 'DM Serif Text';
+    font-weight: 100;
+    font-size: 2rem;
   `,
 
   FeatureDescription: styled.div`
-    line-height: 1.4rem !important;
+    line-height: 1.6rem !important;
     color: #ffffff;
     text-align: center;
     letter-spacing: 0.06rem;
-    font-weight: 200;
+    font-family: 'Montserrat';
+    font-size: 0.9rem;
+    font-weight: 300;
   `,
 
   PreviousButton: styled.div`

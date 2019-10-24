@@ -11,6 +11,22 @@ interface StepTItleProps {
 }
 
 export default {
+  GoUpButton: styled.div`
+    background-color: #3e4b39;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    bottom: 4rem;
+    right: 3rem;
+    z-index: 101;
+    box-shadow: 0 0 9px darkgrey;
+  `,
+
   BannerBox: styled.div`
   background-image: url("${IMAGE_STORAGE}app/main-banner.jpg");
   padding: 5rem 0;
@@ -25,21 +41,22 @@ export default {
   BannerInfoBox: styled.div`
     background-color: rgba(255, 255, 255, 0.45);
     padding: 3.5rem 0;
-    width: 48%;
+    width: 47%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-family: 'Josefin Sans';
-    letter-spacing: 0.17rem;
+    font-family: 'Montserrat';
+    letter-spacing: 0.14rem;
   `,
 
   BannerInfoText: styled.div`
-    width: 74%;
+    width: 69%;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 2.4rem;
     color: #253535;
+    font-weight: 500;
   `,
 
   BannerInfoButton: styled.button`
@@ -47,11 +64,11 @@ export default {
     padding: 0.73rem 0 0.7rem 0;
     background-color: #fdfcfd;
     border: 0.2rem solid #253535;
-    margin-top: 1.3rem;
+    margin-top: 1.45rem;
     font-weight: 700;
-    font-family: 'Josefin Sans';
-    letter-spacing: 0.17rem;
-    font-size: 0.97rem;
+    font-family: 'DM Serif Text';
+    letter-spacing: 0.08rem;
+    font-size: 1.1rem;
     color: #253535;
     cursor: pointer;
     display: flex;
@@ -92,7 +109,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 5.7rem 3rem 2rem 3rem;
+    padding: 4.7rem 3rem 2rem 3rem;
     align-items: center;
   `,
 
@@ -101,18 +118,18 @@ export default {
     font-size: 0.75rem;
     font-weight: 400;
     line-height: 2.3rem;
-    font-family: 'Josefin Sans';
-    letter-spacing: 0.16rem;
+    font-family: 'Montserrat';
+    letter-spacing: 0.13rem;
     color: #253535;
-    width: 84%;
+    width: 80%;
   `,
 
   MeetUsTitle: styled.div`
     text-align: center;
-    font-size: 1.4rem;
-    font-weight: 800;
-    font-family: 'Josefin Sans';
-    letter-spacing: 0.3rem;
+    letter-spacing: 0.05rem;
+    font-size: 2.3rem;
+    font-family: 'DM Serif Text';
+    letter-spacing: 0.05rem;
     color: #253535;
   `,
 
@@ -173,13 +190,14 @@ export default {
     height: 2.6rem;
     border-radius: 1.2rem;
     color: #ecccc4;
-    font-family: 'Josefin Sans';
+    font-family: 'Montserrat';
     text-align: center;
     letter-spacing: 0.1rem;
     padding-top: 0.1rem;
     font-weight: 600;
     padding: 0 0.8rem 0 0.8rem;
     cursor: pointer;
+    box-shadow: 0.1rem 0.1rem 0.18rem #e2dcdc;
 
     &: hover {
       border: 0.25rem solid #d49c8e;
@@ -212,17 +230,18 @@ export default {
   `,
 
   WhatsThisTitle: styled.img`
-    width: 14rem;
+    width: 9rem;
     margin-top: -2rem;
   `,
 
   WhatsThisText: styled.div`
   text-align: center;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.09rem;
   font-weight: 400;
   line-height: 1.9rem;
-  font-size: 0.9rem;
-  width: 77%;
+  font-family: 'Montserrat';
+  font-size: 0.8rem;
+  width: 76%;
   margin-top: -1.5rem;
 }
   `,
@@ -237,6 +256,7 @@ export default {
 
   FVideo: styled.video`
     object-fit: cover;
+    opacity: 0.92;
     height: 29rem;
     width: 100%;
     position: absolute;
@@ -254,12 +274,20 @@ export default {
     justify-content: space-around;
   `,
 
+  FeaturesTop: styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  `,
+
   FeaturesTitle: styled.div`
     text-align: center;
-    letter-spacing: 0.3rem;
+    letter-spacing: 0.05rem;
     color: #ffffff;
-    font-size: 2.6rem;
-    padding-top: 3.5rem;
+    padding-top: 2.8rem;
+    font-family: 'DM Serif Text';
+    font-weight: 500;
+    font-size: 3rem;
   `,
 
   InstructionSection: styled.div`
@@ -275,15 +303,19 @@ export default {
   `,
 
   InstructionTitleSmall: styled.div`
-    font-size: 1.2rem;
     font-weight: 400;
-    padding: 5rem 0 0.8rem 0;
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    padding: 5rem 0 0.2rem 0;
   `,
 
   InstructionTitleBig: styled.div`
-    font-weight: 400;
     font-size: 3.5rem;
     padding-bottom: 0.6rem;
+    font-family: 'DM Serif Text';
+    font-weight: 500;
+    letter-spacing: 0.1rem;
   `,
 
   InstructionStepByStep: styled.div`
@@ -301,7 +333,7 @@ export default {
   `,
 
   InstructionNumber: styled.div`
-    width: 11.7rem;
+    width: 11rem;
     height: 11rem;
     border-radius: 50%;
     background-color: ${(props: InstructionNumberProps) => props.backgroundColor};
@@ -310,22 +342,27 @@ export default {
     justify-content: center;
     align-items: center;
     font-size: 7rem;
-    padding-top: 0.7rem;
+    font-family: 'DM Serif Text';
   `,
 
   StepTItle: styled.div`
-    font-size: 1.5rem;
-    font-weight: 800;
     padding: 1.7rem 0 1rem 0;
-    letter-spacing: 0.1rem;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    letter-spacing: 0.14rem;
+    font-family: 'DM Serif Text';
+    font-size: 1.6rem;
+    text-align: center;
+}
     color: ${(props: StepTItleProps) => props.color};
   `,
 
   StepDescription: styled.div`
+    font-family: 'Montserrat';
+    font-size: 0.85rem;
+    line-height: 1.4rem;
     text-align: center;
     font-weight: 400;
-    font-size: 0.9rem;
-    line-height: 1.3rem;
     letter-spacing: 0.09rem;
   `,
 };

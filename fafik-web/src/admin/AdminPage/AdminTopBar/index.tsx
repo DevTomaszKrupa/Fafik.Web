@@ -25,7 +25,7 @@ const AdminPanelComponent = () => {
     <AdminPanelHeader>
       <HeaderLeftSide />
       <HeaderLogo>
-        <AdminLogo onClick={onLogoClicked} src={`${IMAGE_STORAGE}app/logo.png`} />
+        <AdminLogo onClick={onLogoClicked} src={`${IMAGE_STORAGE}app/logo-panel.png`} />
       </HeaderLogo>
       <HeaderRightSide>
         <NotificationButton />

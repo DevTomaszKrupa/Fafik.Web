@@ -7,11 +7,9 @@ interface SidePanelItemProps {
 export default {
   AdminSidePanel: styled.div`
     background-color: #fdfbfd;
-    width: 18%;
+    width: 19%;
     height: 100%;
     border: 0.1rem solid #cbc3b6;
-    font-family: 'Josefin Sans';
-    letter-spacing: 0.1rem;
   `,
 
   SidePanelItem: styled.div`
@@ -25,7 +23,7 @@ export default {
       `
       background-color: #FDFBFD;
   `}
-  display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     padding: 1.3rem 0;
@@ -33,7 +31,10 @@ export default {
     text-transform: uppercase;
     border-bottom: 0.09rem solid #cbc3b6;
     cursor: pointer;
+    letter-spacing: 0.05rem;
+    font-family: 'Montserrat';
     font-weight: 500;
+    font-size: 0.97rem;
 
     &:hover {
       background-color: #f2eee8;
@@ -41,48 +42,28 @@ export default {
   `,
 
   SidePanelClientBox: styled.div`
-    background-color: #f2eee8;
-  `,
-
-  ClientBoxText: styled.div`
-    padding: 1.5rem 0 1.3rem 1.3rem;
-  `,
-
-  ClientBoxTitle: styled.div`
-    color: #3e4b39;
-    font-size: 1.15rem;
+    background-color: #dbcfc5;
+    color: #ffffff;
+    padding: 1.3rem 1.5rem;
   `,
 
   ClientBoxNames: styled.div`
-    font-size: 1.45rem;
-    text-transform: uppercase;
-    letter-spacing: 0.17rem;
-    padding: 0.7rem 0;
+    letter-spacing: 0.04rem;
+    font-family: 'DM Serif Text';
+    font-size: 2.3rem;
+    line-height: 2.5rem;
+    text-align: center;
+    padding-bottom: 0.2rem;
+    padding-top: 0.4rem;
   `,
 
-  ClientBoxValidity: styled.div`
-    display: flex;
-    align-items: center;
+  WeddingDate: styled.div`
+    letter-spacing: 0.04rem;
+    text-align: center;
+    font-size: 0.96rem;
+    line-height: 1.4rem;
+    font-family: 'Montserrat';
   `,
-
-  ValidityRequest: styled.div`
-    color: #3e4b39;
-  `,
-
-  ValidityExpDate: styled.div`
-    padding: 0.3rem 0.8rem;
-    height: 1rem;
-    width: 5rem;
-    background-color: #d5a396;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 2rem;
-    margin-left: 0.35rem;
-    color: #ffffff;
-  `,
-
-  ClientBoxOptionArrow: styled.div``,
 
   SidePanelPause: styled.div`
     height: 0.8rem;
@@ -95,15 +76,15 @@ export default {
     align-items: center;
     justify-content: center;
     padding: 1.3rem 0;
-    background-color: #f9e3d6;
-    color: #000000;
+    background-color: #f26d64;
+    color: #ffffff;
     text-transform: uppercase;
     border-bottom: 0.09rem solid #cbc3b6;
     cursor: pointer;
     font-weight: 500;
 
     &:hover {
-      background-color: #efd4c4;
+      background-color: #e8493e;
     }
   `,
 };

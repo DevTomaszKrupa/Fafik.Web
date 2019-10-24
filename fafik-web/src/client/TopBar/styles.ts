@@ -124,7 +124,7 @@ export default {
   `,
 
   MainLogo: styled.img`
-    width: 28rem;
+    width: 23rem;
     padding: 4rem 0 3rem 0;
     cursor: pointer;
 

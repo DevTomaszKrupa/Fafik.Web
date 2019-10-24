@@ -2,12 +2,14 @@ import styled from 'styled-components';
 
 export default {
   AdminPanelHeader: styled.div`
-    background-color: #909f88;
+    background-color: #f2eee8;
     height: 5rem;
     display: flex;
     justify-content: center;
     position: sticky;
     top: 0;
+    font-family: 'Montserrat';
+    box-shadow: 0 0rem 1rem rgba(0, 0, 0, 0.4);
   `,
 
   HeaderLeftSide: styled.div`
@@ -22,7 +24,7 @@ export default {
   `,
 
   AdminLogo: styled.img`
-    width: 23rem;
+    width: 17rem;
   `,
 
   HeaderRightSide: styled.div`

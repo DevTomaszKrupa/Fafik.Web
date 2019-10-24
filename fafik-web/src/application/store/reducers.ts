@@ -7,6 +7,8 @@ import { AdminEditorSidePanelState, adminEditorSidePanelState } from 'editor/The
 
 import { ClientState, clientState } from './client/reducers';
 import { FaqPageState, faqPageState } from 'client/Home/FAQPage/reducers';
+import { FeatureListState, featureListState } from 'client/Home/PricingPage/FeatureList/reducers';
+import { ThemesSectionState, themesSectionState } from 'client/Home/OfferPage/reducers';
 import { LeavesState, leavesState } from './leaves/theme/reducers';
 import { RomanticState, romanticState } from './romantic/theme/reducers';
 import { RomanticRsvpDialogState, romanticRsvpDialogState } from './romantic/dialogs/RsvpDialog/reducers';
@@ -28,6 +30,8 @@ export type AppState = {
   leavesMainSiteState: LeavesMainSiteState;
   romanticRsvpDialogState: RomanticRsvpDialogState;
   faqPageState: FaqPageState;
+  themesSectionState: ThemesSectionState;
+  featureListState: FeatureListState;
 
   // admin
   adminLoginState: AdminLoginState;
@@ -51,6 +55,8 @@ export default combineReducers<AppState>({
   leavesMainSiteState,
   romanticRsvpDialogState,
   faqPageState,
+  themesSectionState,
+  featureListState,
 
   // admin
   adminLoginState,

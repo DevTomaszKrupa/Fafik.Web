@@ -1,22 +1,23 @@
-import React, { useState } from 'react';
-import RegisterForm from './RegisterForm';
-import { RegisterRequest } from 'domain/models';
-import { useDispatch } from 'react-redux';
-import { useDocumentTitle } from 'application/shared';
-import { IMAGE_STORAGE } from 'application/config';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import PageTitleBar from 'client/PageTitleBar';
+import { RegisterRequest } from 'domain/models';
+import { useDocumentTitle } from 'application/shared';
+import { AppState } from 'application/store/reducers';
+
+import PageTitleBar from '../../PageTitleBar';
+import RegisterForm from './RegisterForm';
+import ThemeElement from './ThemeComponent';
 import components from './styles';
+import { SingleTheme } from './reducers';
 
 const OfferPageComponent = () => {
   useDocumentTitle('Szablony - Miłość Wierność');
-  const [loginFormVisible, setLoginFormVisible] = useState(false);
-  const [selectedTheme, setSelectedTheme] = useState('');
+  const [selectedTheme, setSelectedTheme] = useState({} as SingleTheme);
   const dispatch = useDispatch();
   const submitRegisterForm = (request: RegisterRequest) => dispatch({ type: 'REGISTER_STARTED', payload: request });
 
-  const onThemeClicked = (theme: string) => {
-    setLoginFormVisible(true);
+  const onThemeClicked = (theme: SingleTheme) => {
     setSelectedTheme(theme);
   };
 
@@ -28,27 +29,33 @@ const OfferPageComponent = () => {
     submitRegisterForm(request);
   };
 
-  const { ThemeBox, ThemeImage, ThemeTop, DemoButton } = components;
+  useEffect(() => {
+    dispatch({ type: 'THEMES_SECTION_GET_THEME_STARTED' });
+  }, []);
+
+  const themesSectionState = useSelector((state: AppState) => state.themesSectionState);
+  const { themes } = themesSectionState;
+
+  const { SelectedThemeSection, ThemesSection, Form, Buttons, BackButton, ActionButton } = components;
 
   return (
     <div>
       <PageTitleBar title="WYBIERZCIE SWÓJ SZABLON" />
-      <ThemeBox>
-        <ThemeImage src={`${IMAGE_STORAGE}app/Romantic-theme-img.png`} />
-        <ThemeTop>
-          <DemoButton>PODGLĄD</DemoButton>
-        </ThemeTop>
-      </ThemeBox>
-      <ul>
-        <li onClick={() => onThemeClicked('leaves')}>LEAVES</li>
-        <li onClick={() => onThemeClicked('romantic')}>ROMANTIC</li>
-      </ul>
-
-      {loginFormVisible && (
-        <div>
+      <SelectedThemeSection isVisible={!!selectedTheme.themeName}>
+        <ThemeElement theme={selectedTheme} />
+        <Form>
           <RegisterForm submitRegisterForm={submitRegisterFormHandler} />
-        </div>
-      )}
+          <Buttons>
+            <BackButton onClick={() => setSelectedTheme({} as SingleTheme)}>POWRÓT</BackButton>
+            <ActionButton type="submit">ZAREJESTRUJ</ActionButton>
+          </Buttons>
+        </Form>
+      </SelectedThemeSection>
+      <ThemesSection>
+        {themes.map(theme => (
+          <ThemeElement theme={theme} onPreviewClickFunction={onThemeClicked} onSelectClickFunction={onThemeClicked} />
+        ))}
+      </ThemesSection>
     </div>
   );
 };

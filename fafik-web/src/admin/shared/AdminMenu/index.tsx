@@ -19,7 +19,7 @@ const AdminMenu = () => {
   };
 
   const dispatch = useDispatch();
-  const logout = () => dispatch({ type: 'ADMIN_LOGOUT' });
+  const logout = () => dispatch({ type: 'LOGOUT' });
   const onLogoutClicked = () => logout();
 
   const { ProfilBox, ButtonTitle, DropdownMenu, MenuButton } = components;

@@ -38,7 +38,7 @@ export const loginState: Reducer<LoginState, Action> = (state = initialState, ac
       };
     case 'LOGOUT':
       localStorageService.clearToken();
-      history.push('/admin/login');
+      history.push('/home');
       return {
         ...state,
         loginCallSuccessful: false,

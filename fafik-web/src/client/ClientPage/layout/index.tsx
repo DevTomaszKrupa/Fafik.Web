@@ -21,7 +21,7 @@ const ClientPageLayout = (props: Props & RouteComponentProps<{ clientName: strin
 
   useEffect(() => {
     getClient({ clientName: clientName, sitePath: sitePath ? sitePath : '' });
-  }, [clientName]);
+  }, [clientName, sitePath, getClient]);
 
   return <Fragment>{resolveTheme()}</Fragment>;
 };

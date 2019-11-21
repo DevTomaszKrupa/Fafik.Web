@@ -1,18 +1,12 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import { useDocumentTitle } from 'application/shared';
 import AdminTitleSection from '../shared/AdminTitleSection';
-import components from './styles';
 
 const AdminGalleryComponent = () => {
   useDocumentTitle('Galeria');
 
-  const {} = components;
-  return (
-    <Fragment>
-      <AdminTitleSection title="Galeria" />
-    </Fragment>
-  );
+  return <AdminTitleSection title="Galeria" />;
 };
 
 export default AdminGalleryComponent;

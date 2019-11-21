@@ -5,12 +5,12 @@ import { RegisterRequest } from 'domain/models';
 import { useDocumentTitle } from 'application/shared';
 import { AppState } from 'application/store/reducers';
 
-import PageTitleBar from '../../PageTitleBar';
-import RegisterForm from '../../shared/RegisterForm';
+import PageTitleBar from '../shared/PageTitleBar';
+import RegisterForm from '../shared/RegisterForm';
 import ThemeElement from './ThemeComponent';
 import components from './styles';
 import { SingleTheme } from './reducers';
-import Footer from '../../HomeFooter';
+import Footer from '../shared/HomeFooter';
 
 const OfferPageComponent = () => {
   useDocumentTitle('Szablony - Miłość Wierność');
@@ -32,7 +32,7 @@ const OfferPageComponent = () => {
 
   useEffect(() => {
     dispatch({ type: 'THEMES_SECTION_GET_THEME_STARTED' });
-  }, []);
+  }, [dispatch]);
 
   const themesSectionState = useSelector((state: AppState) => state.themesSectionState);
   const { themes } = themesSectionState;

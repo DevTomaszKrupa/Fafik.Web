@@ -5,17 +5,18 @@ import { AdminBlogState, adminBlogState } from 'admin/Blog/reducers';
 import { AdminNewBlogPostState, adminNewBlogPostState } from 'admin/BlogNewPost/reducers';
 import { AdminEditorSidePanelState, adminEditorSidePanelState } from 'editor/ThemeEditor/reducers';
 
-import { ClientState, clientState } from './client/reducers';
 import { FaqPageState, faqPageState } from 'client/Home/FAQPage/reducers';
 import { FeatureListState, featureListState } from 'client/Home/PricingPage/FeatureList/reducers';
 import { ThemesSectionState, themesSectionState } from 'client/Home/OfferPage/reducers';
+import { LoginState, loginState } from 'client/Home/shared/LoginForm/reducers';
+
+import { ClientState, clientState } from './client/reducers';
 import { LeavesState, leavesState } from './leaves/theme/reducers';
 import { RomanticState, romanticState } from './romantic/theme/reducers';
 import { RomanticRsvpDialogState, romanticRsvpDialogState } from './romantic/dialogs/RsvpDialog/reducers';
 import { leavesMainSiteState, LeavesMainSiteState } from './leaves/main/reducers';
 import { AdminThemeEditorState, adminThemeEditorState } from './admin/theme-editor/reducers';
 import { AdminSidePanelState, adminSidePanelState } from './admin/side-panel/reducers';
-import { AdminLoginState, adminLoginState } from './admin/login/reducers';
 
 import { AdminRomanticThemeEditorState, adminRomanticThemeEditorState } from './admin/romantic-theme-editor/reducers';
 import { RegisterState, registerState } from './register/reducers';
@@ -32,9 +33,9 @@ export type AppState = {
   faqPageState: FaqPageState;
   themesSectionState: ThemesSectionState;
   featureListState: FeatureListState;
+  loginState: LoginState;
 
   // admin
-  adminLoginState: AdminLoginState;
   adminEditorSidePanelState: AdminEditorSidePanelState;
   adminSidePanelState: AdminSidePanelState;
   adminThemeEditorState: AdminThemeEditorState;
@@ -59,7 +60,7 @@ export default combineReducers<AppState>({
   featureListState,
 
   // admin
-  adminLoginState,
+  loginState,
   adminEditorSidePanelState,
   adminSidePanelState,
   adminThemeEditorState,

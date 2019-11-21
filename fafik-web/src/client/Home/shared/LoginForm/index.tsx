@@ -25,12 +25,11 @@ const LoginFormComponent = (props: Props & InjectedFormProps<{}, Props>) => {
     CheckboxBox,
     Checkbox,
     CheckboxText,
-    FormField,
   } = components;
   const { submitLoginForm } = props;
-  const adminLoginState = useSelector((state: AppState) => state.adminLoginState);
+  const loginState = useSelector((state: AppState) => state.loginState);
   const values = useSelector((state: AppState) => getFormValues('login-form')(state));
-  const { loginCallSuccessful } = adminLoginState;
+  const { loginCallSuccessful } = loginState;
 
   const [checkboxIsChecked, setcheckboxIsChecked] = useState(false);
 
@@ -39,7 +38,6 @@ const LoginFormComponent = (props: Props & InjectedFormProps<{}, Props>) => {
   }, [loginCallSuccessful]);
 
   const handleSubmit = (e: any) => {
-    console.log(values);
     e.preventDefault();
     submitLoginForm(values as LoginRequest);
   };

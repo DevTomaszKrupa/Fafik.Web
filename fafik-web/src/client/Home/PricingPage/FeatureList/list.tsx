@@ -1,6 +1,3 @@
-import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
-import { faGlassCheers } from '@fortawesome/free-solid-svg-icons';
-
 const slides = [
   {
     title: 'O WAS',

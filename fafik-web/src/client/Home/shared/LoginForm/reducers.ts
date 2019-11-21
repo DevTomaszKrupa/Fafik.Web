@@ -1,29 +1,28 @@
 import { Reducer } from 'redux';
 
-import { ADMIN_LOGIN_STARTED, ADMIN_LOGIN_SUCCESS, ADMIN_LOGIN_FAILURE, ADMIN_LOGOUT } from './consts';
-import { Action } from '../../actions';
-import { localStorageService } from '../../../services';
-import { history } from '../../../helpers';
+import { Action } from 'application/store/actions';
+import { localStorageService } from 'application/services';
+import { history } from 'application/helpers';
 
-export type AdminLoginState = {
+export type LoginState = {
   readonly isLoading: boolean;
   readonly loginCallSuccessful: boolean;
 };
 
-const initialState: AdminLoginState = {
+const initialState: LoginState = {
   isLoading: false,
   loginCallSuccessful: false,
 };
 
-export const adminLoginState: Reducer<AdminLoginState, Action> = (state = initialState, action: Action): AdminLoginState => {
+export const loginState: Reducer<LoginState, Action> = (state = initialState, action: Action): LoginState => {
   switch (action.type) {
-    case ADMIN_LOGIN_STARTED:
+    case 'LOGIN_STARTED':
       return {
         ...state,
         isLoading: true,
         loginCallSuccessful: false,
       };
-    case ADMIN_LOGIN_SUCCESS:
+    case 'LOGIN_SUCCESS':
       const { token } = action.payload.data;
       localStorageService.token = token;
       return {
@@ -31,13 +30,13 @@ export const adminLoginState: Reducer<AdminLoginState, Action> = (state = initia
         isLoading: false,
         loginCallSuccessful: true,
       };
-    case ADMIN_LOGIN_FAILURE:
+    case 'LOGIN_FAILURE':
       return {
         ...state,
         isLoading: false,
         loginCallSuccessful: false,
       };
-    case ADMIN_LOGOUT:
+    case 'LOGOUT':
       localStorageService.clearToken();
       history.push('/admin/login');
       return {

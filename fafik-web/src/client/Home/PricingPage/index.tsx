@@ -5,10 +5,10 @@ import { AppState } from 'application/store/reducers';
 import { useDocumentTitle } from '../../../application/shared';
 
 import components from './styles';
-import PageTitleBar from '../../../client/PageTitleBar';
+import PageTitleBar from '../shared/PageTitleBar';
 import FeaturesList from './FeatureList';
 import PricingPlans from './PricingPlan';
-import Footer from '../../HomeFooter';
+import Footer from '../shared/HomeFooter';
 
 const PricingPage = () => {
   useDocumentTitle('Cennik - Miłość Wierność');

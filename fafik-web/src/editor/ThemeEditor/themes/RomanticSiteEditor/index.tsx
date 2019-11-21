@@ -11,17 +11,15 @@ type Props = {
 
 const AdminRomanticSiteEditorComponent = (props: Props) => {
   const dispatch = useDispatch();
-  const getThemeData = () =>
-    dispatch({
-      type: 'ROMANTIC_THEME_EDITOR_GET_THEME_STARTED',
-      payload: { clientName: props.clientName, sitePath: 'home' },
-    });
   const adminRomanticThemeEditorState = useSelector((state: AppState) => state.adminRomanticThemeEditorState);
   const { header } = adminRomanticThemeEditorState;
 
   useEffect(() => {
-    getThemeData();
-  }, []);
+    dispatch({
+      type: 'ROMANTIC_THEME_EDITOR_GET_THEME_STARTED',
+      payload: { clientName: props.clientName, sitePath: 'home' },
+    });
+  }, [props.clientName]);
 
   const { MainContainer, Editor } = components;
   return (

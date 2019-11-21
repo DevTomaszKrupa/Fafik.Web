@@ -1,18 +1,12 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import { useDocumentTitle } from 'application/shared';
 import AdminTitleSection from '../shared/AdminTitleSection';
-import components from './styles';
 
 const AdminStatsComponent = () => {
   useDocumentTitle('Statystyki');
 
-  const {} = components;
-  return (
-    <Fragment>
-      <AdminTitleSection title="Statystyki" />
-    </Fragment>
-  );
+  return <AdminTitleSection title="Statystyki" />;
 };
 
 export default AdminStatsComponent;

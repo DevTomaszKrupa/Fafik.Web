@@ -17,13 +17,12 @@ import RsvpDialog from './dialogs/RsvpDialog';
 
 const RomanticLayout = () => {
   const dispatch = useDispatch();
-  const getRomanticTheme = (clientName: string) => dispatch({ type: 'GET_ROMANTIC_THEME_STARTED', payload: clientName });
 
   const { DoubleLineTheme } = components;
 
   useEffect(() => {
-    getRomanticTheme('gaja-i-slawomir');
-  }, []);
+    dispatch({ type: 'GET_ROMANTIC_THEME_STARTED', payload: 'gaja-i-slawomir' });
+  }, [dispatch]);
 
   return (
     <Fragment>

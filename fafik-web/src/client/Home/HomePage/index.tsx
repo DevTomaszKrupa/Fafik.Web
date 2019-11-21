@@ -9,7 +9,7 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 import components from './styles';
 import Carousel from './HomeCarousel';
-import Footer from '../../HomeFooter';
+import Footer from '../shared/HomeFooter';
 
 const HomePageComponent = () => {
   useDocumentTitle('Wytwórnia stron ślubnych - Miłość Wierność');
@@ -21,7 +21,6 @@ const HomePageComponent = () => {
 
   const scrollToTop = () => {
     const topElement = document.getElementById('topBar');
-    console.log(topElement);
     if (topElement) topElement.scrollIntoView();
   };
 
@@ -134,7 +133,7 @@ const HomePageComponent = () => {
         <InstructionStepByStep>
           <InstructionStep>
             <InstructionNumber backgroundColor="#BAC6B6">1</InstructionNumber>
-            <StepTItle color="#BAC6B6">Wybierz szablon<br/>i załóż konto</StepTItle>
+            <StepTItle color="#BAC6B6">Wybierz szablon<br />i załóż konto</StepTItle>
             <StepDescription>
               Nasze szablony są dopasowane również
               <br />
@@ -147,7 +146,7 @@ const HomePageComponent = () => {
 
           <InstructionStep>
             <InstructionNumber backgroundColor="#ECE8DF">2</InstructionNumber>
-            <StepTItle color="#ECE8DF">Wybierz abonament<br/>i wykonaj płatność </StepTItle>
+            <StepTItle color="#ECE8DF">Wybierz abonament<br />i wykonaj płatność </StepTItle>
             <StepDescription>
               zacznij edytować swoją stronę
               <br /> - zobacz jakie to szybkie i przyjemne.
@@ -158,7 +157,7 @@ const HomePageComponent = () => {
 
           <InstructionStep>
             <InstructionNumber backgroundColor="#F9E2DB">3</InstructionNumber>
-            <StepTItle color="#F9E2DB">Edytuj stronę<br/>i opublikuj ją</StepTItle>
+            <StepTItle color="#F9E2DB">Edytuj stronę<br />i opublikuj ją</StepTItle>
             <StepDescription>
               zakup abonament aby Wasza strona
               <br />
@@ -170,7 +169,7 @@ const HomePageComponent = () => {
           </InstructionStep>
         </InstructionStepByStep>
       </InstructionSection>
-      <Footer/>
+      <Footer />
     </Fragment>
   );
 };

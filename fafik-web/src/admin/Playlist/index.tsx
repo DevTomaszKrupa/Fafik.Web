@@ -1,18 +1,12 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import { useDocumentTitle } from 'application/shared';
 import AdminTitleSection from '../shared/AdminTitleSection';
-import components from './styles';
 
 const AdminPlaylistComponent = () => {
   useDocumentTitle('Playlista');
 
-  const {} = components;
-  return (
-    <Fragment>
-      <AdminTitleSection title="Playlista" />
-    </Fragment>
-  );
+  return <AdminTitleSection title="Playlista" />;
 };
 
 export default AdminPlaylistComponent;

@@ -4,27 +4,29 @@ import { useDispatch } from 'react-redux';
 import { RegisterRequest, LoginRequest } from 'domain/models';
 
 import components from './styles';
-// import PageTitleBar from '../../client/PageTitleBar';
-import LoginForm from '../../shared/LoginForm';
-import Footer from 'client/HomeFooter';
+import PageTitleBar from '../shared/PageTitleBar';
+import LoginForm from '../shared/LoginForm';
+import Footer from '../shared/HomeFooter';
 
 const LoginPageComponent = () => {
   const [loginClicked, setloginClicked] = useState(false);
   const [registerClicked, setregisterClicked] = useState(false);
   const dispatch = useDispatch();
   const submitRegisterForm = (request: RegisterRequest) => dispatch({ type: 'REGISTER_STARTED', payload: request });
+  const submitLoginForm = (request: LoginRequest) => dispatch({ type: 'LOGIN_STARTED', payload: request });
 
   const OnLoginClick = () => {
     setregisterClicked(false);
     setloginClicked(!loginClicked);
   };
+
   const OnRegisterClick = () => {
     setloginClicked(false);
     setregisterClicked(!registerClicked);
   };
 
   const submitLoginFormHandler = (values: LoginRequest) => {
-    console.log(values);
+    submitLoginForm(values);
   };
 
   const submitRegisterFormHandler = (values: any) => {
@@ -53,7 +55,7 @@ const LoginPageComponent = () => {
 
   return (
     <LoginPage>
-      {/* <PageTitleBar title="ZALOGUJ LUB ZAREJESTRUJ KONTO" /> */}
+      <PageTitleBar title="ZALOGUJ LUB ZAREJESTRUJ KONTO" />
       <IntroBar>
         <IntroTitle>Dołączcie do grona zadowolonych klientów</IntroTitle>
         <IntroSubitle>

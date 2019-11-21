@@ -21,11 +21,10 @@ import { adminPaths } from '../consts';
 
 const AdminPanelComponent = () => {
   const dispatch = useDispatch();
-  const getAdminClients = () => dispatch({ type: 'GET_ADMIN_CLIENTS_STARTED' });
 
   useEffect(() => {
-    getAdminClients();
-  }, []);
+    dispatch({ type: 'GET_ADMIN_CLIENTS_STARTED' });
+  }, [dispatch]);
 
   const { AdminMainPanel, AdminMain, AdminSidePanel } = components;
 

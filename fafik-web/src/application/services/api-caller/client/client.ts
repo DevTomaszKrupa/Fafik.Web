@@ -1,7 +1,17 @@
-import { GetClientRequest, GetClientResponse, RegisterRequest, RegisterResponse, GetThemeRequest } from 'domain/models';
+import {
+  GetClientRequest,
+  GetClientResponse,
+  RegisterRequest,
+  RegisterResponse,
+  GetThemeRequest,
+  LoginRequest,
+  LoginResponse,
+} from 'domain/models';
 import Axios from 'axios';
 
 import { API_BASE_URL } from 'application/config';
+
+const login = (request: LoginRequest) => Axios.post<LoginResponse>(`${API_BASE_URL}/users/authenticate`, request);
 
 const getClient = (request: GetClientRequest) =>
   Axios.get<GetClientResponse>(`${API_BASE_URL}/clients/${request.clientName}/site/${request.sitePath}`);
@@ -73,6 +83,7 @@ const getFeatureListData = () => ({
 });
 
 export default {
+  login,
   getClient,
   register,
   getTheme,

@@ -18,7 +18,7 @@ const MainLayout = (props: Props) => {
 
   useEffect(() => {
     getLeavesMainSite(leavesMainSiteState.clientName);
-  }, []);
+  }, [leavesMainSiteState.clientName]);
 
   return (
     <Fragment>

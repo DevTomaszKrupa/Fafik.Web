@@ -3,9 +3,10 @@ import { faAt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import components from './styles';
-import Footer from '../../HomeFooter';
+import Footer from '../shared/HomeFooter';
+import PageTitleBar from '../shared/PageTitleBar';
+
 import { useDocumentTitle } from 'application/shared';
-import PageTitleBar from 'client/PageTitleBar';
 
 const ContactPage = () => {
   useDocumentTitle('Kontakt - Miłość Wierność');

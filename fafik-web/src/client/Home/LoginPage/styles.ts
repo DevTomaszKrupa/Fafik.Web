@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import RegisterForm from '../../client/Home/OfferPage/RegisterForm';
+import RegisterForm from '../../shared/RegisterForm';
 
 interface ActionBoxProps {
   boxStyle: 'left' | 'right';

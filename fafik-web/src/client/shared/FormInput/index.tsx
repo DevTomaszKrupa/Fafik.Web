@@ -5,6 +5,6 @@ import components from './styles';
 const { FormInput } = components;
 
 const FormInputComponent = (props: any) => {
-  return <FormInput {...props} />;
+  return <FormInput component="input"  {...props} />;
 };
 export default FormInputComponent;

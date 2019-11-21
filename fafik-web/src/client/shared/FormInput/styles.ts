@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { Field } from 'redux-form';
 
 export default {
-  FormInput: styled.input`
+  FormInput: styled(Field)`
     border: 0.15rem solid #e3b7ac;
     border-radius: 2rem;
     height: 2rem;

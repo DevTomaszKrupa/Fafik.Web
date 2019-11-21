@@ -6,7 +6,7 @@ import { useDocumentTitle } from 'application/shared';
 import { AppState } from 'application/store/reducers';
 
 import PageTitleBar from '../../PageTitleBar';
-import RegisterForm from './RegisterForm';
+import RegisterForm from '../../shared/RegisterForm';
 import ThemeElement from './ThemeComponent';
 import components from './styles';
 import { SingleTheme } from './reducers';

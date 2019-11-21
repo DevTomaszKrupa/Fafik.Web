@@ -7,7 +7,7 @@ import { AppState } from 'application/store/reducers';
 import { LoginRequest } from 'domain/models';
 import { history } from 'application/helpers';
 
-import FormInput from '../../../../shared/FormInput';
+import FormInput from '../FormInput';
 
 type Props = {
   submitLoginForm: (request: LoginRequest) => void;
@@ -53,10 +53,10 @@ const LoginFormComponent = (props: Props & InjectedFormProps<{}, Props>) => {
       <MainForm>
         <LoginInputs>
           <InputBox>
-            E-MAIL: <Field name="email" component={FormInput} type="email" />
+            E-MAIL: <FormInput name="email" type="email" />
           </InputBox>
           <InputBox>
-            HASŁO: <Field name="password" component={FormInput} type="text" />
+            HASŁO: <FormInput name="password" type="text" />
           </InputBox>
         </LoginInputs>
         <GeneralInputs>

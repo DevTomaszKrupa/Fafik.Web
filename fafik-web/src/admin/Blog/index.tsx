@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 import moment from 'moment';
@@ -12,6 +12,7 @@ import { AppState } from 'application/store/reducers';
 import { BlogPost } from './reducers';
 import AdminTitleSection from '../shared/AdminTitleSection';
 import AdminButton from '../shared/AdminButton';
+import AdminLoadingSpinner from '../shared/AdminLoadingSpinner';
 import components from './styles';
 import { adminPaths } from '../consts';
 
@@ -64,50 +65,45 @@ const AdminBlogComponent = (props: RouteComponentProps<{ clientName: string }>) 
     OptionBox,
   } = components;
   return (
-    <Fragment>
-      <div>
-        {isLoading && <div> loading </div>}
-        {!isLoading && (
-          <Fragment>
-            <AdminTitleSection title="Zarządzanie blogiem" />
-            <BlogContent>
-              <AdminEditButtonsInputs>
-                <ButtonsPart1>
-                  <AdminCheckbox>
-                    <Checkbox type="checkbox" checked={isAllChecked} onClick={CheckAll} />
-                  </AdminCheckbox>
-                  <AdminButton buttonStyle="gray" buttonText="Opublikuj" />
-                  <AdminButton buttonStyle="gray" buttonText="Usuń" />
-                </ButtonsPart1>
-                <ButtonsPart2>
-                  <AdminButton buttonStyle="pink" buttonText="Nowy post" onClick={OnNewPostClick} />
-                  <SearchBox>
-                    <SearchInput {...searchPhraseInput} onKeyDown={doSearch} />
-                    <SearchButton>
-                      <FontAwesomeIcon icon={faSearch} size="lg" color="#000000" />
-                    </SearchButton>
-                  </SearchBox>
-                </ButtonsPart2>
-              </AdminEditButtonsInputs>
-              {posts.map(post => (
-                <BlogPostSection key={`blog-post-${post.postId}`}>
-                  <TableCheckbox>
-                    <CheckboxPosts type="checkbox" checked={post.isChecked} onClick={() => CheckSingle(post)} />
-                  </TableCheckbox>
-                  <TableInfoBox>
-                    <DateTitleBox>
-                      <PostDate>{moment(post.date).format('DD.MM.YYYY')}</PostDate>
-                      <PostTitle>{post.title}</PostTitle>
-                    </DateTitleBox>
-                    <OptionBox>WYŚWIETL | EDYTUJ | USUŃ</OptionBox>
-                  </TableInfoBox>
-                </BlogPostSection>
-              ))}
-            </BlogContent>
-          </Fragment>
-        )}
-      </div>
-    </Fragment>
+    <div>
+      <AdminTitleSection title="Zarządzanie blogiem" />
+      <BlogContent>
+        <AdminEditButtonsInputs>
+          <ButtonsPart1>
+            <AdminCheckbox>
+              <Checkbox type="checkbox" checked={isAllChecked} onClick={CheckAll} />
+            </AdminCheckbox>
+            <AdminButton buttonStyle="gray" buttonText="Opublikuj" />
+            <AdminButton buttonStyle="gray" buttonText="Usuń" />
+          </ButtonsPart1>
+          <ButtonsPart2>
+            <AdminButton buttonStyle="pink" buttonText="Nowy post" onClick={OnNewPostClick} />
+            <SearchBox>
+              <SearchInput {...searchPhraseInput} onKeyDown={doSearch} />
+              <SearchButton>
+                <FontAwesomeIcon icon={faSearch} size="lg" color="#000000" />
+              </SearchButton>
+            </SearchBox>
+          </ButtonsPart2>
+        </AdminEditButtonsInputs>
+        {isLoading && <AdminLoadingSpinner />}
+        {!isLoading &&
+          posts.map(post => (
+            <BlogPostSection key={`blog-post-${post.postId}`} onClick={() => CheckSingle(post)}>
+              <TableCheckbox>
+                <CheckboxPosts type="checkbox" checked={post.isChecked} />
+              </TableCheckbox>
+              <TableInfoBox>
+                <DateTitleBox>
+                  <PostDate>{moment(post.date).format('DD.MM.YYYY')}</PostDate>
+                  <PostTitle>{post.title}</PostTitle>
+                </DateTitleBox>
+                <OptionBox>WYŚWIETL | EDYTUJ | USUŃ</OptionBox>
+              </TableInfoBox>
+            </BlogPostSection>
+          ))}
+      </BlogContent>
+    </div>
   );
 };
 

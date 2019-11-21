@@ -1,19 +1,19 @@
 import React, { Fragment, useState } from 'react';
 import { InjectedFormProps, Field, reduxForm, getFormValues } from 'redux-form';
 import { useSelector } from 'react-redux';
+
 import { AppState } from 'application/store/reducers';
 
-import FormInput from '../../../shared/FormInput';
+import FormInput from '../FormInput';
 import components from './styles';
 
-const formName = 'register-form';
 
 type Props = {
   submitRegisterForm: (values: any) => void;
 };
 
 const RegisterComponent = (props: Props & InjectedFormProps<{}, Props>) => {
-  const values = useSelector((state: AppState) => getFormValues(formName)(state));
+  const values = useSelector((state: AppState) => getFormValues('register-form')(state));
   const [checkboxIsChecked, setcheckboxIsChecked] = useState(false);
   const { submitRegisterForm } = props;
 
@@ -74,6 +74,6 @@ const RegisterComponent = (props: Props & InjectedFormProps<{}, Props>) => {
   );
 };
 
-const component = reduxForm<{}, Props>({ form: formName })(RegisterComponent);
+const component = reduxForm<{}, Props>({ form: 'register-form' })(RegisterComponent);
 
 export default component;

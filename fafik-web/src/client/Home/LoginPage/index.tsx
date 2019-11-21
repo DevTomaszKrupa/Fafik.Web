@@ -5,7 +5,7 @@ import { RegisterRequest, LoginRequest } from 'domain/models';
 
 import components from './styles';
 // import PageTitleBar from '../../client/PageTitleBar';
-import LoginForm from './LoginForm';
+import LoginForm from '../../shared/LoginForm';
 import Footer from 'client/HomeFooter';
 
 const LoginPageComponent = () => {

@@ -11,7 +11,7 @@ import GlobalStyle from 'application/styles/global-styles';
 import HomeTopBar from 'client/TopBar';
 import HomePage from 'client/Home';
 import ClientPage from 'client/ClientPage';
-import AdminLoginPage from 'admin/LoginPage';
+import LoginPage from 'client/Home/LoginPage';
 import AdminPage from 'admin/AdminPage';
 
 setupAxiosInterceptors();
@@ -21,10 +21,10 @@ ReactDOM.render(
     <Provider store={store}>
       <Router history={history}>
         <Route exact path="/(|oferta|cennik|FAQ|kontakt)/" component={HomeTopBar} />
-          <Route exact path="/admin/login" component={HomeTopBar} />
+        <Route exact path="/admin/login" component={HomeTopBar} />
         <Switch>
           <Route exact path="/(|oferta|cennik|FAQ|kontakt)/" component={HomePage} />
-          <Route exact path="/admin/login" component={AdminLoginPage} />
+          <Route exact path="/admin/login" component={LoginPage} />
           <AuthenticatedRoute path="/admin" component={AdminPage} />
 
           <Route exact path="/:clientName" component={ClientPage} />

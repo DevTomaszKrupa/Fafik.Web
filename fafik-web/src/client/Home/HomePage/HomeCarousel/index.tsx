@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import AliceCarousel from 'react-alice-carousel';
-import 'react-alice-carousel/lib/alice-carousel.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import DOMPurify from 'dompurify';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// tslint:disable-next-line:no-import-side-effect
+import 'react-alice-carousel/lib/alice-carousel.css';
 
 import components from './styles';
 import slides from './slides';

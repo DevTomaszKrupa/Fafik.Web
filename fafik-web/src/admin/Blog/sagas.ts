@@ -12,6 +12,16 @@ function* adminBlogGetPosts(action: Action): any {
   }
 }
 
+function* adminBlogDeletePost(action: Action): any {
+  try {
+    const response = yield call(apiCaller.admin.deletePost, action.payload);
+    yield put({ type: 'ADMIN_BLOG_DELETE_POST_SUCCESS', payload: response.data });
+  } catch (error) {
+    yield put({ type: 'ADMIN_BLOG_DELETE_POST_FAILURE' });
+  }
+}
+
 export function* adminBlogGetPostsRootSaga(): any {
   yield takeLatest('ADMIN_BLOG_GET_POSTS_STARTED', adminBlogGetPosts);
+  yield takeLatest('ADMIN_BLOG_DELETE_POST_STARTED', adminBlogDeletePost);
 }

@@ -12,6 +12,8 @@ const getClients = () => Axios.get<AdminClient>(`${API_BASE_URL}/admin/clients`)
 const getBlogPosts = (request: GetBlogPostRequest) =>
   Axios.get(`${API_BASE_URL}/admin/blog/post?clientName=${request.clientName}&offset=${request.offset}&limit=${request.limit}`);
 
+const deletePost = (postId: number) => Axios.put(`${API_BASE_URL}/admin/blog/post/${postId}/delete`);
+
 const createNewPost = (data: CreateNewPostRequest) => Axios.post(`${API_BASE_URL}/admin/blog/post`, data);
 
 export default {
@@ -19,5 +21,6 @@ export default {
   getEditorTheme,
   getClients,
   getBlogPosts,
+  deletePost,
   createNewPost,
 };

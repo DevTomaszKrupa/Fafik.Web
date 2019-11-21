@@ -2,8 +2,10 @@ import React, { Fragment, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import AdminSiteEditor from 'editor/ThemeEditor';
-import components from './styles';
+import AdminThemeEditorSidePanelComponent from 'editor/ThemeEditor/SidePanel';
 import { AuthenticatedRoute } from 'application/shared';
+
+import components from './styles';
 import AdminMySites from '../MySites';
 import AdminBlog from '../Blog';
 import AdminPlaylist from '../Playlist';
@@ -13,7 +15,6 @@ import AdminGallery from '../Gallery';
 import AdminBlogNewPost from '../BlogNewPost';
 import AdminQRcode from '../QRCodePage';
 import AdminTopBar from '../AdminPage/AdminTopBar';
-import AdminThemeEditorSidePanelComponent from 'editor/ThemeEditor/SidePanel';
 import BaseAdminSidePanel from './AdminSidePanel';
 import ChooseTheme from '../ChooseTheme';
 import { adminPaths } from '../consts';

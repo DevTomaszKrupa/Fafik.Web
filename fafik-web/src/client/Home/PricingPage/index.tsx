@@ -8,6 +8,7 @@ import components from './styles';
 import PageTitleBar from '../../../client/PageTitleBar';
 import FeaturesList from './FeatureList';
 import PricingPlans from './PricingPlan';
+import Footer from '../../HomeFooter';
 
 const PricingPage = () => {
   useDocumentTitle('Cennik - Miłość Wierność');
@@ -82,6 +83,7 @@ const PricingPage = () => {
         </FeaturesSection>
       </PricingPageMain>
       <PricingPlans />
+      <Footer />
     </Fragment>
   );
 };

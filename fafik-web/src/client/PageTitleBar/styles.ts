@@ -9,7 +9,10 @@ export default {
     letter-spacing: 0.1rem;
     display: flex;
     justify-content: center;
-    padding: 2.4rem 0;
+    padding: 2.4rem 1rem;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 1.9rem;
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 1rem;

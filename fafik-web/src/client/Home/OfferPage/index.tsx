@@ -10,6 +10,7 @@ import RegisterForm from './RegisterForm';
 import ThemeElement from './ThemeComponent';
 import components from './styles';
 import { SingleTheme } from './reducers';
+import Footer from '../../HomeFooter';
 
 const OfferPageComponent = () => {
   useDocumentTitle('Szablony - Miłość Wierność');
@@ -56,6 +57,7 @@ const OfferPageComponent = () => {
           <ThemeElement theme={theme} onPreviewClickFunction={onThemeClicked} onSelectClickFunction={onThemeClicked} />
         ))}
       </ThemesSection>
+      <Footer />
     </div>
   );
 };

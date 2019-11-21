@@ -41,7 +41,7 @@ export default {
   BannerInfoBox: styled.div`
     background-color: rgba(255, 255, 255, 0.45);
     padding: 3.5rem 0;
-    width: 47%;
+    width: 45rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,7 +60,7 @@ export default {
   `,
 
   BannerInfoButton: styled.button`
-    width: 51%;
+    width: 18rem;
     padding: 0.73rem 0 0.7rem 0;
     background-color: #fdfcfd;
     border: 0.2rem solid #253535;
@@ -321,15 +321,16 @@ export default {
   InstructionStepByStep: styled.div`
     display: flex;
     justify-content: space-around;
-    flex-grow: 1;
     width: 80%;
-    padding: 1.3rem 0 4rem 0;
+    padding-top: 1.3rem;
+    flex-wrap: wrap;
   `,
 
   InstructionStep: styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 3rem;
   `,
 
   InstructionNumber: styled.div`

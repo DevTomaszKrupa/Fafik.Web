@@ -9,6 +9,7 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 import components from './styles';
 import Carousel from './HomeCarousel';
+import Footer from '../../HomeFooter';
 
 const HomePageComponent = () => {
   useDocumentTitle('Wytwórnia stron ślubnych - Miłość Wierność');
@@ -169,6 +170,7 @@ const HomePageComponent = () => {
           </InstructionStep>
         </InstructionStepByStep>
       </InstructionSection>
+      <Footer/>
     </Fragment>
   );
 };

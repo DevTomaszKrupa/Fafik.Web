@@ -3,7 +3,7 @@ import { InjectedFormProps, Field, reduxForm, getFormValues } from 'redux-form';
 import { useSelector } from 'react-redux';
 import { AppState } from 'application/store/reducers';
 
-import FormInput from './RegisterFormInput';
+import FormInput from '../../../shared/FormInput';
 import components from './styles';
 
 const formName = 'register-form';

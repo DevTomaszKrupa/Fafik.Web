@@ -74,10 +74,9 @@ export default {
 
   TopBartLeftTitle: styled.div`
     color: #ffffff;
-    font-family: 'Josefin Sans';
-    font-size: 0.8rem;
+    font-family: 'Montserrat';
+    font-size: 0.73rem;
     font-weight: 600;
-    padding-top: 0.15rem;
     letter-spacing: 0.1rem;
 
     position: relative;
@@ -109,10 +108,9 @@ export default {
 
   TopBartRightTitle: styled.div`
     color: #e3b7ac;
-    font-family: 'Josefin Sans';
-    font-size: 0.8rem;
+    font-family: 'Montserrat';
+    font-size: 0.73rem;
     font-weight: 600;
-    padding-top: 0.15rem;
     letter-spacing: 0.1rem;
   `,
 
@@ -137,18 +135,18 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1% 0;
+    padding-bottom: 1rem;
     position: sticky;
     top: 0;
     z-index: 1;
     background-color: #ffffff;
     flex-wrap: wrap;
 
-    @media (max-width: 1080px) {
-      padding: 3.5% 3%;
+    @media (max-width: 630px) {
+      padding: 0 3% 3.5% 3%;
     }
     @media (max-width: 395px) {
-      padding: 3.5% 1%;
+      padding: 0 1% 3.5% 1%;
     }
   `,
 
@@ -160,6 +158,7 @@ export default {
     color: #253535;
     border-left: 0.08rem solid #253535;
     padding: 0 1.6rem;
+    margin-top: 1.1rem;
 
     @media (min-width: 487px) and (max-width: 750px) {
       &:nth-last-child(1) {

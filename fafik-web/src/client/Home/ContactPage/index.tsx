@@ -3,6 +3,7 @@ import { faAt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import components from './styles';
+import Footer from '../../HomeFooter';
 import { useDocumentTitle } from 'application/shared';
 import PageTitleBar from 'client/PageTitleBar';
 
@@ -25,6 +26,7 @@ const ContactPage = () => {
           <TextMail>e-mail: wiernoscmilosc@gmail.com</TextMail>
         </MailBox>
       </MainContainer>
+      <Footer />
     </Fragment>
   );
 };

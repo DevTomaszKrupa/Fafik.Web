@@ -29,7 +29,7 @@ const LoginFormComponent = (props: Props & InjectedFormProps<{}, Props>) => {
   const { submitLoginForm } = props;
   const loginState = useSelector((state: AppState) => state.loginState);
   const values = useSelector((state: AppState) => getFormValues('login-form')(state));
-  const { loginCallSuccessful } = loginState;
+  const { loginCallSuccessful, errorMessage } = loginState;
 
   const [checkboxIsChecked, setcheckboxIsChecked] = useState(false);
 
@@ -64,6 +64,7 @@ const LoginFormComponent = (props: Props & InjectedFormProps<{}, Props>) => {
           </CheckboxBox>
         </GeneralInputs>
       </MainForm>
+      {errorMessage && <span>{errorMessage}</span>}
     </LoginForm>
   );
 };

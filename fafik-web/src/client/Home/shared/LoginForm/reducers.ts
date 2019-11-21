@@ -7,11 +7,13 @@ import { history } from 'application/helpers';
 export type LoginState = {
   readonly isLoading: boolean;
   readonly loginCallSuccessful: boolean;
+  readonly errorMessage: string;
 };
 
 const initialState: LoginState = {
   isLoading: false,
   loginCallSuccessful: false,
+  errorMessage: '',
 };
 
 export const loginState: Reducer<LoginState, Action> = (state = initialState, action: Action): LoginState => {
@@ -21,6 +23,7 @@ export const loginState: Reducer<LoginState, Action> = (state = initialState, ac
         ...state,
         isLoading: true,
         loginCallSuccessful: false,
+        errorMessage: '',
       };
     case 'LOGIN_SUCCESS':
       const { token } = action.payload.data;
@@ -35,10 +38,11 @@ export const loginState: Reducer<LoginState, Action> = (state = initialState, ac
         ...state,
         isLoading: false,
         loginCallSuccessful: false,
+        errorMessage: 'Dane logowania są nieprawidłowe.',
       };
     case 'LOGOUT':
       localStorageService.clearToken();
-      history.push('/home');
+      history.push('/');
       return {
         ...state,
         loginCallSuccessful: false,

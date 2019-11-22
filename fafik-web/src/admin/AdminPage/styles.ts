@@ -11,9 +11,9 @@ export default {
     background-color: #fdfbfd;
     width: 18%;
     height: 100%;
-    border: 0.1rem solid #cbc3b6;
     font-family: 'Josefin Sans';
     letter-spacing: 0.1rem;
+    border-right: 0.1rem dashed #f3f3f3;
   `,
 
   AdminMainPanel: styled.div`

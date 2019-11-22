@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImages } from '@fortawesome/free-solid-svg-icons';
@@ -37,10 +36,11 @@ const AdminBlogNewPostComponent = props => {
     ImageUploadSection,
     ImageUploadTitle,
     ImageUpload,
+    PostEditor,
   } = components;
   return (
     <Fragment>
-      <AdminTitleSection title="Blog - Nowy post" />
+      <AdminTitleSection title="Zarządzanie blogiem ► Nowy Post" />
       <AdminMainSection>
         <ButtonSection>
           <AdminButton
@@ -59,7 +59,7 @@ const AdminBlogNewPostComponent = props => {
         </ButtonSection>
         <MainPostEditor>
           <EditorSection>
-            <CKEditor editor={ClassicEditor} data={postContent} onChange={(_event, editor) => setPostContent(editor.getData())} />
+            <PostEditor editor={ClassicEditor} data={postContent} onChange={(_event, editor) => setPostContent(editor.getData())} />
           </EditorSection>
           <ImageUploadSection>
             <ImageUploadTitle>WGRAJ MINIATURKĘ POSTA:</ImageUploadTitle>

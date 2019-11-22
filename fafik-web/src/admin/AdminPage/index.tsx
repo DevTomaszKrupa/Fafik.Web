@@ -6,7 +6,7 @@ import AdminThemeEditorSidePanelComponent from 'editor/ThemeEditor/SidePanel';
 import { AuthenticatedRoute } from 'application/shared';
 
 import components from './styles';
-import AdminMySites from '../MySites';
+import AdminMySites from '../Home';
 import AdminBlog from '../Blog';
 import AdminPlaylist from '../Playlist';
 import AdminGuestList from '../GuestList';

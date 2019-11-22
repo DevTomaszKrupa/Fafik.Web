@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default {
   PageDescription: styled.div`
@@ -19,7 +20,7 @@ export default {
   QRgraphic: styled.img`
     width: 13rem;
     height: auto;
-    padding: 0 1rem;
+    padding: 0 2rem;
   `,
 
   QRMain: styled.div`
@@ -30,7 +31,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 1.5rem;
+    margin: 0 1rem;
     box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.15);
   `,
 
@@ -42,5 +43,33 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+  `,
+
+  FAwesomeIconRight: styled(FontAwesomeIcon)`
+      position: relative;
+      animation: moveArrowLeft 1.4s infinite;
+      animation-timing-function: ease;
+      animation-direction: alternate-reverse;
+      @keyframes moveArrowLeft {
+        from {
+          left: 0px;
+        }
+        to {
+          left: 17px;
+        }
+  `,
+
+  FAwesomeIconLeft: styled(FontAwesomeIcon)`
+      position: relative;
+      animation: moveArrowRight 1.4s infinite;
+      animation-timing-function: ease;
+      animation-direction: alternate-reverse;
+      @keyframes moveArrowRight {
+        from {
+          right: 0px;
+        }
+        to {
+          right: 17px;
+        }
   `,
 };

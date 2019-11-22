@@ -30,17 +30,19 @@ const AdminBlogComponent = (props: RouteComponentProps<{ clientName: string }>) 
   const doSearch = (evt: any) => {
     const searchText = evt.target.value; // this is the search text
     if (clock) setClock(undefined);
-    setClock(setTimeout(() => {
-      console.log(searchText);
-    }, 1000));
+    setClock(
+      setTimeout(() => {
+        console.log(searchText);
+      }, 1000)
+    );
   };
 
   const CheckAll = (event: any) => {
-    dispatch({ type: 'ADMIN_BLOG_CHANGE_ALL_POSTS_CHECK', payload: event.target.checked, });
+    dispatch({ type: 'ADMIN_BLOG_CHANGE_ALL_POSTS_CHECK', payload: event.target.checked });
   };
 
   const CheckSingle = (post: BlogPost) => {
-    dispatch({ type: 'ADMIN_BLOG_CHANGE_SINGLE_POST_CHECK', payload: post.postId, });
+    dispatch({ type: 'ADMIN_BLOG_CHANGE_SINGLE_POST_CHECK', payload: post.postId });
   };
 
   const OnNewPostClick = () => history.push(adminPaths.blogNewPost(props.match.params.clientName));

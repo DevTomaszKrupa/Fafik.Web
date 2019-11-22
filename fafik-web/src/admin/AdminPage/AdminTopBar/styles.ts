@@ -10,6 +10,7 @@ export default {
     top: 0;
     font-family: 'Montserrat';
     box-shadow: 0 0rem 1rem rgba(0, 0, 0, 0.4);
+    z-index: 1;
   `,
 
   HeaderLeftSide: styled.div`
@@ -25,6 +26,7 @@ export default {
 
   AdminLogo: styled.img`
     width: 17rem;
+    cursor: pointer;
   `,
 
   HeaderRightSide: styled.div`

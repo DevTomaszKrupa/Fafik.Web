@@ -15,7 +15,7 @@ export default {
     letter-spacing: 0.1rem;
     font-family: 'Montserrat';
     padding-left: 0.5rem;
-    font-weight: 800;
+    font-weight: 600;
     padding-top: 0.2rem;
   `,
 

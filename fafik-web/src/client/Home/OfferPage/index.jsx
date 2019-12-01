@@ -26,7 +26,7 @@ const OfferPageComponent = () => {
   };
 
   useEffect(() => {
-    dispatch({ type: 'THEMES_SECTION_GET_THEME_STARTED' });
+    dispatch({ type: 'GET_THEMES_STARTED' });
   }, [dispatch]);
 
   const themesSectionState = useSelector(state => state.themesSectionState);

@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import { useSelector } from 'react-redux';
+import React, { Fragment, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { useDocumentTitle } from 'application/shared';
 import { IMAGE_STORAGE } from 'application/config';
@@ -12,6 +12,11 @@ const AdminHomeComponent = () => {
 
   const adminPanelState = useSelector(state => state.adminPanelState);
   const { isLoading, client } = adminPanelState;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!client) dispatch({ type: '' });
+  }, [dispatch, client]);
 
   const {
     WelcomeText,

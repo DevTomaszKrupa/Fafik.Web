@@ -1,5 +1,8 @@
 import { all, fork } from 'redux-saga/effects';
 
+// domain
+import { getThemesRootSaga } from 'domain/sagas/getThemesRootSaga';
+
 // admin
 import { adminBlogGetPostsRootSaga } from 'admin/Blog/sagas';
 import { adminBlogCreateNewPostRootSaga } from 'admin/BlogNewPost/sagas';
@@ -8,7 +11,6 @@ import { adminGetAdminClientRootSaga } from 'admin/AdminPanel/sagas';
 // client
 import { faqPageGetQuestionsRootSaga } from 'client/Home/FAQPage/sagas';
 import { featureListGetDataRootSaga } from 'client/Home/PricingPage/FeatureList/sagas';
-import { themesSectionGetThemeRootSaga } from 'client/Home/OfferPage/sagas';
 import { loginSaga } from 'client/Home/shared/LoginForm/sagas';
 import { registerRootSaga } from 'client/Home/shared/RegisterForm/sagas';
 
@@ -24,9 +26,11 @@ const sagas = [
   clientRootSaga,
   registerRootSaga,
   faqPageGetQuestionsRootSaga,
-  themesSectionGetThemeRootSaga,
   featureListGetDataRootSaga,
   loginSaga,
+
+  // domain
+  getThemesRootSaga,
 
   // leaves
   leavesRootSaga,

@@ -21,18 +21,18 @@ const initialState: ThemesSectionState = {
 
 export const themesSectionState: Reducer<ThemesSectionState, Action> = (state = initialState, action: Action): ThemesSectionState => {
   switch (action.type) {
-    case 'THEMES_SECTION_GET_THEME_STARTED':
+    case 'GET_THEMES_STARTED':
       return {
         ...state,
         isLoading: true,
       };
-    case 'THEMES_SECTION_GET_THEME_SUCCESS':
+    case 'GET_THEMES_SUCCESS':
       return {
         ...state,
         isLoading: false,
         themes: action.payload,
       };
-    case 'THEMES_SECTION_GET_THEME_FAILURE':
+    case 'GET_THEMES_FAILURE':
       return {
         ...state,
         isLoading: false,

@@ -1,7 +1,7 @@
 const adminPaths = {
   mainAdminPage: '/admin',
   chooseTheme: '/admin/wybierz-motyw',
-  pages: '/admin/pages',
+  pages: '/admin',
   config: (clientName: string) => '/admin/konfiguruj/:clientName'.replace(':clientName', clientName),
   guestList: (clientName: string) => '/admin/lista-gosci/:clientName'.replace(':clientName', clientName),
   playlist: (clientName: string) => '/admin/playlista/:clientName'.replace(':clientName', clientName),

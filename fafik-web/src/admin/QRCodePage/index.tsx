@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import QRCode from '../shared/QRComponent';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleRight, faAngleDoubleLeft } from '@fortawesome/free-solid-svg-icons';
 
 import { IMAGE_STORAGE } from 'application/config';
@@ -14,7 +13,7 @@ const AdminQRCodePage = () => {
 
   const UserName: string = 'kasia-i-daniel';
 
-  const { PageDescription, QRInfographic, QRgraphic, QRMain, QRFrame } = components;
+  const { PageDescription, QRInfographic, QRgraphic, QRMain, QRFrame, FAwesomeIconLeft, FAwesomeIconRight } = components;
   return (
     <Fragment>
       <AdminTitleSection title="Wasz kod QR" />
@@ -27,13 +26,13 @@ const AdminQRCodePage = () => {
       </PageDescription>
       <QRInfographic>
         <QRgraphic src={`${IMAGE_STORAGE}app/QR-letter.png`} />
-        <FontAwesomeIcon icon={faAngleDoubleLeft} size="5x" color="#DBCFC5" />
+        <FAwesomeIconLeft icon={faAngleDoubleLeft} size="5x" color="#DBCFC5" />
         <QRMain>
           <QRFrame>
             <QRCode value={`www.miloscwiernosc.pl/${UserName}`} /> {/*TODO Get this from global variable*/}
           </QRFrame>
         </QRMain>
-        <FontAwesomeIcon icon={faAngleDoubleRight} size="5x" color="#DBCFC5" />
+        <FAwesomeIconRight icon={faAngleDoubleRight} size="5x" color="#DBCFC5" />
         <QRgraphic src={`${IMAGE_STORAGE}app/QR-message.png`} />
       </QRInfographic>
     </Fragment>

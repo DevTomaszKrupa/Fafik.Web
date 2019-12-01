@@ -12,9 +12,9 @@ export default {
 
   Title: styled.div`
     font-family: 'Montserrat';
-    letter-spacing: 0.08rem;
-    font-size: 1.35rem;
-    font-weight: 600;
+    letter-spacing: 0.1rem;
+    font-size: 1.15rem;
+    font-weight: 500;
     text-transform: uppercase;
     padding: 0 0 2rem 7rem;
   `,

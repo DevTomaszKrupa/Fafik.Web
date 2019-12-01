@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import CKEditor from '@ckeditor/ckeditor5-react';
 
 export default {
   AdminMainSection: styled.div`
@@ -80,5 +81,9 @@ export default {
     &: hover {
       border: 0.3rem solid #f26d64;
     }
+  `,
+
+  PostEditor: styled(CKEditor)`
+    padding: 10rem;
   `,
 };

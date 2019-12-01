@@ -20,7 +20,7 @@ const OfferPageComponent = props => {
   return (
     <ThemeElement>
       <ThemeBox onMouseEnter={() => setIsMouseOn(true)} onMouseLeave={() => setIsMouseOn(false)}>
-        <ThemeImage isMouseOn={isMouseOn} src={IMAGE_STORAGE + props.theme.themeImageUrl} />
+        <ThemeImage isMouseOn={isMouseOn} src={IMAGE_STORAGE + props.theme.imageUrl} />
         <ThemeTop>
           {isMouseOn && (
             <TopButtons>
@@ -31,8 +31,8 @@ const OfferPageComponent = props => {
         </ThemeTop>
       </ThemeBox>
       <ThemeText>
-        <ThemeName>{props.theme.themeName}</ThemeName>
-        <ThemeDescription>{props.theme.themeDescription}</ThemeDescription>
+        <ThemeName>{props.theme.name}</ThemeName>
+        <ThemeDescription>{props.theme.description}</ThemeDescription>
       </ThemeText>
     </ThemeElement>
   );

@@ -1,11 +1,10 @@
 import { all, fork } from 'redux-saga/effects';
 
 // domain
-import { getThemesRootSaga } from 'domain/sagas/getThemesRootSaga';
+import { adminBlogRootSaga } from 'domain/sagas/adminBlogSaga';
+import { themeRootSaga } from 'domain/sagas/themeSaga';
 
 // admin
-import { adminBlogGetPostsRootSaga } from 'admin/Blog/sagas';
-import { adminBlogCreateNewPostRootSaga } from 'admin/BlogNewPost/sagas';
 import { adminGetAdminClientRootSaga } from 'admin/AdminPanel/sagas';
 
 // client
@@ -30,7 +29,8 @@ const sagas = [
   loginSaga,
 
   // domain
-  getThemesRootSaga,
+  adminBlogRootSaga,
+  themeRootSaga,
 
   // leaves
   leavesRootSaga,
@@ -43,8 +43,6 @@ const sagas = [
   adminGetAdminClientRootSaga,
   adminThemeEditorRootSaga,
   adminRomanticThemeEditorSaga,
-  adminBlogGetPostsRootSaga,
-  adminBlogCreateNewPostRootSaga,
 ];
 
 export default function* rootSaga() {

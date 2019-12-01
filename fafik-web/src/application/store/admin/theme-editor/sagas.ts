@@ -5,8 +5,8 @@ import { Action } from '../../actions';
 
 function* adminSidePanelGetTheme(action: Action): any {
   try {
-    const theme = yield call(apiCaller.admin.getEditorTheme, action.payload);
-    yield put({ type: 'THEME_EDITOR_GET_THEME_SUCCESS', payload: theme });
+    // TODO TOKO const theme = yield call(apiCaller.admin.getEditorTheme, action.payload);
+    // TODO TOKO  yield put({ type: 'THEME_EDITOR_GET_THEME_SUCCESS', payload: theme });
   } catch (error) {
     yield put({ type: 'THEME_EDITOR_GET_THEME_FAILURE' });
   }

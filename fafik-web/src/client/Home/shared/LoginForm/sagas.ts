@@ -6,7 +6,7 @@ import { Action } from 'application/store/actions';
 
 function* login(action: Action<LoginRequest>): any {
   try {
-    const loginResponse: LoginResponse = yield call(apiCaller.client.login, action.payload as LoginRequest);
+    const loginResponse: LoginResponse = yield call(apiCaller.user.login, action.payload as LoginRequest);
 
     yield put({ type: 'LOGIN_SUCCESS', payload: loginResponse });
   } catch (error) {

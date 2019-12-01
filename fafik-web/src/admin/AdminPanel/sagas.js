@@ -4,7 +4,7 @@ import { apiCaller } from 'application/services';
 
 function* adminGetClient() {
   try {
-    const clients = yield call(apiCaller.admin.getClients);
+    const clients = yield call(apiCaller.admin.getClient);
     yield put({ type: 'GET_ADMIN_CLIENTS_SUCCESS', payload: clients });
   } catch (error) {
     yield put({ type: 'GET_ADMIN_CLIENTS_FAILURE' });

@@ -1,11 +1,11 @@
 const initialState = {
   isLoading: true,
-  clients: [],
+  client: undefined,
 };
 
 export const adminPanelState = (state = initialState, action) => {
   switch (action.type) {
-    case 'GET_ADMIN_CLIENTS_STARTED':
+    case 'GET_ADMIN_CLIENTS_STARTED': // TODO Rename to CLIENT due to convention
       return {
         ...state,
         isLoading: true,
@@ -14,7 +14,7 @@ export const adminPanelState = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        clients: action.payload.data,
+        client: action.payload.data,
       };
     case 'GET_ADMIN_CLIENTS_FAILURE':
       return {

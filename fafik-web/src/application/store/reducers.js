@@ -12,6 +12,7 @@ import { registerState } from 'client/Home/shared/RegisterForm/reducers';
 
 import { adminPanelState } from 'admin/AdminPanel/reducers';
 import { adminHomeState } from 'admin/Home/reducers';
+import { confirmSelectionModalState } from 'admin/Home/ConfirmSelectionModal/reducers';
 
 import { clientState } from './client/reducers';
 import { leavesState } from './leaves/theme/reducers';
@@ -41,6 +42,7 @@ export default combineReducers({
   adminBlogState,
   adminNewBlogPostState,
   adminHomeState,
+  confirmSelectionModalState,
 
   // admin romantic
   adminRomanticThemeEditorState,

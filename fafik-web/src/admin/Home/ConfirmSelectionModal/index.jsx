@@ -1,48 +1,51 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Modal from 'react-modal';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+
 import { useSelector, useDispatch } from 'react-redux';
 
 const ConfirmSelectionModal = props => {
-  const adminHomeState = useSelector(state => state.adminHomeState);
+  const confirmSelectionModalState = useSelector(state => state.confirmSelectionModalState);
   const dispatch = useDispatch();
   const closeModal = () => dispatch({ type: 'CLOSE_CONFIRM_SELECTION_MODAL' });
-  const onConfirmClick = () => dispatch({ type: 'INITIALIZE_THEME_STARTED' });
+  const onConfirmClick = () => dispatch({ type: 'INITIALIZE_THEME_STARTED', payload: theme.themeId });
 
-  const {
-    confirmSelectionModalIsOpen,
-    confirmSelectionModalTheme,
-    confirmSelectionModalThemeLoading,
-    confirmSelectionModalThemeSuccessfulConfirmation,
-  } = adminHomeState;
-  const { className } = props;
+  const { isOpen, theme, isLoading, errorMessage } = confirmSelectionModalState;
+  const { className, onAfterClose } = props;
 
   const contentClassName = `${className}__content`;
   const overlayClassName = `${className}__overlay`;
-
-  useEffect(() => {
-    if (confirmSelectionModalThemeSuccessfulConfirmation) dispatch({ type: 'CLOSE_CONFIRM_SELECTION_MODAL' });
-  }, [confirmSelectionModalThemeSuccessfulConfirmation, dispatch]);
 
   return (
     <Modal
       portalClassName={className}
       className={contentClassName}
       overlayClassName={overlayClassName}
-      isOpen={confirmSelectionModalIsOpen}
+      onAfterClose={onAfterClose}
+      isOpen={isOpen}
       onRequestClose={closeModal}
     >
       <h2>Twój wybór</h2>
-      <div>Wybrałeś motyw: {confirmSelectionModalTheme && confirmSelectionModalTheme.themeName}</div>
+      <div>Wybrałeś motyw: {theme && theme.name}</div>
 
       <button>Zmień wybór</button>
       <button onClick={onConfirmClick}>Potwierdź</button>
-      {confirmSelectionModalThemeLoading && <span>loading...</span>}
+      {isLoading && <span>loading...</span>}
+      {errorMessage && <span>{errorMessage}</span>}
     </Modal>
   );
 };
 
 Modal.setAppElement('body');
+
+ConfirmSelectionModal.propTypes = {
+  onAfterClose: PropTypes.func,
+};
+
+ConfirmSelectionModal.deafultProps = {
+  onAfterClose: undefined,
+};
 
 const StyleConfirmSelectionModal = styled(ConfirmSelectionModal)`
   &__overlay {

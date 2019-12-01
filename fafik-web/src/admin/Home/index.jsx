@@ -20,6 +20,8 @@ const AdminHomeComponent = () => {
     if (!client) dispatch({ type: 'GET_THEMES_STARTED' });
   }, [dispatch, client]);
 
+  const onAfterClose = () => dispatch({ type: 'GET_ADMIN_CLIENTS_STARTED' });
+
   const { WelcomeText, AdminHome } = components;
 
   return (
@@ -33,11 +35,11 @@ const AdminHomeComponent = () => {
           Aby przejść do etapu edytowania, należy opłacić abonament, wybierając okres ważności. <br />
         </WelcomeText>
 
-        {isLoading && <span>loading</span>}
+        {isLoading && <div>loading</div>}
         {!isLoading && client && <SelectedThemeComponent />}
         {!isLoading && !client && <ThemesOfferComponent />}
 
-        <ConfirmSelectionModal />
+        <ConfirmSelectionModal onAfterClose={onAfterClose} />
       </AdminHome>
     </Fragment>
   );

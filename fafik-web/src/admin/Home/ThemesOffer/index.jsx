@@ -16,7 +16,11 @@ const ThemesOfferComponent = () => {
   return (
     <ThemesContainer>
       {themes.map(theme => (
-        <ThemeSelectionMiniature theme={theme} onSelectClickFunction={() => onSelectClick(theme)} />
+        <ThemeSelectionMiniature
+          key={`theme-selection-miniature-${theme.themeId}`}
+          theme={theme}
+          onSelectClickFunction={() => onSelectClick(theme)}
+        />
       ))}
     </ThemesContainer>
   );

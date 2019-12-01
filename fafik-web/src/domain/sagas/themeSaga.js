@@ -11,9 +11,10 @@ function* getThemes() {
   }
 }
 
-function* initializeTheme() {
+function* initializeTheme(action) {
+  console.log(action);
   try {
-    const response = yield call(apiCaller.theme.initializeTheme);
+    const response = yield call(apiCaller.theme.initializeTheme, action.payload);
     yield put({ type: 'INITIALIZE_THEME_SUCCESS', payload: response.data });
   } catch (error) {
     yield put({ type: 'INITIALIZE_THEME_FAILURE' });

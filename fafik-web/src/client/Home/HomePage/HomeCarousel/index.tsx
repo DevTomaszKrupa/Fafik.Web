@@ -29,8 +29,8 @@ const HomeCarouselComponent = () => {
     <Carousel>
       {/* <PreviousButton onClick={previousSlideClicked} /> */}
       <AliceCarousel mouseDragEnabled buttonsDisabled slideToIndex={currentSlide}>
-        {slides.map(slide => (
-          <FeatureBox onDragStart={handleOnDragStart}>
+        {slides.map((slide, index) => (
+          <FeatureBox key={`alice-carousel-feature-${index}`} onDragStart={handleOnDragStart}>
             <FontAwesomeIcon icon={slide.icon} size="2x" color="#ffffff" />
             <SingleFeatureTitle>{slide.title}</SingleFeatureTitle>
             <FeatureDescription dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(slide.description) }}></FeatureDescription>

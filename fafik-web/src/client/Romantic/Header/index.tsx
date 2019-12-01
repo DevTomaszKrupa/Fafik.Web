@@ -3,7 +3,6 @@ import moment from 'moment';
 import { useSelector, useDispatch } from 'react-redux';
 
 import components from './styles';
-import { AppState } from 'application/store/reducers';
 
 import Usual from 'domain/romantic/components/Header/Usual';
 import Sticky from 'domain/romantic/components/Header/Sticky';
@@ -11,7 +10,7 @@ import Sticky from 'domain/romantic/components/Header/Sticky';
 const HeaderLayout = () => {
   const dispatch = useDispatch();
   const openRsvpDialog = () => dispatch({ type: 'OPEN_ROMANTIC_RSVP_DIALOG' });
-  const romanticState = useSelector((state: AppState) => state.romanticState);
+  const romanticState = useSelector((state: any) => state.romanticState);
 
   const stickyIsVisible = useStickyHeader();
   const { Header } = components;

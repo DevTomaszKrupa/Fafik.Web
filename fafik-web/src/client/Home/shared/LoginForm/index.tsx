@@ -3,7 +3,6 @@ import { InjectedFormProps, Field, reduxForm, getFormValues } from 'redux-form';
 import { useSelector } from 'react-redux';
 import components from './styles';
 
-import { AppState } from 'application/store/reducers';
 import { LoginRequest } from 'domain/models';
 import { history } from 'application/helpers';
 
@@ -27,8 +26,8 @@ const LoginFormComponent = (props: Props & InjectedFormProps<{}, Props>) => {
     CheckboxText,
   } = components;
   const { submitLoginForm } = props;
-  const loginState = useSelector((state: AppState) => state.loginState);
-  const values = useSelector((state: AppState) => getFormValues('login-form')(state));
+  const loginState = useSelector((state: any) => state.loginState);
+  const values = useSelector((state: any) => getFormValues('login-form')(state));
   const { loginCallSuccessful } = loginState;
 
   const [checkboxIsChecked, setcheckboxIsChecked] = useState(false);

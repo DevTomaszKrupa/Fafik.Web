@@ -39,7 +39,7 @@ export default {
     align-items: center;
   `,
 
-  RegisterFormBox: styled.form`
+  RegisterFormBox: styled.div`
     ${(props: RegisterFormBox) =>
       props.isDisplayed &&
       `

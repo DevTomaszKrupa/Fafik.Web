@@ -2,12 +2,11 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { history } from 'application/helpers';
-import { AppState } from 'application/store/reducers';
 import TextEditor from './TextEditor';
 
 const AdminThemeEditorSidePanelComponent = () => {
   const leaveEditor = () => history.push('/admin');
-  const adminEditorSidePanelState = useSelector((state: AppState) => state.adminEditorSidePanelState);
+  const adminEditorSidePanelState = useSelector((state: any) => state.adminEditorSidePanelState);
 
   return (
     <div>

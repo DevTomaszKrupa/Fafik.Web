@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
 
 import { ClientPageLayout } from './layout';
-import { AppState } from 'application/store/reducers';
 import { getClient } from 'application/store/client/actions';
 
-const mapStateToProps = ({ clientState }: AppState) => ({
+const mapStateToProps = ({ clientState }: any) => ({
   clientState,
 });
 

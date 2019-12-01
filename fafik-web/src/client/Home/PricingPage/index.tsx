@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { AppState } from 'application/store/reducers';
 import { useDocumentTitle } from '../../../application/shared';
 
 import components from './styles';
@@ -13,7 +12,7 @@ import Footer from '../shared/HomeFooter';
 const PricingPage = () => {
   useDocumentTitle('Cennik - Miłość Wierność');
   const dispatch = useDispatch();
-  const featureListState = useSelector((state: AppState) => state.featureListState);
+  const featureListState = useSelector((state: any) => state.featureListState);
 
   useEffect(() => {
     dispatch({ type: 'FEATURE_LIST_GET_DATA_STARTED' });

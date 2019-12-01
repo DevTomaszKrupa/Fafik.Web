@@ -1,46 +1,45 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RouteComponentProps } from 'react-router-dom';
 import moment from 'moment';
 import { history } from 'application/helpers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import { useDocumentTitle, useFormInput } from 'application/shared';
-import { AppState } from 'application/store/reducers';
 
-import { BlogPost } from './reducers';
 import AdminTitleSection from '../shared/AdminTitleSection';
 import AdminButton from '../shared/AdminButton';
 import AdminLoadingSpinner from '../shared/AdminLoadingSpinner';
 import components from './styles';
 import { adminPaths } from '../consts';
 
-const AdminBlogComponent = (props: RouteComponentProps<{ clientName: string }>) => {
+const AdminBlogComponent = props => {
   useDocumentTitle('Blog');
   const dispatch = useDispatch();
-  const adminBlogState = useSelector((state: AppState) => state.adminBlogState);
+  const adminBlogState = useSelector(state => state.adminBlogState);
   const searchPhraseInput = useFormInput('');
   const { posts, isLoading, isAllChecked } = adminBlogState;
   useEffect(() => {
     dispatch({ type: 'ADMIN_BLOG_GET_POSTS_STARTED', payload: { clientName: props.match.params.clientName, limit: 5, offset: 0 } });
-  }, [props.match.params.clientName]);
+  }, [props.match.params.clientName, dispatch]);
 
   const [clock, setClock] = useState();
-  const doSearch = (evt: any) => {
+  const doSearch = evt => {
     const searchText = evt.target.value; // this is the search text
     if (clock) setClock(undefined);
-    setClock(setTimeout(() => {
-      console.log(searchText);
-    }, 1000));
+    setClock(
+      setTimeout(() => {
+        console.log(searchText);
+      }, 1000)
+    );
   };
 
-  const CheckAll = (event: any) => {
-    dispatch({ type: 'ADMIN_BLOG_CHANGE_ALL_POSTS_CHECK', payload: event.target.checked, });
+  const CheckAll = event => {
+    dispatch({ type: 'ADMIN_BLOG_CHANGE_ALL_POSTS_CHECK', payload: event.target.checked });
   };
 
-  const CheckSingle = (post: BlogPost) => {
-    dispatch({ type: 'ADMIN_BLOG_CHANGE_SINGLE_POST_CHECK', payload: post.postId, });
+  const CheckSingle = post => {
+    dispatch({ type: 'ADMIN_BLOG_CHANGE_SINGLE_POST_CHECK', payload: post.postId });
   };
 
   const OnNewPostClick = () => history.push(adminPaths.blogNewPost(props.match.params.clientName));

@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { AppState } from 'application/store/reducers';
 import { useDocumentTitle } from 'application/shared';
 
 import Footer from '../shared/HomeFooter';
@@ -16,13 +15,13 @@ const FAQPage = () => {
     dispatch({ type: 'FAQ_PAGE_GET_QUESTIONS_STARTED' });
   }, [dispatch]);
 
-  const faqPageState = useSelector((state: AppState) => state.faqPageState);
+  const faqPageState = useSelector((state: any) => state.faqPageState);
   const { questions } = faqPageState;
 
   return (
     <Fragment>
       <PageTitleBar title="FAQ - NAJCZĘŚCIEJ ZADAWANE PYTANIA" />
-      {questions.map(question => (
+      {questions.map((question: any) => (
         <FaqQuestions question={question}></FaqQuestions>
       ))}
       <Footer />

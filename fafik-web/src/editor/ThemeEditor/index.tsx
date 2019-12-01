@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 
 import RomanticSiteEditor from './themes/RomanticSiteEditor';
-import { AppState } from 'application/store/reducers';
 
 const AdminThemeEditorComponent = (props: RouteComponentProps<{ clientName: string }>) => {
   const dispatch = useDispatch();
@@ -12,7 +11,7 @@ const AdminThemeEditorComponent = (props: RouteComponentProps<{ clientName: stri
       type: 'THEME_EDITOR_GET_THEME_STARTED',
       payload: props.match.params.clientName,
     });
-  const adminThemeEditorState = useSelector((state: AppState) => state.adminThemeEditorState);
+  const adminThemeEditorState = useSelector((state: any) => state.adminThemeEditorState);
 
   useEffect(() => {
     getTheme();

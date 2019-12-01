@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
 
 import header from './layout';
-import { AppState } from 'application/store/reducers';
 
-const mapStateToProps = ({ leavesState }: AppState) => ({
+const mapStateToProps = ({ leavesState }: any) => ({
   leavesState: leavesState,
 });
 

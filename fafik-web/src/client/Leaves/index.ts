@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
 
 import { getLeavesTheme } from 'application/store/leaves/theme/actions';
-import { AppState } from 'application/store/reducers';
 import LeavesLayout from './layout';
 
-const mapStateToProps = ({ leavesState }: AppState) => ({
+const mapStateToProps = ({ leavesState }: any) => ({
   leavesState: leavesState,
 });
 

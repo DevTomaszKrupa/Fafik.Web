@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import components from './styles';
 import RomanticUsualHeader from 'domain/romantic/components/Header/Usual';
-import { AppState } from 'application/store/reducers';
 
 type Props = {
   clientName: string;
@@ -11,7 +10,7 @@ type Props = {
 
 const AdminRomanticSiteEditorComponent = (props: Props) => {
   const dispatch = useDispatch();
-  const adminRomanticThemeEditorState = useSelector((state: AppState) => state.adminRomanticThemeEditorState);
+  const adminRomanticThemeEditorState = useSelector((state: any) => state.adminRomanticThemeEditorState);
   const { header } = adminRomanticThemeEditorState;
 
   useEffect(() => {

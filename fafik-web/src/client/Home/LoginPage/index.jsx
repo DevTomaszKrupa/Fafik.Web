@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { RegisterRequest, LoginRequest } from 'domain/models';
-
 import components from './styles';
 import PageTitleBar from '../shared/PageTitleBar';
 import LoginForm from '../shared/LoginForm';
@@ -12,8 +10,8 @@ const LoginPageComponent = () => {
   const [loginClicked, setloginClicked] = useState(false);
   const [registerClicked, setregisterClicked] = useState(false);
   const dispatch = useDispatch();
-  const submitRegisterForm = (request: RegisterRequest) => dispatch({ type: 'REGISTER_STARTED', payload: request });
-  const submitLoginForm = (request: LoginRequest) => dispatch({ type: 'LOGIN_STARTED', payload: request });
+  const submitRegisterForm = request => dispatch({ type: 'REGISTER_STARTED', payload: request });
+  const submitLoginForm = request => dispatch({ type: 'LOGIN_STARTED', payload: request });
 
   const OnLoginClick = () => {
     setregisterClicked(false);
@@ -25,11 +23,11 @@ const LoginPageComponent = () => {
     setregisterClicked(!registerClicked);
   };
 
-  const submitLoginFormHandler = (values: LoginRequest) => {
+  const submitLoginFormHandler = values => {
     submitLoginForm(values);
   };
 
-  const submitRegisterFormHandler = (values: any) => {
+  const submitRegisterFormHandler = values => {
     const request = {
       ...values,
     };
@@ -89,7 +87,9 @@ const LoginPageComponent = () => {
 
       <RegisterFormBox isDisplayed={registerClicked}>
         <Form submitRegisterForm={submitRegisterFormHandler} />
-        <ActionButton type="submit">ZAREJESTRUJ</ActionButton>
+        <ActionButton type="submit" form="register-form">
+          ZAREJESTRUJ
+        </ActionButton>
       </RegisterFormBox>
 
       <Footer />

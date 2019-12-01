@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 
 import RsvpDialog from './layout';
-import { AppState } from 'application/store/reducers';
+import {} from 'application/store/reducers';
 import { closeRsvpDialog } from 'application/store/romantic/dialogs/RsvpDialog/actions';
 
-const mapStateToProps = ({ romanticRsvpDialogState }: AppState) => ({
+const mapStateToProps = ({ romanticRsvpDialogState }: any) => ({
   romanticRsvpDialogState: romanticRsvpDialogState,
 });
 

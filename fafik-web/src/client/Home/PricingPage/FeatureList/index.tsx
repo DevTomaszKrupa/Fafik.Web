@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { AppState } from 'application/store/reducers';
 import { IMAGE_STORAGE } from 'application/config';
 
 import components from './styles';
@@ -9,7 +8,7 @@ import listelements from './list';
 
 const FeaturesList = () => {
   const dispatch = useDispatch();
-  const featureListState = useSelector((state: AppState) => state.featureListState);
+  const featureListState = useSelector((state: any) => state.featureListState);
 
   const {
     FeatureList,
@@ -33,8 +32,8 @@ const FeaturesList = () => {
 
   return (
     <FeatureList>
-      {listelements.map(listelement => (
-        <FeatureBox>
+      {listelements.map((listelement, index) => (
+        <FeatureBox key={`feature-box-${index}`}>
           <CheckboxBox>
             <CheckboxImage src={`${IMAGE_STORAGE}app/Checkbox-checked.png`} />
           </CheckboxBox>

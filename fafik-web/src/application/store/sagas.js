@@ -16,7 +16,7 @@ import { leavesMainSiteRootSaga } from './leaves/main/sagas';
 import { adminGetClientsRootSaga } from './admin/side-panel/sagas';
 import { adminThemeEditorRootSaga } from './admin/theme-editor/sagas';
 import { adminRomanticThemeEditorSaga } from './admin/romantic-theme-editor/sagas';
-import { registerRootSaga } from './register/sagas';
+import { registerRootSaga } from 'client/Home/shared/RegisterForm/sagas';
 
 const sagas = [
   clientRootSaga,
@@ -41,6 +41,6 @@ const sagas = [
   adminBlogCreateNewPostRootSaga,
 ];
 
-export default function* rootSaga(): any {
+export default function* rootSaga() {
   yield all(sagas.map(saga => fork(saga)));
 }

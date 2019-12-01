@@ -31,7 +31,7 @@ export default {
     align-items: flex-end;
   `,
 
-  InputBox: styled.div`
+  LabelInputBox: styled.div`
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.06rem;
@@ -42,14 +42,19 @@ export default {
     justify-content: flex-end;
   `,
 
+  ErrorMessage: styled.span`
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.8rem;
+    color: red;
+  `,
+
   GeneralInputs: styled.div``,
 
   CheckboxBox: styled.div`
     display: flex;
     padding-top: 1.5rem;
   `,
-
-  Checkbox: styled.input``,
 
   CheckboxText: styled.div`
     letter-spacing: 0.05rem;

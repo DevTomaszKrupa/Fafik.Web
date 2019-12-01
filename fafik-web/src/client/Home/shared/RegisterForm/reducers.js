@@ -1,15 +1,8 @@
-import { Reducer } from 'redux';
-import { Action } from '../actions';
-
-export type RegisterState = {
-  readonly isLoading: boolean;
-};
-
-const initialState: RegisterState = {
+const initialState = {
   isLoading: true,
 };
 
-export const registerState: Reducer<RegisterState, Action> = (state = initialState, action: Action): RegisterState => {
+export const registerState = (state = initialState, action) => {
   switch (action.type) {
     case 'REGISTER_STARTED':
       return {

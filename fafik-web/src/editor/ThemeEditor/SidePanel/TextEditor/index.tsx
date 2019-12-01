@@ -1,9 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppState } from 'application/store/reducers';
 
 const AdminThemeEditorTextEditorComponent = () => {
-  const adminEditorSidePanelState = useSelector((state: AppState) => state.adminEditorSidePanelState);
+  const adminEditorSidePanelState = useSelector((state: any) => state.adminEditorSidePanelState);
   const dispatch = useDispatch();
   const updateTextValue = (value: string) =>
     dispatch({

@@ -1,28 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { RegisterRequest } from 'domain/models';
 import { useDocumentTitle } from 'application/shared';
-import { AppState } from 'application/store/reducers';
 
 import PageTitleBar from '../shared/PageTitleBar';
 import RegisterForm from '../shared/RegisterForm';
 import ThemeElement from './ThemeComponent';
 import components from './styles';
-import { SingleTheme } from './reducers';
 import Footer from '../shared/HomeFooter';
 
 const OfferPageComponent = () => {
   useDocumentTitle('Szablony - Miłość Wierność');
-  const [selectedTheme, setSelectedTheme] = useState({} as SingleTheme);
+  const [selectedTheme, setSelectedTheme] = useState({});
   const dispatch = useDispatch();
-  const submitRegisterForm = (request: RegisterRequest) => dispatch({ type: 'REGISTER_STARTED', payload: request });
+  const submitRegisterForm = request => dispatch({ type: 'REGISTER_STARTED', payload: request });
 
-  const onThemeClicked = (theme: SingleTheme) => {
-    setSelectedTheme(theme);
-  };
+  const onThemeClicked = theme => setSelectedTheme(theme);
 
-  const submitRegisterFormHandler = (values: any) => {
+  const submitRegisterFormHandler = values => {
     const request = {
       ...values,
       theme: selectedTheme,
@@ -34,7 +29,7 @@ const OfferPageComponent = () => {
     dispatch({ type: 'THEMES_SECTION_GET_THEME_STARTED' });
   }, [dispatch]);
 
-  const themesSectionState = useSelector((state: AppState) => state.themesSectionState);
+  const themesSectionState = useSelector(state => state.themesSectionState);
   const { themes } = themesSectionState;
 
   const { SelectedThemeSection, ThemesSection, Form, Buttons, BackButton, ActionButton } = components;
@@ -47,7 +42,7 @@ const OfferPageComponent = () => {
         <Form>
           <RegisterForm submitRegisterForm={submitRegisterFormHandler} />
           <Buttons>
-            <BackButton onClick={() => setSelectedTheme({} as SingleTheme)}>POWRÓT</BackButton>
+            <BackButton onClick={() => setSelectedTheme({})}>POWRÓT</BackButton>
             <ActionButton type="submit">ZAREJESTRUJ</ActionButton>
           </Buttons>
         </Form>

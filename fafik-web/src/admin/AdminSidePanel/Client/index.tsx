@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import components from './styles';
 import { history } from 'application/helpers';
 import { AdminClient } from 'domain/models';
-import { adminPaths } from '../../../consts';
+import { adminPaths } from '../../consts';
 import { useDispatch } from 'react-redux';
 import { faPalette, faPen, faMusic, faUserFriends, faChartBar, faImage, faQrcode, faStar } from '@fortawesome/free-solid-svg-icons';
 

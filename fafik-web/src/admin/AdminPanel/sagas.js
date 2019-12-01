@@ -1,9 +1,8 @@
 import { put, takeLatest, call } from 'redux-saga/effects';
 
-import { Action } from '../../actions';
-import { apiCaller } from './../../../services';
+import { apiCaller } from 'application/services';
 
-function* adminGetClients(action: Action): any {
+function* adminGetClient() {
   try {
     const clients = yield call(apiCaller.admin.getClients);
     yield put({ type: 'GET_ADMIN_CLIENTS_SUCCESS', payload: clients });
@@ -12,6 +11,6 @@ function* adminGetClients(action: Action): any {
   }
 }
 
-export function* adminGetClientsRootSaga(): any {
-  yield takeLatest('GET_ADMIN_CLIENTS_STARTED', adminGetClients);
+export function* adminGetAdminClientRootSaga() {
+  yield takeLatest('GET_ADMIN_CLIENTS_STARTED', adminGetClient);
 }

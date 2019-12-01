@@ -12,7 +12,7 @@ import HomeTopBar from 'client/TopBar';
 import HomePage from 'client/Home';
 import ClientPage from 'client/ClientPage';
 import LoginPage from 'client/Home/LoginPage';
-import AdminPage from 'admin/AdminPage';
+import AdminPanel from 'admin/AdminPanel';
 
 setupAxiosInterceptors();
 ReactDOM.render(
@@ -25,7 +25,7 @@ ReactDOM.render(
         <Switch>
           <Route exact path="/(|oferta|cennik|FAQ|kontakt)/" component={HomePage} />
           <Route exact path="/admin/login" component={LoginPage} />
-          <AuthenticatedRoute path="/admin" component={AdminPage} />
+          <AuthenticatedRoute path="/admin" component={AdminPanel} />
 
           <Route exact path="/:clientName" component={ClientPage} />
           <Route exact path="/:clientName/:site" component={ClientPage} />

@@ -1,18 +1,9 @@
-import { AdminClient } from 'domain/models/admin/admin-client';
-import { Reducer } from 'redux';
-import { Action } from '../../actions';
-
-export type AdminSidePanelState = {
-  readonly isLoading: boolean;
-  readonly clients: AdminClient[];
-};
-
-const initialState: AdminSidePanelState = {
+const initialState = {
   isLoading: true,
   clients: [],
 };
 
-export const adminSidePanelState: Reducer<AdminSidePanelState, Action> = (state = initialState, action: Action): AdminSidePanelState => {
+export const adminPanelState = (state = initialState, action) => {
   switch (action.type) {
     case 'GET_ADMIN_CLIENTS_STARTED':
       return {

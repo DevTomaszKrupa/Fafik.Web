@@ -14,19 +14,19 @@ import AdminStats from '../Stats';
 import AdminGallery from '../Gallery';
 import AdminBlogNewPost from '../BlogNewPost';
 import AdminQRcode from '../QRCodePage';
-import AdminTopBar from '../AdminPage/AdminTopBar';
-import BaseAdminSidePanel from './AdminSidePanel';
+import AdminTopBar from '../AdminTopBar';
+import BaseAdminSidePanel from '../AdminSidePanel';
 import ChooseTheme from '../ChooseTheme';
 import { adminPaths } from '../consts';
 
 const AdminPanelComponent = () => {
+  const { AdminMainPanel, AdminMain, AdminSidePanel } = components;
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch({ type: 'GET_ADMIN_CLIENTS_STARTED' });
   }, [dispatch]);
-
-  const { AdminMainPanel, AdminMain, AdminSidePanel } = components;
 
   return (
     <Fragment>

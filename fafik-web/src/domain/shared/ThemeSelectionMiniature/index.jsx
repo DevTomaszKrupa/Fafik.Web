@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import { IMAGE_STORAGE } from 'application/config';
-import { SingleTheme } from '../reducers';
 import components from './styles';
 
-type Props = {
-  theme: SingleTheme;
-  onPreviewClickFunction?: (themeFunctionName: SingleTheme) => void;
-  onSelectClickFunction?: (themeFunctionName: SingleTheme) => void;
-};
-
-const OfferPageComponent = (props: Props) => {
+const OfferPageComponent = props => {
   const [isMouseOn, setIsMouseOn] = useState(false);
 
   const onPreviewClickHandled = () => {
@@ -43,4 +37,16 @@ const OfferPageComponent = (props: Props) => {
     </ThemeElement>
   );
 };
+
+OfferPageComponent.propTypes = {
+  theme: PropTypes.object.isRequired,
+  onPreviewClickFunction: PropTypes.func,
+  onSelectClickFunction: PropTypes.func,
+};
+
+OfferPageComponent.defaultProps = {
+  onPreviewClickFunction: undefined,
+  onSelectClickFunction: undefined,
+};
+
 export default OfferPageComponent;

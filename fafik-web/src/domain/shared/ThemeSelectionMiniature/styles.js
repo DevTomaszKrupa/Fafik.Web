@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-interface ThemeImageProps {
-  isMouseOn: boolean;
-}
-
 export default {
   ThemeElement: styled.div`
     width: 27rem;
@@ -20,7 +16,7 @@ export default {
     height: 17rem;
     position: absolute;
 
-    ${(props: ThemeImageProps) => props.isMouseOn && `filter: blur(2px); opacity: 0.95;`}
+    ${props => props.isMouseOn && `filter: blur(2px); opacity: 0.95;`}
   `,
 
   ThemeTop: styled.div`

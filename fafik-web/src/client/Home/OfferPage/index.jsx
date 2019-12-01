@@ -5,7 +5,7 @@ import { useDocumentTitle } from 'application/shared';
 
 import PageTitleBar from '../shared/PageTitleBar';
 import RegisterForm from '../shared/RegisterForm';
-import ThemeElement from './ThemeComponent';
+import ThemeSelectionMiniature from 'domain/shared/ThemeSelectionMiniature';
 import components from './styles';
 import Footer from '../shared/HomeFooter';
 
@@ -38,7 +38,7 @@ const OfferPageComponent = () => {
     <div>
       <PageTitleBar title="WYBIERZCIE SWÓJ SZABLON" />
       <SelectedThemeSection isVisible={!!selectedTheme.themeName}>
-        <ThemeElement theme={selectedTheme} />
+        <ThemeSelectionMiniature theme={selectedTheme} />
         <Form>
           <RegisterForm submitRegisterForm={submitRegisterFormHandler} />
           <Buttons>
@@ -49,7 +49,7 @@ const OfferPageComponent = () => {
       </SelectedThemeSection>
       <ThemesSection>
         {themes.map(theme => (
-          <ThemeElement theme={theme} onPreviewClickFunction={onThemeClicked} onSelectClickFunction={onThemeClicked} />
+          <ThemeSelectionMiniature theme={theme} onPreviewClickFunction={onThemeClicked} onSelectClickFunction={onThemeClicked} />
         ))}
       </ThemesSection>
       <Footer />

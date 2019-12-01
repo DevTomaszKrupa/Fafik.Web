@@ -2,10 +2,12 @@ import React, { Fragment, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { useDocumentTitle } from 'application/shared';
-import { IMAGE_STORAGE } from 'application/config';
 
 import AdminTitleSection from '../shared/AdminTitleSection';
 import components from './styles';
+import ThemesOfferComponent from './ThemesOffer';
+import SelectedThemeComponent from './SelectedTheme';
+import ConfirmSelectionModal from './ConfirmSelectionModal';
 
 const AdminHomeComponent = () => {
   useDocumentTitle('Moje strony');
@@ -15,26 +17,10 @@ const AdminHomeComponent = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!client) dispatch({ type: '' });
+    if (!client) dispatch({ type: 'GET_THEMES_STARTED' });
   }, [dispatch, client]);
 
-  const {
-    WelcomeText,
-    AdminHome,
-    ChoiceBox,
-    ThemeOptionBox,
-    SideThemePanel,
-    TopDecoration,
-    MainBox,
-    ThemeNameBox,
-    ThemeFrame,
-    ThemeImage,
-    BottomDecoration,
-    Feature,
-    CheckboxImage,
-    FeatureTitle,
-    FeatureDescription,
-  } = components;
+  const { WelcomeText, AdminHome } = components;
 
   return (
     <Fragment>
@@ -46,37 +32,12 @@ const AdminHomeComponent = () => {
           (w zakładce "Ustawienia" w "Profil" w prawym górnym rogu) możecie zmienić ten wybór. <br />
           Aby przejść do etapu edytowania, należy opłacić abonament, wybierając okres ważności. <br />
         </WelcomeText>
+
         {isLoading && <span>loading</span>}
-        {!isLoading && client && (
-          <ChoiceBox>
-            <ThemeOptionBox>
-              <SideThemePanel>
-                <TopDecoration />
-                <MainBox>WASZ WYBÓR:</MainBox>
-                <ThemeNameBox>Liściasty</ThemeNameBox>
-              </SideThemePanel>
-              <ThemeFrame>
-                <ThemeImage />
-              </ThemeFrame>
-              <SideThemePanel>
-                <TopDecoration />
-                <MainBox>
-                  <Feature>
-                    <CheckboxImage src={IMAGE_STORAGE + 'app/Checkbox-checked.png'} />
-                    <FeatureTitle>Pakiet podstawowy</FeatureTitle>
-                    <FeatureDescription>
-                      Odliczanie, mapy, plan dnia, playlisty, <br />
-                      blog, przedstawienie, preferencje <br />
-                      prezentowe, kod QR, informacje <br />
-                      dodatkowe, samodzielna edycja
-                    </FeatureDescription>
-                  </Feature>
-                </MainBox>
-                <BottomDecoration />
-              </SideThemePanel>
-            </ThemeOptionBox>
-          </ChoiceBox>
-        )}
+        {!isLoading && client && <SelectedThemeComponent />}
+        {!isLoading && !client && <ThemesOfferComponent />}
+
+        <ConfirmSelectionModal />
       </AdminHome>
     </Fragment>
   );

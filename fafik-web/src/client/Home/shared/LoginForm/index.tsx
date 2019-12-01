@@ -1,64 +1,62 @@
-import React, { useEffect, useState } from 'react';
-import { InjectedFormProps, Field, reduxForm, getFormValues } from 'redux-form';
+import React, { useEffect } from 'react';
+import useForm from 'react-hook-form';
 import { useSelector } from 'react-redux';
 import components from './styles';
 
-import { LoginRequest } from 'domain/models';
 import { history } from 'application/helpers';
 
-import FormInput from '../FormInput';
+import FafikFormInput from '../FafikFormInput';
 
-type Props = {
-  submitLoginForm: (request: LoginRequest) => void;
-};
-
-const LoginFormComponent = (props: Props & InjectedFormProps<{}, Props>) => {
-  const {
-    LoginForm,
-    SectionTitle,
-    Subtitle,
-    MainForm,
-    LoginInputs,
-    InputBox,
-    GeneralInputs,
-    CheckboxBox,
-    Checkbox,
-    CheckboxText,
-  } = components;
+const LoginFormComponent = (props: any) => {
   const { submitLoginForm } = props;
   const loginState = useSelector((state: any) => state.loginState);
-  const values = useSelector((state: any) => getFormValues('login-form')(state));
   const { loginCallSuccessful, errorMessage } = loginState;
 
-  const [checkboxIsChecked, setcheckboxIsChecked] = useState(false);
+  const { register, setValue, errors, getValues, handleSubmit } = useForm();
 
   useEffect(() => {
     if (loginCallSuccessful) history.push('/admin');
   }, [loginCallSuccessful]);
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    submitLoginForm(values as LoginRequest);
+  const onSubmit = (data: any) => {
+    submitLoginForm(data);
   };
 
-  const onCheckboxTextClicked = () => setcheckboxIsChecked(!checkboxIsChecked);
+  const onCheckboxTextClicked = () => {
+    const values = getValues();
+    setValue('rememberPassword', !values.rememberPassword);
+  };
+
+  const { LoginForm, SectionTitle, Subtitle, MainForm, LoginInputs, GeneralInputs, CheckboxBox, CheckboxText } = components;
 
   return (
-    <LoginForm id="login-form-id" onSubmit={handleSubmit}>
+    <LoginForm id="login-form-id" onSubmit={handleSubmit(onSubmit)}>
       <SectionTitle>LOGOWANIE</SectionTitle>
       <Subtitle>Zaczynijcie organizację Waszego dnia już teraz i zalogujcie się na swoje konto!</Subtitle>
       <MainForm>
         <LoginInputs>
-          <InputBox>
-            E-MAIL: <FormInput name="email" type="email" />
-          </InputBox>
-          <InputBox>
-            HASŁO: <FormInput name="password" type="text" />
-          </InputBox>
+          <FafikFormInput
+            label="E-MAIL:"
+            type="text"
+            name="email"
+            required={true}
+            errors={errors}
+            register={register}
+            errorMessage="Login nie może być pusty"
+          />
+          <FafikFormInput
+            label="HASŁO:"
+            type="password"
+            name="password"
+            required={true}
+            errors={errors}
+            register={register}
+            errorMessage="Hasło nie może być puste"
+          />
         </LoginInputs>
         <GeneralInputs>
           <CheckboxBox>
-            <Field name="rememberPassword" component={Checkbox} type="checkbox" />
+            <input name="rememberPassword" type="checkbox" ref={register} />
             <CheckboxText onClick={onCheckboxTextClicked}>ZAPAMIĘTAJ NA TYM KOMPUTERZE</CheckboxText>
           </CheckboxBox>
         </GeneralInputs>
@@ -68,5 +66,4 @@ const LoginFormComponent = (props: Props & InjectedFormProps<{}, Props>) => {
   );
 };
 
-const component = reduxForm<{}, Props>({ form: 'login-form' })(LoginFormComponent);
-export default component;
+export default LoginFormComponent;

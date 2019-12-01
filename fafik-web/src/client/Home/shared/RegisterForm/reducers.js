@@ -1,5 +1,8 @@
+import { localStorageService } from 'application/services';
+
 const initialState = {
   isLoading: true,
+  loginCallSuccessful: false,
 };
 
 export const registerState = (state = initialState, action) => {
@@ -8,16 +11,21 @@ export const registerState = (state = initialState, action) => {
       return {
         ...state,
         isLoading: true,
+        loginCallSuccessful: false,
       };
     case 'REGISTER_SUCCESS':
+      const { token } = action.payload.data;
+      localStorageService.token = token;
       return {
         ...state,
         isLoading: false,
+        loginCallSuccessful: true,
       };
     case 'REGISTER_FAILURE':
       return {
         ...state,
         isLoading: false,
+        loginCallSuccessful: false,
       };
     default:
       return state;

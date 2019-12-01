@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { history } from 'application/helpers';
 
 import components from './styles';
 import PageTitleBar from '../shared/PageTitleBar';
@@ -12,6 +14,8 @@ const LoginPageComponent = () => {
   const dispatch = useDispatch();
   const submitRegisterForm = request => dispatch({ type: 'REGISTER_STARTED', payload: request });
   const submitLoginForm = request => dispatch({ type: 'LOGIN_STARTED', payload: request });
+  const registerState = useSelector(state => state.registerState);
+  const { loginCallSuccessful } = registerState;
 
   const OnLoginClick = () => {
     setregisterClicked(false);
@@ -23,16 +27,15 @@ const LoginPageComponent = () => {
     setregisterClicked(!registerClicked);
   };
 
+  useEffect(() => {
+    if (loginCallSuccessful) history.push('/admin');
+  }, [loginCallSuccessful]);
+
   const submitLoginFormHandler = values => {
     submitLoginForm(values);
   };
 
-  const submitRegisterFormHandler = values => {
-    const request = {
-      ...values,
-    };
-    submitRegisterForm(request);
-  };
+  const submitRegisterFormHandler = values => submitRegisterForm(values);
 
   const {
     LoginPage,

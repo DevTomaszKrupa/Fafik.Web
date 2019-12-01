@@ -1,12 +1,13 @@
 const initialState = {
   themes: [],
   isLoading: false,
-  confirmSelectionModalIsOpen: false,
+  confirmSelectionModalIsOpen: false, // TODO Split this to two reducers?
   confirmSelectionModalTheme: undefined,
+  confirmSelectionModalThemeLoading: false,
+  confirmSelectionModalThemeSuccessfulConfirmation: false,
 };
 
 export const adminHomeState = (state = initialState, action) => {
-  console.log(action);
   switch (action.type) {
     case 'GET_THEMES_STARTED':
       return {
@@ -35,6 +36,23 @@ export const adminHomeState = (state = initialState, action) => {
         ...state,
         confirmSelectionModalIsOpen: false,
         confirmSelectionModalTheme: undefined,
+      };
+    case 'INITIALIZE_THEME_STARTED':
+      return {
+        ...state,
+        confirmSelectionModalThemeLoading: true,
+      };
+    case 'INITIALIZE_THEME_SUCCESS':
+      return {
+        ...state,
+        confirmSelectionModalThemeLoading: false,
+        confirmSelectionModalThemeSuccessfulConfirmation: true,
+      };
+    case 'INITIALIZE_THEME_FAILURE': // TODO Error message?
+      return {
+        ...state,
+        confirmSelectionModalThemeLoading: false,
+        confirmSelectionModalThemeSuccessfulConfirmation: false,
       };
     default:
       return state;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Modal from 'react-modal';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
@@ -7,12 +7,23 @@ const ConfirmSelectionModal = props => {
   const adminHomeState = useSelector(state => state.adminHomeState);
   const dispatch = useDispatch();
   const closeModal = () => dispatch({ type: 'CLOSE_CONFIRM_SELECTION_MODAL' });
+  const onConfirmClick = () => dispatch({ type: 'INITIALIZE_THEME_STARTED' });
 
-  const { confirmSelectionModalIsOpen, confirmSelectionModalTheme } = adminHomeState;
+  const {
+    confirmSelectionModalIsOpen,
+    confirmSelectionModalTheme,
+    confirmSelectionModalThemeLoading,
+    confirmSelectionModalThemeSuccessfulConfirmation,
+  } = adminHomeState;
   const { className } = props;
 
   const contentClassName = `${className}__content`;
   const overlayClassName = `${className}__overlay`;
+
+  useEffect(() => {
+    if (confirmSelectionModalThemeSuccessfulConfirmation) dispatch({ type: 'CLOSE_CONFIRM_SELECTION_MODAL' });
+  }, [confirmSelectionModalThemeSuccessfulConfirmation, dispatch]);
+
   return (
     <Modal
       portalClassName={className}
@@ -25,7 +36,8 @@ const ConfirmSelectionModal = props => {
       <div>Wybrałeś motyw: {confirmSelectionModalTheme && confirmSelectionModalTheme.themeName}</div>
 
       <button>Zmień wybór</button>
-      <button>Potwierdź</button>
+      <button onClick={onConfirmClick}>Potwierdź</button>
+      {confirmSelectionModalThemeLoading && <span>loading...</span>}
     </Modal>
   );
 };

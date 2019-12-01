@@ -13,7 +13,7 @@ function* getThemes() {
 
 function* initializeTheme() {
   try {
-    const response = yield call(apiCaller.admin.initializeTheme);
+    const response = yield call(apiCaller.theme.initializeTheme);
     yield put({ type: 'INITIALIZE_THEME_SUCCESS', payload: response.data });
   } catch (error) {
     yield put({ type: 'INITIALIZE_THEME_FAILURE' });

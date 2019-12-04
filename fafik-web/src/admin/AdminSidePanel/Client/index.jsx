@@ -22,7 +22,7 @@ const AdminSidePanelClientComponent = props => {
   return (
     <Fragment>
       <SidePanelClientBox>
-        <ClientBoxNames>{client.clientNames}</ClientBoxNames>
+        <ClientBoxNames>{client.coupleNames}</ClientBoxNames>
         <WeddingDate>
           Wasz wielki dzień już
           <br />

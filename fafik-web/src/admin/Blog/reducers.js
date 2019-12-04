@@ -1,29 +1,11 @@
-import { Reducer } from 'redux';
-import { Action } from 'application/store/actions';
-
-export type BlogPost = {
-  postId: number;
-  title: string;
-  date: Date;
-  isPublished: boolean;
-  isChecked: boolean;
-};
-
-export type AdminBlogState = {
-  posts: BlogPost[];
-  isLoading: boolean;
-  isAllChecked: boolean;
-  total: number;
-};
-
-const initialState: AdminBlogState = {
+const initialState = {
   posts: [],
   isLoading: false,
   isAllChecked: false,
   total: 0,
 };
 
-export const adminBlogState: Reducer<AdminBlogState, Action> = (state = initialState, action: Action): AdminBlogState => {
+export const adminBlogState = (state = initialState, action) => {
   switch (action.type) {
     case 'ADMIN_BLOG_CHANGE_ALL_POSTS_CHECK':
       const newPosts = state.posts.map(post => ({

@@ -1,10 +1,14 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import { IMAGE_STORAGE } from 'application/config';
 
 import components from './styles';
 
 const SelectedThemeComponent = () => {
+  const adminPanelState = useSelector(state => state.adminPanelState);
+  const { client } = adminPanelState;
+
   const {
     ChoiceBox,
     ThemeOptionBox,
@@ -27,7 +31,7 @@ const SelectedThemeComponent = () => {
         <SideThemePanel>
           <TopDecoration />
           <MainBox>WASZ WYBÓR:</MainBox>
-          <ThemeNameBox>Liściasty</ThemeNameBox>
+          <ThemeNameBox>{client.themeName}</ThemeNameBox>
         </SideThemePanel>
         <ThemeFrame>
           <ThemeImage />

@@ -1,20 +1,16 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-interface SidePanelItemProps {
-  active?: boolean;
-}
-
 export default {
   SidePanelItem: styled.div`
-    ${(props: SidePanelItemProps) =>
+    ${props =>
       props.active &&
       `
       background-color: #F2EEE8;
       border-radius: 0 3rem 3rem 0;
       font-weight: 600;
   `}
-    ${(props: SidePanelItemProps) =>
+    ${props =>
       !props.active &&
       `
       background-color: #FDFBFD;
@@ -52,7 +48,7 @@ export default {
     background-position-y: 53%;
     background-position: 50% 61%;
     background-image: url('https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
-  `,
+  `, // TODO
 
   ClientBoxNames: styled.div`
     letter-spacing: 0.04rem;

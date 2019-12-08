@@ -6,6 +6,7 @@ import admin from './admin';
 import adminBlog from './adminBlog';
 import theme from './theme';
 import user from './user';
+import editor from './editor';
 
 export const apiCaller = {
   admin,
@@ -15,4 +16,5 @@ export const apiCaller = {
   romantic,
   theme,
   user,
+  editor,
 };

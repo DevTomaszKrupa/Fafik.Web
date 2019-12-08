@@ -1,20 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import components from './header.styles';
-import { SiteItem } from 'application/store/romantic/theme/types';
 import { AdminEditableComponent } from 'application/shared/components';
 
-type Props = {
-  headerNames: string;
-  headerQuote: string;
-  weddingDate: string;
-  leftMenuItems: SiteItem[];
-  rightMenuItems: SiteItem[];
-  onItemClick?: (path: string) => void;
-  adminMode?: boolean;
-};
+import components from './styles';
 
-const HeaderLayout = (props: Props) => {
+const HeaderLayout = props => {
   const {
     Menu,
     MenuFrame,
@@ -30,7 +21,7 @@ const HeaderLayout = (props: Props) => {
 
   const { headerNames, leftMenuItems, headerQuote, weddingDate, rightMenuItems, onItemClick, adminMode } = props;
 
-  const handleOnItemClick = (path: string) => {
+  const handleOnItemClick = path => {
     if (onItemClick) onItemClick(path);
   };
 
@@ -40,8 +31,7 @@ const HeaderLayout = (props: Props) => {
         <SideMenu>
           {leftMenuItems.map(x => (
             <Item key={`side-menu-left-item-${x.path}`} onClick={() => handleOnItemClick(x.path)} textAlign="right">
-              {' '}
-              {x.name}{' '}
+              {x.name}
             </Item>
           ))}
         </SideMenu>
@@ -68,14 +58,28 @@ const HeaderLayout = (props: Props) => {
         <SideMenu>
           {rightMenuItems.map(x => (
             <Item key={`side-menu-right-item-${x.path}`} onClick={() => handleOnItemClick(x.path)} textAlign="left">
-              {' '}
-              {x.name}{' '}
+              {x.name}
             </Item>
           ))}
         </SideMenu>
       </MenuFrame>
     </Menu>
   );
+};
+
+HeaderLayout.propTypes = {
+  headerNames: PropTypes.string.isRequired,
+  headerQuote: PropTypes.string.isRequired,
+  weddingDate: PropTypes.string.isRequired,
+  leftMenuItems: PropTypes.array.isRequired,
+  rightMenuItems: PropTypes.array.isRequired,
+  onItemClick: PropTypes.func,
+  adminMode: PropTypes.bool,
+};
+
+HeaderLayout.defaultProps = {
+  onItemClick: undefined,
+  adminMode: false,
 };
 
 export default HeaderLayout;

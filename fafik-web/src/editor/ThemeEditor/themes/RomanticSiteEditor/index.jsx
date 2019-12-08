@@ -1,30 +1,18 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 import components from './styles';
 import RomanticUsualHeader from 'domain/romantic/components/Header/Usual';
 
-type Props = {
-  clientName: string;
-};
-
-const AdminRomanticSiteEditorComponent = (props: Props) => {
-  const dispatch = useDispatch();
-  const adminRomanticThemeEditorState = useSelector((state: any) => state.adminRomanticThemeEditorState);
-  const { header } = adminRomanticThemeEditorState;
-
-  useEffect(() => {
-    dispatch({
-      type: 'ROMANTIC_THEME_EDITOR_GET_THEME_STARTED',
-      payload: { clientName: props.clientName, sitePath: 'home' },
-    });
-  }, [props.clientName]);
+const AdminRomanticSiteEditorComponent = () => {
+  const romanticThemeEditorState = useSelector(state => state.romanticThemeEditorState);
+  const { header } = romanticThemeEditorState;
 
   const { MainContainer, Editor } = components;
   return (
     <MainContainer>
       <Editor>
-        {!adminRomanticThemeEditorState.isLoading && (
+        {!romanticThemeEditorState.isLoading && (
           <RomanticUsualHeader
             headerNames={header.headerNames}
             headerQuote={header.headerQuote}

@@ -5,7 +5,7 @@ import AdminSidePanelClient from './Client';
 import { history } from 'application/helpers';
 
 const AdminSidePanelComponent = () => {
-  const adminPanelState = useSelector((state: any) => state.adminPanelState);
+  const adminPanelState = useSelector(state => state.adminPanelState);
   const { isLoading, client } = adminPanelState;
 
   return (

@@ -1,13 +1,5 @@
 import styled from 'styled-components';
 
-interface ItemProps {
-  textAlign: string;
-}
-
-interface HeaderProps {
-  headerImage: string;
-}
-
 export default {
   Menu: styled.div`
     flex-grow: 1;
@@ -42,7 +34,7 @@ export default {
   `,
 
   Item: styled.div`
-    text-align: ${(props: ItemProps) => props.textAlign};
+    text-align: ${props => props.textAlign};
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;

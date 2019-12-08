@@ -4,6 +4,7 @@ import { all, fork } from 'redux-saga/effects';
 import { adminBlogRootSaga } from 'domain/sagas/adminBlogSaga';
 import { themeRootSaga } from 'domain/sagas/themeSaga';
 import { adminRootSaga } from 'domain/sagas/adminSaga';
+import { editorRootSaga } from 'domain/sagas/editorSaga';
 
 // client
 import { faqPageGetQuestionsRootSaga } from 'client/Home/FAQPage/sagas';
@@ -17,7 +18,6 @@ import { romanticRootSaga } from './romantic/theme/sagas';
 import { leavesMainSiteRootSaga } from './leaves/main/sagas';
 
 import { adminThemeEditorRootSaga } from './admin/theme-editor/sagas';
-import { adminRomanticThemeEditorSaga } from './admin/romantic-theme-editor/sagas';
 
 const sagas = [
   clientRootSaga,
@@ -30,6 +30,7 @@ const sagas = [
   adminBlogRootSaga,
   themeRootSaga,
   adminRootSaga,
+  editorRootSaga,
 
   // leaves
   leavesRootSaga,
@@ -40,7 +41,6 @@ const sagas = [
 
   // admin
   adminThemeEditorRootSaga,
-  adminRomanticThemeEditorSaga,
 ];
 
 export default function* rootSaga() {

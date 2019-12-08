@@ -1,8 +1,13 @@
 import { combineReducers } from 'redux';
 
+// admin
 import { adminBlogState } from 'admin/Blog/reducers';
 import { adminNewBlogPostState } from 'admin/BlogNewPost/reducers';
-import { adminEditorSidePanelState } from 'editor/ThemeEditor/reducers';
+
+// editor
+import { themeEditorState } from 'editor/ThemeEditor/reducers';
+import { romanticThemeEditorState } from 'editor/ThemeEditor/themes/RomanticSiteEditor/reducers';
+import { editorSidePanelState } from 'editor/ThemeEditor/SidePanel/reducers';
 
 import { faqPageState } from 'client/Home/FAQPage/reducers';
 import { featureListState } from 'client/Home/PricingPage/FeatureList/reducers';
@@ -21,8 +26,6 @@ import { romanticRsvpDialogState } from './romantic/dialogs/RsvpDialog/reducers'
 import { leavesMainSiteState } from './leaves/main/reducers';
 import { adminThemeEditorState } from './admin/theme-editor/reducers';
 
-import { adminRomanticThemeEditorState } from './admin/romantic-theme-editor/reducers';
-
 export default combineReducers({
   registerState,
   clientState,
@@ -36,7 +39,6 @@ export default combineReducers({
 
   // admin
   loginState,
-  adminEditorSidePanelState,
   adminPanelState,
   adminThemeEditorState,
   adminBlogState,
@@ -44,6 +46,8 @@ export default combineReducers({
   adminHomeState,
   confirmSelectionModalState,
 
-  // admin romantic
-  adminRomanticThemeEditorState,
+  // editor
+  themeEditorState,
+  romanticThemeEditorState,
+  editorSidePanelState,
 });

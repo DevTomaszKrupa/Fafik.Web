@@ -4,14 +4,14 @@ import { useSelector } from 'react-redux';
 import { history } from 'application/helpers';
 import TextEditor from './TextEditor';
 
-const AdminThemeEditorSidePanelComponent = () => {
+const AdminThemeEditorSidePanelComponent = props => {
   const leaveEditor = () => history.push('/admin');
-  const adminEditorSidePanelState = useSelector((state: any) => state.adminEditorSidePanelState);
+  const editorSidePanelState = useSelector(state => state.editorSidePanelState);
 
   return (
     <div>
       PANEL EDYCJI <button onClick={leaveEditor}> Powrót </button>
-      {adminEditorSidePanelState.editor === 'text' && <TextEditor />}
+      {editorSidePanelState.editor === 'text' && <TextEditor clientName={props.match.params.clientName} />}
     </div>
   );
 };

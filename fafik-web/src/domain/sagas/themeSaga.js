@@ -11,8 +11,16 @@ function* getThemes() {
   }
 }
 
+function* getTheme(action) {
+  try {
+    const response = yield call(apiCaller.theme.getTheme, action.payload);
+    yield put({ type: 'API_THEME_GET_THEME_SUCCESS', payload: response.data });
+  } catch (error) {
+    yield put({ type: 'API_THEME_GET_THEME_FAILURE' });
+  }
+}
+
 function* initializeTheme(action) {
-  console.log(action);
   try {
     const response = yield call(apiCaller.theme.initializeTheme, action.payload);
     yield put({ type: 'INITIALIZE_THEME_SUCCESS', payload: response.data });
@@ -24,4 +32,5 @@ function* initializeTheme(action) {
 export function* themeRootSaga() {
   yield takeLatest('GET_THEMES_STARTED', getThemes);
   yield takeLatest('INITIALIZE_THEME_STARTED', initializeTheme);
+  yield takeLatest('API_THEME_GET_THEME_STARTED', getTheme);
 }

@@ -31,7 +31,7 @@ const StickyHeaderLayout = (props: Props) => {
     <StickyMenu>
       <StickyMenuTopLine>
         <StickyMenuIconBox>
-          <StickyMenuIcon
+          <StickyMenuIcon // TODO
             src={'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png'}
           ></StickyMenuIcon>
         </StickyMenuIconBox>

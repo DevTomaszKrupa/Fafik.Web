@@ -2,8 +2,8 @@ import Axios from 'axios';
 
 import { API_BASE_URL } from 'application/config';
 
-const getClient = () => Axios.get(`${API_BASE_URL}/admin/client`);
+const getSite = () => Axios.get(`${API_BASE_URL}/admin/site`);
 
 export default {
-  getClient,
+  getSite,
 };

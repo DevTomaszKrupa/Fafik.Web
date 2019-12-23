@@ -25,7 +25,7 @@ const AdminPanelComponent = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch({ type: 'GET_ADMIN_CLIENTS_STARTED' });
+    dispatch({ type: 'API_ADMIN_GET_SITE_STARTED' });
   }, [dispatch]);
 
   return (

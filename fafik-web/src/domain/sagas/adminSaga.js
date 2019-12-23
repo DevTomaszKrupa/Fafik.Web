@@ -2,15 +2,15 @@ import { put, takeLatest, call } from 'redux-saga/effects';
 
 import { apiCaller } from 'application/services';
 
-function* getClient() {
+function* getSite() {
   try {
-    const clients = yield call(apiCaller.admin.getClient);
-    yield put({ type: 'GET_ADMIN_CLIENTS_SUCCESS', payload: clients });
+    const site = yield call(apiCaller.admin.getSite);
+    yield put({ type: 'API_ADMIN_GET_SITE_SUCCESS', payload: site });
   } catch (error) {
-    yield put({ type: 'GET_ADMIN_CLIENTS_FAILURE' });
+    yield put({ type: 'API_ADMIN_GET_SITE_FAILURE' });
   }
 }
 
 export function* adminRootSaga() {
-  yield takeLatest('GET_ADMIN_CLIENTS_STARTED', getClient);
+  yield takeLatest('API_ADMIN_GET_SITE_STARTED', getSite);
 }

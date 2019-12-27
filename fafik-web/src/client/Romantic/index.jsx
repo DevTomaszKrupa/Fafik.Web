@@ -1,8 +1,6 @@
 import React, { Fragment, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import components from './styles';
-
 import Header from './Header';
 import AboutUs from './AboutUs';
 import Quote from './Quote';
@@ -14,11 +12,10 @@ import GiftPreferences from './GiftPreferences';
 import Music from './Music';
 import AdditionalInfo from './AdditionalInfo';
 import RsvpDialog from './dialogs/RsvpDialog';
+import DoubleLineTheme from './DoubleLine';
 
 const RomanticLayout = () => {
   const dispatch = useDispatch();
-
-  const { DoubleLineTheme } = components;
 
   useEffect(() => {
     dispatch({ type: 'GET_ROMANTIC_THEME_STARTED', payload: 'gaja-i-slawomir' });

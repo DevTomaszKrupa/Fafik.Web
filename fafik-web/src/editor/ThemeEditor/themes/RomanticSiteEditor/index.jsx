@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import components from './styles';
 import RomanticUsualHeader from 'domain/romantic/components/Header/Usual';
+import AboutUs from 'domain/romantic/components/AboutUs';
 
 const AdminRomanticSiteEditorComponent = () => {
   const romanticThemeEditorState = useSelector(state => state.romanticThemeEditorState);
@@ -23,6 +24,35 @@ const AdminRomanticSiteEditorComponent = () => {
             onItemClick={undefined}
           />
         )}
+        <AboutUs />
+        {/* 
+        <DoubleLineTheme />
+
+        <AboutUs />
+        <DoubleLineTheme />
+
+        <Quote />
+        <DoubleLineTheme />
+
+        <Gallery />
+        <Blog />
+        <DoubleLineTheme />
+
+        <Map />
+        <DoubleLineTheme />
+
+        <EventPlan />
+        <DoubleLineTheme />
+
+        <GiftPreferences />
+        <DoubleLineTheme />
+
+        <Music />
+        <DoubleLineTheme />
+
+        <AdditionalInfo />
+
+        <RsvpDialog /> */}
       </Editor>
     </MainContainer>
   );

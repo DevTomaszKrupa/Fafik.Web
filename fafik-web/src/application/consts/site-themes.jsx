@@ -1,10 +1,11 @@
 import React from 'react';
-import Leaves from 'client/Leaves';
+
+import LeavesLayout from 'client/Leaves';
 import RomanticLayout from 'client/Romantic';
 
-const SiteThemes: { [key: string]: JSX.Element } = {
+const SiteThemes = {
   1: <RomanticLayout />,
-  2: <Leaves />,
+  2: <LeavesLayout />,
 };
 
 export { SiteThemes };

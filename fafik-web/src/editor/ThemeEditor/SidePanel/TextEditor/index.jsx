@@ -6,16 +6,16 @@ const AdminThemeEditorTextEditorComponent = props => {
   const dispatch = useDispatch();
   const { siteName } = props;
 
-  const updateTextValue = value =>
+  const updateTextValue = textValue =>
     dispatch({
       type: 'EDITOR_SITE_PANEL_UPDATE_TEXT_VALUE',
-      payload: { itemId: editorSidePanelState.itemId, value: editorSidePanelState.textValue },
+      payload: { itemId: editorSidePanelState.itemId, textValue: textValue },
     });
 
   const saveTextValue = () =>
     dispatch({
       type: 'API_EDITOR_SAVE_TEXT_VALUE_STARTED',
-      payload: { siteName: siteName, itemId: editorSidePanelState.itemId, value: editorSidePanelState.textValue },
+      payload: { siteName: siteName, itemId: editorSidePanelState.itemId, textValue: editorSidePanelState.textValue },
     });
 
   return (

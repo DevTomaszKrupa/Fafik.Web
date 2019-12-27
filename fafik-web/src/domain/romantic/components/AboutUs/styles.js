@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 import { IMAGE_STORAGE } from 'application/config';
 
-interface AboutUsPhotoProps {
-  aboutUsImg: string;
-}
-
 export default {
   AboutUsBox: styled.div`
     padding: 4rem 0 3rem 0;
@@ -20,7 +16,7 @@ export default {
   `,
 
   AboutUsPhoto: styled.div`
-    background-image: ${(props: AboutUsPhotoProps) => `url("${IMAGE_STORAGE}${props.aboutUsImg}")`};
+    background-image: ${props => `url("${IMAGE_STORAGE}${props.aboutUsImg}")`};
     width: 17rem;
     height: 25rem;
     background-size: 107%;

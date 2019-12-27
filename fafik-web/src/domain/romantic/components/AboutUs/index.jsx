@@ -1,9 +1,8 @@
 import React from 'react';
 
 import components from './styles';
-import { RomanticAboutUsProps } from '../../models';
 
-const AboutUsLayout = (props: RomanticAboutUsProps) => {
+const AboutUsLayout = props => {
   const { AboutUsBox, AboutUsPhotoBox, AboutUsPhotoFrame, AboutUsPhoto, AboutBoxText, TextWelcome, AboutUs, ToRSVPButton } = components;
   const { aboutUsPhoto, textWelcome, aboutUs } = props;
 

@@ -53,7 +53,6 @@ export const romanticThemeEditorState = (state = initialState, action) => {
         },
       };
     case 'EDITOR_SITE_PANEL_UPDATE_TEXT_VALUE':
-      console.log(action);
       const { itemId, textValue } = action.payload;
       const newState = { ...state };
       set(newState, itemId, textValue);

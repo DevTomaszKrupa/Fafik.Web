@@ -11,7 +11,7 @@ const AdminThemeEditorSidePanelComponent = props => {
   return (
     <div>
       PANEL EDYCJI <button onClick={leaveEditor}> Powrót </button>
-      {editorSidePanelState.editor === 'text' && <TextEditor clientName={props.match.params.clientName} />}
+      {editorSidePanelState.editor === 'text' && <TextEditor siteName={props.match.params.siteName} />}
     </div>
   );
 };

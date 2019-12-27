@@ -7,6 +7,7 @@ import adminBlog from './adminBlog';
 import theme from './theme';
 import user from './user';
 import editor from './editor';
+import site from './site';
 
 export const apiCaller = {
   admin,
@@ -17,4 +18,5 @@ export const apiCaller = {
   theme,
   user,
   editor,
+  site,
 };

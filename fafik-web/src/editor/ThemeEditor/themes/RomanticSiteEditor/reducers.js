@@ -37,8 +37,8 @@ export const romanticThemeEditorState = (state = initialState, action) => {
     //     textValue: textValue,
     //   };
     // }
-    case 'API_THEME_GET_THEME_SUCCESS':
-      const { aboutUs, additionalInfo, blog, gallery, header, plan, quoteSection } = action.payload.themeData;
+    case 'API_SITE_GET_SITE_SUCCESS':
+      const { aboutUs, additionalInfo, blog, gallery, header, plan, quoteSection } = action.payload.siteData;
       const { headerNames, headerQuote, mainImage, weddingDate, sites } = header;
       const { leftItems, rightItems } = resolveMenuItem(sites);
       return {
@@ -52,11 +52,12 @@ export const romanticThemeEditorState = (state = initialState, action) => {
           rightMenuItems: rightItems,
         },
       };
-    // case 'EDITOR_SITE_PANEL_UPDATE_TEXT_VALUE':
-    //   const { itemId, textValue } = action.payload;
-    //   const newState = { ...state };
-    //   set(newState, itemId, textValue);
-    //   return newState;
+    case 'EDITOR_SITE_PANEL_UPDATE_TEXT_VALUE':
+      console.log(action);
+      const { itemId, textValue } = action.payload;
+      const newState = { ...state };
+      set(newState, itemId, textValue);
+      return newState;
     default:
       return state;
   }

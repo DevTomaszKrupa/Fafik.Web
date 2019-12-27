@@ -7,7 +7,7 @@ import components from './styles';
 
 const SelectedThemeComponent = () => {
   const adminPanelState = useSelector(state => state.adminPanelState);
-  const { client } = adminPanelState;
+  const { site } = adminPanelState;
 
   const {
     ChoiceBox,
@@ -31,7 +31,7 @@ const SelectedThemeComponent = () => {
         <SideThemePanel>
           <TopDecoration />
           <MainBox>WASZ WYBÓR:</MainBox>
-          <ThemeNameBox>{client.themeName}</ThemeNameBox>
+          <ThemeNameBox>{site.siteName}</ThemeNameBox>
         </SideThemePanel>
         <ThemeFrame>
           <ThemeImage />

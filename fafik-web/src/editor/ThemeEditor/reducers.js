@@ -37,18 +37,18 @@ export const themeEditorState = (state = initialState, action) => {
     //     textValue: textValue,
     //   };
     // }
-    case 'API_THEME_GET_THEME_STARTED':
+    case 'API_SITE_GET_SITE_STARTED':
       return {
         ...state,
         isLoading: true,
       };
-    case 'API_THEME_GET_THEME_SUCCESS':
+    case 'API_SITE_GET_SITE_SUCCESS':
       const { themeCode } = action.payload;
       return {
         ...state,
         themeCode: themeCode,
       };
-    case 'API_THEME_GET_THEME_FAILURE':
+    case 'API_SITE_GET_SITE_FAILURE':
       return {
         ...state,
         isLoading: false,

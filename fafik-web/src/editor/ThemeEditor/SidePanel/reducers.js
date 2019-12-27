@@ -16,9 +16,10 @@ export const editorSidePanelState = (state = initialState, action) => {
       };
     }
     case 'EDITOR_SITE_PANEL_UPDATE_TEXT_VALUE':
+      const { textValue } = action.payload;
       return {
         ...state,
-        textValue: action.payload,
+        textValue: textValue,
       };
     default:
       return state;

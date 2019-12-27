@@ -5,6 +5,7 @@ import { adminBlogRootSaga } from 'domain/sagas/adminBlogSaga';
 import { themeRootSaga } from 'domain/sagas/themeSaga';
 import { adminRootSaga } from 'domain/sagas/adminSaga';
 import { editorRootSaga } from 'domain/sagas/editorSaga';
+import { siteRootSaga } from 'domain/sagas/siteSaga';
 
 // client
 import { faqPageGetQuestionsRootSaga } from 'client/Home/FAQPage/sagas';
@@ -31,6 +32,7 @@ const sagas = [
   themeRootSaga,
   adminRootSaga,
   editorRootSaga,
+  siteRootSaga,
 
   // leaves
   leavesRootSaga,

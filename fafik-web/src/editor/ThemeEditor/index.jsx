@@ -8,11 +8,11 @@ const AdminThemeEditorComponent = props => {
   const themeEditorState = useSelector(state => state.themeEditorState);
 
   useEffect(() => {
-    dispatch({ type: 'API_THEME_GET_THEME_STARTED', payload: props.match.params.clientName });
-  }, [dispatch, props.match.params.clientName]);
+    dispatch({ type: 'API_SITE_GET_SITE_STARTED', payload: props.match.params.siteName });
+  }, [dispatch, props.match.params.siteName]);
 
   const resolveTheme = () => {
-    if (themeEditorState.themeCode) return ThemeEditors[themeEditorState.themeCode](props.match.params.clientName);
+    if (themeEditorState.themeCode) return ThemeEditors[themeEditorState.themeCode](props.match.params.siteName);
   };
 
   return <Fragment>{resolveTheme()}</Fragment>;
@@ -21,5 +21,5 @@ const AdminThemeEditorComponent = props => {
 export default AdminThemeEditorComponent;
 
 const ThemeEditors = {
-  romantic: clientName => <RomanticSiteEditor clientName={clientName} />,
+  romantic: siteName => <RomanticSiteEditor siteName={siteName} />,
 };

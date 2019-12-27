@@ -13,12 +13,12 @@ const AdminHomeComponent = () => {
   useDocumentTitle('Moje strony');
 
   const adminPanelState = useSelector(state => state.adminPanelState);
-  const { isLoading, client } = adminPanelState;
+  const { isLoading, site } = adminPanelState;
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!client) dispatch({ type: 'GET_THEMES_STARTED' });
-  }, [dispatch, client]);
+    if (!site) dispatch({ type: 'GET_THEMES_STARTED' });
+  }, [dispatch, site]);
 
   const onAfterClose = () => dispatch({ type: 'API_ADMIN_GET_SITE_STARTED' });
 
@@ -36,8 +36,8 @@ const AdminHomeComponent = () => {
         </WelcomeText>
 
         {isLoading && <div>loading</div>}
-        {!isLoading && client && <SelectedThemeComponent />}
-        {!isLoading && !client && <ThemesOfferComponent />}
+        {!isLoading && site && <SelectedThemeComponent />}
+        {!isLoading && !site && <ThemesOfferComponent />}
 
         <ConfirmSelectionModal onAfterClose={onAfterClose} />
       </AdminHome>

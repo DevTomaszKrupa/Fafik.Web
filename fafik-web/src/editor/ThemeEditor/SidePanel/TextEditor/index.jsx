@@ -4,15 +4,18 @@ import { useDispatch, useSelector } from 'react-redux';
 const AdminThemeEditorTextEditorComponent = props => {
   const editorSidePanelState = useSelector(state => state.editorSidePanelState);
   const dispatch = useDispatch();
-  const { clientName } = props;
-  console.log(editorSidePanelState);
+  const { siteName } = props;
 
-  const updateTextValue = value => dispatch({ type: 'EDITOR_SITE_PANEL_UPDATE_TEXT_VALUE', payload: value });
+  const updateTextValue = value =>
+    dispatch({
+      type: 'EDITOR_SITE_PANEL_UPDATE_TEXT_VALUE',
+      payload: { itemId: editorSidePanelState.itemId, value: editorSidePanelState.textValue },
+    });
 
   const saveTextValue = () =>
     dispatch({
       type: 'API_EDITOR_SAVE_TEXT_VALUE_STARTED',
-      payload: { clientName: clientName, itemId: editorSidePanelState.itemId, value: editorSidePanelState.textValue },
+      payload: { siteName: siteName, itemId: editorSidePanelState.itemId, value: editorSidePanelState.textValue },
     });
 
   return (

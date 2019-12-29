@@ -1,0 +1,60 @@
+const initialState = {
+  clientName: '',
+  isLoading: false,
+  headerNames: '',
+  headerImageLeft: '',
+  headerImageRight: '',
+  leftMenuItems: [],
+  rightMenuItems: [],
+  mainImage: '',
+  weddingDate: undefined,
+};
+
+const resolveMenuItem = sites => {
+  let leftItems = [];
+  let rightItems = [];
+  if (sites.length % 2 === 0) {
+    leftItems = sites.slice(0, sites.length / 2);
+    rightItems = sites.slice(sites.length / 2, sites.length);
+  } else {
+    leftItems = sites.slice(0, Math.floor(sites.length / 2));
+    rightItems = sites.slice(Math.floor(sites.length / 2), Math.floor(sites.length / 2) * 2);
+  }
+  return { leftItems, rightItems };
+};
+
+export const leavesState = (state = initialState, action) => {
+  switch (action.type) {
+    case 'GET_CLIENT_SUCCESS':
+      return {
+        ...state,
+        clientName: action.payload.data.clientName,
+      };
+    case 'GET_LEAVES_THEME_STARTED':
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case 'GET_LEAVES_THEME_SUCCESS':
+      const { headerNames, headerImageLeft, headerImageRight, sites, mainImage, weddingDate } = action.payload.data;
+      const { leftItems, rightItems } = resolveMenuItem(sites);
+      return {
+        ...state,
+        isLoading: false,
+        headerNames: headerNames,
+        headerImageLeft: headerImageLeft,
+        headerImageRight: headerImageRight,
+        leftMenuItems: leftItems,
+        rightMenuItems: rightItems,
+        mainImage: mainImage,
+        weddingDate: weddingDate,
+      };
+    case 'GET_LEAVES_THEME_FAILURE':
+      return {
+        ...state,
+        isLoading: false,
+      };
+    default:
+      return state;
+  }
+};

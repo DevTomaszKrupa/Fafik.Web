@@ -1,60 +1,59 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useSelector } from 'react-redux';
 
-import components from './styles';
 import RomanticUsualHeader from 'domain/romantic/components/Header/Usual';
 import AboutUs from 'domain/romantic/components/AboutUs';
+import Quote from 'domain/romantic/components/Quote';
+import Gallery from 'domain/romantic/components/Gallery';
+import Blog from 'domain/romantic/components/Blog';
+import Map from 'domain/romantic/components/Map';
+import EventPlan from 'domain/romantic/components/EventPlan';
+import GiftPreferences from 'domain/romantic/components/GiftPreferences';
+import Music from 'domain/romantic/components/Music';
+import AdditionalInfo from 'domain/romantic/components/AdditionalInfo';
+
+// import DoubleLine from 'domain/romantic/components/DoubleLine';
 
 const AdminRomanticSiteEditorComponent = () => {
   const romanticThemeEditorState = useSelector(state => state.romanticThemeEditorState);
-  const { header } = romanticThemeEditorState;
+  const { header, aboutUs, quoteSection, gallery, blog, plan, additionalInfo } = romanticThemeEditorState;
 
-  const { MainContainer, Editor } = components;
   return (
-    <MainContainer>
-      <Editor>
-        {!romanticThemeEditorState.isLoading && (
-          <RomanticUsualHeader
-            headerNames={header.headerNames}
-            headerQuote={header.headerQuote}
-            weddingDate={header.weddingDate ? '' : 'Tu wpisz waszą datę'}
-            adminMode={true}
-            leftMenuItems={header.leftMenuItems}
-            rightMenuItems={header.rightMenuItems}
-            onItemClick={undefined}
-          />
-        )}
-        <AboutUs />
-        {/* 
-        <DoubleLineTheme />
+    <Fragment>
+      {!romanticThemeEditorState.isLoading && (
+        <RomanticUsualHeader
+          headerNames={header.headerNames}
+          headerQuote={header.headerQuote}
+          weddingDate={header.weddingDate ? '' : 'Tu wpisz waszsą datę'}
+          adminMode={true}
+          leftMenuItems={header.leftMenuItems}
+          rightMenuItems={header.rightMenuItems}
+          onItemClick={undefined}
+        />
+      )}
+      {/* <DoubleLine /> */}
+      <AboutUs adminMode={true} {...aboutUs} />
+      {/* <DoubleLine /> */}
+      <Quote adminMode={true} {...quoteSection} />
+      {/* <DoubleLine /> */}
 
-        <AboutUs />
-        <DoubleLineTheme />
+      <Gallery adminMode={true} {...gallery} />
+      <Blog adminMode={true} {...blog} />
+      {/* <DoubleLine /> */}
 
-        <Quote />
-        <DoubleLineTheme />
+      <Map adminMode={true} />
+      {/* <DoubleLine /> */}
+      <EventPlan adminMode={true} {...plan} />
+      {/* <DoubleLine /> */}
 
-        <Gallery />
-        <Blog />
-        <DoubleLineTheme />
+      <GiftPreferences adminMode={true} />
+      {/* <DoubleLine /> */}
 
-        <Map />
-        <DoubleLineTheme />
+      <Music adminMode={true} />
+      {/* <DoubleLine /> */}
 
-        <EventPlan />
-        <DoubleLineTheme />
-
-        <GiftPreferences />
-        <DoubleLineTheme />
-
-        <Music />
-        <DoubleLineTheme />
-
-        <AdditionalInfo />
-
-        <RsvpDialog /> */}
-      </Editor>
-    </MainContainer>
+      <AdditionalInfo adminMode={true} {...additionalInfo} />
+    </Fragment>
   );
 };
 

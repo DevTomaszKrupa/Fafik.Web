@@ -1,24 +1,22 @@
-import { User } from 'domain/models';
-
 class LocalStorageService {
   private userKey = 'user';
   private tokenKey = 'token';
 
-  get user(): User {
+  get user() {
     const userJson = localStorage.getItem(this.userKey);
     return JSON.parse(userJson ? userJson : '');
   }
 
-  set user(user: User) {
+  set user(user) {
     const stringifiedUser = JSON.stringify(user);
     localStorage.setItem(this.userKey, stringifiedUser);
   }
 
-  get token(): string | null {
+  get token() {
     return localStorage.getItem(this.tokenKey);
   }
 
-  set token(token: string | null) {
+  set token(token) {
     localStorage.setItem(this.tokenKey, token ? token : '');
   }
 

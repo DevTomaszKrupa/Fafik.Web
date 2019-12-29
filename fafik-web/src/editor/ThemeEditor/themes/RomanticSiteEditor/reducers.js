@@ -1,12 +1,17 @@
 import { set } from 'lodash';
 
 const initialState = {
-  // editor: 'none',
-  // itemId: '',
-  // textValue: '',
   header: {
     leftMenuItems: [],
     rightMenuItems: [],
+  },
+  aboutUs: {},
+  blog: {
+    posts: [],
+  },
+  gallery: {},
+  plan: {
+    events: [],
   },
   themeCode: '',
   editor: 'none',
@@ -51,6 +56,12 @@ export const romanticThemeEditorState = (state = initialState, action) => {
           leftMenuItems: leftItems,
           rightMenuItems: rightItems,
         },
+        aboutUs: aboutUs,
+        quoteSection: quoteSection,
+        gallery: gallery,
+        blog: blog,
+        plan: plan,
+        additionalInfo: additionalInfo,
       };
     case 'EDITOR_SITE_PANEL_UPDATE_TEXT_VALUE':
       const { itemId, textValue } = action.payload;

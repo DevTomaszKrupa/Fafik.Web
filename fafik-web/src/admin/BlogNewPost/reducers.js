@@ -1,19 +1,8 @@
-import { Reducer } from 'redux';
-
-import { Action } from 'application/store/actions';
-
-export type AdminNewBlogPostState = {
-  isLoading: boolean;
-};
-
-const initialState: AdminNewBlogPostState = {
+const initialState = {
   isLoading: false,
 };
 
-export const adminNewBlogPostState: Reducer<AdminNewBlogPostState, Action> = (
-  state = initialState,
-  action: Action
-): AdminNewBlogPostState => {
+export const adminNewBlogPostState = (state = initialState, action) => {
   switch (action.type) {
     case 'ADMIN_BLOG_CREATE_NEW_POST_STARTED':
       return {

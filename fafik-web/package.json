@@ -51,6 +51,7 @@
     "react-alice-carousel": "^1.15.3",
     "react-datalist-input": "^1.2.12",
     "react-dom": "^16.8.6",
+    "react-dropzone": "^10.2.1",
     "react-hook-form": "^3.28.9",
     "react-images-upload": "^1.2.7",
     "react-modal": "^3.10.1",

@@ -1,12 +1,11 @@
 import React, { Fragment, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faImages } from '@fortawesome/free-solid-svg-icons';
 
 import { history } from 'application/helpers';
 import { useDocumentTitle } from 'application/shared';
 import { useFormInput } from 'application/shared/hooks';
+import { FafikDropzone } from 'domain/controls';
 
 import components from './styles';
 import AdminTitleSection from '../shared/AdminTitleSection';
@@ -16,13 +15,25 @@ import { adminPaths } from '../consts';
 const AdminBlogNewPostComponent = props => {
   useDocumentTitle('Blog - Nowy post');
   const [postContent, setPostContent] = useState('');
+  const [postMiniature, setPostMiniature] = useState(undefined);
+
   const title = useFormInput('');
   const dispatch = useDispatch();
+
   const createNewPost = () =>
     dispatch({
       type: 'ADMIN_BLOG_CREATE_NEW_POST_STARTED',
-      payload: { title: title.value, content: postContent, clientName: props.match.params.clientName },
+      payload: {
+        image: postMiniature,
+        title: title.value,
+        content: postContent,
+        siteName: props.match.params.siteName,
+      },
     });
+
+  const onFileAdd = file => {
+    setPostMiniature(file);
+  };
 
   const {
     AdminMainSection,
@@ -33,9 +44,6 @@ const AdminBlogNewPostComponent = props => {
     PublicButtons,
     MainPostEditor,
     EditorSection,
-    ImageUploadSection,
-    ImageUploadTitle,
-    ImageUpload,
     PostEditor,
   } = components;
   return (
@@ -45,7 +53,7 @@ const AdminBlogNewPostComponent = props => {
         <ButtonSection>
           <AdminButton
             buttonStyle="gray"
-            onClick={() => history.push(adminPaths.blog(props.match.params.clientName))}
+            onClick={() => history.push(adminPaths.blog(props.match.params.siteName))}
             buttonText="< Powrót"
           />
           <TitleSection>
@@ -61,12 +69,7 @@ const AdminBlogNewPostComponent = props => {
           <EditorSection>
             <PostEditor editor={ClassicEditor} data={postContent} onChange={(_event, editor) => setPostContent(editor.getData())} />
           </EditorSection>
-          <ImageUploadSection>
-            <ImageUploadTitle>WGRAJ MINIATURKĘ POSTA:</ImageUploadTitle>
-            <ImageUpload>
-              <FontAwesomeIcon icon={faImages} size="3x" color="#253535" />
-            </ImageUpload>
-          </ImageUploadSection>
+          <FafikDropzone onSuccessAdd={onFileAdd} />
         </MainPostEditor>
       </AdminMainSection>
     </Fragment>

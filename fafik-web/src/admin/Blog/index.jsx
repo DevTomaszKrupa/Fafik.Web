@@ -20,8 +20,11 @@ const AdminBlogComponent = props => {
   const searchPhraseInput = useFormInput('');
   const { posts, isLoading, isAllChecked } = adminBlogState;
   useEffect(() => {
-    dispatch({ type: 'ADMIN_BLOG_GET_POSTS_STARTED', payload: { clientName: props.match.params.clientName, limit: 5, offset: 0 } });
-  }, [props.match.params.clientName, dispatch]);
+    dispatch({
+      type: 'ADMIN_BLOG_GET_POSTS_STARTED',
+      payload: { searchPhrase: '', siteName: props.match.params.siteName, limit: 5, offset: 0 },
+    });
+  }, [props.match.params.siteName, dispatch]);
 
   const [clock, setClock] = useState();
   const doSearch = evt => {
@@ -42,7 +45,7 @@ const AdminBlogComponent = props => {
     dispatch({ type: 'ADMIN_BLOG_CHANGE_SINGLE_POST_CHECK', payload: post.postId });
   };
 
-  const OnNewPostClick = () => history.push(adminPaths.blogNewPost(props.match.params.clientName));
+  const OnNewPostClick = () => history.push(adminPaths.blogNewPost(props.match.params.siteName));
 
   const {
     BlogContent,

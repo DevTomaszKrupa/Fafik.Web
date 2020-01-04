@@ -5,18 +5,18 @@ const initialState = {
 
 export const adminPanelState = (state = initialState, action) => {
   switch (action.type) {
-    case 'API_ADMIN_GET_SITE_STARTED':
+    case 'API_ADMIN_SITE_GET_SITE_STARTED':
       return {
         ...state,
         isLoading: true,
       };
-    case 'API_ADMIN_GET_SITE_SUCCESS':
+    case 'API_ADMIN_SITE_GET_SITE_SUCCESS':
       return {
         ...state,
         isLoading: false,
         site: action.payload.data,
       };
-    case 'API_ADMIN_GET_SITE_FAILURE':
+    case 'API_ADMIN_SITE_GET_SITE_FAILURE':
       return {
         ...state,
         isLoading: false,

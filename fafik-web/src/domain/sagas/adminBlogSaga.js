@@ -1,11 +1,9 @@
 import { put, takeLatest, call } from 'redux-saga/effects';
 
 import { apiCaller } from 'application/services';
-import { Action } from 'application/store/actions';
 
-function* adminBlogGetPosts(action: Action): any {
+function* adminBlogGetPosts(action) {
   try {
-    console.log(action);
     const response = yield call(apiCaller.adminBlog.getBlogPosts, action.payload);
     yield put({ type: 'ADMIN_BLOG_GET_POSTS_SUCCESS', payload: response.data });
   } catch (error) {
@@ -13,7 +11,7 @@ function* adminBlogGetPosts(action: Action): any {
   }
 }
 
-function* adminBlogDeletePost(action: Action): any {
+function* adminBlogDeletePost(action) {
   try {
     const response = yield call(apiCaller.adminBlog.deletePost, action.payload);
     yield put({ type: 'ADMIN_BLOG_DELETE_POST_SUCCESS', payload: response.data });
@@ -22,7 +20,7 @@ function* adminBlogDeletePost(action: Action): any {
   }
 }
 
-function* adminBlogCreateNewPost(action: Action): any {
+function* adminBlogCreateNewPost(action) {
   try {
     const response = yield call(apiCaller.adminBlog.createNewPost, action.payload);
     yield put({ type: 'ADMIN_BLOG_CREATE_NEW_POST_SUCCESS', payload: response.data });
@@ -31,7 +29,7 @@ function* adminBlogCreateNewPost(action: Action): any {
   }
 }
 
-export function* adminBlogRootSaga(): any {
+export function* adminBlogRootSaga() {
   yield takeLatest('ADMIN_BLOG_GET_POSTS_STARTED', adminBlogGetPosts);
   yield takeLatest('ADMIN_BLOG_DELETE_POST_STARTED', adminBlogDeletePost);
   yield takeLatest('ADMIN_BLOG_CREATE_NEW_POST_STARTED', adminBlogCreateNewPost);

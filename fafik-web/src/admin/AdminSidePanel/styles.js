@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IMAGE_STORAGE } from 'application/config';
 
 export default {
   SidePanelItem: styled.div`
@@ -47,8 +48,8 @@ export default {
     background-repeat: no-repeat;
     background-position-y: 53%;
     background-position: 50% 61%;
-    background-image: url('https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
-  `, // TODO
+    background-image: url("${IMAGE_STORAGE}/app/admin-side-panel-header.jpg");
+  `,
 
   ClientBoxNames: styled.div`
     letter-spacing: 0.04rem;

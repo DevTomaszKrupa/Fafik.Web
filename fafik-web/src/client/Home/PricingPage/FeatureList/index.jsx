@@ -8,7 +8,7 @@ import listelements from './list';
 
 const FeaturesList = () => {
   const dispatch = useDispatch();
-  const featureListState = useSelector((state: any) => state.featureListState);
+  const featureListState = useSelector(state => state.featureListState);
 
   const {
     FeatureList,

@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router-dom';
 
 import { localStorageService } from '../../../services';
 
-export const AuthenticatedRoute = ({ component: Component, ...rest }: any) => {
+export const AuthenticatedRoute = ({ component: Component, ...rest }) => {
   return (
     <Route
       {...rest}

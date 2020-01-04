@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { useDocumentTitle } from '../../../application/shared';
+import { useDocumentTitle } from 'application/shared';
 
 import components from './styles';
 import PageTitleBar from '../shared/PageTitleBar';
@@ -12,11 +12,11 @@ import Footer from '../shared/HomeFooter';
 const PricingPage = () => {
   useDocumentTitle('Cennik - Miłość Wierność');
   const dispatch = useDispatch();
-  const featureListState = useSelector((state: any) => state.featureListState);
+  const featureListState = useSelector(state => state.featureListState);
 
   useEffect(() => {
     dispatch({ type: 'FEATURE_LIST_GET_DATA_STARTED' });
-  }, []);
+  }, [dispatch]);
 
   const {
     IntroBar,
@@ -70,7 +70,6 @@ const PricingPage = () => {
             <PriceBoxTitle>KWOTA:</PriceBoxTitle>
             <Price>{featureListState.price}zł/</Price>
             <PriceDetails>
-              {' '}
               mies.
               <br />w rozliczeniu miesięcznym
             </PriceDetails>

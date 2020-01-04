@@ -20,7 +20,7 @@ const AdminHomeComponent = () => {
     if (!site) dispatch({ type: 'GET_THEMES_STARTED' });
   }, [dispatch, site]);
 
-  const onAfterClose = () => dispatch({ type: 'API_ADMIN_GET_SITE_STARTED' });
+  const onAfterClose = () => dispatch({ type: 'API_ADMIN_SITE_GET_SITE_STARTED' });
 
   const { WelcomeText, AdminHome } = components;
 

@@ -17,6 +17,7 @@ import AdminQRcode from '../QRCodePage';
 import AdminTopBar from '../AdminTopBar';
 import BaseAdminSidePanel from '../AdminSidePanel';
 import ChooseTheme from '../ChooseTheme';
+import SubscriptionPage from '../SubscriptionPage';
 import { adminPaths } from '../consts';
 
 const AdminPanelComponent = () => {
@@ -25,7 +26,7 @@ const AdminPanelComponent = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch({ type: 'API_ADMIN_GET_SITE_STARTED' });
+    dispatch({ type: 'API_ADMIN_SITE_GET_SITE_STARTED' });
   }, [dispatch]);
 
   return (
@@ -46,6 +47,7 @@ const AdminPanelComponent = () => {
               adminPaths.gallery(':siteName'),
               adminPaths.blogNewPost(':siteName'),
               adminPaths.QRcode(':siteName'),
+              adminPaths.subscription(':siteName'),
             ]}
             component={BaseAdminSidePanel}
           />
@@ -63,6 +65,7 @@ const AdminPanelComponent = () => {
           <AuthenticatedRoute exact path={adminPaths.playlist(':siteName')} component={AdminPlaylist} />
           <AuthenticatedRoute exact path={adminPaths.blogNewPost(':siteName')} component={AdminBlogNewPost} />
           <AuthenticatedRoute exact path={adminPaths.QRcode(':siteName')} component={AdminQRcode} />
+          <AuthenticatedRoute exact path={adminPaths.subscription(':siteName')} component={SubscriptionPage} />
         </AdminMainPanel>
       </AdminMain>
     </Fragment>

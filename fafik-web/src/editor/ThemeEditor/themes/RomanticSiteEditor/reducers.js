@@ -33,15 +33,6 @@ const resolveMenuItem = sites => {
 
 export const romanticThemeEditorState = (state = initialState, action) => {
   switch (action.type) {
-    // case 'EDITOR_EDITABLE_TEXT_COMPONENT_CLICK': {
-    //   const { itemId, textValue } = action.payload;
-    //   return {
-    //     ...state,
-    //     editor: 'text',
-    //     itemId: itemId,
-    //     textValue: textValue,
-    //   };
-    // }
     case 'API_SITE_GET_SITE_SUCCESS':
       const { aboutUs, additionalInfo, blog, gallery, header, plan, quoteSection } = action.payload.siteData;
       const { headerNames, headerQuote, mainImage, weddingDate, sites } = header;
@@ -68,6 +59,11 @@ export const romanticThemeEditorState = (state = initialState, action) => {
       const newState = { ...state };
       set(newState, itemId, textValue);
       return newState;
+    // case 'EDITOR_SITE_PANEL_UPDATE_IMAGE_VALUE':
+    //   const { itemId, textValue } = action.payload;
+    //   const newState = { ...state };
+    //   set(newState, itemId, textValue);
+    //   return newState;
     default:
       return state;
   }

@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { history } from 'application/helpers';
 import TextEditor from './TextEditor';
+import ImageEditor from './ImageEditor';
 
 const AdminThemeEditorSidePanelComponent = props => {
   const leaveEditor = () => history.push('/admin');
@@ -12,6 +13,7 @@ const AdminThemeEditorSidePanelComponent = props => {
     <div>
       PANEL EDYCJI <button onClick={leaveEditor}> Powrót </button>
       {editorSidePanelState.editor === 'text' && <TextEditor siteName={props.match.params.siteName} />}
+      {editorSidePanelState.editor === 'image' && <ImageEditor siteName={props.match.params.siteName} />}
     </div>
   );
 };

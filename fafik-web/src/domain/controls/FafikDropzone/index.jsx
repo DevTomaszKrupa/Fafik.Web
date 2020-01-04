@@ -55,30 +55,12 @@ const FafikDropzone = props => {
             </ImageUpload>
           </>
         ) : (
-          <>
-            {/* <ImageUploadTitle>WGRAJ MINIATURKĘ POSTA:</ImageUploadTitle> */}
-            <ImageUpload>
-              <img src={acceptedFiles[0].preview} style={img} />
-            </ImageUpload>
-          </>
+          <ImageUpload>
+            <img src={acceptedFiles[0].preview} style={img} />
+          </ImageUpload>
         )}
       </ImageUploadSection>
     </section>
-    // <ImageUploadSection {...getRootProps()}>
-    //   <input {...getInputProps()} />
-    //   <ImageUploadTitle>WGRAJ MINIATURKĘ POSTA:</ImageUploadTitle>
-    //   <ImageUpload>
-    //     <FontAwesomeIcon icon={faImages} size="3x" color="#253535" />
-    //   </ImageUpload>
-    //   {acceptedFiles.map(file => (
-    //     <div>{file.preview}</div>
-    //     // <div key={file.name}>
-    //     //   <div>
-    //     //     <img src={file.preview} />
-    //     //   </div>
-    //     // </div>
-    //   ))}
-    // </ImageUploadSection>
   );
 };
 

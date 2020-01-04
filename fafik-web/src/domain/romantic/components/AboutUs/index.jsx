@@ -1,20 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { AdminEditableComponent } from 'application/shared/components';
+import { AdminEditableComponent, AdminEditableImageComponent } from 'application/shared/components';
 
 import components from './styles';
 
 const AboutUsLayout = props => {
   const { aboutUsPhoto, textWelcome, adminMode, aboutUs } = props;
-
   const { AboutUsBox, AboutUsPhotoBox, AboutUsPhotoFrame, AboutUsPhoto, AboutBoxText, TextWelcome, AboutUs, ToRSVPButton } = components;
 
   return (
     <AboutUsBox id="o-nas">
       <AboutUsPhotoBox>
         <AboutUsPhotoFrame>
-          <AboutUsPhoto aboutUsImg={aboutUsPhoto}></AboutUsPhoto>
+          <AdminEditableImageComponent adminMode={adminMode}>
+            <AboutUsPhoto aboutUsImg={aboutUsPhoto}></AboutUsPhoto>
+          </AdminEditableImageComponent>
         </AboutUsPhotoFrame>
       </AboutUsPhotoBox>
       <AboutBoxText>

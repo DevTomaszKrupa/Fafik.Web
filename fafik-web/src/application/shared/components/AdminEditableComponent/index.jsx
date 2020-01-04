@@ -8,14 +8,14 @@ const AdminEditableComponent = props => {
   const { children, adminMode, itemId, textValue } = props;
   const dispatch = useDispatch();
 
-  const editAdminEditableTextComponent = item =>
-    dispatch({ type: 'EDITOR_EDITABLE_TEXT_COMPONENT_CLICK', payload: { itemId: item, textValue: textValue } });
+  const editAdminEditableTextComponent = () =>
+    dispatch({ type: 'EDITOR_EDITABLE_TEXT_COMPONENT_CLICK', payload: { itemId, textValue: textValue } });
 
   const { Container } = components;
 
   return (
     <Fragment>
-      {adminMode && <Container onClick={() => editAdminEditableTextComponent(itemId)}>{children}</Container>}
+      {adminMode && <Container onClick={() => editAdminEditableTextComponent()}>{children}</Container>}
       {!adminMode && children}
     </Fragment>
   );

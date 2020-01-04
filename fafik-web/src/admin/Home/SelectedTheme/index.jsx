@@ -1,13 +1,17 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { IMAGE_STORAGE } from 'application/config';
 
 import components from './styles';
 
 const SelectedThemeComponent = () => {
-  const adminPanelState = useSelector(state => state.adminPanelState);
-  const { site } = adminPanelState;
+  const { site } = useSelector(state => state.adminPanelState);
+  const dispatch = useDispatch();
+
+  const resetChoice = () => {
+    dispatch({ type: 'API_ADMIN_SITE_DELETE_SITE_STARTED' });
+  };
 
   const {
     ChoiceBox,
@@ -48,6 +52,7 @@ const SelectedThemeComponent = () => {
                 prezentowe, kod QR, informacje <br />
                 dodatkowe, samodzielna edycja
               </FeatureDescription>
+              <button onClick={resetChoice}>Cofnij wybór</button>
             </Feature>
           </MainBox>
           <BottomDecoration />

@@ -24,7 +24,6 @@ import { leavesState } from './leaves/theme/reducers';
 import { romanticState } from './romantic/theme/reducers';
 import { romanticRsvpDialogState } from './romantic/dialogs/RsvpDialog/reducers';
 import { leavesMainSiteState } from './leaves/main/reducers';
-import { adminThemeEditorState } from './admin/theme-editor/reducers';
 
 export default combineReducers({
   registerState,
@@ -40,7 +39,6 @@ export default combineReducers({
   // admin
   loginState,
   adminPanelState,
-  adminThemeEditorState,
   adminBlogState,
   adminNewBlogPostState,
   adminHomeState,

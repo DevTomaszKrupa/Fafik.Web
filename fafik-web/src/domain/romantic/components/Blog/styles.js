@@ -24,7 +24,6 @@ export default {
     font-size: 2rem;
     line-height: 2.6rem;
     padding: ${props => props.padding};
-    width: 60%;
   `,
 
   BlogSection: styled.div`

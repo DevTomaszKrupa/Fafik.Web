@@ -1,16 +1,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-
 import components from './styles';
 
 const PricingPage = () => {
   const dispatch = useDispatch();
-  const featureListState = useSelector((state: any) => state.featureListState);
+  const featureListState = useSelector(state => state.featureListState);
 
   useEffect(() => {
     dispatch({ type: 'FEATURE_LIST_GET_DATA_STARTED' });
-  }, []);
+  }, [dispatch]);
 
   const { PricingPlans, PricingPlan, PricingTitle, Subtitle, PlanDescription, PlanSavings, PlanPrice } = components;
 

@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 import { IMAGE_STORAGE } from 'application/config';
 
-interface PhotoSquareProps {
-  backgroundImage: string;
-}
-
 export default {
   IntroBar: styled.div`
     flex-grow: 1;
@@ -79,7 +75,7 @@ export default {
     background-size: auto 100%;
     background-position: center;
     margin-right: 1.7rem;
-    background-image: url(${IMAGE_STORAGE}${(props: PhotoSquareProps) => props.backgroundImage});
+    background-image: url(${IMAGE_STORAGE}${props => props.backgroundImage});
   `,
 
   FeaturesSection: styled.div`

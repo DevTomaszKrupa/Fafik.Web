@@ -25,11 +25,6 @@ export default {
     font-size: 2.3rem;
     text-align: center;
     padding-bottom: 1rem;
-    width: 45%;
-
-    @media (max-width: 900px) {
-      width: 80%;
-    }
   `,
 
   QuoteAuthor: styled.div`

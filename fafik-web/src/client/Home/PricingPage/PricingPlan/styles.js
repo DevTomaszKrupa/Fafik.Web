@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-interface PlanProps {
-  colorVersion: string;
-}
-
 export default {
   PricingPlans: styled.div`
     display: flex;
@@ -15,21 +11,9 @@ export default {
     width: 20rem;
     border-radius: 0 0 2rem 2rem;
 
-    ${(props: PlanProps) =>
-      props.colorVersion === 'pink' &&
-      `
-      border: 0.25rem solid #f2d0be;
-    `}
-    ${(props: PlanProps) =>
-      props.colorVersion === 'gray' &&
-      `
-      border: 0.25rem solid #CEC9C1;
-    `}
-    ${(props: PlanProps) =>
-      props.colorVersion === 'green' &&
-      `
-      border: 0.25rem solid #859A7A;
-    `}
+    ${props => props.colorVersion === 'pink' && `border: 0.25rem solid #f2d0be;`}
+    ${props => props.colorVersion === 'gray' && `border: 0.25rem solid #CEC9C1;`}
+    ${props => props.colorVersion === 'green' && `border: 0.25rem solid #859A7A;`}
   `,
 
   PricingTitle: styled.div`
@@ -43,21 +27,9 @@ export default {
     align-items: center;
     padding: 2.1rem 0 1rem 0;
 
-    ${(props: PlanProps) =>
-      props.colorVersion === 'pink' &&
-      `
-      border-bottom: 0.25rem solid #f2d0be;
-    `}
-    ${(props: PlanProps) =>
-      props.colorVersion === 'gray' &&
-      `
-      border-bottom: 0.25rem solid #CEC9C1;
-    `}
-    ${(props: PlanProps) =>
-      props.colorVersion === 'green' &&
-      `
-      border-bottom: 0.25rem solid #859A7A;
-    `}
+    ${props => props.colorVersion === 'pink' && `border-bottom: 0.25rem solid #f2d0be;`}
+    ${props => props.colorVersion === 'gray' && `border-bottom: 0.25rem solid #CEC9C1;`}
+    ${props => props.colorVersion === 'green' && `border-bottom: 0.25rem solid #859A7A;`}
   `,
 
   Subtitle: styled.div`
@@ -92,20 +64,8 @@ export default {
     justify-content: center;
     align-items: center;
 
-    ${(props: PlanProps) =>
-      props.colorVersion === 'pink' &&
-      `
-      background-color: #f2d0be;
-    `}
-    ${(props: PlanProps) =>
-      props.colorVersion === 'gray' &&
-      `
-      background-color: #CEC9C1;
-    `}
-    ${(props: PlanProps) =>
-      props.colorVersion === 'green' &&
-      `
-      background-color: #859A7A;
-    `}
+    ${props => props.colorVersion === 'pink' && `background-color: #f2d0be;`}
+    ${props => props.colorVersion === 'gray' && `background-color: #CEC9C1;`}
+    ${props => props.colorVersion === 'green' && `background-color: #859A7A;`}
   `,
 };
